@@ -22,7 +22,7 @@ public class LoginPage
 	/************************************Utilization******************************************/
 	public void loginToPage(String username, String password)
 	{
-		BaseClass.driver.switchTo().frame(0);
+		BaseClass.driver.switchTo().frame("");
 		
 		userNameEdt.sendKeys(username);
 		passWordEdt.sendKeys(password);
@@ -30,6 +30,7 @@ public class LoginPage
 	 }
 	  public void logOut()
 	  {
+	  BaseClass.driver.switchTo().frame("/html/frameset/frame"); 
 	  WebdriverUtils.waitForPageToLoad(BaseClass.driver);
 	  dropDownArrow.click();
 	  logoutBtn.click();

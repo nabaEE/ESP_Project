@@ -25,9 +25,8 @@ public class BaseClass extends FileUtils
 	
  @BeforeClass()
  @Parameters({"browser"})
-public void openBrowser(String browser)
+public void openBrowser(String browserName)
   {
-  String browserName=browser;
 	 /*Call the chrome driver*/
   if(browserName.equalsIgnoreCase("chrome"))
    {
