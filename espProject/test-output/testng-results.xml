@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="97" started-at="2019-09-29T18:31:14Z" finished-at="2019-09-29T18:31:14Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="97" started-at="2019-09-29T18:31:14Z" finished-at="2019-09-29T18:31:14Z">
+      <class name="com.orgDesignData.CostCenterManagementTest">
+        <test-method status="PASS" signature="submitNewLegalEntity()[pri:0, instance:com.orgDesignData.CostCenterManagementTest@ae45eb6]" name="submitNewLegalEntity" duration-ms="20" started-at="2019-09-29T18:31:14Z" finished-at="2019-09-29T18:31:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- submitNewLegalEntity -->
+      </class> <!-- com.orgDesignData.CostCenterManagementTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
