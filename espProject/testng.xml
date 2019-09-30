@@ -2,8 +2,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 <listeners>
-<listener name=""/>
-<listener name=""/>
+<listener class-name="esp.genericLibraries.ListenerImplimentationClass"/>
+<listener class-name="esp.genericLibraries.ExtentReporterNG"/>
 </listeners>
   <parameter name="browser" value="firefox 68"/>
   <test thread-count="5" name="Test">

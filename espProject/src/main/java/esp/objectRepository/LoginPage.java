@@ -1,5 +1,6 @@
 package esp.objectRepository;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -15,14 +16,14 @@ public class LoginPage
 	private WebElement passWordEdt;
 	@FindBy(xpath="//*[@id=\"login_normal\"]")
 	private WebElement loginBtn;
-	@FindBy(xpath="//i[text()='arrow_drop_down']")
+	@FindBy(xpath="//div[@class='navbar-fixed']//nav/div/ul/li[9]/a/i")
 	private WebElement dropDownArrow;
-	@FindBy(linkText="Logout")
+	@FindBy(xpath="//ul[@id='dropdown1']/li[2]/a")
 	private WebElement logoutBtn;
 	/************************************Utilization******************************************/
 	public void loginToPage(String username, String password)
 	{
-		BaseClass.driver.switchTo().frame("");
+		BaseClass.driver.switchTo().frame(BaseClass.driver.findElement(By.xpath("//html//frameset//frameset//frame")));
 		
 		userNameEdt.sendKeys(username);
 		passWordEdt.sendKeys(password);
@@ -30,7 +31,7 @@ public class LoginPage
 	 }
 	  public void logOut()
 	  {
-	  BaseClass.driver.switchTo().frame("/html/frameset/frame"); 
+	  BaseClass.driver.switchTo().frame(BaseClass.driver.findElement(By.xpath("//html//frameset//frame")));
 	  WebdriverUtils.waitForPageToLoad(BaseClass.driver);
 	  dropDownArrow.click();
 	  logoutBtn.click();

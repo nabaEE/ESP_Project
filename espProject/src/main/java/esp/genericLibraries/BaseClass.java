@@ -28,6 +28,7 @@ public class BaseClass extends FileUtils
 public void openBrowser(String browserName)
   {
 	 /*Call the chrome driver*/
+	 System.out.println("********************Launching the browser**********************");
   if(browserName.equalsIgnoreCase("chrome"))
    {
 	 System.setProperty("webdriver.chrome.driver", "C:\\Users\\Prod\\Downloads\\chromedriver_win32 (5)\\chromedriver.exe");
@@ -50,6 +51,7 @@ public void openBrowser(String browserName)
 @BeforeMethod()
 public void login() throws IOException
 {
+ System.out.println("************Login to the application***************");
 	/*Create an object of FileUtils class to get the data from property file*/
  FileUtils fl= new FileUtils();
  Properties pObj=fl.getPropertyData();
@@ -61,17 +63,18 @@ public void login() throws IOException
  }
 @AfterMethod
 public void tearDown() throws Exception
-{
-		  driver.switchTo().frame(0); 
+{ 
 		  esp.objectRepository.LoginPage lp=PageFactory.initElements(driver, LoginPage.class);
 		 //call the logout method declared in LoginPage
 		 lp.logOut();
+		 System.out.println("***********Logout from the application*********");
 }
 @AfterClass
 public void closeBrowser()
 { 
 	driver.switchTo().defaultContent();
 	driver.quit();
+	System.out.println("*************Closing the browser***********");
 }
 	
 }

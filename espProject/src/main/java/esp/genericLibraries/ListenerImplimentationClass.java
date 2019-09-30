@@ -12,9 +12,7 @@ import org.testng.ITestResult;
 
 import esp.genericLibraries.BaseClass;
 
-public class ListenerImplimentationClass
-{
-	public class ListenerImplemention implements ITestListener
+	public class ListenerImplimentationClass implements ITestListener
 	{
 
 		public void onTestStart(ITestResult result) {
@@ -32,7 +30,7 @@ public class ListenerImplimentationClass
 			String failedTestName=r.getMethod().getMethodName();
 			EventFiringWebDriver eDriver= new EventFiringWebDriver(BaseClass.driver);
 			File src=eDriver.getScreenshotAs(OutputType.FILE);
-			File dst=new File("./screenshot/"+failedTestName+".png");
+			File dst=new File("./Screenshots/"+failedTestName+".png");
 			try
 			{
 			 FileUtils.copyFileToDirectory(src, dst);
@@ -66,4 +64,4 @@ public class ListenerImplimentationClass
 
 
 }
-}
+
