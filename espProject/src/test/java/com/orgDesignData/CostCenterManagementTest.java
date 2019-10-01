@@ -7,7 +7,7 @@ import esp.genericLibraries.BaseClass;
 public class CostCenterManagementTest  extends BaseClass
 {
 @Test()
-public static void submitNewLegalEntity()
+public static void submitNewCostCenter()
 {
 	
 }

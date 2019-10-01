@@ -8,7 +8,7 @@
   <parameter name="browser" value="firefox 68"/>
   <test thread-count="5" name="Test">
    <classes>
-      <class name="com.orgDesignData.CostCenterManagementTest"/>
+      <class name="com.compensationItems.CompItemGroupsTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -16,7 +16,7 @@ public class LoginPage
 	private WebElement passWordEdt;
 	@FindBy(xpath="//*[@id=\"login_normal\"]")
 	private WebElement loginBtn;
-	@FindBy(xpath="//div[@class='navbar-fixed']//nav/div/ul/li[9]/a/i")
+	@FindBy(css=".dropdown-icon")
 	private WebElement dropDownArrow;
 	@FindBy(xpath="//ul[@id='dropdown1']/li[2]/a")
 	private WebElement logoutBtn;
@@ -24,17 +24,16 @@ public class LoginPage
 	public void loginToPage(String username, String password)
 	{
 		BaseClass.driver.switchTo().frame(BaseClass.driver.findElement(By.xpath("//html//frameset//frameset//frame")));
-		
 		userNameEdt.sendKeys(username);
 		passWordEdt.sendKeys(password);
 		loginBtn.click();
 	 }
 	  public void logOut()
 	  {
-	  BaseClass.driver.switchTo().frame(BaseClass.driver.findElement(By.xpath("//html//frameset//frame")));
-	  WebdriverUtils.waitForPageToLoad(BaseClass.driver);
-	  dropDownArrow.click();
-	  logoutBtn.click();
+		// BaseClass.driver.switchTo().frame(BaseClass.driver.findElement(By.xpath("//html//frameset//frameset//frame")));
+		  WebdriverUtils.waitForPageToLoad(BaseClass.driver);
+	      dropDownArrow.click();
+	      logoutBtn.click();
 	  }
 	
 	

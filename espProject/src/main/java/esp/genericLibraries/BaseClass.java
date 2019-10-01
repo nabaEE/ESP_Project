@@ -3,6 +3,7 @@ package esp.genericLibraries;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -31,7 +32,7 @@ public void openBrowser(String browserName)
 	 System.out.println("********************Launching the browser**********************");
   if(browserName.equalsIgnoreCase("chrome"))
    {
-	 System.setProperty("webdriver.chrome.driver", "C:\\Users\\Prod\\Downloads\\chromedriver_win32 (5)\\chromedriver.exe");
+	 System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Chrome\\Chrome77\\chromedriver.exe");
 	 driver= new ChromeDriver();
     }
   /*call the firefox browser*/
@@ -60,11 +61,14 @@ public void login() throws IOException
  esp.objectRepository.LoginPage lp= PageFactory.initElements(driver, LoginPage.class);
  //Calling the method declared in login page class
  lp.loginToPage(pObj.getProperty("USERNAME"), pObj.getProperty("PASSWORD"));
+ WebdriverUtils.waitForPageToLoad(driver);
+ BaseClass.driver.switchTo().frame(BaseClass.driver.findElement(By.xpath("//html//frameset//frame")));
+ 
  }
 @AfterMethod
 public void tearDown() throws Exception
 { 
-		  esp.objectRepository.LoginPage lp=PageFactory.initElements(driver, LoginPage.class);
+	    esp.objectRepository.LoginPage lp=PageFactory.initElements(driver, LoginPage.class);
 		 //call the logout method declared in LoginPage
 		 lp.logOut();
 		 System.out.println("***********Logout from the application*********");
