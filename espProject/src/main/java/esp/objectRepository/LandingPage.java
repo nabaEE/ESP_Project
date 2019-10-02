@@ -20,8 +20,6 @@ public class LandingPage
 	@FindBy(xpath="//ul[@id='AdminDropDowns']/li[4]/a")
 	private WebElement newHireAdminValue;
 	
-
-	
 /***********Getters Usage************/
 	
 	public WebElement getAdminIcon() {

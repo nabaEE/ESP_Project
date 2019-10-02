@@ -30,7 +30,7 @@ public class WebdriverUtils
 	  {
 		  WebDriverWait wait= new WebDriverWait(driver, 20);
 		  wait.until(ExpectedConditions.visibilityOf(wb));
-		  System.out.println("/nElement is visible after Explicit Wait\n");
+		 // System.out.println("/nElement is visible after Explicit Wait\n");
 	   }
 	 
 	 /**

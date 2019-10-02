@@ -30,8 +30,7 @@ public class LoginPage
 	 }
 	  public void logOut()
 	  {
-		// BaseClass.driver.switchTo().frame(BaseClass.driver.findElement(By.xpath("//html//frameset//frameset//frame")));
-		  WebdriverUtils.waitForPageToLoad(BaseClass.driver);
+		  WebdriverUtils.waitForElementPresent(BaseClass.driver, dropDownArrow);
 	      dropDownArrow.click();
 	      logoutBtn.click();
 	  }

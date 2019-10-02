@@ -3,15 +3,16 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.orgDesignData.CostCenterManagementTest">
+      <class name="com.compensationItems.CompItemGroupsTest">
         <methods>
+          <include name="submitAnexistingCompensationGroup"/>
           <include name="login"/>
           <include name="closeBrowser"/>
+          <include name="submitNewCompensationGroup"/>
           <include name="openBrowser"/>
           <include name="tearDown"/>
-          <include name="submitNewLegalEntity"/>
         </methods>
-      </class> <!-- com.orgDesignData.CostCenterManagementTest -->
+      </class> <!-- com.compensationItems.CompItemGroupsTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
