@@ -8,13 +8,14 @@
   <parameter name="browser" value="firefox 68"/>
   <test thread-count="5" name="Test">
    <classes>
-      <class name="com.compensationItems.CompItemGroupsTest">
+      <class name="com.newHire.NewHireTest">
       <methods>
-      <include name="submitAnexistingCompensationGroupAndVerifyErrorMessage"/>
+      <include name="submitNewHireForm"/>
       </methods>
       </class>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
+
 
 

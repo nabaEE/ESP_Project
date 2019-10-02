@@ -62,7 +62,9 @@ public void login() throws IOException
  //Calling the method declared in login page class
  lp.loginToPage(pObj.getProperty("USERNAME"), pObj.getProperty("PASSWORD"));
  WebdriverUtils.waitForPageToLoad(driver);
- BaseClass.driver.switchTo().frame(BaseClass.driver.findElement(By.xpath("//html//frameset//frame")));
+ driver.switchTo().frame(BaseClass.driver.findElement(By.xpath("//html//frameset//frame")));
+
+ 
  
  }
 @AfterMethod

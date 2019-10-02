@@ -2,8 +2,12 @@ package esp.objectRepository;
 
 import java.util.List;
 
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import esp.genericLibraries.BaseClass;
 
 public class NewHirePage 
 {
@@ -57,6 +61,8 @@ public class NewHirePage
 	private WebElement stateOfBirthDropdown;
 	@FindBy(xpath="//div[@id='div_BirthState_Code']/div/ul/li")
 	private List<WebElement> stateOfBirthDropdownValues;
+	@FindBy(xpath="//div[@id='div_BirthState_Code']/div/ul/li[3]")
+	private WebElement pickStateOfBirth;
 	@FindBy(id="Error_BirthState_Code")
 	private WebElement StateOfBirthBlankErrMessage;
 	
@@ -162,6 +168,8 @@ public class NewHirePage
 	private WebElement joiningDate;
 	@FindBy(id="Error_Emp_JoiningDate")
 	private WebElement joiningDateBlankErrorMessage;
+	@FindBy(id="Group_JoiningDate")
+	private WebElement groupJoiningDate;
 	
 	@FindBy(id="Emp_Id")
 	private WebElement employeeId;
@@ -181,7 +189,7 @@ public class NewHirePage
 	private WebElement employmentTypeDropdown;
 	@FindBy(xpath="//div[@id='div_Employment_Type']/div/ul/li")
 	private WebElement employmentTypeDropdownValues;
-	@FindBy(xpath="//div[@id='div_Employment_Type']/div/ul[2]")
+	@FindBy(xpath="//div[@id='div_Employment_Type']/div/ul/li[4]")
 	private WebElement pickEmploymentType;
 	@FindBy(id="Error_Employment_Type")
 	private WebElement employmentTypeBlankErrorMessage;
@@ -213,17 +221,19 @@ public class NewHirePage
 	private WebElement roleEditbox;
 	@FindBy(id="Error_Role_Id")
 	private WebElement roleEditboxBlankErrorMessage;
+	@FindBy(xpath="//div[@id='div_Role_Id']/ul/li[2]")
+	private WebElement pickRole;
 	
 	@FindBy(id="Designation_Id")
 	private WebElement designationEditbox;
-	@FindBy(xpath="//ul[@id='Desig_Search_Designation_Id']/li[1]")
+	@FindBy(xpath="//div[@id='div_Designation_Id']/ul/li[2]")
 	private WebElement pickDesignation;
 	@FindBy(id="Error_Designation_Id")
 	private WebElement designationBlankErrorMessage;
 	
 	@FindBy(id="Manager_Id")
 	private WebElement reportingHiringManagerEditbox;
-	@FindBy(xpath="//ul[@id='Mgr_Search_Manager_Id']/li[2]")
+	@FindBy(xpath="//div[@id='div_Manager_Id']/ul/li[2]")
 	private WebElement pickReportingHiringManager;
 	@FindBy(id="Error_Manager_Id")
 	private WebElement reportingHiringManagerBlankErrorMesage;
@@ -257,6 +267,9 @@ public class NewHirePage
 	private WebElement fteEditbox;
 	@FindBy(id="Error_FTE_Weeklyhours")
 	private WebElement fteBlankErrorMessage;
+	
+	@FindBy(id="Submit")
+	private WebElement saveAndContinueButton;
 	
 	
 	/************************Getters Usage********************************/
@@ -323,6 +336,9 @@ public class NewHirePage
 	}
 	public List<WebElement> getStateOfBirthDropdownValues() {
 		return stateOfBirthDropdownValues;
+	}
+	public WebElement getPickStateOfBirth() {
+		return pickStateOfBirth;
 	}
 	public WebElement getStateOfBirthBlankErrMessage() {
 		return StateOfBirthBlankErrMessage;
@@ -462,6 +478,9 @@ public class NewHirePage
 	public WebElement getJoiningDateBlankErrorMessage() {
 		return joiningDateBlankErrorMessage;
 	}
+	public WebElement getGroupJoiningDate() {
+		return groupJoiningDate;
+	}
 	public WebElement getEmployeeId() {
 		return employeeId;
 	}
@@ -528,6 +547,9 @@ public class NewHirePage
 	public WebElement getRoleEditboxBlankErrorMessage() {
 		return roleEditboxBlankErrorMessage;
 	}
+	public WebElement getPickRole() {
+		return pickRole;
+	}
 	public WebElement getDesignationEditbox() {
 		return designationEditbox;
 	}
@@ -585,29 +607,18 @@ public class NewHirePage
 	public WebElement getFteBlankErrorMessage() {
 		return fteBlankErrorMessage;
 	}
+	public WebElement getSaveAndContinueButton()
+	{
+		return saveAndContinueButton;
+	}
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	/**************************Utilization******************************/
+/**************************Utilization******************************/
+	public void DatePicker(WebDriver driver, WebElement element, String date)
+	{   
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("arguments[0].setAttribute('value',' "+ date + "');" , element);
+	}
 
 }
