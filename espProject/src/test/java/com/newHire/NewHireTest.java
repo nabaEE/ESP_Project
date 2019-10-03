@@ -1,5 +1,7 @@
 package com.newHire;
 
+import java.awt.AWTException;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
@@ -7,6 +9,7 @@ import org.testng.annotations.Test;
 import esp.genericLibraries.BaseClass;
 import esp.genericLibraries.WebdriverUtils;
 import esp.objectRepository.CompensationPage;
+import esp.objectRepository.HireSummaryPage;
 import esp.objectRepository.LandingPage;
 import esp.objectRepository.NewHirePage;
 
@@ -14,8 +17,8 @@ public class NewHireTest extends BaseClass
 {
 
 //1. Submit new hire form and verify.
-@Test()
-public static void submitNewHireForm()
+@Test(groups="Smoke")
+public static void submitNewHireForm() throws AWTException, InterruptedException
 {
 	    //Call the landing page
 		LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
@@ -30,9 +33,9 @@ public static void submitNewHireForm()
 		nhp.getTitleDropdown().click();
 		nhp.getPickTitle_MR().click();
 		//Enter the first Name
-		nhp.getFirstNameEditbox().sendKeys("Rahul");
+		nhp.getFirstNameEditbox().sendKeys("Dharam");
 		//Enter last name
-		nhp.getLastNameEditbox().sendKeys("Ghosh");
+		nhp.getLastNameEditbox().sendKeys("Singh");
 		//Pick date of birth
 		WebElement element=nhp.getDateOfBirthCalenderWindow();
 		String date="7-Oct-1989";
@@ -80,9 +83,9 @@ public static void submitNewHireForm()
 	    String groupJoiningDate="1-Sept-2019";
 	    nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 	    //Enter the employee Id
-	    nhp.getEmployeeId().sendKeys("RHL123");
+	    nhp.getEmployeeId().sendKeys("DHA89");
 	    //Enter email id
-	    nhp.getEmailIdEditbox().sendKeys("rahul234");
+	    nhp.getEmailIdEditbox().sendKeys("dharm234");
 	    //Pick employment type 
 	    nhp.getEmploymentTypeDropdown().click();
 	    nhp.getPickEmploymentType().click();
@@ -99,7 +102,7 @@ public static void submitNewHireForm()
 	    nhp.getDesignationEditbox().sendKeys("sal");
 	    nhp.getPickDesignation().click();
 	    //Enter three letters in the reporting Hiring Manager and pick one.
-	    nhp.getReportingHiringManagerEditbox().sendKeys("Man");
+	    nhp.getReportingHiringManagerEditbox().sendKeys("sar");
 	    nhp.getPickReportingHiringManager().click();
 	    //Select paytype
 	    nhp.getPickTypeDropdown().click();
@@ -119,7 +122,116 @@ public static void submitNewHireForm()
 	    //select above 3 lakhs
 	    cmp.getClickAbove3Lakh().click();
 	    //Click on save And continue
+	    WebdriverUtils.waitForPageToLoad(driver);
 	    cmp.getSaveAndContinueButton().click();
+	  //Call Hire summary page
+	    HireSummaryPage hsp= PageFactory.initElements(driver, HireSummaryPage.class);
+	   /****************************Adding mobile contact details******************************/
+	    hsp.getClickContactDetails().click();
+	    //Click phone type and pick mobile
+	    hsp.getPhoneTypeDropdown().click();
+	    hsp.getPickPhoneTypeAsMobile().click();
+	    //Select country code
+	    hsp.getCountryCodeDropdown().click();
+	    hsp.getPickCountryCodeAsIndia().click();
+	    hsp.getNumberEditbox().sendKeys("9681312762");
+	    //Click on submit
+	    hsp.getSubmitButton().click();
+	    /****************************Adding Home contact details******************************/
+	    hsp.getClickContactDetails().click();
+	    //Click phone type and pick mobile
+	    hsp.getPhoneTypeDropdown().click();
+	    hsp.getPickPhoneTypeAsHome().click();
+	    //Select country code
+	    hsp.getCountryCodeDropdown().click();
+	    hsp.getPickCountryCodeAsIndia().click();
+	    hsp.getNumberEditbox().sendKeys("9681312763");
+	    //Click on submit
+	    hsp.getSubmitButton().click();
+	    /*******************************Adding current Address and permanent address************/
+	    hsp.getClickCurrentAddressPencilIcon().click();
+	    //Click on effective from date and pick the date
+	    hsp.getEffectiveFromDateCalenderWin().click();
+	    hsp.getCurrentDate().click();
+	    //Enter address line1
+	    hsp.getAddressLine1().sendKeys("Mathura, block1");
+	    //Click on country dropdown and Pick country
+	    hsp.getCountryDropdownOnAddressDetailsWin().click();
+	    hsp.getPickCountryIndiaOnAddressDetailsWin().click();
+	    //Click on state dropdown and pick a state
+	    hsp.getStateDropdownOnAddressDetailsWin().click();
+	    hsp.getPickState().click();
+	    //Type three letters in the city search editbox
+	    hsp.getCityEditbox().sendKeys("hyd");
+	    hsp.getPickCity().click();
+	    //Enter postal code
+	    hsp.getPostalCode().sendKeys("78452142");
+	    //Click on copy current address as permanent addres
+	    hsp.getCopyCurrentAddressAsPermanentAddress().click();
+	    //upload document
+	    hsp.clickAnduploadDocument();
+	    //click on submit
+	    hsp.getSubmitButton().click();
+	    WebdriverUtils.waitForPageToLoad(driver);
 	    
-}
+	  /****************************Adding Personal Email details***********************************/
+	   WebdriverUtils.waitForElementPresent(driver, hsp.getEmailDetailsAddIcon());
+	   hsp.getEmailDetailsAddIcon().click();
+	   //Click on email type dropdown and pick personal email
+	   hsp.getEmailTypeDropdown().click();
+	   hsp.getPickPersonalEmail().click();
+	   //Enter email id
+	   hsp.getEmailIdEditbox().sendKeys("ranu@gmail.com");
+	   //Click on submit
+	   hsp.getSubmitButton().click();
+	   Thread.sleep(2000);
+	  /***************************Adding Emergency email********************************************/
+	   hsp.getEmailDetailsAddIcon().click();
+	   //Click on email type dropdown and pick personal email
+	   hsp.getEmailTypeDropdown().click();
+	   hsp.getPickEmergencyEmail().click();
+	 //Enter email id
+	   hsp.getEmailIdEditbox().sendKeys("ranuj@gmail.com");
+	 //Click on submit
+	   hsp.getSubmitButton().click();
+	  /******************************Adding Aadhar Statutory Details****************************************/
+	   hsp.getStatutoryNumbersAddIcon().click();
+	   //Click on statutorytype
+	   hsp.getStatutoryTypeDropdown().click();
+	   hsp.getPickAadharStatutoryType().click();
+	   //Enter the Aadhar number
+	   hsp.getStatutoryValueEditbox().sendKeys("852014796312");
+	   hsp.clickAnduploadDocument();
+	   //click on submit
+	   hsp.getSubmitButton().click();
+	   /******************************Adding PAN Statutory Details****************************************/
+	   hsp.getStatutoryNumbersAddIcon().click();
+	   //Click on statutorytype
+	   hsp.getStatutoryTypeDropdown().click();
+	   hsp.getPickPANStatutoryType().click();
+	   //Enter the PAN number
+	   hsp.getStatutoryValueEditbox().sendKeys("AXCVN5412G");
+	   hsp.clickAnduploadDocument();
+	   //click on submit
+	   hsp.getSubmitButton().click();
+	 /***************************Adding Health details********************************/
+	   WebdriverUtils.waitForElementPresent(driver, hsp.getHealthDetailsAddIcon());
+	  hsp.getHealthDetailsAddIcon().click();
+	  //Enter height
+	  hsp.getHeightEditbox().sendKeys("165");
+	  //Enter weight
+	  hsp.getWeightEditbox().sendKeys("64");
+	  //Click on blood group and pick one
+	  hsp.getBloodGroupDropdown().click();
+	  hsp.getPickBloodGroup().click();
+	  //Click on submit
+	  hsp.getSubmitButton().click();
+	  /***************************Uploading appointment Letter************************/
+	  WebdriverUtils.waitForElementPresent(driver, hsp.getUploadAppointmentLetterButton());
+	  hsp.uploadAppointmentLetter();
+	  Thread.sleep(2000);
+	  //Click on upload document
+	  hsp.getFileUploadButton().click();
+	  
+	}
 }

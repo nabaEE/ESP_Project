@@ -1,9 +1,20 @@
 package esp.objectRepository;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.util.List;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+
+import esp.genericLibraries.BaseClass;
+import esp.genericLibraries.WebdriverUtils;
 
 public class HireSummaryPage
 {
@@ -23,12 +34,13 @@ public class HireSummaryPage
  
  @FindBy(id="div_Country_Code")
  private WebElement countryCodeDropdown;
- @FindBy(id="//div[@id='div_Country_Code']/div/ul/li[2]")
+ //@FindBy(id="//div[@id='div_Country_Code']/div/ul/li[2]/span")
+ @FindBy(xpath="//html//body//main//div//div[2]//div[2]//div[3]//div//form//div[1]//div//div//div[1]//div[2]//div//ul//li[2]//span")
  private WebElement pickCountryCodeAsIndia;
  @FindBy(id="Error_Country_Code")
  private WebElement countryCodeBlankErrorMessage;
  
- @FindBy(id="div_Contact_Number")
+ @FindBy(id="Contact_Number")
  private WebElement numberEditbox;
  @FindBy(xpath="//div[@id='div_Contact_Number']/span")
  private WebElement numberEditboxLength;
@@ -87,7 +99,7 @@ public class HireSummaryPage
  @FindBy(xpath="//div[@id='div_Copy_Address']/div/p/label/span")
  private WebElement copyCurrentAddressAsPermanentAddress;
  
- @FindBy(id="Item_Doc")
+ @FindBy(css="#Item_Doc")
  private WebElement uploadButton;
  @FindBy(id="Error_Item_Doc")
  private WebElement uploadBlankErrorMessage;
@@ -99,7 +111,7 @@ public class HireSummaryPage
  private WebElement emailTypeDropdown;
  @FindBy(xpath="//div[@id='div_Email_Type']/div/ul/li[2]")
  private WebElement pickPersonalEmail;
- @FindBy(xpath="//div[@id='div_Email_Type']/div/ul/li[3]")
+ @FindBy(xpath="//div[@id='div_Email_Type']/div/ul/li[2]")
  private WebElement pickEmergencyEmail;
  @FindBy(id="Error_Email_Type")
  private WebElement emailTypeBlankErrorMessage;
@@ -133,9 +145,68 @@ public class HireSummaryPage
  @FindBy(id="Error_Statutory_Value")
  private WebElement statutoryValueBlankErrMessage;
  
-
-	
-	/************Getters Usage******************/
+ @FindBy(xpath="//form[@id='ContentDiv']/div[1]/div/table/tbody/tr[13]/td[1]/a/i") //..........
+ private WebElement healthDetailsAddIcon;
+ 
+ @FindBy(id="Emp_Height")
+ private WebElement heightEditbox;
+ @FindBy(xpath="//div[@id='div_Emp_Height']/span")
+ private WebElement heightEditboxLength;
+ @FindBy(id="Error_Emp_Height")
+ private WebElement heightEditboxBlankErrorMessage;
+ 
+ @FindBy(id="Emp_Weight")
+ private WebElement weightEditbox;
+ @FindBy(xpath="//div[@id='div_Emp_Weight']/span")
+ private WebElement weightEditboxLength;
+ @FindBy(id="Error_Emp_Weight_Invalid")
+ private WebElement weightEditboxBlankErrorMessage;
+ 
+ @FindBy(id="div_Blood_Group")
+ private WebElement bloodGroupDropdown;
+ @FindBy(xpath="//div[@id='div_Blood_Group']/div/ul/li")
+ private List<WebElement> bloodGroupDropdownvalues;
+ @FindBy(xpath="//div[@id='div_Blood_Group']/div/ul/li[2]")
+ private WebElement pickBloodGroup;
+ @FindBy(id="Error_Blood_Group")
+ private WebElement bloodGroupBlankErrMessage;
+ 
+ @FindBy(xpath="//div[@id='div_Differently_Abled']/div/p/label/span")
+ private WebElement differentlyAbledSwitchButton;
+ @FindBy(id="div_Diff_Abled_Type")
+ private WebElement differentlyAbledTypeDropdown;
+ @FindBy(xpath="//div[@id='div_Diff_Abled_Type']/div/ul/li")
+ private List<WebElement> differentlyAbledTypeDropdownValues;
+ @FindBy(xpath="//div[@id='div_Diff_Abled_Type']/div/ul/li[2]")
+ private WebElement pickDifferentlyAbledType;
+ @FindBy(id="Error_Diff_Abled_Type")
+ private WebElement differentlyAbledTypeDropdownBlankErrMessage;
+ 
+ @FindBy(id="div_Diff_Abled_Perce")
+ private WebElement differentlyAbledPercentageDropdown;
+ @FindBy(xpath="//div[@id='div_Diff_Abled_Perce']/div/ul/li[2]")
+ private WebElement pickDifferentlyAbledPercentage;
+ @FindBy(id="Error_Diff_Abled_Perce")
+ private WebElement differentlyAbledPercentageDropdownBlankErrMessage;
+ 
+ @FindBy(id="div_PT_Exemption")
+ private WebElement ptExemptionDropdown;
+ @FindBy(xpath="//div[@id='div_PT_Exemption']/div/ul/li[2]")
+ private WebElement pickPTExemptionDropdownvalue;
+ @FindBy(id="Error_PT_Exemption")
+ private WebElement ptExemptionBlankErrMessage;
+ 
+ @FindBy(name="file")
+ private WebElement uploadAppointmentLetterButton;
+ @FindBy(id="f_upload")
+ private WebElement fileUpload;
+ 
+ @FindBy(xpath="//form[@id='ContentDiv']/div[5]/button")
+ private WebElement deleteIcon;
+ 
+ 
+ 
+/************Getters Usage******************/
 	
 	
 	public WebElement getClickContactDetails() {
@@ -453,13 +524,202 @@ public WebElement getStatutoryValueEditboxLength() {
 public WebElement getStatutoryValueBlankErrMessage() {
 	return statutoryValueBlankErrMessage;
 }
+public WebElement getHealthDetailsAddIcon() {
+	return healthDetailsAddIcon;
+}
 
 
 
-	/**************Utilization****************/
- public void uploadDocument()
- {
-	 
+public WebElement getHeightEditbox() {
+	return heightEditbox;
+}
+
+
+
+public WebElement getHeightEditboxLength() {
+	return heightEditboxLength;
+}
+
+
+
+public WebElement getHeightEditboxBlankErrorMessage() {
+	return heightEditboxBlankErrorMessage;
+}
+
+
+
+public WebElement getWeightEditbox() {
+	return weightEditbox;
+}
+
+
+
+public WebElement getWeightEditboxLength() {
+	return weightEditboxLength;
+}
+
+
+
+public WebElement getWeightEditboxBlankErrorMessage() {
+	return weightEditboxBlankErrorMessage;
+}
+
+
+
+public WebElement getBloodGroupDropdown() {
+	return bloodGroupDropdown;
+}
+
+
+
+public List<WebElement> getBloodGroupDropdownvalues() {
+	return bloodGroupDropdownvalues;
+}
+
+
+
+public WebElement getPickBloodGroup() {
+	return pickBloodGroup;
+}
+
+
+
+public WebElement getBloodGroupBlankErrMessage() {
+	return bloodGroupBlankErrMessage;
+}
+
+
+
+public WebElement getDifferentlyAbledSwitchButton() {
+	return differentlyAbledSwitchButton;
+}
+
+
+
+public WebElement getDifferentlyAbledTypeDropdown() {
+	return differentlyAbledTypeDropdown;
+}
+
+
+
+public List<WebElement> getDifferentlyAbledTypeDropdownValues() {
+	return differentlyAbledTypeDropdownValues;
+}
+
+
+
+public WebElement getPickDifferentlyAbledType() {
+	return pickDifferentlyAbledType;
+}
+
+
+
+public WebElement getDifferentlyAbledTypeDropdownBlankErrMessage() {
+	return differentlyAbledTypeDropdownBlankErrMessage;
+}
+
+
+
+public WebElement getDifferentlyAbledPercentageDropdown() {
+	return differentlyAbledPercentageDropdown;
+}
+
+
+
+public WebElement getPickDifferentlyAbledPercentage() {
+	return pickDifferentlyAbledPercentage;
+}
+
+
+
+public WebElement getDifferentlyAbledPercentageDropdownBlankErrMessage() {
+	return differentlyAbledPercentageDropdownBlankErrMessage;
+}
+
+
+
+public WebElement getPtExemptionDropdown() {
+	return ptExemptionDropdown;
+}
+
+
+
+public WebElement getPickPTExemptionDropdownvalue() {
+	return pickPTExemptionDropdownvalue;
+}
+
+
+
+public WebElement getPtExemptionBlankErrMessage() {
+	return ptExemptionBlankErrMessage;
+}
+public WebElement getUploadAppointmentLetterButton() {
+	return uploadAppointmentLetterButton;
+}
+
+
+
+public WebElement getFileUploadButton() {
+	return fileUpload;
+}
+
+
+
+public WebElement getDeleteIcon() {
+	return deleteIcon;
+}
+
+/***************************Utilization ***********************************/
+
+ public void uploadAppointmentLetter() throws AWTException, InterruptedException {
+	 JavascriptExecutor js = (JavascriptExecutor)BaseClass.driver;
+	 js.executeScript("arguments[0].click();", uploadAppointmentLetterButton);
+	 Thread.sleep(2000);
+	 StringSelection path= new StringSelection("C:\\Users\\Prod\\Desktop\\Doc1.pdf");
+		//pass the driver control to system
+		Toolkit t= Toolkit.getDefaultToolkit();
+		//pass the driver control to mouse
+		 Clipboard c=t.getSystemClipboard();
+		//Copy the path into mouse clipboard
+		 c.setContents(path, null);
+		 //Declare the Robot class
+		 Robot rob= new Robot();
+		 //Press control + V
+		 rob.keyPress(KeyEvent.VK_CONTROL);
+		 rob.keyPress(KeyEvent.VK_V);
+		 //Release control+V
+		 rob.keyRelease(KeyEvent.VK_CONTROL);
+		 rob.keyRelease(KeyEvent.VK_V);
+		 Thread.sleep(2000);
+		 //press enter
+		 rob.keyPress(KeyEvent.VK_ENTER);
+		 //Release Enter
+		 rob.keyRelease(KeyEvent.VK_ENTER);	
+ }
+ public void clickAnduploadDocument() throws AWTException, InterruptedException {
+	 JavascriptExecutor js = (JavascriptExecutor)BaseClass.driver;
+	 js.executeScript("arguments[0].click();", uploadButton);
+	 Thread.sleep(2000);
+	 StringSelection path= new StringSelection("C:\\Users\\Prod\\Desktop\\Doc1.pdf");
+		//pass the driver control to system
+		Toolkit t= Toolkit.getDefaultToolkit();
+		//pass the driver control to mouse
+		 Clipboard c=t.getSystemClipboard();
+		//Copy the path into mouse clipboard
+		 c.setContents(path, null);
+		 //Declare the Robot class
+		 Robot rob= new Robot();
+		 //Press control + V
+		 rob.keyPress(KeyEvent.VK_CONTROL);
+		 rob.keyPress(KeyEvent.VK_V);
+		 //Release control+V
+		 rob.keyRelease(KeyEvent.VK_CONTROL);
+		 rob.keyRelease(KeyEvent.VK_V);
+		 Thread.sleep(2000);
+		 //press enter
+		 rob.keyPress(KeyEvent.VK_ENTER);
+		 //Release Enter
+		 rob.keyRelease(KeyEvent.VK_ENTER);	
  }
 
 }
