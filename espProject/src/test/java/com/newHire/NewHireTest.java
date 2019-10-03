@@ -80,7 +80,7 @@ public static void submitNewHireForm()
 	    String groupJoiningDate="1-Sept-2019";
 	    nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 	    //Enter the employee Id
-	    nhp.getEmployeeId().sendKeys("MHR123");
+	    nhp.getEmployeeId().sendKeys("RHL123");
 	    //Enter email id
 	    nhp.getEmailIdEditbox().sendKeys("rahul234");
 	    //Pick employment type 
@@ -120,5 +120,6 @@ public static void submitNewHireForm()
 	    cmp.getClickAbove3Lakh().click();
 	    //Click on save And continue
 	    cmp.getSaveAndContinueButton().click();
+	    
 }
 }
