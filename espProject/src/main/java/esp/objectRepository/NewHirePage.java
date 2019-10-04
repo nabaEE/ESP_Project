@@ -3,6 +3,7 @@ package esp.objectRepository;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -178,7 +179,7 @@ public class NewHirePage
 	private WebElement employeeIdBlankErrorMessage;
 	@FindBy(xpath="//div[@id='div_Emp_Id']/span")
 	private WebElement employeeIdEditboxLength;
-	@FindBy(xpath="//div[@id='div_Emp_Id']/p[2]")
+	@FindBy(id="DBError_Emp_Id")
 	private WebElement existEmployeeIdErr;
 	
 	@FindBy(id="Email")
@@ -187,7 +188,7 @@ public class NewHirePage
 	private WebElement emailIdEditboxLength;
 	@FindBy(id="Error_Email")
 	private WebElement emaildIdBlankErrorMessage;
-	@FindBy(xpath="//div[@id='div_Email']/p[2]")
+	@FindBy(id="DBError_Email")
 	private WebElement emailAlreadyExistErr;
 	
 	@FindBy(id="div_Employment_Type")
@@ -275,6 +276,9 @@ public class NewHirePage
 	
 	@FindBy(id="Submit")
 	private WebElement saveAndContinueButton;
+	
+	@FindBy(xpath="//div[@id=\"Display_ul\"]/div[4]/li/p")
+	private WebElement savedList;
 	
 	
 	
@@ -624,6 +628,11 @@ public class NewHirePage
 		return saveAndContinueButton;
 	}
 	
+	public WebElement getSavedList()
+	{
+		return savedList;
+	}
+	
 	
 	
 /**************************Utilization******************************/
@@ -643,5 +652,6 @@ public class NewHirePage
 		return values;
 		 
 	 }
+ 
 
 }

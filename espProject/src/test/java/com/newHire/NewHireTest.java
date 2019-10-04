@@ -22,7 +22,7 @@ public class NewHireTest extends BaseClass
 
 //1. Submit new hire form and verify.
 @Test(groups="Smoke")
-public static void submitNewHireForm() throws AWTException, InterruptedException
+public static void submitNewHireFormAndValidateActivateButton() throws AWTException, InterruptedException
 {
 	    //Call the landing page
 		LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
@@ -38,9 +38,9 @@ public static void submitNewHireForm() throws AWTException, InterruptedException
 		nhp.getTitleDropdown().click();
 		nhp.getPickTitle_MR().click();
 		//Enter the first Name
-		nhp.getFirstNameEditbox().sendKeys("Samir");
+		nhp.getFirstNameEditbox().sendKeys("Surur");
 		//Enter last name
-		nhp.getLastNameEditbox().sendKeys("Gantayat");
+		nhp.getLastNameEditbox().sendKeys("dutta");
 		//Pick date of birth
 		WebElement element=nhp.getDateOfBirthCalenderWindow();
 		String date="1-Feb-1990";
@@ -88,9 +88,9 @@ public static void submitNewHireForm() throws AWTException, InterruptedException
 	    String groupJoiningDate="1-Sept-2019";
 	    nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 	    //Enter the employee Id
-	    nhp.getEmployeeId().sendKeys("NEKUR23");
+	    nhp.getEmployeeId().sendKeys("SURU78");
 	    //Enter email id
-	    nhp.getEmailIdEditbox().sendKeys("nexkur12");
+	    nhp.getEmailIdEditbox().sendKeys("surur102");
 	    //Pick employment type 
 	    nhp.getEmploymentTypeDropdown().click();
 	    nhp.getPickEmploymentType().click();
@@ -256,6 +256,8 @@ public static void submitNewHireForm() throws AWTException, InterruptedException
 	  //Click on activate button
 	  WebdriverUtils.waitForElementPresent(driver, hsp.getActivateButton());
 	  hsp.getActivateButton().click();
+	  hsp.handleAlert();
+	  
 	  System.out.println("Activate button is displayed and activated successfully");
 	  }
 //2. Enter an existing email and validate the error message.
@@ -327,7 +329,7 @@ public static void checkErrorMessageForEnteringExistingEmail() throws Interrupte
 		    String groupJoiningDate="1-Sept-2019";
 		    nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 		    //Enter the employee Id
-		    nhp.getEmployeeId().sendKeys("SADH24");
+		    nhp.getEmployeeId().sendKeys("KURBM12");
 		    //Enter email id
 		    nhp.getEmailIdEditbox().sendKeys("dhawan25");
 		    //Pick employment type 
@@ -363,7 +365,8 @@ public static void checkErrorMessageForEnteringExistingEmail() throws Interrupte
 		    nhp.getSaveAndContinueButton().click();	
 		    Thread.sleep(2000);
 		    //Declare the expected error message
-		    String expErr="Mail Id already Exists. ";
+		    String expErr="Mail Id already Exists.";
+		    Thread.sleep(2000);
 		    System.out.println("Expected error message is :"+expErr);
 		    //Capture the actual error
 		    String actErr=nhp.getEmailAlreadyExistErr().getText();
@@ -443,7 +446,7 @@ public static void enterExistEmployeeIdAndValidateErrorMessage() throws Interrup
     String groupJoiningDate="1-Sept-2019";
     nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
     //Enter the employee Id
-    nhp.getEmployeeId().sendKeys("SADH24");
+    nhp.getEmployeeId().sendKeys("AXZ7894222");
     //Enter email id
     nhp.getEmailIdEditbox().sendKeys("dhawan25");
     //Pick employment type 
@@ -479,7 +482,7 @@ public static void enterExistEmployeeIdAndValidateErrorMessage() throws Interrup
     nhp.getSaveAndContinueButton().click();	
     Thread.sleep(2000);
     //Declare the expected error message
-    String expErr="Emp Id already Exists.";
+    String expErr="The Employee Id already exists in the system. Please correct.";
     System.out.println("Expected error message is :"+expErr);
     //Capture the actual error
     String actErr=nhp.getExistEmployeeIdErr().getText();
@@ -529,11 +532,116 @@ public static void clickAndverifyTitleDropdownValues()
 	Assert.assertEquals(actValues, expValues);
 	System.out.println("                        ");
 	System.out.println("Actual values are :"+actValues);
-	
-	
-	
 }
-
+//5. Enter the DOB equals to joining date and verify the error message.
+@Test()
+public static void makeBothDOB_JoiningDateEqualAndverify()
+{
+	//Call the landing page
+		LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+		//Click on admin icon
+		WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+		lnp.getAdminIcon().click();
+		//Click on new hire option
+		//lnp.getNewHireAdminValue().click();
+		lnp.clickNewHire();
+		//Call the new hire page
+		NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+		//Click on title dropdown and pick MR
+		nhp.getTitleDropdown().click();
+		nhp.getPickTitle_MR().click();
+		//Enter the first Name
+		nhp.getFirstNameEditbox().sendKeys("Sadhav");
+		//Enter last name
+		nhp.getLastNameEditbox().sendKeys("dhawan");
+		//Pick date of birth
+		WebElement element=nhp.getDateOfBirthCalenderWindow();
+		String date="1-Sept-2019";
+		nhp.DatePicker(driver, element, date);
+		//Pick country of birth as India
+		nhp.getCountryOfBirthDropdown().click();
+		nhp.getPickCountryOfBirthAsIndia().click();
+		//Pick state of birth
+		nhp.getStateOfBirthDropdown().click();
+		nhp.getPickStateOfBirth().click();
+		//Enter the city of birth
+		nhp.getCityOfBirthEditbox().sendKeys("Hyderabad");
+		//Pick citizenship
+		nhp.getCitizenshipDropdown().click();
+		nhp.getPickCitizenshipAsIndia().click();
+		//Select the gender Male
+		nhp.getMaleRadioButton().click();
+		//select marital status as single
+		nhp.getMaritalStatusAsSingle().click();
+		//Pick education Details
+		nhp.getEducationDetailsDropdown().click();
+		nhp.getPickGraduate().click();
+		//Click on source of hire dropdown
+		nhp.getSourceOfHireDropdown().click();
+	  //Pick campus Recruitment
+		nhp.getCampusRecruitmentSourceOfHire().click();
+		//Click on University dropdown
+		nhp.getUniversityNameDropdown().click();
+		nhp.getPickUniversity().click();
+		//Select the country
+		nhp.getCountryDropdown().click();
+	    nhp.getPickCountryIndia().click();
+	    //Select Legal Entity
+	    nhp.getLegalEntityDropdown().click();
+	    nhp.getPickLegalEntity().click();
+	    //Select the location
+	    nhp.getLocationDropdown().click();
+	    nhp.getPickLocation().click();
+	    //Pick the joining date
+	    WebElement joiningDateElement=nhp.getJoiningDate();
+	    String joiningDate="1-Sept-1990";
+	    nhp.DatePicker(driver, joiningDateElement, joiningDate);
+	    //Pick the group joining
+	    WebElement groupJoiningDateElement=nhp.getGroupJoiningDate();
+	    String groupJoiningDate="1-Sept-2019";
+	    nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
+	    //Enter the employee Id
+	    nhp.getEmployeeId().sendKeys("nxtsar2");
+	    //Enter email id
+	    nhp.getEmailIdEditbox().sendKeys("sagar45");
+	    //Pick employment type 
+	    nhp.getEmploymentTypeDropdown().click();
+	    nhp.getPickEmploymentType().click();
+	    //Pick employment status
+	    nhp.getEmploymentStatusDropdown().click();
+	    nhp.getPickEmploymentStatusAsConfirmed().click();
+	    //Enter three letters in the role editbox
+	    nhp.getRoleEditbox().sendKeys("ass");
+	    nhp.getPickRole().click();
+	    //Enter three letters in the Department editbox and pick one department
+	    nhp.getDepartmentEditbox().sendKeys("sal");
+	    nhp.getPickDepartment().click();
+	    //Enter three letters in the designation editbox and pick one.
+	    nhp.getDesignationEditbox().sendKeys("sal");
+	    nhp.getPickDesignation().click();
+	    //Enter three letters in the reporting Hiring Manager and pick one.
+	    nhp.getReportingHiringManagerEditbox().sendKeys("sar");
+	    nhp.getPickReportingHiringManager().click();
+	    //Select paytype
+	    nhp.getPickTypeDropdown().click();
+	    nhp.getPickPayType().click();
+	    //Pick pay frequency
+	    nhp.getPayFrequencyDropdown().click();
+	    nhp.getPickPayFrequencyDropdownValue().click();
+	    //Pick FT/PT indicator
+	    nhp.getFtptIndicatorDropdown().click();
+	    nhp.getPickPartTimeIndicator().click();
+	    //Enter FTE Equivalent hours
+	    nhp.getFteEditbox().sendKeys("30");
+	    //Click on save and Continue
+	    nhp.getSaveAndContinueButton().click();	
+	    System.out.println("Form should not be submitted");
+	    System.out.println("                        ");
+	    System.out.println("*********Validate if save and continue button is displayed********");
+	    Assert.assertTrue(nhp.getSaveAndContinueButton().isDisplayed());
+	    System.out.println("                           ");
+	    System.out.println("Test case is passed");
+}
 
 
 

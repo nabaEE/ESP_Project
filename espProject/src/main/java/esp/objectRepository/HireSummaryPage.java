@@ -9,6 +9,7 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -780,4 +781,11 @@ public WebElement getActivateButton() {
 		 * js.executeScript("return window.stop");
 		 */
  }
+//Method to handle alert windoow
+	 public void handleAlert() {
+		
+		Alert alt= BaseClass.driver.switchTo().alert();
+		alt.accept();
+		
+	 }
 }

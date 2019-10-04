@@ -10,7 +10,7 @@
     <classes>
       <class name="com.newHire.NewHireTest">
         <methods>
-          <include name="clickAndverifyTitleDropdownValues"/>
+          <include name="submitNewHireFormAndValidateActivateButton"/>
           <include name="login"/>
           <include name="closeBrowser"/>
           <include name="openBrowser"/>
