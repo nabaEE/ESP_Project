@@ -208,7 +208,8 @@ public class HireSummaryPage
  @FindBy(xpath="//form[@id='ContentDiv']/div[5]/button")
  private WebElement deleteIcon;
  
- @FindBy(xpath="//html//body//main//div//div[2]//div[2]//form//div[5]//button[2]")
+ //@FindBy(xpath="//html//body//main//div//div[2]//div[2]//form//div[5]//button[2]")
+ @FindBy(xpath="//form[@id=\"ContentDiv\"]/div[5]/button[2]")
  private WebElement activateButton;
  
  

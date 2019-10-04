@@ -10,11 +10,11 @@
     <classes>
       <class name="com.newHire.NewHireTest">
         <methods>
+          <include name="clickAndverifyTitleDropdownValues"/>
           <include name="login"/>
           <include name="closeBrowser"/>
           <include name="openBrowser"/>
           <include name="tearDown"/>
-          <include name="submitNewHireForm"/>
         </methods>
       </class> <!-- com.newHire.NewHireTest -->
     </classes>

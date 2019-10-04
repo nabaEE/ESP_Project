@@ -38,9 +38,9 @@ public static void submitNewHireForm() throws AWTException, InterruptedException
 		nhp.getTitleDropdown().click();
 		nhp.getPickTitle_MR().click();
 		//Enter the first Name
-		nhp.getFirstNameEditbox().sendKeys("Nurul");
+		nhp.getFirstNameEditbox().sendKeys("Samir");
 		//Enter last name
-		nhp.getLastNameEditbox().sendKeys("Hassan");
+		nhp.getLastNameEditbox().sendKeys("Gantayat");
 		//Pick date of birth
 		WebElement element=nhp.getDateOfBirthCalenderWindow();
 		String date="1-Feb-1990";
@@ -88,9 +88,9 @@ public static void submitNewHireForm() throws AWTException, InterruptedException
 	    String groupJoiningDate="1-Sept-2019";
 	    nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 	    //Enter the employee Id
-	    nhp.getEmployeeId().sendKeys("EMPSUKU789");
+	    nhp.getEmployeeId().sendKeys("NEKUR23");
 	    //Enter email id
-	    nhp.getEmailIdEditbox().sendKeys("sukur789");
+	    nhp.getEmailIdEditbox().sendKeys("nexkur12");
 	    //Pick employment type 
 	    nhp.getEmploymentTypeDropdown().click();
 	    nhp.getPickEmploymentType().click();
@@ -254,6 +254,7 @@ public static void submitNewHireForm() throws AWTException, InterruptedException
 	  Assert.assertTrue(hsp.getActivateButton().isDisplayed());
 	  System.out.println("                             ");
 	  //Click on activate button
+	  WebdriverUtils.waitForElementPresent(driver, hsp.getActivateButton());
 	  hsp.getActivateButton().click();
 	  System.out.println("Activate button is displayed and activated successfully");
 	  }
