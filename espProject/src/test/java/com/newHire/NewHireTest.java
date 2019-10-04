@@ -1,6 +1,8 @@
 package com.newHire;
 
 import java.awt.AWTException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -36,9 +38,9 @@ public static void submitNewHireForm() throws AWTException, InterruptedException
 		nhp.getTitleDropdown().click();
 		nhp.getPickTitle_MR().click();
 		//Enter the first Name
-		nhp.getFirstNameEditbox().sendKeys("Keshab");
+		nhp.getFirstNameEditbox().sendKeys("Nurul");
 		//Enter last name
-		nhp.getLastNameEditbox().sendKeys("Gokhle");
+		nhp.getLastNameEditbox().sendKeys("Hassan");
 		//Pick date of birth
 		WebElement element=nhp.getDateOfBirthCalenderWindow();
 		String date="1-Feb-1990";
@@ -86,9 +88,9 @@ public static void submitNewHireForm() throws AWTException, InterruptedException
 	    String groupJoiningDate="1-Sept-2019";
 	    nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 	    //Enter the employee Id
-	    nhp.getEmployeeId().sendKeys("NEXT789");
+	    nhp.getEmployeeId().sendKeys("EMPSUKU789");
 	    //Enter email id
-	    nhp.getEmailIdEditbox().sendKeys("manab741");
+	    nhp.getEmailIdEditbox().sendKeys("sukur789");
 	    //Pick employment type 
 	    nhp.getEmploymentTypeDropdown().click();
 	    nhp.getPickEmploymentType().click();
@@ -130,6 +132,7 @@ public static void submitNewHireForm() throws AWTException, InterruptedException
 	  //Call Hire summary page
 	    HireSummaryPage hsp= PageFactory.initElements(driver, HireSummaryPage.class);
 	   /****************************Adding mobile contact details******************************/
+	    WebdriverUtils.waitForElementPresent(driver, hsp.getClickContactDetails());
 	    hsp.getClickContactDetails().click();
 	    //Click phone type and pick mobile
 	    hsp.getPhoneTypeDropdown().click();
@@ -141,6 +144,7 @@ public static void submitNewHireForm() throws AWTException, InterruptedException
 	    //Click on submit
 	    hsp.getSubmitButton().click();
 	    /****************************Adding Home contact details******************************/
+	    WebdriverUtils.waitForElementPresent(driver, hsp.getClickContactDetails());
 	    hsp.getClickContactDetails().click();
 	    //Click phone type and pick mobile
 	    hsp.getPhoneTypeDropdown().click();
@@ -152,6 +156,7 @@ public static void submitNewHireForm() throws AWTException, InterruptedException
 	    //Click on submit
 	    hsp.getSubmitButton().click();
 	    /*******************************Adding current Address and permanent address************/
+	    WebdriverUtils.waitForElementPresent(driver, hsp.getClickCurrentAddressPencilIcon());
 	    hsp.getClickCurrentAddressPencilIcon().click();
 	    //Click on effective from date and pick the date
 	    hsp.getEffectiveFromDateCalenderWin().click();
@@ -159,6 +164,7 @@ public static void submitNewHireForm() throws AWTException, InterruptedException
 	    //Enter address line1
 	    hsp.getAddressLine1().sendKeys("Mathura, block1");
 	    //Click on country dropdown and Pick country
+	    WebdriverUtils.waitForElementPresent(driver, hsp.getCountryDropdownOnAddressDetailsWin());
 	    hsp.getCountryDropdownOnAddressDetailsWin().click();
 	    hsp.getPickCountryIndiaOnAddressDetailsWin().click();
 	    //Click on state dropdown and pick a state
@@ -175,7 +181,8 @@ public static void submitNewHireForm() throws AWTException, InterruptedException
 	    hsp.clickAnduploadDocument();
 	    //click on submit
 	    hsp.getSubmitButton().click();
-	    driver.findElement(By.tagName("body")).sendKeys("Keys.ESCAPE");
+	  //Stop the page load
+	    BaseClass.driver.findElement(By.tagName("body")).sendKeys("Keys.ESCAPE");
 	    
 	  /****************************Adding Personal Email details***********************************/
 	   WebdriverUtils.waitForElementPresent(driver, hsp.getEmailDetailsAddIcon());
@@ -187,8 +194,9 @@ public static void submitNewHireForm() throws AWTException, InterruptedException
 	   hsp.getEmailIdEditbox().sendKeys("ranu@gmail.com");
 	   //Click on submit
 	   hsp.getSubmitButton().click();
-	   Thread.sleep(2000);
+	   WebdriverUtils.waitForPageToLoad(driver);
 	  /***************************Adding Emergency email********************************************/
+	   WebdriverUtils.waitForElementPresent(driver, hsp.getEmailDetailsAddIcon());
 	   hsp.getEmailDetailsAddIcon().click();
 	   //Click on email type dropdown and pick personal email
 	   hsp.getEmailTypeDropdown().click();
@@ -198,6 +206,7 @@ public static void submitNewHireForm() throws AWTException, InterruptedException
 	 //Click on submit
 	   hsp.getSubmitButton().click();
 	  /******************************Adding Aadhar Statutory Details****************************************/
+	   WebdriverUtils.waitForElementPresent(driver, hsp.getStatutoryNumbersAddIcon());
 	   hsp.getStatutoryNumbersAddIcon().click();
 	   //Click on statutorytype
 	   hsp.getStatutoryTypeDropdown().click();
@@ -207,21 +216,11 @@ public static void submitNewHireForm() throws AWTException, InterruptedException
 	   hsp.clickAnduploadDocument();
 	   //click on submit
 	   hsp.getStatutoryDetailsSubmitButton().click();
-	   driver.findElement(By.tagName("body")).sendKeys("Keys.ESCAPE");
-	   WebdriverUtils.waitForPageToLoad(driver);
-	   /******************************Adding PAN Statutory Details****************************************/
-	   hsp.getStatutoryNumbersAddIcon().click();
-	   //Click on statutorytype
-	   hsp.getStatutoryTypeDropdown().click();
-	   hsp.pickPANStatustoryType();
-	   //Enter the PAN number
-	   hsp.getStatutoryValueEditbox().sendKeys("AXCVN5412G");
-	   hsp.clickAnduploadDocument();
-	   //click on submit
-	   hsp.getStatutoryDetailsSubmitButton().click();
-	   driver.findElement(By.tagName("body")).sendKeys("Keys.ESCAPE");
+	   //Stop the page load
+	   BaseClass.driver.findElement(By.tagName("body")).sendKeys("Keys.ESCAPE");
 	   WebdriverUtils.waitForPageToLoad(driver);
 	   /******************************Adding UAN Number Statutory Details*****************************/
+	   WebdriverUtils.waitForElementPresent(driver, hsp.getStatutoryNumbersAddIcon());
 	   
 	   hsp.getStatutoryNumbersAddIcon().click();
 	   //Click on statutorytype
@@ -232,8 +231,7 @@ public static void submitNewHireForm() throws AWTException, InterruptedException
 	   //click on submit
 	   hsp.getStatutoryDetailsSubmitButton().click();
 	   
-	   
-	 /***************************Adding Health details********************************/
+	   /***************************Adding Health details********************************/
 	   WebdriverUtils.waitForElementPresent(driver, hsp.getHealthDetailsAddIcon());
 	  hsp.getHealthDetailsAddIcon().click();
 	  //Enter height
@@ -246,12 +244,18 @@ public static void submitNewHireForm() throws AWTException, InterruptedException
 	  //Click on submit
 	  hsp.getSubmitButton().click();
 	  /***************************Uploading appointment Letter************************/
-	  //WebdriverUtils.scrollDown();
-	  WebdriverUtils.waitForElementPresent(driver, hsp.getUploadAppointmentLetterButton());
+	  hsp.scrollDown();
 	  hsp.uploadAppointmentLetter();
-	  Thread.sleep(2000);
+	  WebdriverUtils.waitForPageToLoad(driver);
+	  WebdriverUtils.waitForElementPresent(driver, hsp.getFileUploadButton());
 	  //Click on upload document
 	  hsp.getFileUploadButton().click();
+	  System.out.println("Expected to view the activate button");
+	  Assert.assertTrue(hsp.getActivateButton().isDisplayed());
+	  System.out.println("                             ");
+	  //Click on activate button
+	  hsp.getActivateButton().click();
+	  System.out.println("Activate button is displayed and activated successfully");
 	  }
 //2. Enter an existing email and validate the error message.
 
@@ -483,6 +487,50 @@ public static void enterExistEmployeeIdAndValidateErrorMessage() throws Interrup
     Assert.assertEquals(actErr, expErr);
     System.out.println("                  ");
     System.out.println("Actual error message is :"+actErr);
+}
+
+//4. Click on title dropdown and verify the values present.
+@Test()
+public static void clickAndverifyTitleDropdownValues()
+{
+	//Call the landing page
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+	//Click on title dropdown
+	nhp.getTitleDropdown().click();
+	//Declare the expected values
+	List<String> expValues= new ArrayList<String>();
+	expValues.add("Mr.");
+	expValues.add("Ms.");
+	expValues.add("Mrs.");
+	expValues.add("Dr.");
+	expValues.add("Jr.");
+	expValues.add("Col.");
+	expValues.add("Lt.Col.");
+	expValues.add("Brig.");
+	expValues.add("Maj");
+	expValues.add("Prof.");
+	expValues.add("Capt.");
+	expValues.add("Master");
+	expValues.add("Lt.CDR.");
+	System.out.println("Expected title values are :"+expValues);
+	//Capture the actual data
+	List<String> actValues=nhp.printTitleDropdownValues();
+	System.out.println("           ");
+	System.out.println("****************Validate the actual values********************");
+	Assert.assertEquals(actValues, expValues);
+	System.out.println("                        ");
+	System.out.println("Actual values are :"+actValues);
+	
+	
+	
 }
 
 

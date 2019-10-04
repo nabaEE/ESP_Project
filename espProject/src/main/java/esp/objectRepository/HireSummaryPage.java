@@ -6,8 +6,10 @@ import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -198,7 +200,7 @@ public class HireSummaryPage
  @FindBy(id="Error_PT_Exemption")
  private WebElement ptExemptionBlankErrMessage;
  
- @FindBy(xpath="//input[@id='file']")
+ @FindBy(xpath="//fieldset[@class='custom-fieldset']/div[1]/input")
  private WebElement uploadAppointmentLetterButton;
  @FindBy(id="f_upload")
  private WebElement fileUpload;
@@ -206,8 +208,15 @@ public class HireSummaryPage
  @FindBy(xpath="//form[@id='ContentDiv']/div[5]/button")
  private WebElement deleteIcon;
  
+ @FindBy(xpath="//html//body//main//div//div[2]//div[2]//form//div[5]//button[2]")
+ private WebElement activateButton;
  
  
+ 
+
+
+
+
 /************Getters Usage******************/
 	
 	
@@ -673,6 +682,15 @@ public WebElement getFileUploadButton() {
 public WebElement getDeleteIcon() {
 	return deleteIcon;
 }
+public WebElement getFileUpload() {
+	return fileUpload;
+}
+
+
+
+public WebElement getActivateButton() {
+	return activateButton;
+}
 
 /***************************Utilization ***********************************/
 
@@ -695,7 +713,7 @@ public WebElement getDeleteIcon() {
 		 //Release control+V
 		 rob.keyRelease(KeyEvent.VK_CONTROL);
 		 rob.keyRelease(KeyEvent.VK_V);
-		 Thread.sleep(2000);
+		 Thread.sleep(1000);
 		 //press enter
 		 rob.keyPress(KeyEvent.VK_ENTER);
 		 //Release Enter
@@ -726,7 +744,7 @@ public WebElement getDeleteIcon() {
 		 //Release Enter
 		 rob.keyRelease(KeyEvent.VK_ENTER);	
  }
- 
+ //Method to pick UAN number
  public void pickUANStatutoryType()
  {
 	 for(int i=0; i<statutoryTypeDropdownValues.size(); i++)
@@ -736,6 +754,7 @@ public WebElement getDeleteIcon() {
 		 }
 	 }
  }
+ //Method to pick PAN number
  public void pickPANStatustoryType()
  {
 	for(int i=0; i<statutoryTypeDropdownValues.size(); i++)
@@ -746,5 +765,18 @@ public WebElement getDeleteIcon() {
 		}
 	}
  }
-
+ //Method to scrolldown the page
+ public void scrollDown()
+	{
+		JavascriptExecutor jse = (JavascriptExecutor)BaseClass.driver;
+		jse.executeScript("window.scrollBy(0,250)", "");
+	}
+//Method to stop the page load
+ public void stopPageLoad() {
+	 BaseClass.driver.findElement(By.tagName("body")).sendKeys("Keys.ESCAPE");
+		/*
+		 * JavascriptExecutor js = (JavascriptExecutor) BaseClass.driver;
+		 * js.executeScript("return window.stop");
+		 */
+ }
 }

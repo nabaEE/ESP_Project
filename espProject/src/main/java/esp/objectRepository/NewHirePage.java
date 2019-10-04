@@ -1,5 +1,6 @@
 package esp.objectRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.JavascriptExecutor;
@@ -631,5 +632,16 @@ public class NewHirePage
 	    JavascriptExecutor js = (JavascriptExecutor) driver;
 	    js.executeScript("arguments[0].setAttribute('value',' "+ date + "');" , element);
 	}
+	 //Method to print title dropdown values
+	 public List<String> printTitleDropdownValues()
+	 {
+		List<String> values= new ArrayList<String>();
+		for(int i=1; i<titleDropdownValues.size(); i++)
+		{
+			values.add(titleDropdownValues.get(i).getText());
+		}
+		return values;
+		 
+	 }
 
 }
