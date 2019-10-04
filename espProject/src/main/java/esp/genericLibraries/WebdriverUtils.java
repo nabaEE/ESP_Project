@@ -2,6 +2,8 @@ package esp.genericLibraries;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -56,6 +58,29 @@ public class WebdriverUtils
 			 count++;
 		  }
 	  }
+	}
+	/**
+	 * Scroll down and up the page
+	 * 
+	 */
+	public static void scrollDown()
+	{
+		JavascriptExecutor jse = (JavascriptExecutor)BaseClass.driver;
+		jse.executeScript("window.scrollBy(0,250)", "");
+	}
+	public static void scrollUP()
+	{
+		JavascriptExecutor jse = (JavascriptExecutor)BaseClass.driver;
+		jse.executeScript("window.scrollBy(0,-250)");
+	}
+	
+	/**
+	 * 
+	 * Stop the page load
+	 */
+	public static void stopPageLoad()
+	{
+		BaseClass.driver.findElement(By.tagName("body")).sendKeys("Keys.ESCAPE");
 	}
 
 	}

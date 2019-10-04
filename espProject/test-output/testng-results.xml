@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="1" ignored="2" total="3" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="40112" started-at="2019-10-03T12:42:25Z" finished-at="2019-10-03T12:43:05Z">
+  <suite name="Suite" duration-ms="78768" started-at="2019-10-04T07:22:52Z" finished-at="2019-10-04T07:24:11Z">
     <groups>
       <group name="Smoke">
         <method signature="NewHireTest.submitNewHireForm()[pri:0, instance:com.newHire.NewHireTest@204f30ec]" name="submitNewHireForm" class="com.newHire.NewHireTest"/>
       </group> <!-- Smoke -->
     </groups>
-    <test name="Test" duration-ms="40112" started-at="2019-10-03T12:42:25Z" finished-at="2019-10-03T12:43:05Z">
+    <test name="Test" duration-ms="78768" started-at="2019-10-04T07:22:52Z" finished-at="2019-10-04T07:24:11Z">
       <class name="com.newHire.NewHireTest">
-        <test-method status="PASS" signature="openBrowser(java.lang.String)[pri:0, instance:com.newHire.NewHireTest@204f30ec]" name="openBrowser" is-config="true" duration-ms="6955" started-at="2019-10-03T12:42:25Z" finished-at="2019-10-03T12:42:32Z">
+        <test-method status="PASS" signature="openBrowser(java.lang.String)[pri:0, instance:com.newHire.NewHireTest@204f30ec]" name="openBrowser" is-config="true" duration-ms="7421" started-at="2019-10-04T07:22:52Z" finished-at="2019-10-04T07:23:00Z">
           <params>
             <param index="0">
               <value>
@@ -21,54 +21,31 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method status="PASS" signature="login()[pri:0, instance:com.newHire.NewHireTest@204f30ec]" name="login" is-config="true" duration-ms="4273" started-at="2019-10-03T12:42:32Z" finished-at="2019-10-03T12:42:36Z">
+        <test-method status="PASS" signature="login()[pri:0, instance:com.newHire.NewHireTest@204f30ec]" name="login" is-config="true" duration-ms="5524" started-at="2019-10-04T07:23:00Z" finished-at="2019-10-04T07:23:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="FAIL" signature="submitNewHireForm()[pri:0, instance:com.newHire.NewHireTest@204f30ec]" name="submitNewHireForm" duration-ms="22555" started-at="2019-10-03T12:42:36Z" finished-at="2019-10-03T12:42:58Z">
-          <exception class="org.openqa.selenium.StaleElementReferenceException">
+        <test-method status="FAIL" signature="submitNewHireForm()[pri:0, instance:com.newHire.NewHireTest@204f30ec]" name="submitNewHireForm" duration-ms="62327" started-at="2019-10-04T07:23:05Z" finished-at="2019-10-04T07:24:08Z">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[The element reference of <i class="material-icons"> is stale; either the element is no longer attached to the DOM, it is not in the current frame context, or the document has been refreshed
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+              <![CDATA[Expected condition failed: waiting for visibility of [[FirefoxDriver: firefox on WINDOWS (bcb46897-da5d-44e2-8461-b0855de5c2e1)] -> xpath: //input[@id='file']] (tried for 20 second(s) with 500 milliseconds interval)
 Build info: version: '4.0.0-alpha-2', revision: 'f148142cf8', time: '2019-07-01T20:55:26'
 System info: host: 'SYSTEM-72', ip: '10.9.46.161', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 69.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190917135527, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 22884, moz:profile: C:\Users\Prod\AppData\Local..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 6c2c4b26-c336-42d9-8b0d-838e68b534c6]]>
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 69.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190917135527, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 17084, moz:profile: C:\Users\Prod\AppData\Local..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: bcb46897-da5d-44e2-8461-b0855de5c2e1]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.StaleElementReferenceException: The element reference of <i class="material-icons"> is stale; either the element is no longer attached to the DOM, it is not in the current frame context, or the document has been refreshed
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[FirefoxDriver: firefox on WINDOWS (bcb46897-da5d-44e2-8461-b0855de5c2e1)] -> xpath: //input[@id='file']] (tried for 20 second(s) with 500 milliseconds interval)
 Build info: version: '4.0.0-alpha-2', revision: 'f148142cf8', time: '2019-07-01T20:55:26'
 System info: host: 'SYSTEM-72', ip: '10.9.46.161', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 69.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190917135527, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 22884, moz:profile: C:\Users\Prod\AppData\Local..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 6c2c4b26-c336-42d9-8b0d-838e68b534c6
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-at java.lang.reflect.Constructor.newInstance(Unknown Source)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:191)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:125)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:161)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:576)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:308)
-at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:355)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
-at com.sun.proxy.$Proxy12.isDisplayed(Unknown Source)
-at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
-at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:211)
-at esp.genericLibraries.WebdriverUtils.waitForElementPresent(WebdriverUtils.java:32)
-at com.newHire.NewHireTest.submitNewHireForm(NewHireTest.java:178)
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 69.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190917135527, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 17084, moz:profile: C:\Users\Prod\AppData\Local..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: bcb46897-da5d-44e2-8461-b0855de5c2e1
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:138)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
+at esp.genericLibraries.WebdriverUtils.waitForElementPresent(WebdriverUtils.java:34)
+at com.newHire.NewHireTest.submitNewHireForm(NewHireTest.java:250)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -96,15 +73,15 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- submitNewHireForm -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.newHire.NewHireTest@204f30ec]" name="tearDown" is-config="true" duration-ms="991" started-at="2019-10-03T12:42:58Z" finished-at="2019-10-03T12:42:59Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.newHire.NewHireTest@204f30ec]" name="tearDown" is-config="true" duration-ms="788" started-at="2019-10-04T07:24:08Z" finished-at="2019-10-04T07:24:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.newHire.NewHireTest@204f30ec]" name="closeBrowser" is-config="true" duration-ms="5185" started-at="2019-10-03T12:42:59Z" finished-at="2019-10-03T12:43:05Z">
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.newHire.NewHireTest@204f30ec]" name="closeBrowser" is-config="true" duration-ms="2505" started-at="2019-10-04T07:24:08Z" finished-at="2019-10-04T07:24:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->

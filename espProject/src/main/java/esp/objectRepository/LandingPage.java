@@ -17,6 +17,8 @@ public class LandingPage
 	private WebElement adminIcon;
 	@FindBy(xpath="//ul[@id='AdminDropDowns']/li[9]/a")
 	private WebElement configurationSetupAdminValue;
+	@FindBy(xpath="//div[@class='nav-wrapper']/ul/li[4]/ul/li")
+	private List<WebElement> adminDropdownValues;
 	@FindBy(xpath="//ul[@id='AdminDropDowns']/li[4]/a")
 	private WebElement newHireAdminValue;
 	
@@ -43,6 +45,17 @@ public class LandingPage
 		}
 		
 	}
+	
+	public void clickNewHire()
+	{
+		for(int i=0; i<adminDropdownValues.size(); i++)
+		{
+			if(adminDropdownValues.get(i).getText().equalsIgnoreCase("New Hire")) {
+				adminDropdownValues.get(i).click();
+			}
+		}
+	}
+
 	
 
 

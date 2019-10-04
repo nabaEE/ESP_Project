@@ -177,6 +177,8 @@ public class NewHirePage
 	private WebElement employeeIdBlankErrorMessage;
 	@FindBy(xpath="//div[@id='div_Emp_Id']/span")
 	private WebElement employeeIdEditboxLength;
+	@FindBy(xpath="//div[@id='div_Emp_Id']/p[2]")
+	private WebElement existEmployeeIdErr;
 	
 	@FindBy(id="Email")
 	private WebElement emailIdEditbox;
@@ -184,6 +186,8 @@ public class NewHirePage
 	private WebElement emailIdEditboxLength;
 	@FindBy(id="Error_Email")
 	private WebElement emaildIdBlankErrorMessage;
+	@FindBy(xpath="//div[@id='div_Email']/p[2]")
+	private WebElement emailAlreadyExistErr;
 	
 	@FindBy(id="div_Employment_Type")
 	private WebElement employmentTypeDropdown;
@@ -270,6 +274,7 @@ public class NewHirePage
 	
 	@FindBy(id="Submit")
 	private WebElement saveAndContinueButton;
+	
 	
 	
 	/************************Getters Usage********************************/
@@ -486,6 +491,12 @@ public class NewHirePage
 	}
 	public WebElement getEmployeeIdBlankErrorMessage() {
 		return employeeIdBlankErrorMessage;
+	}
+	public WebElement getExistEmployeeIdErr() {
+		return existEmployeeIdErr;
+	}
+	public WebElement getEmailAlreadyExistErr() {
+		return emailAlreadyExistErr;
 	}
 	public WebElement getEmployeeIdEditboxLength() {
 		return employeeIdEditboxLength;

@@ -135,6 +135,8 @@ public class HireSummaryPage
  private WebElement pickPANStatutoryType;
  @FindBy(xpath="//div[@id='div_Statutory_Type']/div/ul/li[4]")
  private WebElement pickDrivingLincenceStatutoryType;
+ @FindBy(id="SaveC")
+ private WebElement statutoryDetailsSubmitButton;
  @FindBy(id="Error_Statutory_Type")
  private WebElement statutoryTypeBlankErrorMessage;
  
@@ -196,7 +198,7 @@ public class HireSummaryPage
  @FindBy(id="Error_PT_Exemption")
  private WebElement ptExemptionBlankErrMessage;
  
- @FindBy(name="file")
+ @FindBy(xpath="//input[@id='file']")
  private WebElement uploadAppointmentLetterButton;
  @FindBy(id="f_upload")
  private WebElement fileUpload;
@@ -524,6 +526,9 @@ public WebElement getStatutoryValueEditboxLength() {
 public WebElement getStatutoryValueBlankErrMessage() {
 	return statutoryValueBlankErrMessage;
 }
+public WebElement getStatutoryDetailsSubmitButton() {
+return statutoryDetailsSubmitButton;
+}
 public WebElement getHealthDetailsAddIcon() {
 	return healthDetailsAddIcon;
 }
@@ -720,6 +725,26 @@ public WebElement getDeleteIcon() {
 		 rob.keyPress(KeyEvent.VK_ENTER);
 		 //Release Enter
 		 rob.keyRelease(KeyEvent.VK_ENTER);	
+ }
+ 
+ public void pickUANStatutoryType()
+ {
+	 for(int i=0; i<statutoryTypeDropdownValues.size(); i++)
+	 {
+		 if(statutoryTypeDropdownValues.get(i).getText().equalsIgnoreCase("UAN Number")) {
+			 statutoryTypeDropdownValues.get(i).click();
+		 }
+	 }
+ }
+ public void pickPANStatustoryType()
+ {
+	for(int i=0; i<statutoryTypeDropdownValues.size(); i++)
+	{
+		if(statutoryTypeDropdownValues.get(i).getText().equalsIgnoreCase("PAN Number")) {
+			statutoryTypeDropdownValues.get(i).click();
+			
+		}
+	}
  }
 
 }
