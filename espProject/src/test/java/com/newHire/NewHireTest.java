@@ -88,9 +88,9 @@ public static void submitNewHireFormAndValidateActivateButton() throws AWTExcept
 	    String groupJoiningDate="1-Sept-2019";
 	    nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 	    //Enter the employee Id
-	    nhp.getEmployeeId().sendKeys("SURU78");
+	    nhp.getEmployeeId().sendKeys("KOLI23");
 	    //Enter email id
-	    nhp.getEmailIdEditbox().sendKeys("surur102");
+	    nhp.getEmailIdEditbox().sendKeys("kolin89");
 	    //Pick employment type 
 	    nhp.getEmploymentTypeDropdown().click();
 	    nhp.getPickEmploymentType().click();
@@ -642,6 +642,65 @@ public static void makeBothDOB_JoiningDateEqualAndverify()
 	    System.out.println("                           ");
 	    System.out.println("Test case is passed");
 }
+
+//6. Make the title dropdown blank and verify the error message.
+@Test()
+public static void VerifyErrorForkeepingTitleWinBlank()
+{
+	//Call the landing page
+		LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+		//Click on admin icon
+		WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+		lnp.getAdminIcon().click();
+		//Click on new hire option
+		//lnp.getNewHireAdminValue().click();
+		lnp.clickNewHire();
+		//Call the new hire page
+		NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+		//Click on title dropdown
+		nhp.getTitleDropdown().click();
+		//Click on submit
+		nhp.getSaveAndContinueButton().click();
+		//Declare the expected error
+		String expErr="Title cannot be empty";
+		System.out.println("Expected error message is :"+expErr);
+		//Capture the actual error message
+		String actErr=nhp.getTitleBlankErrMessage().getText();
+		System.out.println("                  ");
+		System.out.println("********Validate the error message********");
+		Assert.assertEquals(actErr, expErr);
+		System.out.println("                        ");
+		System.out.println("Actual error message is :"+actErr);
+}
+//7.check the error message for keeping first name blank.
+@Test()
+public static void verifyErrorMessageForKeepingFirstNameBlank()
+{
+	       //Call the landing page
+			LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+			//Click on admin icon
+			WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+			lnp.getAdminIcon().click();
+			//Click on new hire option
+			//lnp.getNewHireAdminValue().click();
+			lnp.clickNewHire();
+			//Call the new hire page
+			NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+			//Click on first name
+			nhp.getFirstNameEditbox().click();
+			//Click on submit
+			nhp.getSaveAndContinueButton().click();
+			//Declare the error message
+			String expErr="First Name cannot be empty";
+			System.out.println("Expected error message is :"+expErr);
+			//Capture the actual error
+			String actErr=nhp.getFirstNameBlankErrMessage().getText();
+			System.out.println("                ");
+			System.out.println("*******Validate the error message********");
+			System.out.println("                ");
+			System.out.println("Actual error messageis :"+actErr);
+}
+
 
 
 

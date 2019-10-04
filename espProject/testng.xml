@@ -10,7 +10,7 @@
    <classes>
       <class name="com.newHire.NewHireTest">
        <methods>
-      <include name="submitNewHireFormAndValidateActivateButton"/>
+      <include name="verifyErrorMessageForKeepingFirstNameBlank"/>
       </methods>
       </class>
     </classes>
