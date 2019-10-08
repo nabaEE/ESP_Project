@@ -138,6 +138,8 @@ public class NewHirePage
 	private WebElement referalSearchEditbox;
 	@FindBy(xpath="//ul[@id='empsearch_Referal_Search']/li[1]")
 	private WebElement pickReferalSearch;
+	@FindBy(id="Error_Referal_Search")
+	private WebElement referalSearchBlankErr;
 	
 	@FindBy(id="div_Country_Code")
 	private WebElement countryDropdown;
@@ -172,6 +174,10 @@ public class NewHirePage
 	private WebElement joiningDateBlankErrorMessage;
 	@FindBy(id="Group_JoiningDate")
 	private WebElement groupJoiningDate;
+	@FindBy(id="Error_Group_JoiningDate")
+	private WebElement groupJoiningBlankErr;
+	@FindBy(id="DBError_Emp_JoiningDate")
+	private WebElement joiningDateAndDOBEqualError;
 	
 	@FindBy(id="Emp_Id")
 	private WebElement employeeId;
@@ -446,6 +452,9 @@ public class NewHirePage
 	public WebElement getPickReferalSearch() {
 		return pickReferalSearch;
 	}
+	public WebElement getReferalSearchBlankErr() {
+		return referalSearchBlankErr;
+	}
 	public WebElement getCountryDropdown() {
 		return countryDropdown;
 	}
@@ -488,8 +497,15 @@ public class NewHirePage
 	public WebElement getJoiningDateBlankErrorMessage() {
 		return joiningDateBlankErrorMessage;
 	}
+	public WebElement getJoiningDateAndDOBEqualError(){
+	    return joiningDateAndDOBEqualError;
+     }
 	public WebElement getGroupJoiningDate() {
 		return groupJoiningDate;
+	}
+	public WebElement getGroupJoiningBlankErr()
+	{
+		return groupJoiningBlankErr;
 	}
 	public WebElement getEmployeeId() {
 		return employeeId;

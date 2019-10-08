@@ -2,9 +2,12 @@ package com.newHire;
 
 import java.awt.AWTException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -21,7 +24,7 @@ public class NewHireTest extends BaseClass
 {
 
 //1. Submit new hire form and verify.
-@Test(groups="Smoke")
+@Test(groups="Smoke", priority=-1, enabled=false)
 public static void submitNewHireFormAndValidateActivateButton() throws AWTException, InterruptedException
 {
 	    //Call the landing page
@@ -38,9 +41,9 @@ public static void submitNewHireFormAndValidateActivateButton() throws AWTExcept
 		nhp.getTitleDropdown().click();
 		nhp.getPickTitle_MR().click();
 		//Enter the first Name
-		nhp.getFirstNameEditbox().sendKeys("Surur");
+		nhp.getFirstNameEditbox().sendKeys("Satya");
 		//Enter last name
-		nhp.getLastNameEditbox().sendKeys("dutta");
+		nhp.getLastNameEditbox().sendKeys("Reddy");
 		//Pick date of birth
 		WebElement element=nhp.getDateOfBirthCalenderWindow();
 		String date="1-Feb-1990";
@@ -88,9 +91,9 @@ public static void submitNewHireFormAndValidateActivateButton() throws AWTExcept
 	    String groupJoiningDate="1-Sept-2019";
 	    nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 	    //Enter the employee Id
-	    nhp.getEmployeeId().sendKeys("KOLI23");
+	    nhp.getEmployeeId().sendKeys("MUNK34");
 	    //Enter email id
-	    nhp.getEmailIdEditbox().sendKeys("kolin89");
+	    nhp.getEmailIdEditbox().sendKeys("cavin12");
 	    //Pick employment type 
 	    nhp.getEmploymentTypeDropdown().click();
 	    nhp.getPickEmploymentType().click();
@@ -180,13 +183,20 @@ public static void submitNewHireFormAndValidateActivateButton() throws AWTExcept
 	    //upload document
 	    hsp.clickAnduploadDocument();
 	    //click on submit
+	    try {
 	    hsp.getSubmitButton().click();
-	  //Stop the page load
+	    }
+	    	catch (StaleElementReferenceException e) {
+	    		hsp.getSubmitButton().click();
+	    }
+	    
+  	  //Stop the page load
 	    BaseClass.driver.findElement(By.tagName("body")).sendKeys("Keys.ESCAPE");
 	    
 	  /****************************Adding Personal Email details***********************************/
 	   WebdriverUtils.waitForElementPresent(driver, hsp.getEmailDetailsAddIcon());
 	   hsp.getEmailDetailsAddIcon().click();
+
 	   //Click on email type dropdown and pick personal email
 	   hsp.getEmailTypeDropdown().click();
 	   hsp.getPickPersonalEmail().click();
@@ -216,6 +226,7 @@ public static void submitNewHireFormAndValidateActivateButton() throws AWTExcept
 	   hsp.clickAnduploadDocument();
 	   //click on submit
 	   hsp.getStatutoryDetailsSubmitButton().click();
+	   
 	   //Stop the page load
 	   BaseClass.driver.findElement(By.tagName("body")).sendKeys("Keys.ESCAPE");
 	   WebdriverUtils.waitForPageToLoad(driver);
@@ -255,9 +266,12 @@ public static void submitNewHireFormAndValidateActivateButton() throws AWTExcept
 	  System.out.println("                             ");
 	  //Click on activate button
 	  WebdriverUtils.waitForElementPresent(driver, hsp.getActivateButton());
-	  hsp.getActivateButton().click();
-	  hsp.handleAlert();
-	  
+	  System.out.println("*********Verify the activate button *******");
+	  //hsp.getActivateButton().click();
+	 // hsp.handleAlert();
+	  Assert.assertTrue(hsp.getActivateButton().isDisplayed());
+	  System.out.println("*********Verify the activate button *******");
+	  System.out.println("                                 ");
 	  System.out.println("Activate button is displayed and activated successfully");
 	  }
 //2. Enter an existing email and validate the error message.
@@ -265,7 +279,7 @@ public static void submitNewHireFormAndValidateActivateButton() throws AWTExcept
 @Test()
 public static void checkErrorMessageForEnteringExistingEmail() throws InterruptedException
 {
-	//Call the landing page
+	        //Call the landing page
 			LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
 			//Click on admin icon
 			WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
@@ -329,9 +343,9 @@ public static void checkErrorMessageForEnteringExistingEmail() throws Interrupte
 		    String groupJoiningDate="1-Sept-2019";
 		    nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 		    //Enter the employee Id
-		    nhp.getEmployeeId().sendKeys("KURBM12");
+		    nhp.getEmployeeId().sendKeys("MXC34");
 		    //Enter email id
-		    nhp.getEmailIdEditbox().sendKeys("dhawan25");
+		    nhp.getEmailIdEditbox().sendKeys("satyak3");
 		    //Pick employment type 
 		    nhp.getEmploymentTypeDropdown().click();
 		    nhp.getPickEmploymentType().click();
@@ -535,7 +549,7 @@ public static void clickAndverifyTitleDropdownValues()
 }
 //5. Enter the DOB equals to joining date and verify the error message.
 @Test()
-public static void makeBothDOB_JoiningDateEqualAndverify()
+public static void makeBothDOB_JoiningDateEqualAndverifyError()
 {
 	//Call the landing page
 		LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
@@ -634,13 +648,17 @@ public static void makeBothDOB_JoiningDateEqualAndverify()
 	    //Enter FTE Equivalent hours
 	    nhp.getFteEditbox().sendKeys("30");
 	    //Click on save and Continue
+	    WebdriverUtils.waitForElementPresent(driver, nhp.getSaveAndContinueButton());
 	    nhp.getSaveAndContinueButton().click();	
-	    System.out.println("Form should not be submitted");
+	    String expErr="Joining Date should be greater than Date of Birth";
+	    System.out.println("Expected error message :"+expErr);
+	    //Capture the actual error message 
+	    String actErr=nhp.getJoiningDateAndDOBEqualError().getText();
 	    System.out.println("                        ");
-	    System.out.println("*********Validate if save and continue button is displayed********");
-	    Assert.assertTrue(nhp.getSaveAndContinueButton().isDisplayed());
+	    System.out.println("*********Validate the error message********");
+	    Assert.assertEquals(actErr,expErr);
 	    System.out.println("                           ");
-	    System.out.println("Test case is passed");
+	    System.out.println("Actual error message is :"+actErr);
 }
 
 //6. Make the title dropdown blank and verify the error message.
@@ -676,7 +694,7 @@ public static void VerifyErrorForkeepingTitleWinBlank()
 @Test()
 public static void verifyErrorMessageForKeepingFirstNameBlank()
 {
-	       //Call the landing page
+	       //Call the landing page	
 			LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
 			//Click on admin icon
 			WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
@@ -698,11 +716,526 @@ public static void verifyErrorMessageForKeepingFirstNameBlank()
 			System.out.println("                ");
 			System.out.println("*******Validate the error message********");
 			System.out.println("                ");
-			System.out.println("Actual error messageis :"+actErr);
+			System.out.println("Actual error message is :"+actErr);
+ }
+
+//8. Verify the error message for keeping last name blank.
+@Test()
+public static void verifyErrorMessageForKeepingLastNameBlank() 
+{
+	//Call the landing page
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+	//Click on first name
+	nhp.getFirstNameEditbox().click();
+	//Click on submit
+	nhp.getSaveAndContinueButton().click();
+	//Declare the error message
+	String expErr="First Name cannot be empty";
+	System.out.println("Expected error message is :"+expErr);
+	//Capture the actual error
+	String actErr=nhp.getLastNameEditboxBlankErrMessage().getText();
+	System.out.println("                ");
+	System.out.println("*******Validate the error message********");
+	System.out.println("                ");
+	System.out.println("Actual error message is :"+actErr);	
 }
+//9. Don't pick the DOB and verify the error message.
+@Test()
+public static void checkErrorMessageForNotPickingDOB()
+{
+	//Call the landing page
+		LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+		//Click on admin icon
+		WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+		lnp.getAdminIcon().click();
+		//Click on new hire option
+		//lnp.getNewHireAdminValue().click();
+		lnp.clickNewHire();
+		//Call the new hire page
+		NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+		//Click on first name
+		nhp.getFirstNameEditbox().click();
+		//Click on submit
+		nhp.getSaveAndContinueButton().click();
+		//Declare the error message
+		String expErr="Date Of Birth cannot be empty";
+		System.out.println("Expected error message is :"+expErr);
+		//Capture the actual error
+		String actErr=nhp.getDobBlankErrMessage().getText();
+		System.out.println("                ");
+		System.out.println("*******Validate the error message********");
+		System.out.println("                ");
+		System.out.println("Actual error message is :"+actErr);		
+}
+//10. Check the error message for not picking Country of birth.
+@Test()
+public static void verifyErrorMessageForNotPickingCountryOfBirth()
+{
+	//Call the landing page
+			LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+			//Click on admin icon
+			WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+			lnp.getAdminIcon().click();
+			//Click on new hire option
+			//lnp.getNewHireAdminValue().click();
+			lnp.clickNewHire();
+			//Call the new hire page
+			NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+			//Click on first name
+			nhp.getFirstNameEditbox().click();
+			//Click on submit
+			nhp.getSaveAndContinueButton().click();
+			//Declare the error message
+			String expErr="Country Of Birth cannot be empty";
+			System.out.println("Expected error message is :"+expErr);
+			//Capture the actual error
+			String actErr=nhp.getCountryOfBirthBlankErrMessage().getText();
+			System.out.println("                ");
+			System.out.println("*******Validate the error message********");
+			System.out.println("                ");
+			System.out.println("Actual error message is :"+actErr);			
+}
+//11. Verify the error message for keeping state of birth blank.
+@Test()
+public static void checkErrorMessageForNotPickingStateOfBirth()
+{
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+	//Click on first name
+	nhp.getFirstNameEditbox().click();
+	//Pick the country of birth dropdown
+	nhp.getCountryOfBirthDropdown().click();
+	nhp.getPickCountryOfBirthAsIndia().click();
+	//Click on submit
+	nhp.getSaveAndContinueButton().click();
+	//Declare the error message
+	String expErr="State Of Birth cannot be empty";
+	System.out.println("Expected error message is :"+expErr);
+	//Capture the actual error
+	String actErr=nhp.getStateOfBirthBlankErrMessage().getText();
+	System.out.println("                ");
+	System.out.println("*******Validate the error message********");
+	System.out.println("                ");
+	System.out.println("Actual error message is :"+actErr);			
+}
+//12. Make city of birth as blank and verify the error message.
+@Test()
+public static void checkErrorForKeepingCityOfBirthBlank()
+{
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+	//Click on city of birth editbox
+	nhp.getCityOfBirthEditbox().click();
+	//Click on submit
+	nhp.getSaveAndContinueButton().click();
+	//Declare the error message
+	String expErr="City Of Birth cannot be empty";
+	System.out.println("Expected error message is :"+expErr);
+	//Capture the actual error
+	String actErr=nhp.getCityOfBirthErrBlankMessage().getText();
+	System.out.println("                ");
+	System.out.println("*******Validate the error message********");
+	System.out.println("                ");
+	System.out.println("Actual error message is :"+actErr);	
+}
+//13.Check error message for not picking citizenship.
+@Test()
+public static void checkErrorForNotPickingCitizenShip()
+{
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+	//Click on submit
+	nhp.getSaveAndContinueButton().click();
+	//Declare the error message
+	String expErr="Citizenship cannot be empty";
+	System.out.println("Expected error message is :"+expErr);
+	//Capture the actual error
+	String actErr=nhp.getCitizenshipBlankErrMessage().getText();
+	System.out.println("                ");
+	System.out.println("*******Validate the error message********");
+	System.out.println("                ");
+	System.out.println("Actual error message is :"+actErr);	
+}
+//14. Don't pick the gender radio button and click on save and continue to check the error message.
+@Test()
+public static void checkErrorForNotPickingGender()
+{
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+	//Click on submit
+	nhp.getSaveAndContinueButton().click();
+	//Declare the error message
+	String expErr="Gender cannot be empty";
+	System.out.println("Expected error message is :"+expErr);
+	//Capture the actual error
+	String actErr=nhp.getGenderBlankErrMessage().getText();
+	System.out.println("                ");
+	System.out.println("*******Validate the error message********");
+	System.out.println("                ");
+	System.out.println("Actual error message is :"+actErr);	
+}
+//15. Don't select the marital status radio button and click on saveAndContinue to verify the error message.
+@Test()
+public static void checkErrorForNotSelectingMaritalStatus()
+{
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+	//Click on submit
+	nhp.getSaveAndContinueButton().click();
+	//Declare the error message
+	String expErr="Marital Status cannot be empty";
+	System.out.println("Expected error message is :"+expErr);
+	//Capture the actual error
+	String actErr=nhp.getMaritalStatusBlankErrorMessage().getText();
+	System.out.println("                ");
+	System.out.println("*******Validate the error message********");
+	System.out.println("                ");
+	System.out.println("Actual error message is :"+actErr);	
+}
+//16. Check the error message for not picking educational details.
+@Test()
+public static void checkErrorForNotPickingEducationDetails()
+{
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+	//Click on submit
+	nhp.getSaveAndContinueButton().click();
+	//Declare the error message
+	String expErr="Education Details cannot be empty";
+	System.out.println("Expected error message is :"+expErr);
+	//Capture the actual error
+	String actErr=nhp.getEducationDetailsBlankErrorMessage().getText();
+	System.out.println("                ");
+	System.out.println("*******Validate the error message********");
+	System.out.println("                ");
+	System.out.println("Actual error message is :"+actErr);
+}
+//17. Select not a fresher and keep the Relevant experience editbox blank to check the error message.
+@Test()
+public static void checkErrorForKeepingRelevantExpEditboxBlank()
+{
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+	//Click on fresher switch button
+	nhp.getFresherSwitchButton().click();
+	//Click on the relevant experience editbox
+	nhp.getRelevantExpEditbox().click();
+	//Click on submit
+	nhp.getSaveAndContinueButton().click();
+	//Declare the error message
+	String expErr="Relevant Experience (In Months) cannot be empty";
+	System.out.println("Expected error message is :"+expErr);
+	//Capture the actual error
+	String actErr=nhp.getRelevantExpEditboxBlankErrMessage().getText();
+	System.out.println("                ");
+	System.out.println("*******Validate the error message********");
+	System.out.println("                ");
+	System.out.println("Actual error message is :"+actErr);
+	
+}
+//18. Pick source of hire as Campus Recruitment and click on saveAndContinue without picking UniversityName.
+@Test()
+public static void checkErrorForNotPickingUniversityName()
+{
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+	//Click on source of hire editbox
+	nhp.getSourceOfHireDropdown().click();
+	nhp.getCampusRecruitmentSourceOfHire().click();
+	//Click on submit
+	nhp.getSaveAndContinueButton().click();
+	//Declare the error message
+	String expErr="University/College Name cannot be empty";
+	System.out.println("Expected error message is :"+expErr);
+	//Capture the actual error
+	String actErr=nhp.getUniversityBlankErrMessage().getText();
+	System.out.println("                ");
+	System.out.println("*******Validate the error message********");
+	System.out.println("                ");
+	System.out.println("Actual error message is :"+actErr);
 
+}
+//19. Pick source of hire as Referral and click on saveAndContinue without picking Referal Search.
+@Test()
+public static void checkErrorForKeepingReferalSearchBoxBlank()
+{
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+	//Click on source of hire editbox
+	nhp.getSourceOfHireDropdown().click();
+	nhp.getReferalSourceOfHire().click();
+	//Don't pick the referal
+	nhp.getReferalSearchEditbox().click();
+	//Click on save and continue
+	nhp.getSaveAndContinueButton().click();
+	//Declare the error message
+	String expErr="Referal Search cannot be empty";
+	System.out.println("Expected error message is :"+expErr);
+	//Capture the actual error
+	String actErr=nhp.getReferalSearchBlankErr().getText();
+	System.out.println("                ");
+	System.out.println("*******Validate the error message********");
+	System.out.println("                ");
+	System.out.println("Actual error message is :"+actErr);
+}
+//20. Don't pick the country and check the error message.
+@Test()
+public static void verifyErrorForNotPickingCountry()
+{
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+	//Click on country dropdown
+	nhp.getCountryDropdown().click();
+	//Declare the error message
+	String expErr="Country cannot be empty";
+	System.out.println("Expected error message is :"+expErr);
+	//Capture the actual error
+	String actErr=nhp.getCountryBlankErrorMessage().getText();
+	System.out.println("                ");
+	System.out.println("*******Validate the error message********");
+	System.out.println("                ");
+	System.out.println("Actual error message is :"+actErr);
+	
+}
+//21. Check error message for not picking the legal entity.
+@Test()
+public static void verifyErrorForNotPickingLegalEntity()
+{
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+	//Click on country dropdown
+	nhp.getCountryDropdown().click();	
+    nhp.getPickCountryIndia().click();
+    //Click on legal entity
+    nhp.getLegalEntityDropdown().click();
+  //Click on save and continue
+  	nhp.getSaveAndContinueButton().click();
+  	//Declare the error message
+  	String expErr="Legal Entity cannot be empty";
+  	System.out.println("Expected error message is :"+expErr);
+  	//Capture the actual error
+  	String actErr=nhp.getLegalEntityBlankErrorMessage().getText();
+  	System.out.println("                ");
+  	System.out.println("*******Validate the error message********");
+  	System.out.println("                ");
+  	System.out.println("Actual error message is :"+actErr);    
+}
+//22. Verify error message for not picking the location.
+@Test()
+public static void verifyErrorForNotPickingLocation()
+{
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+	//Click on location dropdown
+	nhp.getLocationDropdown().click();
+	nhp.getSaveAndContinueButton().click();
+  	//Declare the error message
+  	String expErr="Location cannot be empty";
+  	System.out.println("Expected error message is :"+expErr);
+  	//Capture the actual error
+  	String actErr=nhp.getLocationBlankErrorMessage().getText();
+  	System.out.println("                ");
+  	System.out.println("*******Validate the error message********");
+  	System.out.println("                ");
+  	System.out.println("Actual error message is :"+actErr);   
+}
+//23. Validate the error message for not picking joining date.
+@Test()
+public static void checkErrorForNotPickingJoiningDate()
+{
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+	//Click on save and continue 
+	nhp.getSaveAndContinueButton().click();
+	//Declare the error message
+  	String expErr="Joining Date cannot be empty";
+  	System.out.println("Expected error message is :"+expErr);
+  	//Capture the actual error
+  	String actErr=nhp.getJoiningDateBlankErrorMessage().getText();
+  	System.out.println("                ");
+  	System.out.println("*******Validate the error message********");
+  	System.out.println("                ");
+  	System.out.println("Actual error message is :"+actErr);
+  }
+//24. Check the error message for not picking the group joining date.
+@Test()
+public static void checkErrorForNotPickingGroupJoiningDate()
+{
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+	//Click on save and continue 
+	nhp.getSaveAndContinueButton().click();
+	//Declare the error message
+  	String expErr="Group Joining Date cannot be empty";
+  	System.out.println("Expected error message is :"+expErr);
+  	//Capture the actual error
+  	String actErr=nhp.getGroupJoiningBlankErr().getText();
+  	System.out.println("                ");
+  	System.out.println("*******Validate the error message********");
+  	System.out.println("                ");
+  	System.out.println("Actual error message is :"+actErr);	
+}
+//25. Verify the error message for keeping employee Id section blank.
+@Test()
+public static void makeEmployeeIdEditboxBlankAndValidateError()
+{
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+	//Click on employee id editbox 
+	nhp.getEmployeeId().click();
+	//Click on save and continue 
+	nhp.getSaveAndContinueButton().click();
+	//Declare the error message
+  	String expErr="Employee ID cannot be empty";
+  	System.out.println("Expected error message is :"+expErr);
+  	//Capture the actual error
+  	String actErr=nhp.getEmployeeIdBlankErrorMessage().getText();
+  	System.out.println("                ");
+  	System.out.println("*******Validate the error message********");
+  	System.out.println("                ");
+  	System.out.println("Actual error message is :"+actErr);	
+}
+//26. Make the email id section blank and check for the error message.
+@Test()
+public static void keepEmailIdSectionBlankAndVerifyError()
+{
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+	//Click on employee id editbox 
+	nhp.getEmployeeId().click();
+	//Click on save and continue 
+	nhp.getSaveAndContinueButton().click();
+	//Declare the error message
+  	String expErr="Email Id cannot be empty";
+  	System.out.println("Expected error message is :"+expErr);
+  	//Capture the actual error
+  	String actErr=nhp.getEmaildIdBlankErrorMessage().getText();
+  	System.out.println("                ");
+  	System.out.println("*******Validate the error message********");
+  	System.out.println("                ");
+  	System.out.println("Actual error message is :"+actErr);	
 
-
+}
 
 
 

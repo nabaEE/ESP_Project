@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>24/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Oct 04 17:08:01 IST 2019</td>
+<td>Started on:</td><td>Tue Oct 08 09:39:10 IST 2019</td>
 </tr>
-<tr><td>Total time:</td><td>39 seconds (39901 ms)</td>
+<tr><td>Total time:</td><td>159 seconds (159093 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,49 +75,18 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.newHire.NewHireTest.submitNewHireFormAndValidateActivateButton()'><b>submitNewHireFormAndValidateActivateButton</b><br>Test class: com.newHire.NewHireTest</td>
-<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: Element &lt;i class=&quot;material-icons&quot;&gt; is not clickable at point (244,649) because another element &lt;span class=&quot;Mandatory_Star&quot;&gt; obscures it
-Build info: version: &apos;4.0.0-alpha-2&apos;, revision: &apos;f148142cf8&apos;, time: &apos;2019-07-01T20:55:26&apos;
-System info: host: &apos;SYSTEM-72&apos;, ip: &apos;10.9.46.161&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_211&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 69.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190917135527, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 22696, moz:profile: C:\Users\Prod\AppData\Local..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: be7ecfc6-94ae-4226-81e3-9f36acb6d6f5
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:191)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:125)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:161)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:576)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:308)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
-	at com.sun.proxy.$Proxy12.click(Unknown Source)
-	at com.newHire.NewHireTest.submitNewHireFormAndValidateActivateButton(NewHireTest.java:189)
-... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace845119401", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace845119401'><pre>org.openqa.selenium.ElementClickInterceptedException: Element &lt;i class=&quot;material-icons&quot;&gt; is not clickable at point (244,649) because another element &lt;span class=&quot;Mandatory_Star&quot;&gt; obscures it
-Build info: version: &apos;4.0.0-alpha-2&apos;, revision: &apos;f148142cf8&apos;, time: &apos;2019-07-01T20:55:26&apos;
-System info: host: &apos;SYSTEM-72&apos;, ip: &apos;10.9.46.161&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_211&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 69.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190917135527, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 22696, moz:profile: C:\Users\Prod\AppData\Local..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: be7ecfc6-94ae-4226-81e3-9f36acb6d6f5
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
-	at java.lang.reflect.Constructor.newInstance(Unknown Source)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:191)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:125)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:161)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:576)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:308)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
-	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
-	at com.sun.proxy.$Proxy12.click(Unknown Source)
-	at com.newHire.NewHireTest.submitNewHireFormAndValidateActivateButton(NewHireTest.java:189)
+<td title='com.newHire.NewHireTest.checkErrorMessageForEnteringExistingEmail()'><b>checkErrorMessageForEnteringExistingEmail</b><br>Test class: com.newHire.NewHireTest</td>
+<td><div><pre>java.lang.AssertionError: expected [Mail Id already Exists.] but found [The User Handle already exists in the system. Please correct.]
+	at com.newHire.NewHireTest.checkErrorMessageForEnteringExistingEmail(NewHireTest.java:389)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace504510379", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace504510379'><pre>java.lang.AssertionError: expected [Mail Id already Exists.] but found [The User Handle already exists in the system. Please correct.]
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.failNotEquals(Assert.java:776)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:137)
+	at org.testng.Assert.assertEquals(Assert.java:118)
+	at org.testng.Assert.assertEquals(Assert.java:453)
+	at org.testng.Assert.assertEquals(Assert.java:463)
+	at com.newHire.NewHireTest.checkErrorMessageForEnteringExistingEmail(NewHireTest.java:389)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -144,8 +113,136 @@ Session ID: be7ecfc6-94ae-4226-81e3-9f36acb6d6f5
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>23</td>
-<td>com.newHire.NewHireTest@204f30ec</td></tr>
+<td>18</td>
+<td>com.newHire.NewHireTest@146ba0ac</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.newHire.NewHireTest.VerifyErrorForkeepingTitleWinBlank()'><b>VerifyErrorForkeepingTitleWinBlank</b><br>Test class: com.newHire.NewHireTest</td>
+<td></td>
+<td>1</td>
+<td>com.newHire.NewHireTest@146ba0ac</td></tr>
+<tr>
+<td title='com.newHire.NewHireTest.checkErrorForKeepingCityOfBirthBlank()'><b>checkErrorForKeepingCityOfBirthBlank</b><br>Test class: com.newHire.NewHireTest</td>
+<td></td>
+<td>2</td>
+<td>com.newHire.NewHireTest@146ba0ac</td></tr>
+<tr>
+<td title='com.newHire.NewHireTest.checkErrorForKeepingReferalSearchBoxBlank()'><b>checkErrorForKeepingReferalSearchBoxBlank</b><br>Test class: com.newHire.NewHireTest</td>
+<td></td>
+<td>2</td>
+<td>com.newHire.NewHireTest@146ba0ac</td></tr>
+<tr>
+<td title='com.newHire.NewHireTest.checkErrorForKeepingRelevantExpEditboxBlank()'><b>checkErrorForKeepingRelevantExpEditboxBlank</b><br>Test class: com.newHire.NewHireTest</td>
+<td></td>
+<td>2</td>
+<td>com.newHire.NewHireTest@146ba0ac</td></tr>
+<tr>
+<td title='com.newHire.NewHireTest.checkErrorForNotPickingCitizenShip()'><b>checkErrorForNotPickingCitizenShip</b><br>Test class: com.newHire.NewHireTest</td>
+<td></td>
+<td>1</td>
+<td>com.newHire.NewHireTest@146ba0ac</td></tr>
+<tr>
+<td title='com.newHire.NewHireTest.checkErrorForNotPickingEducationDetails()'><b>checkErrorForNotPickingEducationDetails</b><br>Test class: com.newHire.NewHireTest</td>
+<td></td>
+<td>1</td>
+<td>com.newHire.NewHireTest@146ba0ac</td></tr>
+<tr>
+<td title='com.newHire.NewHireTest.checkErrorForNotPickingGender()'><b>checkErrorForNotPickingGender</b><br>Test class: com.newHire.NewHireTest</td>
+<td></td>
+<td>1</td>
+<td>com.newHire.NewHireTest@146ba0ac</td></tr>
+<tr>
+<td title='com.newHire.NewHireTest.checkErrorForNotPickingGroupJoiningDate()'><b>checkErrorForNotPickingGroupJoiningDate</b><br>Test class: com.newHire.NewHireTest</td>
+<td></td>
+<td>1</td>
+<td>com.newHire.NewHireTest@146ba0ac</td></tr>
+<tr>
+<td title='com.newHire.NewHireTest.checkErrorForNotPickingJoiningDate()'><b>checkErrorForNotPickingJoiningDate</b><br>Test class: com.newHire.NewHireTest</td>
+<td></td>
+<td>1</td>
+<td>com.newHire.NewHireTest@146ba0ac</td></tr>
+<tr>
+<td title='com.newHire.NewHireTest.checkErrorForNotPickingUniversityName()'><b>checkErrorForNotPickingUniversityName</b><br>Test class: com.newHire.NewHireTest</td>
+<td></td>
+<td>2</td>
+<td>com.newHire.NewHireTest@146ba0ac</td></tr>
+<tr>
+<td title='com.newHire.NewHireTest.checkErrorForNotSelectingMaritalStatus()'><b>checkErrorForNotSelectingMaritalStatus</b><br>Test class: com.newHire.NewHireTest</td>
+<td></td>
+<td>1</td>
+<td>com.newHire.NewHireTest@146ba0ac</td></tr>
+<tr>
+<td title='com.newHire.NewHireTest.checkErrorMessageForNotPickingDOB()'><b>checkErrorMessageForNotPickingDOB</b><br>Test class: com.newHire.NewHireTest</td>
+<td></td>
+<td>2</td>
+<td>com.newHire.NewHireTest@146ba0ac</td></tr>
+<tr>
+<td title='com.newHire.NewHireTest.checkErrorMessageForNotPickingStateOfBirth()'><b>checkErrorMessageForNotPickingStateOfBirth</b><br>Test class: com.newHire.NewHireTest</td>
+<td></td>
+<td>2</td>
+<td>com.newHire.NewHireTest@146ba0ac</td></tr>
+<tr>
+<td title='com.newHire.NewHireTest.clickAndverifyTitleDropdownValues()'><b>clickAndverifyTitleDropdownValues</b><br>Test class: com.newHire.NewHireTest</td>
+<td></td>
+<td>3</td>
+<td>com.newHire.NewHireTest@146ba0ac</td></tr>
+<tr>
+<td title='com.newHire.NewHireTest.enterExistEmployeeIdAndValidateErrorMessage()'><b>enterExistEmployeeIdAndValidateErrorMessage</b><br>Test class: com.newHire.NewHireTest</td>
+<td></td>
+<td>16</td>
+<td>com.newHire.NewHireTest@146ba0ac</td></tr>
+<tr>
+<td title='com.newHire.NewHireTest.keepEmailIdSectionBlankAndVerifyError()'><b>keepEmailIdSectionBlankAndVerifyError</b><br>Test class: com.newHire.NewHireTest</td>
+<td></td>
+<td>2</td>
+<td>com.newHire.NewHireTest@146ba0ac</td></tr>
+<tr>
+<td title='com.newHire.NewHireTest.makeBothDOB_JoiningDateEqualAndverifyError()'><b>makeBothDOB_JoiningDateEqualAndverifyError</b><br>Test class: com.newHire.NewHireTest</td>
+<td></td>
+<td>14</td>
+<td>com.newHire.NewHireTest@146ba0ac</td></tr>
+<tr>
+<td title='com.newHire.NewHireTest.makeEmployeeIdEditboxBlankAndValidateError()'><b>makeEmployeeIdEditboxBlankAndValidateError</b><br>Test class: com.newHire.NewHireTest</td>
+<td></td>
+<td>2</td>
+<td>com.newHire.NewHireTest@146ba0ac</td></tr>
+<tr>
+<td title='com.newHire.NewHireTest.verifyErrorForNotPickingCountry()'><b>verifyErrorForNotPickingCountry</b><br>Test class: com.newHire.NewHireTest</td>
+<td></td>
+<td>1</td>
+<td>com.newHire.NewHireTest@146ba0ac</td></tr>
+<tr>
+<td title='com.newHire.NewHireTest.verifyErrorForNotPickingLegalEntity()'><b>verifyErrorForNotPickingLegalEntity</b><br>Test class: com.newHire.NewHireTest</td>
+<td></td>
+<td>3</td>
+<td>com.newHire.NewHireTest@146ba0ac</td></tr>
+<tr>
+<td title='com.newHire.NewHireTest.verifyErrorForNotPickingLocation()'><b>verifyErrorForNotPickingLocation</b><br>Test class: com.newHire.NewHireTest</td>
+<td></td>
+<td>2</td>
+<td>com.newHire.NewHireTest@146ba0ac</td></tr>
+<tr>
+<td title='com.newHire.NewHireTest.verifyErrorMessageForKeepingFirstNameBlank()'><b>verifyErrorMessageForKeepingFirstNameBlank</b><br>Test class: com.newHire.NewHireTest</td>
+<td></td>
+<td>2</td>
+<td>com.newHire.NewHireTest@146ba0ac</td></tr>
+<tr>
+<td title='com.newHire.NewHireTest.verifyErrorMessageForKeepingLastNameBlank()'><b>verifyErrorMessageForKeepingLastNameBlank</b><br>Test class: com.newHire.NewHireTest</td>
+<td></td>
+<td>2</td>
+<td>com.newHire.NewHireTest@146ba0ac</td></tr>
+<tr>
+<td title='com.newHire.NewHireTest.verifyErrorMessageForNotPickingCountryOfBirth()'><b>verifyErrorMessageForNotPickingCountryOfBirth</b><br>Test class: com.newHire.NewHireTest</td>
+<td></td>
+<td>2</td>
+<td>com.newHire.NewHireTest@146ba0ac</td></tr>
 </table><p>
 </body>
 </html>

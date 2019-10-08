@@ -9,13 +9,12 @@
   <test thread-count="5" name="Test">
    <classes>
       <class name="com.newHire.NewHireTest">
-       <methods>
-      <include name="verifyErrorMessageForKeepingFirstNameBlank"/>
-      </methods>
+<!--        <methods>
+      <include name="checkErrorMessageForEnteringExistingEmail"/>
+      </methods> -->
       </class>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
-
 
 

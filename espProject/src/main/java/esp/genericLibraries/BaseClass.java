@@ -23,7 +23,6 @@ public class BaseClass extends FileUtils
 {
  public static WebDriver driver;
  
-	
  @BeforeClass()
  @Parameters({"browser"})
 public void openBrowser(String browserName)
