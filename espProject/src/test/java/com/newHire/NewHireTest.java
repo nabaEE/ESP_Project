@@ -715,6 +715,7 @@ public static void verifyErrorMessageForKeepingFirstNameBlank()
 			String actErr=nhp.getFirstNameBlankErrMessage().getText();
 			System.out.println("                ");
 			System.out.println("*******Validate the error message********");
+			Assert.assertEquals(actErr, expErr);
 			System.out.println("                ");
 			System.out.println("Actual error message is :"+actErr);
  }
@@ -744,6 +745,7 @@ public static void verifyErrorMessageForKeepingLastNameBlank()
 	String actErr=nhp.getLastNameEditboxBlankErrMessage().getText();
 	System.out.println("                ");
 	System.out.println("*******Validate the error message********");
+	Assert.assertEquals(actErr, expErr);
 	System.out.println("                ");
 	System.out.println("Actual error message is :"+actErr);	
 }
@@ -772,6 +774,7 @@ public static void checkErrorMessageForNotPickingDOB()
 		String actErr=nhp.getDobBlankErrMessage().getText();
 		System.out.println("                ");
 		System.out.println("*******Validate the error message********");
+		Assert.assertEquals(actErr, expErr);
 		System.out.println("                ");
 		System.out.println("Actual error message is :"+actErr);		
 }
@@ -800,6 +803,7 @@ public static void verifyErrorMessageForNotPickingCountryOfBirth()
 			String actErr=nhp.getCountryOfBirthBlankErrMessage().getText();
 			System.out.println("                ");
 			System.out.println("*******Validate the error message********");
+			Assert.assertEquals(actErr, expErr);
 			System.out.println("                ");
 			System.out.println("Actual error message is :"+actErr);			
 }
@@ -830,6 +834,7 @@ public static void checkErrorMessageForNotPickingStateOfBirth()
 	String actErr=nhp.getStateOfBirthBlankErrMessage().getText();
 	System.out.println("                ");
 	System.out.println("*******Validate the error message********");
+	Assert.assertEquals(actErr, expErr);
 	System.out.println("                ");
 	System.out.println("Actual error message is :"+actErr);			
 }
@@ -857,6 +862,7 @@ public static void checkErrorForKeepingCityOfBirthBlank()
 	String actErr=nhp.getCityOfBirthErrBlankMessage().getText();
 	System.out.println("                ");
 	System.out.println("*******Validate the error message********");
+	Assert.assertEquals(actErr, expErr);
 	System.out.println("                ");
 	System.out.println("Actual error message is :"+actErr);	
 }
@@ -882,6 +888,7 @@ public static void checkErrorForNotPickingCitizenShip()
 	String actErr=nhp.getCitizenshipBlankErrMessage().getText();
 	System.out.println("                ");
 	System.out.println("*******Validate the error message********");
+	Assert.assertEquals(actErr, expErr);
 	System.out.println("                ");
 	System.out.println("Actual error message is :"+actErr);	
 }
@@ -907,6 +914,7 @@ public static void checkErrorForNotPickingGender()
 	String actErr=nhp.getGenderBlankErrMessage().getText();
 	System.out.println("                ");
 	System.out.println("*******Validate the error message********");
+	Assert.assertEquals(actErr, expErr);
 	System.out.println("                ");
 	System.out.println("Actual error message is :"+actErr);	
 }
@@ -932,6 +940,7 @@ public static void checkErrorForNotSelectingMaritalStatus()
 	String actErr=nhp.getMaritalStatusBlankErrorMessage().getText();
 	System.out.println("                ");
 	System.out.println("*******Validate the error message********");
+	Assert.assertEquals(actErr, expErr);
 	System.out.println("                ");
 	System.out.println("Actual error message is :"+actErr);	
 }
@@ -957,6 +966,7 @@ public static void checkErrorForNotPickingEducationDetails()
 	String actErr=nhp.getEducationDetailsBlankErrorMessage().getText();
 	System.out.println("                ");
 	System.out.println("*******Validate the error message********");
+	Assert.assertEquals(actErr, expErr);
 	System.out.println("                ");
 	System.out.println("Actual error message is :"+actErr);
 }
@@ -986,6 +996,7 @@ public static void checkErrorForKeepingRelevantExpEditboxBlank()
 	String actErr=nhp.getRelevantExpEditboxBlankErrMessage().getText();
 	System.out.println("                ");
 	System.out.println("*******Validate the error message********");
+	Assert.assertEquals(actErr, expErr);
 	System.out.println("                ");
 	System.out.println("Actual error message is :"+actErr);
 	
@@ -1015,6 +1026,7 @@ public static void checkErrorForNotPickingUniversityName()
 	String actErr=nhp.getUniversityBlankErrMessage().getText();
 	System.out.println("                ");
 	System.out.println("*******Validate the error message********");
+	Assert.assertEquals(actErr, expErr);
 	System.out.println("                ");
 	System.out.println("Actual error message is :"+actErr);
 
@@ -1046,6 +1058,7 @@ public static void checkErrorForKeepingReferalSearchBoxBlank()
 	String actErr=nhp.getReferalSearchBlankErr().getText();
 	System.out.println("                ");
 	System.out.println("*******Validate the error message********");
+	Assert.assertEquals(actErr, expErr);
 	System.out.println("                ");
 	System.out.println("Actual error message is :"+actErr);
 }
@@ -1071,6 +1084,7 @@ public static void verifyErrorForNotPickingCountry()
 	String actErr=nhp.getCountryBlankErrorMessage().getText();
 	System.out.println("                ");
 	System.out.println("*******Validate the error message********");
+	Assert.assertEquals(actErr, expErr);
 	System.out.println("                ");
 	System.out.println("Actual error message is :"+actErr);
 	
@@ -1102,6 +1116,7 @@ public static void verifyErrorForNotPickingLegalEntity()
   	String actErr=nhp.getLegalEntityBlankErrorMessage().getText();
   	System.out.println("                ");
   	System.out.println("*******Validate the error message********");
+  	Assert.assertEquals(actErr, expErr);
   	System.out.println("                ");
   	System.out.println("Actual error message is :"+actErr);    
 }
@@ -1128,6 +1143,7 @@ public static void verifyErrorForNotPickingLocation()
   	String actErr=nhp.getLocationBlankErrorMessage().getText();
   	System.out.println("                ");
   	System.out.println("*******Validate the error message********");
+  	Assert.assertEquals(actErr, expErr);
   	System.out.println("                ");
   	System.out.println("Actual error message is :"+actErr);   
 }
@@ -1152,6 +1168,7 @@ public static void checkErrorForNotPickingJoiningDate()
   	//Capture the actual error
   	String actErr=nhp.getJoiningDateBlankErrorMessage().getText();
   	System.out.println("                ");
+  	Assert.assertEquals(actErr, expErr);
   	System.out.println("*******Validate the error message********");
   	System.out.println("                ");
   	System.out.println("Actual error message is :"+actErr);
@@ -1178,6 +1195,7 @@ public static void checkErrorForNotPickingGroupJoiningDate()
   	String actErr=nhp.getGroupJoiningBlankErr().getText();
   	System.out.println("                ");
   	System.out.println("*******Validate the error message********");
+  	Assert.assertEquals(actErr, expErr);
   	System.out.println("                ");
   	System.out.println("Actual error message is :"+actErr);	
 }
@@ -1205,6 +1223,7 @@ public static void makeEmployeeIdEditboxBlankAndValidateError()
   	String actErr=nhp.getEmployeeIdBlankErrorMessage().getText();
   	System.out.println("                ");
   	System.out.println("*******Validate the error message********");
+  	Assert.assertEquals(actErr, expErr);
   	System.out.println("                ");
   	System.out.println("Actual error message is :"+actErr);	
 }
@@ -1222,7 +1241,7 @@ public static void keepEmailIdSectionBlankAndVerifyError()
 	//Call the new hire page
 	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
 	//Click on employee id editbox 
-	nhp.getEmployeeId().click();
+	nhp.getEmailIdEditbox().click();
 	//Click on save and continue 
 	nhp.getSaveAndContinueButton().click();
 	//Declare the error message
@@ -1232,10 +1251,424 @@ public static void keepEmailIdSectionBlankAndVerifyError()
   	String actErr=nhp.getEmaildIdBlankErrorMessage().getText();
   	System.out.println("                ");
   	System.out.println("*******Validate the error message********");
+  	Assert.assertEquals(actErr, expErr);
   	System.out.println("                ");
   	System.out.println("Actual error message is :"+actErr);	
-
 }
+//27. Don't pick the employment type and verify the error message.
+@Test()
+public static void validateErrorForNotPickingEmploymentType()
+{
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);	
+	//Click on employment type
+	nhp.getEmploymentTypeDropdown().click();
+	//Declare the error message
+  	String expErr="Employment Type cannot be empty";
+  	System.out.println("Expected error message is :"+expErr);
+  	//Capture the actual error
+  	String actErr=nhp.getEmploymentTypeBlankErrorMessage().getText();
+  	System.out.println("                ");
+  	System.out.println("*******Validate the error message********");
+  	Assert.assertEquals(actErr, expErr);
+  	System.out.println("                ");
+  	System.out.println("Actual error message is :"+actErr);
+  }
+//28. Check the error message for not picking Employment status.
+@Test()
+public static void verifyErrorForNotPickingEmploymentStatus()
+{
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);	
+	//Click on employment type
+	nhp.getEmploymentTypeDropdown().click();
+	nhp.getPickEmploymentType().click();
+	//Click on employment status
+	nhp.getEmploymentStatusDropdown().click();
+	//Click on save and continue
+	nhp.getSaveAndContinueButton().click();
+	//Declare the error message
+  	String expErr="Employment Status cannot be empty";
+  	System.out.println("Expected error message is :"+expErr);
+  	//Capture the actual error
+  	String actErr=nhp.getEmploymentStatusBlankErrorMessage().getText();
+  	System.out.println("                ");
+  	System.out.println("*******Validate the error message********");
+  	Assert.assertEquals(actErr, expErr);
+  	System.out.println("                ");
+  	System.out.println("Actual error message is :"+actErr);
+	}
+//29. Keep the Department section as Blank and verify the error message.
+@Test()
+public static void checkErrorForKeepingDepartmentEditboxBlank()
+{
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);	
+	//Click on department editbox
+	nhp.getDepartmentEditbox().click();
+	//Declare the error message
+  	String expErr="Department cannot be empty";
+  	System.out.println("Expected error message is :"+expErr);
+  	//Capture the actual error
+  	String actErr=nhp.getDepartmentBlankErrorMessage().getText();
+  	System.out.println("                ");
+  	System.out.println("*******Validate the error message********");
+  	Assert.assertEquals(actErr, expErr);
+  	System.out.println("                ");
+  	System.out.println("Actual error message is :"+actErr);	
+}
+//30. Select Employment type as Contract/Temporary/ then click on saveAndContinue button to varify the error for not picking Contract End Date.
+@Test()
+public static void verifyErrorForNotPickingContractEndDate()
+{
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+	//Click on employment type
+	nhp.getEmploymentTypeDropdown().click();
+	//pick employment type as Contract
+	nhp.pickEmploymentTypeAsContract();
+	//Click on save and Continue
+	nhp.getSaveAndContinueButton().click();
+	//Declare the error message
+  	String expErr="Contract End Date cannot be empty";
+  	System.out.println("Expected error message is :"+expErr);
+  	//Capture the actual error
+  	String actErr=nhp.getContractEndDateBlankErrMessage().getText();
+  	System.out.println("                ");
+  	System.out.println("*******Validate the error message********");
+  	Assert.assertEquals(actErr, expErr);
+  	System.out.println("                ");
+  	System.out.println("Actual error message is :"+actErr);	
+}
+//31.Keep the Role editbox as blank then click on saveAndContinue button to verify the error message.
+@Test()
+public static void CheckErrorForKeepingRoleEditboxBlank()
+{
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+  //Don't pick the role
+	//Click on saveAndContinue button
+	nhp.getSaveAndContinueButton().click();
+	//Declare the error message
+  	String expErr="Role cannot be empty";
+  	System.out.println("Expected error message is :"+expErr);
+  	//Capture the actual error
+  	String actErr=nhp.getRoleEditboxBlankErrorMessage().getText();
+  	System.out.println("                ");
+  	System.out.println("*******Validate the error message********");
+  	Assert.assertEquals(actErr, expErr);
+  	System.out.println("                ");
+  	System.out.println("Actual error message is :"+actErr);
+}
+//32. Don't enter the designation then click on saveAndContinue to verify Error message.
+@Test()
+public static void verifyErrorForKeepingDesignationBlank()
+{
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+//Don't pick the designation
+	//Click on save and continue button
+	nhp.getSaveAndContinueButton().click();
+	//Declare the error message
+  	String expErr="Designation cannot be empty";
+  	System.out.println("Expected error message is :"+expErr);
+  	//Capture the actual error
+  	String actErr=nhp.getDesignationBlankErrorMessage().getText();
+  	System.out.println("                ");
+  	System.out.println("*******Validate the error message********");
+  	Assert.assertEquals(actErr, expErr);
+  	System.out.println("                ");
+  	System.out.println("Actual error message is :"+actErr);
+}
+//33. Make the Reporting/Hiring Manager section as blank then verify the error message.
+@Test()
+public static void displayErrorForKeepingReportingManagerBlank()
+{
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+	//Dont pick the reporting manager
+	//Click on save and continue button
+	nhp.getSaveAndContinueButton().click();
+	//Declare the error message
+  	String expErr="Reporting/Hiring Manager cannot be empty";
+  	System.out.println("Expected error message is :"+expErr);
+  	//Capture the actual error
+  	String actErr=nhp.getReportingHiringManagerBlankErrorMesage().getText();
+  	System.out.println("                ");
+  	System.out.println("*******Validate the error message********");
+  	Assert.assertEquals(actErr, expErr);
+  	System.out.println("                ");
+  	System.out.println("Actual error message is :"+actErr);
+}
+
+//34. Display the error message for keeping FT/PT indicator as blank.
+@Test()
+public static void displayErrorForNotPickingFT_Indicator()
+{
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+	//Don't pick the FT/PT indicator
+	//Click on save and continue button
+	nhp.getSaveAndContinueButton().click();
+	//Declare the error message
+  	String expErr="FT/PT Indicator cannot be empty";
+  	System.out.println("Expected error message is :"+expErr);
+  	//Capture the actual error
+  	String actErr=nhp.getFtptBlankErrorMessage().getText();
+  	System.out.println("                ");
+  	System.out.println("*******Validate the error message********");
+  	Assert.assertEquals(actErr, expErr);
+  	System.out.println("                ");
+  	System.out.println("Actual error message is :"+actErr);
+}
+//35. Pick FT/PT indicator as part time then click on save and continue without picking FTE Equivalent hours to verify the error.
+@Test()
+public static void verifyErrorForNotPickingFTE_Equivalent()
+{
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);	
+	//Click on the FT/PT indicator
+	nhp.getFtptIndicatorDropdown().click();
+	nhp.getPickPartTimeIndicator().click();
+	//Click on save and continue button
+	nhp.getSaveAndContinueButton().click();
+	//Declare the error message
+  	String expErr="FTE Equivalent(Weekly Hours) cannot be empty";
+  	System.out.println("Expected error message is :"+expErr);
+  	//Capture the actual error
+  	String actErr=nhp.getFteBlankErrorMessage().getText();
+  	System.out.println("                ");
+  	System.out.println("*******Validate the error message********");
+  	Assert.assertEquals(actErr, expErr);
+  	System.out.println("                ");
+  	System.out.println("Actual error message is :"+actErr);	
+}
+//36. Submit the new hire form with picking DOB<18 years and validate the error message.
+@Test()
+public static void verifyErrorForPicking_DOB_lessThanEighteen_years() throws InterruptedException
+{
+	//Call the landing page
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+	//Click on title dropdown and pick MR
+	nhp.getTitleDropdown().click();
+	nhp.getPickTitle_MR().click();
+	//Enter the first Name
+	nhp.getFirstNameEditbox().sendKeys("Sadhav");
+	//Enter last name
+	nhp.getLastNameEditbox().sendKeys("dhawan");
+	//Pick date of birth
+	WebElement element=nhp.getDateOfBirthCalenderWindow();
+	String date="7-Oct-2009";
+	nhp.DatePicker(driver, element, date);
+	//Pick country of birth as India
+	nhp.getCountryOfBirthDropdown().click();
+	nhp.getPickCountryOfBirthAsIndia().click();
+	//Pick state of birth
+	nhp.getStateOfBirthDropdown().click();
+	nhp.getPickStateOfBirth().click();
+	//Enter the city of birth
+	nhp.getCityOfBirthEditbox().sendKeys("Hyderabad");
+	//Pick citizenship
+	nhp.getCitizenshipDropdown().click();
+	nhp.getPickCitizenshipAsIndia().click();
+	//Select the gender Male
+	nhp.getMaleRadioButton().click();
+	//select marital status as single
+	nhp.getMaritalStatusAsSingle().click();
+	//Pick education Details
+	nhp.getEducationDetailsDropdown().click();
+	nhp.getPickGraduate().click();
+	//Click on source of hire dropdown
+	nhp.getSourceOfHireDropdown().click();
+  //Pick campus Recruitment
+	nhp.getCampusRecruitmentSourceOfHire().click();
+	//Click on University dropdown
+	nhp.getUniversityNameDropdown().click();
+	nhp.getPickUniversity().click();
+	//Select the country
+	nhp.getCountryDropdown().click();
+    nhp.getPickCountryIndia().click();
+    //Select Legal Entity
+    nhp.getLegalEntityDropdown().click();
+    nhp.getPickLegalEntity().click();
+    //Select the location
+    nhp.getLocationDropdown().click();
+    nhp.getPickLocation().click();
+    //Pick the joining date
+    WebElement joiningDateElement=nhp.getJoiningDate();
+    String joiningDate="1-Sept-2019";
+    nhp.DatePicker(driver, joiningDateElement, joiningDate);
+    //Pick the group joining
+    WebElement groupJoiningDateElement=nhp.getGroupJoiningDate();
+    String groupJoiningDate="1-Sept-2019";
+    nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
+    //Enter the employee Id
+    nhp.getEmployeeId().sendKeys("NEGTA5");
+    //Enter email id
+    nhp.getEmailIdEditbox().sendKeys("tapan23");
+    //Pick employment type 
+    nhp.getEmploymentTypeDropdown().click();
+    nhp.getPickEmploymentType().click();
+    //Pick employment status
+    nhp.getEmploymentStatusDropdown().click();
+    nhp.getPickEmploymentStatusAsConfirmed().click();
+    //Enter three letters in the role editbox
+    nhp.getRoleEditbox().sendKeys("ass");
+    nhp.getPickRole().click();
+    //Enter three letters in the Department editbox and pick one department
+    nhp.getDepartmentEditbox().sendKeys("sal");
+    nhp.getPickDepartment().click();
+    //Enter three letters in the designation editbox and pick one.
+    nhp.getDesignationEditbox().sendKeys("sal");
+    nhp.getPickDesignation().click();
+    //Enter three letters in the reporting Hiring Manager and pick one.
+    nhp.getReportingHiringManagerEditbox().sendKeys("sar");
+    nhp.getPickReportingHiringManager().click();
+    //Select paytype
+    nhp.getPickTypeDropdown().click();
+    nhp.getPickPayType().click();
+    //Pick pay frequency
+    nhp.getPayFrequencyDropdown().click();
+    nhp.getPickPayFrequencyDropdownValue().click();
+    //Pick FT/PT indicator
+    nhp.getFtptIndicatorDropdown().click();
+    nhp.getPickPartTimeIndicator().click();
+    //Enter FTE Equivalent hours
+    nhp.getFteEditbox().sendKeys("30");
+    //Click on save and Continue
+    nhp.getSaveAndContinueButton().click();	
+    Thread.sleep(2000);
+    //Declare the expected error message
+	System.out.println("Error message should be displayed as :DOB should be greater than 18 years.");
+	System.out.println("                 ");
+	System.out.println("************Validate error message***********");
+	Assert.assertTrue(nhp.getDateOfBirthCalenderWindow().isDisplayed());
+	System.out.println("                   ");
+	System.out.println("Test case is passed");
+}
+//37. Click on pencil icon to upload the phofile photo with correct format and verify.
+@Test()
+public static void uploadProfilePhotoWithCorrectFormat() throws InterruptedException, AWTException
+{
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);	
+	System.out.println("Expected to upload the photo");
+  //Upload profile photo
+	nhp.uploadPhoto();
+	System.out.println("                    ");
+    System.out.println("****Validate if the image is displayed********");
+   Assert.assertTrue(nhp.getNewHireImage().isDisplayed());
+   System.out.println("               ");
+   System.out.println("Profile photo uploaded successfully");
+	
+}
+//38. Click on the pencil icon to upload the profile photo with incorrect format and verify.
+@Test()
+public static void uploadProfilePhotoWithIncorrectFormat() throws InterruptedException, AWTException
+{
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+	//Upload incorrect profile photo
+	nhp.uploadPhotoIncorrectFormat();
+	//Declare the expected error message
+	String expErr="*Please select the correct file format.";
+	System.out.println("Expected error message is :"+expErr);
+	//Capture the actual error message
+	String actErr=nhp.getIncorrectFileFormatError().getText();
+	System.out.println("********Validate the error message********");
+	Assert.assertEquals(actErr, expErr);
+	System.out.println("              ");
+	System.out.println("The actual error message is :"+actErr);
+ }
+
+
+
+
 
 
 

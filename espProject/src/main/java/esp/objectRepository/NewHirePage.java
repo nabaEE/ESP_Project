@@ -1,5 +1,11 @@
 package esp.objectRepository;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +21,13 @@ public class NewHirePage
 {
 
 	/*********************Initialization***********************************/
+	@FindBy(id="NewHireImg")
+	private WebElement newHireImage;
+	@FindBy(id="selectfile")
+	private WebElement uploadEditIcon;
+	@FindBy(id="div_FileError1")
+	private WebElement incorrectFileFormatError;
+	
 	@FindBy(xpath="//div[@id='div_Emp_Title']/div/input")
 	private WebElement titleDropdown;
 	@FindBy(xpath="//div[@id='div_Emp_Title']/div/ul/li")
@@ -200,7 +213,7 @@ public class NewHirePage
 	@FindBy(id="div_Employment_Type")
 	private WebElement employmentTypeDropdown;
 	@FindBy(xpath="//div[@id='div_Employment_Type']/div/ul/li")
-	private WebElement employmentTypeDropdownValues;
+	private List<WebElement> employmentTypeDropdownValues;
 	@FindBy(xpath="//div[@id='div_Employment_Type']/div/ul/li[4]")
 	private WebElement pickEmploymentType;
 	@FindBy(id="Error_Employment_Type")
@@ -289,7 +302,16 @@ public class NewHirePage
 	
 	
 	/************************Getters Usage********************************/
+	public WebElement getNewHireImage() {
+		return newHireImage;
+	}
+	public WebElement getUploadEditIcon() {
+		return uploadEditIcon;
+	}
 	
+	public WebElement getIncorrectFileFormatError() {
+		return incorrectFileFormatError;
+	}
 	public WebElement getTitleDropdown() {
 		return titleDropdown;
 	}
@@ -534,7 +556,7 @@ public class NewHirePage
 	public WebElement getEmploymentTypeDropdown() {
 		return employmentTypeDropdown;
 	}
-	public WebElement getEmploymentTypeDropdownValues() {
+	public List<WebElement> getEmploymentTypeDropdownValues() {
 		return employmentTypeDropdownValues;
 	}
 	public WebElement getPickEmploymentType() {
@@ -668,6 +690,68 @@ public class NewHirePage
 		return values;
 		 
 	 }
- 
+ //Method to pick employment type
+	 public void pickEmploymentTypeAsContract()
+	 {
+		 for(int i=0;i<employmentTypeDropdownValues.size(); i++) {
+			 if(employmentTypeDropdownValues.get(i).getText().equals("Contract")) {
+				 employmentTypeDropdownValues.get(i).click();
+			 }
+		 }
+	 }
+ //Method to upload profile photo with correct format
+	 public  void uploadPhoto() throws InterruptedException, AWTException
+	 {
+		 JavascriptExecutor js = (JavascriptExecutor)BaseClass.driver;
+		 js.executeScript("arguments[0].click();", uploadEditIcon);
+		 Thread.sleep(2000);
+		 StringSelection path= new StringSelection("C:\\Users\\Prod\\Desktop\\green-wallpaper-preview-12.jpg");
+			//pass the driver control to system
+			Toolkit t= Toolkit.getDefaultToolkit();
+			//pass the driver control to mouse
+			 Clipboard c=t.getSystemClipboard();
+			//Copy the path into mouse clipboard
+			 c.setContents(path, null);
+			 //Declare the Robot class
+			 Robot rob= new Robot();
+			 //Press control + V
+			 rob.keyPress(KeyEvent.VK_CONTROL);
+			 rob.keyPress(KeyEvent.VK_V);
+			 //Release control+V
+			 rob.keyRelease(KeyEvent.VK_CONTROL);
+			 rob.keyRelease(KeyEvent.VK_V);
+			 Thread.sleep(1000);
+			 //press enter
+			 rob.keyPress(KeyEvent.VK_ENTER);
+			 //Release Enter
+			 rob.keyRelease(KeyEvent.VK_ENTER);	
+	 }
+	//Method to upload profile photo with correct format
+		 public  void uploadPhotoIncorrectFormat() throws InterruptedException, AWTException
+		 {
+			 JavascriptExecutor js = (JavascriptExecutor)BaseClass.driver;
+			 js.executeScript("arguments[0].click();", uploadEditIcon);
+			 Thread.sleep(2000);
+			 StringSelection path= new StringSelection("C:\\Users\\Prod\\Desktop\\Doc1.pdf");
+				//pass the driver control to system
+				Toolkit t= Toolkit.getDefaultToolkit();
+				//pass the driver control to mouse
+				 Clipboard c=t.getSystemClipboard();
+				//Copy the path into mouse clipboard
+				 c.setContents(path, null);
+				 //Declare the Robot class
+				 Robot rob= new Robot();
+				 //Press control + V
+				 rob.keyPress(KeyEvent.VK_CONTROL);
+				 rob.keyPress(KeyEvent.VK_V);
+				 //Release control+V
+				 rob.keyRelease(KeyEvent.VK_CONTROL);
+				 rob.keyRelease(KeyEvent.VK_V);
+				 Thread.sleep(1000);
+				 //press enter
+				 rob.keyPress(KeyEvent.VK_ENTER);
+				 //Release Enter
+				 rob.keyRelease(KeyEvent.VK_ENTER);	
+		 }
 
 }
