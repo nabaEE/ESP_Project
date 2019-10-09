@@ -10,11 +10,13 @@
    <classes>
       <class name="com.newHire.NewHireTest">
       <methods>
-      <include name="uploadProfilePhotoWithIncorrectFormat"/>
+      <include name="submitNewHireFormAndValidateActivateButton"/>
       </methods>
       </class>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
+
+
 
 

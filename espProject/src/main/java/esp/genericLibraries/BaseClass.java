@@ -3,6 +3,8 @@ package esp.genericLibraries;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -22,13 +24,14 @@ import esp.genericLibraries.FileUtils;
 public class BaseClass extends FileUtils
 {
  public static WebDriver driver;
- 
+ static Logger log= LogManager.getLogger(BaseClass.class);
  @BeforeClass()
  @Parameters({"browser"})
 public void openBrowser(String browserName)
   {
 	 /*Call the chrome driver*/
 	 System.out.println("********************Launching the browser**********************");
+	 log.info("*****************Launching the Browser*************************");
   if(browserName.equalsIgnoreCase("chrome"))
    {
 	 System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Chrome\\Chrome77\\chromedriver.exe");
@@ -52,6 +55,7 @@ public void openBrowser(String browserName)
 public void login() throws IOException
 {
  System.out.println("************Login to the application***************");
+ log.info("******************Login to the application********************");
 	/*Create an object of FileUtils class to get the data from property file*/
  FileUtils fl= new FileUtils();
  Properties pObj=fl.getPropertyData();
@@ -64,7 +68,6 @@ public void login() throws IOException
  driver.switchTo().frame(BaseClass.driver.findElement(By.xpath("//html//frameset//frame")));
 
  
- 
  }
 @AfterMethod
 public void tearDown() throws Exception
@@ -73,6 +76,7 @@ public void tearDown() throws Exception
 		 //call the logout method declared in LoginPage
 		 lp.logOut();
 		 System.out.println("***********Logout from the application*********");
+		 log.info("*****************Logout from the application***************");
 }
 @AfterClass
 public void closeBrowser()
@@ -80,6 +84,7 @@ public void closeBrowser()
 	driver.switchTo().defaultContent();
 	driver.quit();
 	System.out.println("*************Closing the browser***********");
+	log.info("**********Closing the Browser**********");
 }
 	
 }
