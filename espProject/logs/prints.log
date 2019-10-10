@@ -1,0 +1,26 @@
+15:16:11.927 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+15:16:12.897 [main] DEBUG com.newHire.NewHireTest - ------Verify error message for not picking country of birth :-test started------
+15:16:14.859 [main] DEBUG com.newHire.NewHireTest - Expected error message is :Country Of Birth cannot be empty
+15:16:14.874 [main] DEBUG com.newHire.NewHireTest -                 
+15:16:14.874 [main] DEBUG com.newHire.NewHireTest - *******Validate the error message********
+15:16:14.874 [main] DEBUG com.newHire.NewHireTest -                 
+15:16:14.874 [main] INFO  com.newHire.NewHireTest - Actual error message is :Country Of Birth cannot be empty
+15:16:14.874 [main] INFO  com.newHire.NewHireTest - ------Verify error message for not picking country of birth :-test ended------
+15:16:15.383 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+15:16:17.309 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+15:19:45.894 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+15:19:53.063 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+15:19:55.507 [main] DEBUG com.newHire.NewHireTest - ---------submit New Hire FormAnd Validate Activate Button:- test started----------
+15:24:07.873 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+15:24:14.877 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+15:24:18.068 [main] DEBUG com.newHire.NewHireTest - ---------submit New Hire FormAnd Validate Activate Button:- test started----------
+15:33:12.596 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+15:33:21.079 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+15:33:24.302 [main] DEBUG com.newHire.NewHireTest - ---------submit New Hire FormAnd Validate Activate Button:- test started----------
+15:33:35.566 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+15:33:41.440 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+15:38:03.377 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+15:38:10.217 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+15:38:18.192 [main] DEBUG com.newHire.NewHireTest - ---------submit New Hire FormAnd Validate Activate Button:- test started----------
+15:39:07.691 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+15:39:10.485 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********

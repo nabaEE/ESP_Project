@@ -10,17 +10,11 @@
     <classes>
       <class name="com.newHire.NewHireTest">
         <methods>
-          <include name="checkErrorMessageForEnteringExistingEmail"/>
-          <include name="checkErrorForKeepingDepartmentEditboxBlank"/>
-          <include name="verifyErrorMessageForKeepingLastNameBlank"/>
-          <include name="CheckErrorForKeepingRoleEditboxBlank"/>
-          <include name="validateErrorForNotPickingEmploymentType"/>
+          <include name="submitNewHireFormAndValidateActivateButton"/>
           <include name="login"/>
           <include name="closeBrowser"/>
-          <include name="verifyErrorForNotPickingCountry"/>
           <include name="openBrowser"/>
           <include name="tearDown"/>
-          <include name="verifyErrorForPicking_DOB_lessThanEighteen_years"/>
         </methods>
       </class> <!-- com.newHire.NewHireTest -->
     </classes>

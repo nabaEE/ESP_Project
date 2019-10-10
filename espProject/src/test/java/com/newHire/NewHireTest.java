@@ -24,7 +24,6 @@ import esp.objectRepository.NewHirePage;
 
 public class NewHireTest extends BaseClass
 {
-private static Logger log= LogManager.getLogger(NewHireTest.class);
 //1. Submit new hire form and verify.
 @Test(groups="Smoke", priority=-1)
 public static void submitNewHireFormAndValidateActivateButton() throws AWTException, InterruptedException
@@ -94,9 +93,9 @@ public static void submitNewHireFormAndValidateActivateButton() throws AWTExcept
 	    String groupJoiningDate="1-Sept-2019";
 	    nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 	    //Enter the employee Id
-	    nhp.getEmployeeId().sendKeys("PECT30");
+	    nhp.getEmployeeId().sendKeys("NXTET30");
 	    //Enter email id
-	    nhp.getEmailIdEditbox().sendKeys("ksskt3");
+	    nhp.getEmailIdEditbox().sendKeys("msskt3");
 	    //Pick employment type 
 	    nhp.getEmploymentTypeDropdown().click();
 	    nhp.getPickEmploymentType().click();
@@ -347,7 +346,7 @@ public static void checkErrorMessageForEnteringExistingEmail() throws Interrupte
 		    String groupJoiningDate="1-Sept-2019";
 		    nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 		    //Enter the employee Id
-		    nhp.getEmployeeId().sendKeys("MXC34");
+		    nhp.getEmployeeId().sendKeys("NXET54");
 		    //Enter email id
 		    nhp.getEmailIdEditbox().sendKeys("satyak3");
 		    //Pick employment type 
@@ -468,7 +467,7 @@ public static void enterExistEmployeeIdAndValidateErrorMessage() throws Interrup
     //Enter the employee Id
     nhp.getEmployeeId().sendKeys("AXZ7894222");
     //Enter email id
-    nhp.getEmailIdEditbox().sendKeys("shawan25");
+    nhp.getEmailIdEditbox().sendKeys("khawan25");
     //Pick employment type 
     nhp.getEmploymentTypeDropdown().click();
     nhp.getPickEmploymentType().click();
@@ -617,16 +616,16 @@ public static void makeBothDOB_JoiningDateEqualAndverifyError()
 	    nhp.getPickLocation().click();
 	    //Pick the joining date
 	    WebElement joiningDateElement=nhp.getJoiningDate();
-	    String joiningDate="1-Sept-1990";
+	    String joiningDate="1-Sept-2019";
 	    nhp.DatePicker(driver, joiningDateElement, joiningDate);
 	    //Pick the group joining
 	    WebElement groupJoiningDateElement=nhp.getGroupJoiningDate();
 	    String groupJoiningDate="1-Sept-2019";
 	    nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 	    //Enter the employee Id
-	    nhp.getEmployeeId().sendKeys("nxtsar2");
+	    nhp.getEmployeeId().sendKeys("NXKS85");
 	    //Enter email id
-	    nhp.getEmailIdEditbox().sendKeys("sagar45");
+	    nhp.getEmailIdEditbox().sendKeys("tsagar45");
 	    //Pick employment type 
 	    nhp.getEmploymentTypeDropdown().click();
 	    nhp.getPickEmploymentType().click();
@@ -694,6 +693,7 @@ public static void VerifyErrorForkeepingTitleWinBlank()
 		String expErr="Title cannot be empty";
 		log.debug("Expected error message is :"+expErr);
 		//Capture the actual error message
+		WebdriverUtils.waitForPageToLoad(driver);
 		String actErr=nhp.getTitleBlankErrMessage().getText();
 		System.out.println("                  ");
 		log.debug("--------Validate the error message---------");
@@ -725,6 +725,7 @@ public static void verifyErrorMessageForKeepingFirstNameBlank()
 			String expErr="First Name cannot be empty";
 			log.info("Expected error message is :"+expErr);
 			//Capture the actual error
+			WebdriverUtils.waitForPageToLoad(driver);
 			String actErr=nhp.getFirstNameBlankErrMessage().getText();
 			System.out.println("                ");
 			log.debug("*******Validate the error message********");
@@ -757,6 +758,7 @@ public static void verifyErrorMessageForKeepingLastNameBlank()
 	String expErr="First Name cannot be empty";
 	log.debug("Expected error message is :"+expErr);
 	//Capture the actual error
+	WebdriverUtils.waitForPageToLoad(driver);
 	String actErr=nhp.getLastNameEditboxBlankErrMessage().getText();
 	System.out.println("                ");
 	log.debug("*******Validate the error message********");
@@ -788,6 +790,7 @@ public static void checkErrorMessageForNotPickingDOB()
 		String expErr="Date Of Birth cannot be empty";
 		System.out.println("Expected error message is :"+expErr);
 		//Capture the actual error
+		WebdriverUtils.waitForPageToLoad(driver);
 		String actErr=nhp.getDobBlankErrMessage().getText();
 		System.out.println("                ");
 		System.out.println("*******Validate the error message********");
@@ -819,6 +822,7 @@ public static void verifyErrorMessageForNotPickingCountryOfBirth()
 			String expErr="Country Of Birth cannot be empty";
 			log.debug("Expected error message is :"+expErr);
 			//Capture the actual error
+			WebdriverUtils.waitForPageToLoad(driver);
 			String actErr=nhp.getCountryOfBirthBlankErrMessage().getText();
 			log.debug("                ");
 			log.debug("*******Validate the error message********");
@@ -852,6 +856,7 @@ public static void checkErrorMessageForNotPickingStateOfBirth()
 	String expErr="State Of Birth cannot be empty";
 	log.debug("Expected error message is :"+expErr);
 	//Capture the actual error
+	WebdriverUtils.waitForPageToLoad(driver);
 	String actErr=nhp.getStateOfBirthBlankErrMessage().getText();
 	log.debug("                ");
 	log.debug("*******Validate the error message********");
@@ -882,6 +887,7 @@ public static void checkErrorForKeepingCityOfBirthBlank()
 	String expErr="City Of Birth cannot be empty";
 	System.out.println("Expected error message is :"+expErr);
 	//Capture the actual error
+	WebdriverUtils.waitForPageToLoad(driver);
 	String actErr=nhp.getCityOfBirthErrBlankMessage().getText();
 	System.out.println("                ");
 	System.out.println("-------Validate the error message---------");
@@ -910,6 +916,7 @@ public static void checkErrorForNotPickingCitizenShip()
 	String expErr="Citizenship cannot be empty";
 	log.debug("Expected error message is :"+expErr);
 	//Capture the actual error
+	WebdriverUtils.waitForPageToLoad(driver);
 	String actErr=nhp.getCitizenshipBlankErrMessage().getText();
 	log.debug("                ");
 	log.debug("*******Validate the error message********");
@@ -938,6 +945,7 @@ public static void checkErrorForNotPickingGender()
 	String expErr="Gender cannot be empty";
 	log.debug("Expected error message is :"+expErr);
 	//Capture the actual error
+	WebdriverUtils.waitForPageToLoad(driver);
 	String actErr=nhp.getGenderBlankErrMessage().getText();
 	log.debug("                ");
 	log.debug("*******Validate the error message********");
@@ -966,6 +974,7 @@ public static void checkErrorForNotSelectingMaritalStatus()
 	String expErr="Marital Status cannot be empty";
 	log.debug("Expected error message is :"+expErr);
 	//Capture the actual error
+	WebdriverUtils.waitForPageToLoad(driver);
 	String actErr=nhp.getMaritalStatusBlankErrorMessage().getText();
 	log.debug("                ");
 	log.debug("*******Validate the error message********");
@@ -994,6 +1003,7 @@ public static void checkErrorForNotPickingEducationDetails()
 	String expErr="Education Details cannot be empty";
 	log.debug("Expected error message is :"+expErr);
 	//Capture the actual error
+	WebdriverUtils.waitForPageToLoad(driver);
 	String actErr=nhp.getEducationDetailsBlankErrorMessage().getText();
 	log.debug("                ");
 	log.debug("*******Validate the error message********");
@@ -1026,6 +1036,7 @@ public static void checkErrorForKeepingRelevantExpEditboxBlank()
 	String expErr="Relevant Experience (In Months) cannot be empty";
 	log.debug("Expected error message is :"+expErr);
 	//Capture the actual error
+	WebdriverUtils.waitForPageToLoad(driver);
 	String actErr=nhp.getRelevantExpEditboxBlankErrMessage().getText();
 	log.debug("                ");
 	log.debug("--------Validate the error message--------");
@@ -1058,6 +1069,7 @@ public static void checkErrorForNotPickingUniversityName()
 	String expErr="University/College Name cannot be empty";
 	log.debug("Expected error message is :"+expErr);
 	//Capture the actual error
+	WebdriverUtils.waitForPageToLoad(driver);
 	String actErr=nhp.getUniversityBlankErrMessage().getText();
 	log.debug("                ");
 	log.debug("--------Validate the error message---------");
@@ -1092,6 +1104,7 @@ public static void checkErrorForKeepingReferalSearchBoxBlank()
 	String expErr="Referal Search cannot be empty";
 	 log.debug("Expected error message is :"+expErr);
 	//Capture the actual error
+	 WebdriverUtils.waitForPageToLoad(driver);
 	String actErr=nhp.getReferalSearchBlankErr().getText();
 	log.debug("                ");
 	log.debug("---------Validate the error message----------");
@@ -1120,6 +1133,7 @@ public static void verifyErrorForNotPickingCountry()
 	String expErr="Country cannot be empty";
 	log.debug("Expected error message is :"+expErr);
 	//Capture the actual error
+	WebdriverUtils.waitForPageToLoad(driver);
 	String actErr=nhp.getCountryBlankErrorMessage().getText();
 	log.debug("                ");
 	log.debug("-------Validate the error message--------");
@@ -1154,6 +1168,7 @@ public static void verifyErrorForNotPickingLegalEntity()
   	String expErr="Legal Entity cannot be empty";
   	log.debug("Expected error message is :"+expErr);
   	//Capture the actual error
+  	WebdriverUtils.waitForPageToLoad(driver);
   	String actErr=nhp.getLegalEntityBlankErrorMessage().getText();
   	log.debug("                ");
   	log.debug("---------Validate the error message----------");
@@ -1183,6 +1198,7 @@ public static void verifyErrorForNotPickingLocation()
   	String expErr="Location cannot be empty";
   	log.debug("Expected error message is :"+expErr);
   	//Capture the actual error
+  	WebdriverUtils.waitForPageToLoad(driver);
   	String actErr=nhp.getLocationBlankErrorMessage().getText();
   	log.debug("                ");
   	log.debug("-------Validate the error message-------");
@@ -1211,6 +1227,7 @@ public static void checkErrorForNotPickingJoiningDate()
   	String expErr="Joining Date cannot be empty";
   	log.debug("Expected error message is :"+expErr);
   	//Capture the actual error
+  	WebdriverUtils.waitForPageToLoad(driver);
   	String actErr=nhp.getJoiningDateBlankErrorMessage().getText();
   	log.debug("                ");
   	Assert.assertEquals(actErr, expErr);
@@ -1239,6 +1256,7 @@ public static void checkErrorForNotPickingGroupJoiningDate()
   	String expErr="Group Joining Date cannot be empty";
   	log.debug("Expected error message is :"+expErr);
   	//Capture the actual error
+  	WebdriverUtils.waitForPageToLoad(driver);
   	String actErr=nhp.getGroupJoiningBlankErr().getText();
   	log.debug("                ");
   	log.debug("--------Validate the error message---------");
@@ -1269,6 +1287,7 @@ public static void makeEmployeeIdEditboxBlankAndValidateError()
   	String expErr="Employee ID cannot be empty";
   	log.debug("Expected error message is :"+expErr);
   	//Capture the actual error
+  	WebdriverUtils.waitForPageToLoad(driver);
   	String actErr=nhp.getEmployeeIdBlankErrorMessage().getText();
   	System.out.println("                ");
   	log.debug("-------Validate the error message--------");
@@ -1299,6 +1318,7 @@ public static void keepEmailIdSectionBlankAndVerifyError()
   	String expErr="Email Id cannot be empty";
   	log.debug("Expected error message is :"+expErr);
   	//Capture the actual error
+  	WebdriverUtils.waitForPageToLoad(driver);
   	String actErr=nhp.getEmaildIdBlankErrorMessage().getText();
   	log.debug("                ");
   	log.debug("----------Validate the error message---------");

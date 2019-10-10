@@ -24,7 +24,7 @@ import esp.genericLibraries.FileUtils;
 public class BaseClass extends FileUtils
 {
  public static WebDriver driver;
- static Logger log= LogManager.getLogger(BaseClass.class);
+ protected static Logger log= LogManager.getLogger(BaseClass.class);
  @BeforeClass()
  @Parameters({"browser"})
 public void openBrowser(String browserName)
