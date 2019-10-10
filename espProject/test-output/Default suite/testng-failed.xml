@@ -3,16 +3,52 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.compensationItems.CompItemGroupsTest">
+      <class name="com.newHire.NewHireTest">
         <methods>
-          <include name="submitAnexistingCompensationGroup"/>
+          <include name="checkErrorMessageForEnteringExistingEmail"/>
+          <include name="verifyErrorForNotPickingLegalEntity"/>
+          <include name="validateErrorForNotPickingEmploymentType"/>
+          <include name="verifyErrorForNotPickingContractEndDate"/>
+          <include name="clickAndverifyTitleDropdownValues"/>
+          <include name="verifyErrorForKeepingDesignationBlank"/>
+          <include name="keepEmailIdSectionBlankAndVerifyError"/>
+          <include name="checkErrorForNotPickingJoiningDate"/>
+          <include name="makeEmployeeIdEditboxBlankAndValidateError"/>
+          <include name="makeBothDOB_JoiningDateEqualAndverifyError"/>
+          <include name="CheckErrorForKeepingRoleEditboxBlank"/>
+          <include name="VerifyErrorForkeepingTitleWinBlank"/>
+          <include name="checkErrorForKeepingReferalSearchBoxBlank"/>
+          <include name="checkErrorForNotPickingUniversityName"/>
+          <include name="verifyErrorForNotPickingFTE_Equivalent"/>
           <include name="login"/>
           <include name="closeBrowser"/>
-          <include name="submitNewCompensationGroup"/>
+          <include name="verifyErrorForNotPickingCountry"/>
+          <include name="verifyErrorForNotPickingLocation"/>
+          <include name="checkErrorMessageForNotPickingDOB"/>
+          <include name="checkErrorForKeepingCityOfBirthBlank"/>
+          <include name="displayErrorForKeepingReportingManagerBlank"/>
+          <include name="verifyErrorMessageForKeepingFirstNameBlank"/>
+          <include name="submitNewHireFormAndValidateActivateButton"/>
+          <include name="verifyErrorMessageForNotPickingCountryOfBirth"/>
           <include name="openBrowser"/>
+          <include name="checkErrorForKeepingRelevantExpEditboxBlank"/>
+          <include name="checkErrorForNotPickingGender"/>
+          <include name="checkErrorForNotSelectingMaritalStatus"/>
+          <include name="checkErrorForKeepingDepartmentEditboxBlank"/>
+          <include name="verifyErrorMessageForKeepingLastNameBlank"/>
+          <include name="enterExistEmployeeIdAndValidateErrorMessage"/>
+          <include name="checkErrorForNotPickingEducationDetails"/>
+          <include name="checkErrorForNotPickingCitizenShip"/>
+          <include name="displayErrorForNotPickingFT_Indicator"/>
+          <include name="verifyErrorForNotPickingEmploymentStatus"/>
+          <include name="uploadProfilePhotoWithIncorrectFormat"/>
           <include name="tearDown"/>
+          <include name="checkErrorForNotPickingGroupJoiningDate"/>
+          <include name="checkErrorMessageForNotPickingStateOfBirth"/>
+          <include name="uploadProfilePhotoWithCorrectFormat"/>
+          <include name="verifyErrorForPicking_DOB_lessThanEighteen_years"/>
         </methods>
-      </class> <!-- com.compensationItems.CompItemGroupsTest -->
+      </class> <!-- com.newHire.NewHireTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

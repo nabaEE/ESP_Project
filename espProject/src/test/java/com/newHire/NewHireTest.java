@@ -28,7 +28,7 @@ public class NewHireTest extends BaseClass
 @Test(groups="Smoke", priority=-1)
 public static void submitNewHireFormAndValidateActivateButton() throws AWTException, InterruptedException
 {
-	    log.debug("---------submit New Hire FormAnd Validate Activate Button:- test started----------");
+	   log.debug("---------submit New Hire FormAnd Validate Activate Button:- test started----------");
 	    //Call the landing page
 		LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
 		//Click on admin icon
@@ -1764,6 +1764,122 @@ public static void uploadProfilePhotoWithIncorrectFormat() throws InterruptedExc
 	log.info("The actual error message is :"+actErr);
 	log.info("-------Upload profile photo with incorrect format:-test ended--------");
  }
+//39. Pick country india and print the Location.
+@Test()
+public static void pickCountryIndiaAndValidateLocation()
+{
+	log.debug("----Pick Country India and Validate Location :-Test Started-----");
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+	//Click on country dropdown
+	nhp.getCountryDropdown().click();
+	//Pick india
+	nhp.getPickCountryIndia().click();
+	//Click on location dropdown
+	nhp.getLocationDropdown().click();
+	//Print the location
+	log.debug("Display the locations available under India.");
+	List<String> availablelocation=nhp.availableLocations();
+	log.debug("-----Validate if the location is displayed------");
+	Assert.assertTrue(nhp.getLocationDropdown().isEnabled());
+	log.info("Available locations are :" +availablelocation);
+	log.debug("----Pick Country India and Validate Location :-Test ended-----");
+	
+	
+}
+//40. Pick country Singapore and print the location.
+@Test()
+public static void pickCountrySingaporeAndValidateLocation()
+{
+	log.debug("----Pick Country Singapore and Validate Location :-Test started-----");
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+	//Click on country dropdown
+	nhp.getCountryDropdown().click();
+	//Pick india
+	nhp.getPickCountrySingapore().click();
+	//Click on location dropdown
+	nhp.getLocationDropdown().click();
+	//Print the location
+	log.debug("Display the locations available under Singapore.");
+	List<String> availablelocation=nhp.availableLocations();
+	log.debug("-----Validate if the location is displayed------");
+	Assert.assertTrue(nhp.getLocationDropdown().isEnabled());
+	log.info("Available locations are :" +availablelocation);
+	log.info("----Pick Country Singapore and Validate Location :-Test ended-----");	
+}
+//41. Pick Country SriLanka and print the location.
+@Test()
+public static void pickCountrySriLankaAndValidateLocation()
+{
+	log.debug("----Pick Country SriLanka and Validate Location :-Test started-----");	
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+	//Click on country dropdown
+	nhp.getCountryDropdown().click();
+	//Pick india
+	nhp.getPickCountrySriLanka().click();
+	//Click on location dropdown
+	nhp.getLocationDropdown().click();
+	//Print the location
+	log.debug("Display the locations available under Srilanka.");
+	List<String> availablelocation=nhp.availableLocations();
+	log.debug("-----Validate if the location is displayed------");
+	Assert.assertTrue(nhp.getLocationDropdown().isEnabled());
+	log.info("Available locations are :" +availablelocation);
+	log.info("----Pick Country SriLanka and Validate Location :-Test ended-----");
+}
+//42. Pick Country UAE and print the location.
+@Test()
+public static void pickCountryUAEAndValidateLocation()
+{
+	log.debug("----Pick Country UAE and Validate Location :-Test started-----");
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on new hire option
+	//lnp.getNewHireAdminValue().click();
+	lnp.clickNewHire();
+	//Call the new hire page
+	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+	//Click on country dropdown
+	nhp.getCountryDropdown().click();
+	//Pick india
+	nhp.getPickCountryUAE().click();
+	//Click on location dropdown
+	nhp.getLocationDropdown().click();
+	//Print the location
+	log.debug("Display the locations available under UAE.");
+	List<String> availablelocation=nhp.availableLocations();
+	log.debug("-----Validate if the location is displayed------");
+	Assert.assertTrue(nhp.getLocationDropdown().isEnabled());
+	log.info("Available locations are :" +availablelocation);	
+	
+}
+
+
 
 
 

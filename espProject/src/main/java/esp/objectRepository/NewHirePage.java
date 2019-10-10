@@ -160,6 +160,12 @@ public class NewHirePage
 	private List<WebElement> countryDropdownValues;
 	@FindBy(xpath="//div[@id='div_Country_Code']/div/ul/li[2]")
 	private WebElement pickCountryIndia;
+	@FindBy(xpath="//div[@id='div_Country_Code']/div/ul/li[3]")
+	private WebElement pickCountrySingapore;
+	@FindBy(xpath="//div[@id='div_Country_Code']/div/ul/li[4]")
+	private WebElement pickCountrySriLanka;
+	@FindBy(xpath="//div[@id='div_Country_Code']/div/ul/li[5]")
+	private WebElement pickCountryUAE;
 	@FindBy(id="Error_Country_Code")
 	private WebElement countryBlankErrorMessage;
 	
@@ -486,6 +492,15 @@ public class NewHirePage
 	public WebElement getPickCountryIndia() {
 		return pickCountryIndia;
 	}
+	public WebElement getPickCountrySingapore() {
+		return pickCountrySingapore;
+	}
+	public WebElement getPickCountrySriLanka() {
+		return pickCountrySriLanka;
+	}
+	public WebElement getPickCountryUAE() {
+		return pickCountryUAE;
+	}
 	public WebElement getCountryBlankErrorMessage() {
 		return countryBlankErrorMessage;
 	}
@@ -752,6 +767,15 @@ public class NewHirePage
 				 rob.keyPress(KeyEvent.VK_ENTER);
 				 //Release Enter
 				 rob.keyRelease(KeyEvent.VK_ENTER);	
+		 }
+//Method to print locations based on selected country
+		 public List<String> availableLocations()
+		 {
+			 List<String> values= new ArrayList<String>();
+			 for(int i=1; i<locationDropdownValues.size();i++) {
+				 values.add(locationDropdownValues.get(i).getText());
+			 }
+			 return values;
 		 }
 
 }

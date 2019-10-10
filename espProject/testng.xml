@@ -10,7 +10,9 @@
    <classes>
       <class name="com.newHire.NewHireTest">
       <methods>
-      <include name="submitNewHireFormAndValidateActivateButton"/>
+      <include name="pickCountrySingaporeAndValidateLocation"/>
+      <include name="pickCountrySriLankaAndValidateLocation"/>
+      <include name="pickCountryUAEAndValidateLocation"/>
       </methods>
       </class>
     </classes>
