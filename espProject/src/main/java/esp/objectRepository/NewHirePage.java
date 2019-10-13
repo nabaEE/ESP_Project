@@ -11,6 +11,7 @@ import java.util.List;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -245,6 +246,8 @@ public class NewHirePage
 	private WebElement departmentEditbox;
 	@FindBy(xpath="//ul[@id='Dept_Search_OrgUnit_Name']/li[1]/b")
 	private WebElement pickDepartment;
+	@FindBy(xpath="//div[@id='div_OrgUnit_Name']/ul/li")
+	private List<WebElement> departmentDropdownValues;
 	@FindBy(id="Error_OrgUnit_Name")
 	private WebElement departmentBlankErrorMessage;
 	
@@ -252,19 +255,23 @@ public class NewHirePage
 	private WebElement roleEditbox;
 	@FindBy(id="Error_Role_Id")
 	private WebElement roleEditboxBlankErrorMessage;
+	@FindBy(xpath="//div[@id='div_Role_Id']/ul/li")
+	private List<WebElement> roleDropdownValues;
 	@FindBy(xpath="//div[@id='div_Role_Id']/ul/li[2]")
 	private WebElement pickRole;
 	
 	@FindBy(id="Designation_Id")
 	private WebElement designationEditbox;
-	@FindBy(xpath="//div[@id='div_Designation_Id']/ul/li[2]")
+	@FindBy(id="//div[@id='div_Designation_Id']/ul/li")
+	private List<WebElement> designationDropdownValues;
+	@FindBy(xpath="//ul[@id='Desig_Search_Designation_Id']/li[2]")
 	private WebElement pickDesignation;
 	@FindBy(id="Error_Designation_Id")
 	private WebElement designationBlankErrorMessage;
 	
 	@FindBy(id="Manager_Id")
 	private WebElement reportingHiringManagerEditbox;
-	@FindBy(xpath="//div[@id='div_Manager_Id']/ul/li[2]")
+	@FindBy(xpath="//ul[@id='Mgr_Search_Manager_Id']/li[2]")
 	private WebElement pickReportingHiringManager;
 	@FindBy(id="Error_Manager_Id")
 	private WebElement reportingHiringManagerBlankErrorMesage;
@@ -610,6 +617,10 @@ public class NewHirePage
 	public WebElement getDepartmentBlankErrorMessage() {
 		return departmentBlankErrorMessage;
 	}
+	public List<WebElement> getDepartmentDropdownValues()
+	{
+		return departmentDropdownValues;
+	}
 	public WebElement getRoleEditbox() {
 		return roleEditbox;
 	}
@@ -618,6 +629,10 @@ public class NewHirePage
 	}
 	public WebElement getPickRole() {
 		return pickRole;
+	}
+	public List<WebElement> getRoleDropdownValues()
+	{
+		return roleDropdownValues;
 	}
 	public WebElement getDesignationEditbox() {
 		return designationEditbox;
@@ -689,6 +704,44 @@ public class NewHirePage
 	
 	
 /**************************Utilization******************************/
+	
+	
+	//Method to pick role
+	public void selectRole()
+	{
+	 for(int i=0; i<roleDropdownValues.size(); i++)
+	 {
+		 if(roleDropdownValues.get(i).getText().contains("Regular -> NxtGen -> Assistant Manager - Business Analyst - Salest"))
+		 {
+				
+			 roleDropdownValues.get(i).click();
+		 }
+	 }
+	}
+	//Method to pick Department
+	public void selectDepartment()
+	{
+		for(int i=0; i<departmentDropdownValues.size(); i++)
+		{
+			if(departmentDropdownValues.get(i).getText().equalsIgnoreCase("Sales -> Channel Sales"))
+			{
+				departmentDropdownValues.get(i).click();
+		    }
+		}
+	}
+	//Method to pick designation
+	public void selectDesignation() throws Exception
+	{
+	  for(int i=0; i<designationDropdownValues.size(); i++)
+	  {
+		  designationEditbox.sendKeys("Sal");
+		  if(designationDropdownValues.get(i).getText().contains("Vice President - Pre sales"))
+		  {
+			  designationDropdownValues.get(i).click();
+		  }
+	  }
+	}
+	
 	public void DatePicker(WebDriver driver, WebElement element, String date)
 	{   
 	    JavascriptExecutor js = (JavascriptExecutor) driver;

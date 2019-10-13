@@ -10,14 +10,13 @@
    <classes>
       <class name="com.newHire.NewHireTest">
       <methods>
-      <include name="pickCountrySingaporeAndValidateLocation"/>
-      <include name="pickCountrySriLankaAndValidateLocation"/>
-      <include name="pickCountryUAEAndValidateLocation"/>
+      <include name="makeBothDOB_JoiningDateEqualAndverifyError"/>
       </methods>
       </class>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
+
 
 
 

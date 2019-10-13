@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="39" total="42" passed="3">
+<testng-results skipped="0" failed="0" ignored="41" total="42" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="25879" started-at="2019-10-10T13:19:52Z" finished-at="2019-10-10T13:20:18Z">
+  <suite name="Suite" duration-ms="92693" started-at="2019-10-13T17:40:58Z" finished-at="2019-10-13T17:42:31Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="25879" started-at="2019-10-10T13:19:52Z" finished-at="2019-10-10T13:20:18Z">
+    <test name="Test" duration-ms="92693" started-at="2019-10-13T17:40:58Z" finished-at="2019-10-13T17:42:31Z">
       <class name="com.newHire.NewHireTest">
-        <test-method status="PASS" signature="openBrowser(java.lang.String)[pri:0, instance:com.newHire.NewHireTest@5c30a9b0]" name="openBrowser" is-config="true" duration-ms="6821" started-at="2019-10-10T13:19:52Z" finished-at="2019-10-10T13:19:59Z">
+        <test-method status="PASS" signature="openBrowser(java.lang.String)[pri:0, instance:com.newHire.NewHireTest@5c30a9b0]" name="openBrowser" is-config="true" duration-ms="6796" started-at="2019-10-13T17:40:58Z" finished-at="2019-10-13T17:41:05Z">
           <params>
             <param index="0">
               <value>
@@ -18,43 +18,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method status="PASS" signature="login()[pri:0, instance:com.newHire.NewHireTest@5c30a9b0]" name="login" is-config="true" duration-ms="3257" started-at="2019-10-10T13:19:59Z" finished-at="2019-10-10T13:20:02Z">
+        <test-method status="PASS" signature="login()[pri:0, instance:com.newHire.NewHireTest@5c30a9b0]" name="login" is-config="true" duration-ms="3260" started-at="2019-10-13T17:41:05Z" finished-at="2019-10-13T17:41:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="pickCountrySingaporeAndValidateLocation()[pri:0, instance:com.newHire.NewHireTest@5c30a9b0]" name="pickCountrySingaporeAndValidateLocation" duration-ms="1993" started-at="2019-10-10T13:20:02Z" finished-at="2019-10-10T13:20:04Z">
+        <test-method status="PASS" signature="makeBothDOB_JoiningDateEqualAndverifyError()[pri:0, instance:com.newHire.NewHireTest@5c30a9b0]" name="makeBothDOB_JoiningDateEqualAndverifyError" duration-ms="79567" started-at="2019-10-13T17:41:08Z" finished-at="2019-10-13T17:42:28Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- pickCountrySingaporeAndValidateLocation -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.newHire.NewHireTest@5c30a9b0]" name="tearDown" is-config="true" duration-ms="854" started-at="2019-10-10T13:20:04Z" finished-at="2019-10-10T13:20:05Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="login()[pri:0, instance:com.newHire.NewHireTest@5c30a9b0]" name="login" is-config="true" duration-ms="1079" started-at="2019-10-10T13:20:05Z" finished-at="2019-10-10T13:20:06Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- login -->
-        <test-method status="PASS" signature="pickCountrySriLankaAndValidateLocation()[pri:0, instance:com.newHire.NewHireTest@5c30a9b0]" name="pickCountrySriLankaAndValidateLocation" duration-ms="2226" started-at="2019-10-10T13:20:06Z" finished-at="2019-10-10T13:20:08Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- pickCountrySriLankaAndValidateLocation -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.newHire.NewHireTest@5c30a9b0]" name="tearDown" is-config="true" duration-ms="484" started-at="2019-10-10T13:20:08Z" finished-at="2019-10-10T13:20:09Z">
+        </test-method> <!-- makeBothDOB_JoiningDateEqualAndverifyError -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.newHire.NewHireTest@5c30a9b0]" name="tearDown" is-config="true" duration-ms="714" started-at="2019-10-13T17:42:28Z" finished-at="2019-10-13T17:42:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="login()[pri:0, instance:com.newHire.NewHireTest@5c30a9b0]" name="login" is-config="true" duration-ms="1051" started-at="2019-10-10T13:20:09Z" finished-at="2019-10-10T13:20:10Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- login -->
-        <test-method status="PASS" signature="pickCountryUAEAndValidateLocation()[pri:0, instance:com.newHire.NewHireTest@5c30a9b0]" name="pickCountryUAEAndValidateLocation" duration-ms="2104" started-at="2019-10-10T13:20:10Z" finished-at="2019-10-10T13:20:12Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- pickCountryUAEAndValidateLocation -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.newHire.NewHireTest@5c30a9b0]" name="tearDown" is-config="true" duration-ms="409" started-at="2019-10-10T13:20:12Z" finished-at="2019-10-10T13:20:12Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.newHire.NewHireTest@5c30a9b0]" name="closeBrowser" is-config="true" duration-ms="5573" started-at="2019-10-10T13:20:12Z" finished-at="2019-10-10T13:20:18Z">
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.newHire.NewHireTest@5c30a9b0]" name="closeBrowser" is-config="true" duration-ms="2328" started-at="2019-10-13T17:42:29Z" finished-at="2019-10-13T17:42:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->

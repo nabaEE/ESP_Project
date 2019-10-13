@@ -43,9 +43,9 @@ public static void submitNewHireFormAndValidateActivateButton() throws AWTExcept
 		nhp.getTitleDropdown().click();
 		nhp.getPickTitle_MR().click();
 		//Enter the first Name
-		nhp.getFirstNameEditbox().sendKeys("keshab");
+		nhp.getFirstNameEditbox().sendKeys("Rajiv");
 		//Enter last name
-		nhp.getLastNameEditbox().sendKeys("khan");
+		nhp.getLastNameEditbox().sendKeys("Mathur");
 		//Pick date of birth
 		WebElement element=nhp.getDateOfBirthCalenderWindow();
 		String date="1-Feb-1990";
@@ -93,27 +93,60 @@ public static void submitNewHireFormAndValidateActivateButton() throws AWTExcept
 	    String groupJoiningDate="1-Sept-2019";
 	    nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 	    //Enter the employee Id
-	    nhp.getEmployeeId().sendKeys("NXTET30");
+	    nhp.getEmployeeId().sendKeys("NXMATH8");
 	    //Enter email id
-	    nhp.getEmailIdEditbox().sendKeys("msskt3");
+	    nhp.getEmailIdEditbox().sendKeys("jmathur45");
 	    //Pick employment type 
 	    nhp.getEmploymentTypeDropdown().click();
 	    nhp.getPickEmploymentType().click();
 	    //Pick employment status
 	    nhp.getEmploymentStatusDropdown().click();
 	    nhp.getPickEmploymentStatusAsConfirmed().click();
+	    //Stop page refresh
+	    // BaseClass.driver.findElement(By.tagName("body")).sendKeys("Keys.ESCAPE");
 	    //Enter three letters in the role editbox
-	    nhp.getRoleEditbox().sendKeys("ass");
-	    nhp.getPickRole().click();
+	     try {
+	     nhp.getRoleEditbox().sendKeys("sal");
+	     nhp.selectRole();
+	        }
+	     catch(StaleElementReferenceException e)
+	     {
+		     //nhp.selectRole();
+		     nhp.selectRole();
+	     }
 	    //Enter three letters in the Department editbox and pick one department
-	    nhp.getDepartmentEditbox().sendKeys("sal");
-	    nhp.getPickDepartment().click();
-	    //Enter three letters in the designation editbox and pick one.
-	    nhp.getDesignationEditbox().sendKeys("sal");
-	    nhp.getPickDesignation().click();
-	    //Enter three letters in the reporting Hiring Manager and pick one.
-	    nhp.getReportingHiringManagerEditbox().sendKeys("sar");
-	    nhp.getPickReportingHiringManager().click();
+	     try {
+		 nhp.getDepartmentEditbox().sendKeys("sal");
+		 Thread.sleep(2000);
+		 nhp.selectDepartment();
+		 //nhp.getPickDepartment().click();
+	     }
+	     catch(StaleElementReferenceException e)
+	     {
+	       nhp.getPickDepartment().click();
+	     }
+        //Enter three letters and select Designation
+	     try
+	     {
+	     nhp.getDesignationEditbox().sendKeys("Sal");
+	     Thread.sleep(2000);
+	     nhp.getPickDesignation().click();
+	     }
+	     catch(StaleElementReferenceException e)
+	     {
+	    	 nhp.getPickDesignation().click();
+	     }
+	     //Enter three letters and select reporting hiring manager
+	     try {
+	     nhp.getReportingHiringManagerEditbox().sendKeys("Sar");
+	     Thread.sleep(2000);
+	     nhp.getPickReportingHiringManager().click();
+	     }
+	     catch(StaleElementReferenceException e)
+	     {
+	    WebdriverUtils.waitForElementPresent(driver, nhp.getPickReportingHiringManager());
+		 nhp.getPickReportingHiringManager().click(); 
+	     }
 	    //Select paytype
 	    nhp.getPickTypeDropdown().click();
 	    nhp.getPickPayType().click();
@@ -180,20 +213,23 @@ public static void submitNewHireFormAndValidateActivateButton() throws AWTExcept
 	    hsp.getPickCity().click();
 	    //Enter postal code
 	    hsp.getPostalCode().sendKeys("78452142");
-	    //Click on copy current address as permanent addres
+	    //Click on copy current address as permanent address
 	    hsp.getCopyCurrentAddressAsPermanentAddress().click();
 	    //upload document
-	    hsp.clickAnduploadDocument();
+	    WebdriverUtils.waitForCompleteElementToLoad(hsp.getSubmitButton());
 	    //click on submit
-	    try {
+	    try 
+	    {
+	    hsp.clickAnduploadDocument();
 	    hsp.getSubmitButton().click();
 	    }
 	    	catch (StaleElementReferenceException e) {
 	    		hsp.getSubmitButton().click();
 	    }
-	    
+	   
   	  //Stop the page load
-	    BaseClass.driver.findElement(By.tagName("body")).sendKeys("Keys.ESCAPE");
+	  BaseClass.driver.findElement(By.tagName("body")).sendKeys("Keys.ESCAPE");
+	  WebdriverUtils.waitForCompleteElementToLoad(hsp.getEmailDetailsAddIcon());
 	    
 	  /****************************Adding Personal Email details***********************************/
 	   WebdriverUtils.waitForElementPresent(driver, hsp.getEmailDetailsAddIcon());
@@ -230,7 +266,7 @@ public static void submitNewHireFormAndValidateActivateButton() throws AWTExcept
 	   hsp.getStatutoryDetailsSubmitButton().click();
 	   
 	   //Stop the page load
-	   BaseClass.driver.findElement(By.tagName("body")).sendKeys("Keys.ESCAPE");
+	  // BaseClass.driver.findElement(By.tagName("body")).sendKeys("Keys.ESCAPE");
 	   WebdriverUtils.waitForPageToLoad(driver);
 	   /******************************Adding UAN Number Statutory Details*****************************/
 	   WebdriverUtils.waitForElementPresent(driver, hsp.getStatutoryNumbersAddIcon());
@@ -346,7 +382,7 @@ public static void checkErrorMessageForEnteringExistingEmail() throws Interrupte
 		    String groupJoiningDate="1-Sept-2019";
 		    nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 		    //Enter the employee Id
-		    nhp.getEmployeeId().sendKeys("NXET54");
+		    nhp.getEmployeeId().sendKeys("NXET55");
 		    //Enter email id
 		    nhp.getEmailIdEditbox().sendKeys("satyak3");
 		    //Pick employment type 
@@ -356,30 +392,63 @@ public static void checkErrorMessageForEnteringExistingEmail() throws Interrupte
 		    nhp.getEmploymentStatusDropdown().click();
 		    nhp.getPickEmploymentStatusAsConfirmed().click();
 		    //Enter three letters in the role editbox
-		    nhp.getRoleEditbox().sendKeys("ass");
-		    nhp.getPickRole().click();
-		    //Enter three letters in the Department editbox and pick one department
-		    nhp.getDepartmentEditbox().sendKeys("sal");
-		    nhp.getPickDepartment().click();
-		    //Enter three letters in the designation editbox and pick one.
-		    nhp.getDesignationEditbox().sendKeys("sal");
+		  //Enter three letters in the role editbox
+		    try {
+		    nhp.getRoleEditbox().sendKeys("sal");
+		    nhp.selectRole();
+		       }
+		    catch(StaleElementReferenceException e)
+		    {
+			     //nhp.selectRole();
+			     nhp.selectRole();
+		    }
+		   //Enter three letters in the Department editbox and pick one department
+		    try {
+			 nhp.getDepartmentEditbox().sendKeys("sal");
+			 Thread.sleep(2000);
+			 nhp.selectDepartment();
+			 //nhp.getPickDepartment().click();
+		    }
+		    catch(StaleElementReferenceException e)
+		    {
+		      nhp.getPickDepartment().click();
+		    }
+		   //Enter three letters and select Designation
+		    try
+		    {
+		    nhp.getDesignationEditbox().sendKeys("Sal");
+		    Thread.sleep(2000);
 		    nhp.getPickDesignation().click();
-		    //Enter three letters in the reporting Hiring Manager and pick one.
-		    nhp.getReportingHiringManagerEditbox().sendKeys("sar");
+		    }
+		    catch(StaleElementReferenceException e)
+		    {
+		   	 nhp.getPickDesignation().click();
+		    }
+		    //Enter three letters and select reporting hiring manager
+		    try {
+		    nhp.getReportingHiringManagerEditbox().sendKeys("Sar");
+		    Thread.sleep(2000);
 		    nhp.getPickReportingHiringManager().click();
-		    //Select paytype
-		    nhp.getPickTypeDropdown().click();
-		    nhp.getPickPayType().click();
-		    //Pick pay frequency
-		    nhp.getPayFrequencyDropdown().click();
-		    nhp.getPickPayFrequencyDropdownValue().click();
-		    //Pick FT/PT indicator
-		    nhp.getFtptIndicatorDropdown().click();
-		    nhp.getPickPartTimeIndicator().click();
-		    //Enter FTE Equivalent hours
-		    nhp.getFteEditbox().sendKeys("30");
-		    //Click on save and Continue
-		    nhp.getSaveAndContinueButton().click();	
+		    }
+		    catch(StaleElementReferenceException e)
+		    {
+		   WebdriverUtils.waitForElementPresent(driver, nhp.getPickReportingHiringManager());
+			 nhp.getPickReportingHiringManager().click(); 
+		    }
+		   //Select paytype
+		   nhp.getPickTypeDropdown().click();
+		   nhp.getPickPayType().click();
+		   //Pick pay frequency
+		   nhp.getPayFrequencyDropdown().click();
+		   nhp.getPickPayFrequencyDropdownValue().click();
+		   //Pick FT/PT indicator
+		   nhp.getFtptIndicatorDropdown().click();
+		   nhp.getPickPartTimeIndicator().click();
+		   //Enter FTE Equivalent hours
+		   nhp.getFteEditbox().sendKeys("30");
+		   //Click on save and Continue
+		   nhp.getSaveAndContinueButton().click();
+
 		    Thread.sleep(2000);
 		    //Declare the expected error message
 		    String expErr="Mail Id already Exists.";
@@ -475,30 +544,63 @@ public static void enterExistEmployeeIdAndValidateErrorMessage() throws Interrup
     nhp.getEmploymentStatusDropdown().click();
     nhp.getPickEmploymentStatusAsConfirmed().click();
     //Enter three letters in the role editbox
-    nhp.getRoleEditbox().sendKeys("ass");
-    nhp.getPickRole().click();
-    //Enter three letters in the Department editbox and pick one department
-    nhp.getDepartmentEditbox().sendKeys("sal");
-    nhp.getPickDepartment().click();
-    //Enter three letters in the designation editbox and pick one.
-    nhp.getDesignationEditbox().sendKeys("sal");
+    //Enter three letters in the role editbox
+    try {
+    nhp.getRoleEditbox().sendKeys("sal");
+    nhp.selectRole();
+       }
+    catch(StaleElementReferenceException e)
+    {
+	     //nhp.selectRole();
+	     nhp.selectRole();
+    }
+   //Enter three letters in the Department editbox and pick one department
+    try {
+	 nhp.getDepartmentEditbox().sendKeys("sal");
+	 Thread.sleep(2000);
+	 nhp.selectDepartment();
+	 //nhp.getPickDepartment().click();
+    }
+    catch(StaleElementReferenceException e)
+    {
+      nhp.getPickDepartment().click();
+    }
+   //Enter three letters and select Designation
+    try
+    {
+    nhp.getDesignationEditbox().sendKeys("Sal");
+    Thread.sleep(2000);
     nhp.getPickDesignation().click();
-    //Enter three letters in the reporting Hiring Manager and pick one.
-    nhp.getReportingHiringManagerEditbox().sendKeys("sar");
+    }
+    catch(StaleElementReferenceException e)
+    {
+   	 nhp.getPickDesignation().click();
+    }
+    //Enter three letters and select reporting hiring manager
+    try {
+    nhp.getReportingHiringManagerEditbox().sendKeys("Sar");
+    Thread.sleep(2000);
     nhp.getPickReportingHiringManager().click();
-    //Select paytype
-    nhp.getPickTypeDropdown().click();
-    nhp.getPickPayType().click();
-    //Pick pay frequency
-    nhp.getPayFrequencyDropdown().click();
-    nhp.getPickPayFrequencyDropdownValue().click();
-    //Pick FT/PT indicator
-    nhp.getFtptIndicatorDropdown().click();
-    nhp.getPickPartTimeIndicator().click();
-    //Enter FTE Equivalent hours
-    nhp.getFteEditbox().sendKeys("30");
-    //Click on save and Continue
-    nhp.getSaveAndContinueButton().click();	
+    }
+    catch(StaleElementReferenceException e)
+    {
+   WebdriverUtils.waitForElementPresent(driver, nhp.getPickReportingHiringManager());
+	 nhp.getPickReportingHiringManager().click(); 
+    }
+   //Select paytype
+   nhp.getPickTypeDropdown().click();
+   nhp.getPickPayType().click();
+   //Pick pay frequency
+   nhp.getPayFrequencyDropdown().click();
+   nhp.getPickPayFrequencyDropdownValue().click();
+   //Pick FT/PT indicator
+   nhp.getFtptIndicatorDropdown().click();
+   nhp.getPickPartTimeIndicator().click();
+   //Enter FTE Equivalent hours
+   nhp.getFteEditbox().sendKeys("30");
+   //Click on save and Continue
+   nhp.getSaveAndContinueButton().click();
+
     Thread.sleep(2000);
     //Declare the expected error message
     String expErr="The Employee Id already exists in the system. Please correct.";
@@ -556,7 +658,7 @@ public static void clickAndverifyTitleDropdownValues()
 }
 //5. Enter the DOB equals to joining date and verify the error message.
 @Test()
-public static void makeBothDOB_JoiningDateEqualAndverifyError()
+public static void makeBothDOB_JoiningDateEqualAndverifyError() throws InterruptedException
 {
 	log.debug("-----------Make both DOB and Joining Date equal and verify error message:- test started-----------");
 	  //Call the landing page
@@ -623,9 +725,9 @@ public static void makeBothDOB_JoiningDateEqualAndverifyError()
 	    String groupJoiningDate="1-Sept-2019";
 	    nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 	    //Enter the employee Id
-	    nhp.getEmployeeId().sendKeys("NXKS85");
+	    nhp.getEmployeeId().sendKeys("NXKS95");
 	    //Enter email id
-	    nhp.getEmailIdEditbox().sendKeys("tsagar45");
+	    nhp.getEmailIdEditbox().sendKeys("tssagar45");
 	    //Pick employment type 
 	    nhp.getEmploymentTypeDropdown().click();
 	    nhp.getPickEmploymentType().click();
@@ -633,31 +735,63 @@ public static void makeBothDOB_JoiningDateEqualAndverifyError()
 	    nhp.getEmploymentStatusDropdown().click();
 	    nhp.getPickEmploymentStatusAsConfirmed().click();
 	    //Enter three letters in the role editbox
-	    nhp.getRoleEditbox().sendKeys("ass");
-	    nhp.getPickRole().click();
-	    //Enter three letters in the Department editbox and pick one department
-	    nhp.getDepartmentEditbox().sendKeys("sal");
-	    nhp.getPickDepartment().click();
-	    //Enter three letters in the designation editbox and pick one.
-	    nhp.getDesignationEditbox().sendKeys("sal");
+	    //Enter three letters in the role editbox
+	    try {
+	    nhp.getRoleEditbox().sendKeys("sal");
+	    Thread.sleep(2000);
+	    nhp.selectRole();
+	       }
+	    catch(StaleElementReferenceException e)
+	    {
+		     //nhp.selectRole();
+		     nhp.selectRole();
+	    }
+	   //Enter three letters in the Department editbox and pick one department
+	    try {
+		 nhp.getDepartmentEditbox().sendKeys("sal");
+		 Thread.sleep(2000);
+		 nhp.selectDepartment();
+		 //nhp.getPickDepartment().click();
+	    }
+	    catch(StaleElementReferenceException e)
+	    {
+	      nhp.getPickDepartment().click();
+	    }
+	   //Enter three letters and select Designation
+	    try
+	    {
+	    nhp.getDesignationEditbox().sendKeys("Sal");
+	    Thread.sleep(2000);
 	    nhp.getPickDesignation().click();
-	    //Enter three letters in the reporting Hiring Manager and pick one.
-	    nhp.getReportingHiringManagerEditbox().sendKeys("sar");
+	    }
+	    catch(StaleElementReferenceException e)
+	    {
+	   	 nhp.getPickDesignation().click();
+	    }
+	    //Enter three letters and select reporting hiring manager
+	    try {
+	    nhp.getReportingHiringManagerEditbox().sendKeys("Sar");
+	    Thread.sleep(2000);
 	    nhp.getPickReportingHiringManager().click();
-	    //Select paytype
-	    nhp.getPickTypeDropdown().click();
-	    nhp.getPickPayType().click();
-	    //Pick pay frequency
-	    nhp.getPayFrequencyDropdown().click();
-	    nhp.getPickPayFrequencyDropdownValue().click();
-	    //Pick FT/PT indicator
-	    nhp.getFtptIndicatorDropdown().click();
-	    nhp.getPickPartTimeIndicator().click();
-	    //Enter FTE Equivalent hours
-	    nhp.getFteEditbox().sendKeys("30");
-	    //Click on save and Continue
-	    WebdriverUtils.waitForElementPresent(driver, nhp.getSaveAndContinueButton());
-	    nhp.getSaveAndContinueButton().click();	
+	    }
+	    catch(StaleElementReferenceException e)
+	    {
+	   WebdriverUtils.waitForElementPresent(driver, nhp.getPickReportingHiringManager());
+		 nhp.getPickReportingHiringManager().click(); 
+	    }
+	   //Select paytype
+	   nhp.getPickTypeDropdown().click();
+	   nhp.getPickPayType().click();
+	   //Pick pay frequency
+	   nhp.getPayFrequencyDropdown().click();
+	   nhp.getPickPayFrequencyDropdownValue().click();
+	   //Pick FT/PT indicator
+	   nhp.getFtptIndicatorDropdown().click();
+	   nhp.getPickPartTimeIndicator().click();
+	   //Enter FTE Equivalent hours
+	   nhp.getFteEditbox().sendKeys("30");
+	   //Click on save and Continue
+	   nhp.getSaveAndContinueButton().click();
 	    String expErr="Joining Date should be greater than Date of Birth";
 	    log.debug("Expected error message :"+expErr);
 	    //Capture the actual error message 
@@ -755,7 +889,7 @@ public static void verifyErrorMessageForKeepingLastNameBlank()
 	//Click on submit
 	nhp.getSaveAndContinueButton().click();
 	//Declare the error message
-	String expErr="First Name cannot be empty";
+	String expErr="Last Name cannot be empty";
 	log.debug("Expected error message is :"+expErr);
 	//Capture the actual error
 	WebdriverUtils.waitForPageToLoad(driver);
@@ -1123,12 +1257,15 @@ public static void verifyErrorForNotPickingCountry()
 	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
 	lnp.getAdminIcon().click();
 	//Click on new hire option
-	//lnp.getNewHireAdminValue().click();
+	lnp.getNewHireAdminValue().click();
 	lnp.clickNewHire();
 	//Call the new hire page
 	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
-	//Click on country dropdown
+	//Don't pick the country dropdown value
 	nhp.getCountryDropdown().click();
+	//Click on submit
+	WebdriverUtils.waitForElementPresent(driver, nhp.getSaveAndContinueButton());
+	nhp.getSaveAndContinueButton().click();
 	//Declare the error message
 	String expErr="Country cannot be empty";
 	log.debug("Expected error message is :"+expErr);
@@ -1404,6 +1541,8 @@ public static void checkErrorForKeepingDepartmentEditboxBlank()
 	NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);	
 	//Click on department editbox
 	nhp.getDepartmentEditbox().click();
+	//Click on save and continue
+	nhp.getSaveAndContinueButton().click();
 	//Declare the error message
   	String expErr="Department cannot be empty";
   	log.debug("Expected error message is :"+expErr);

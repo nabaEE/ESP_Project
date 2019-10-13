@@ -1,0 +1,23 @@
+23:02:22.923 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+23:02:29.114 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+23:02:33.096 [main] DEBUG esp.genericLibraries.BaseClass - ---------check Error Message For Entering Existing Email:- test started.----------
+23:03:54.163 [main] DEBUG esp.genericLibraries.BaseClass - Expected error message is :Mail Id already Exists.
+23:03:54.175 [main] DEBUG esp.genericLibraries.BaseClass - -----------Validate the error message----------
+23:03:54.175 [main] FATAL esp.genericLibraries.BaseClass - actual error message is incorrect
+23:03:55.030 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+23:03:57.521 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+23:04:37.758 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+23:04:44.538 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+23:04:47.697 [main] DEBUG esp.genericLibraries.BaseClass - ---------check Error Message For Entering Existing Email:- test started.----------
+23:05:38.985 [main] DEBUG esp.genericLibraries.BaseClass - Expected error message is :Mail Id already Exists.
+23:10:58.799 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+23:11:05.569 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+23:11:08.834 [main] DEBUG esp.genericLibraries.BaseClass - -----------Make both DOB and Joining Date equal and verify error message:- test started-----------
+23:12:28.370 [main] DEBUG esp.genericLibraries.BaseClass - Expected error message :Joining Date should be greater than Date of Birth
+23:12:28.392 [main] DEBUG esp.genericLibraries.BaseClass -                         
+23:12:28.392 [main] DEBUG esp.genericLibraries.BaseClass - ---------Validate the error message---------
+23:12:28.394 [main] DEBUG esp.genericLibraries.BaseClass -                            
+23:12:28.395 [main] INFO  esp.genericLibraries.BaseClass - Actual error message is :Joining Date should be greater than Date of Birth
+23:12:28.395 [main] INFO  esp.genericLibraries.BaseClass - -----------Make both DOB and Joining Date equal and verify error message:- test ended-----------
+23:12:29.111 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+23:12:31.440 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********

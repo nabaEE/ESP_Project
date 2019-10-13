@@ -126,7 +126,8 @@ public class HireSummaryPage
  @FindBy(id="Error_Email_ID")
  private WebElement emailIdBlankErrorMessage;
  
- @FindBy(xpath="//form[@id='ContentDiv']/div[1]/div/table/tbody/tr[10]/td[1]/a/i")
+ //@FindBy(xpath="//form[@id='ContentDiv']/div[1]/div/table/tbody/tr[10]/td[1]/a/i")
+ @FindBy(xpath="//html//body//main//div//div[2]//div[2]//form//div[1]//div//table//tbody//tr[11]//td[2]//table//thead//tr//td//span")
  private WebElement statutoryNumbersAddIcon;
  @FindBy(id="div_Statutory_Type")
  private WebElement statutoryTypeDropdown;
@@ -721,7 +722,7 @@ public WebElement getActivateButton() {
 		 //Release Enter
 		 rob.keyRelease(KeyEvent.VK_ENTER);	
  }
- public void clickAnduploadDocument() throws AWTException, InterruptedException {
+    public void clickAnduploadDocument() throws AWTException, InterruptedException {
 	 JavascriptExecutor js = (JavascriptExecutor)BaseClass.driver;
 	 js.executeScript("arguments[0].click();", uploadButton);
 	 Thread.sleep(2000);
