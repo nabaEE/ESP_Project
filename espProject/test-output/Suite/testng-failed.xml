@@ -10,7 +10,7 @@
     <classes>
       <class name="com.newHire.NewHireTest">
         <methods>
-          <include name="checkErrorMessageForEnteringExistingEmail"/>
+          <include name="submitNewHireFormAndValidateActivateButton"/>
           <include name="login"/>
           <include name="closeBrowser"/>
           <include name="openBrowser"/>

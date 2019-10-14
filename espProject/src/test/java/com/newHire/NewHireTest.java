@@ -43,9 +43,9 @@ public static void submitNewHireFormAndValidateActivateButton() throws AWTExcept
 		nhp.getTitleDropdown().click();
 		nhp.getPickTitle_MR().click();
 		//Enter the first Name
-		nhp.getFirstNameEditbox().sendKeys("Rajiv");
+		nhp.getFirstNameEditbox().sendKeys("Ranjit");
 		//Enter last name
-		nhp.getLastNameEditbox().sendKeys("Mathur");
+		nhp.getLastNameEditbox().sendKeys("Singh");
 		//Pick date of birth
 		WebElement element=nhp.getDateOfBirthCalenderWindow();
 		String date="1-Feb-1990";
@@ -93,9 +93,9 @@ public static void submitNewHireFormAndValidateActivateButton() throws AWTExcept
 	    String groupJoiningDate="1-Sept-2019";
 	    nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 	    //Enter the employee Id
-	    nhp.getEmployeeId().sendKeys("NXMATH8");
+	    nhp.getEmployeeId().sendKeys("NXKATC8");
 	    //Enter email id
-	    nhp.getEmailIdEditbox().sendKeys("jmathur45");
+	    nhp.getEmailIdEditbox().sendKeys("s_jmathur45");
 	    //Pick employment type 
 	    nhp.getEmploymentTypeDropdown().click();
 	    nhp.getPickEmploymentType().click();
@@ -107,6 +107,7 @@ public static void submitNewHireFormAndValidateActivateButton() throws AWTExcept
 	    //Enter three letters in the role editbox
 	     try {
 	     nhp.getRoleEditbox().sendKeys("sal");
+	     Thread.sleep(2000);
 	     nhp.selectRole();
 	        }
 	     catch(StaleElementReferenceException e)
@@ -222,6 +223,7 @@ public static void submitNewHireFormAndValidateActivateButton() throws AWTExcept
 	    {
 	    hsp.clickAnduploadDocument();
 	    hsp.getSubmitButton().click();
+	    WebdriverUtils.waitForCompleteElementToLoad(hsp.getEmailDetailsAddIcon());
 	    }
 	    	catch (StaleElementReferenceException e) {
 	    		hsp.getSubmitButton().click();
@@ -229,10 +231,7 @@ public static void submitNewHireFormAndValidateActivateButton() throws AWTExcept
 	   
   	  //Stop the page load
 	  BaseClass.driver.findElement(By.tagName("body")).sendKeys("Keys.ESCAPE");
-	  WebdriverUtils.waitForCompleteElementToLoad(hsp.getEmailDetailsAddIcon());
-	    
 	  /****************************Adding Personal Email details***********************************/
-	   WebdriverUtils.waitForElementPresent(driver, hsp.getEmailDetailsAddIcon());
 	   hsp.getEmailDetailsAddIcon().click();
 
 	   //Click on email type dropdown and pick personal email
@@ -1393,7 +1392,7 @@ public static void checkErrorForNotPickingGroupJoiningDate()
   	String expErr="Group Joining Date cannot be empty";
   	log.debug("Expected error message is :"+expErr);
   	//Capture the actual error
-  	WebdriverUtils.waitForPageToLoad(driver);
+  	WebdriverUtils.waitForElementPresent(driver, nhp.getGroupJoiningBlankErr());
   	String actErr=nhp.getGroupJoiningBlankErr().getText();
   	log.debug("                ");
   	log.debug("--------Validate the error message---------");
