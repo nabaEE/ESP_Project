@@ -313,7 +313,7 @@ public static void submitNewHireFormAndValidateActivateButton() throws AWTExcept
 	  }
 //2. Enter an existing email and validate the error message.
 
-@Test()
+@Test(groups="Smoke")
 public static void checkErrorMessageForEnteringExistingEmail() throws InterruptedException
 {
 	log.debug("---------check Error Message For Entering Existing Email:- test started.----------");
@@ -381,7 +381,7 @@ public static void checkErrorMessageForEnteringExistingEmail() throws Interrupte
 		    String groupJoiningDate="1-Sept-2019";
 		    nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 		    //Enter the employee Id
-		    nhp.getEmployeeId().sendKeys("NXET55");
+		    nhp.getEmployeeId().sendKeys("NXET35");
 		    //Enter email id
 		    nhp.getEmailIdEditbox().sendKeys("satyak3");
 		    //Pick employment type 
@@ -394,6 +394,7 @@ public static void checkErrorMessageForEnteringExistingEmail() throws Interrupte
 		  //Enter three letters in the role editbox
 		    try {
 		    nhp.getRoleEditbox().sendKeys("sal");
+		    Thread.sleep(2000);
 		    nhp.selectRole();
 		       }
 		    catch(StaleElementReferenceException e)
@@ -447,7 +448,6 @@ public static void checkErrorMessageForEnteringExistingEmail() throws Interrupte
 		   nhp.getFteEditbox().sendKeys("30");
 		   //Click on save and Continue
 		   nhp.getSaveAndContinueButton().click();
-
 		    Thread.sleep(2000);
 		    //Declare the expected error message
 		    String expErr="Mail Id already Exists.";
@@ -465,7 +465,7 @@ public static void checkErrorMessageForEnteringExistingEmail() throws Interrupte
 
 //3. Enter an existing Employee Id and validate the error message.
 
-@Test()
+@Test(groups="Smoke")
 public static void enterExistEmployeeIdAndValidateErrorMessage() throws InterruptedException
 {
 	log.debug("------------Enter existing EemployeeId and validate error Message:- test started---------------");
@@ -656,7 +656,7 @@ public static void clickAndverifyTitleDropdownValues()
 	log.info("-----------Click and verify title dropdown values:- test ended-----------");
 }
 //5. Enter the DOB equals to joining date and verify the error message.
-@Test()
+@Test(groups="Smoke")
 public static void makeBothDOB_JoiningDateEqualAndverifyError() throws InterruptedException
 {
 	log.debug("-----------Make both DOB and Joining Date equal and verify error message:- test started-----------");

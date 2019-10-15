@@ -8,15 +8,15 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.newHire.NewHireTest">
+      <class name="com.orgDesignData.LegalEntityManagementTest">
         <methods>
-          <include name="submitNewHireFormAndValidateActivateButton"/>
           <include name="login"/>
           <include name="closeBrowser"/>
           <include name="openBrowser"/>
           <include name="tearDown"/>
+          <include name="printAndVerifyAdminValues"/>
         </methods>
-      </class> <!-- com.newHire.NewHireTest -->
+      </class> <!-- com.orgDesignData.LegalEntityManagementTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

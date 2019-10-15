@@ -12,7 +12,13 @@ private WebElement compensationItems;
 private WebElement compItemGroups;
 @FindBy(xpath="//div[@id='Display_ul']/div[3]/li/p")
 private WebElement compItems;
-	
+@FindBy(xpath="//div[@id='showGroups']/div[2]/div[1]/div/div/p[1]")
+private WebElement orgDesignData;
+@FindBy(xpath="//div[@id='Display_ul']/div[4]/li/p")
+private WebElement clickLegalEntityManagement;
+@FindBy(xpath="//div[@id='Display_ul']/div[3]/li/p")
+private WebElement clickCostCenterManagement;
+
 	
 		
 	

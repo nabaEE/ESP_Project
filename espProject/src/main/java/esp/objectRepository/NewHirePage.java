@@ -212,7 +212,7 @@ public class NewHirePage
 	private WebElement emailIdEditbox;
 	@FindBy(xpath="//div[@id='div_Email']/span")
 	private WebElement emailIdEditboxLength;
-	@FindBy(id="Error_Email")
+	@FindBy(id="Error Error_MailIdExists")
 	private WebElement emaildIdBlankErrorMessage;
 	@FindBy(id="DBError_Email")
 	private WebElement emailAlreadyExistErr;
