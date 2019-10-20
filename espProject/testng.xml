@@ -10,7 +10,7 @@
    <classes>
       <class name="com.orgDesignData.LegalEntityManagementTest">
       <methods>
-      <include name="printAndVerifyAdminValues"/>
+      <include name="submitNewLegalEntityAndVerify"/>
       </methods>
       </class>
     </classes>

@@ -2,12 +2,8 @@ package com.newHire;
 
 import java.awt.AWTException;
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
@@ -29,6 +25,7 @@ public class NewHireTest extends BaseClass
 public static void submitNewHireFormAndValidateActivateButton() throws AWTException, InterruptedException
 {
 	   log.debug("---------submit New Hire FormAnd Validate Activate Button:- test started----------");
+	    driver.findElement(By.id("Not_now")).click();
 	    //Call the landing page
 		LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
 		//Click on admin icon
@@ -43,9 +40,9 @@ public static void submitNewHireFormAndValidateActivateButton() throws AWTExcept
 		nhp.getTitleDropdown().click();
 		nhp.getPickTitle_MR().click();
 		//Enter the first Name
-		nhp.getFirstNameEditbox().sendKeys("Ranjit");
+		nhp.getFirstNameEditbox().sendKeys("Rana");
 		//Enter last name
-		nhp.getLastNameEditbox().sendKeys("Singh");
+		nhp.getLastNameEditbox().sendKeys("Dafadar");
 		//Pick date of birth
 		WebElement element=nhp.getDateOfBirthCalenderWindow();
 		String date="1-Feb-1990";
@@ -93,9 +90,9 @@ public static void submitNewHireFormAndValidateActivateButton() throws AWTExcept
 	    String groupJoiningDate="1-Sept-2019";
 	    nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 	    //Enter the employee Id
-	    nhp.getEmployeeId().sendKeys("NXKATC8");
+	    nhp.getEmployeeId().sendKeys("NXR12");
 	    //Enter email id
-	    nhp.getEmailIdEditbox().sendKeys("s_jmathur45");
+	    nhp.getEmailIdEditbox().sendKeys("ranadaff2");
 	    //Pick employment type 
 	    nhp.getEmploymentTypeDropdown().click();
 	    nhp.getPickEmploymentType().click();
@@ -724,9 +721,9 @@ public static void makeBothDOB_JoiningDateEqualAndverifyError() throws Interrupt
 	    String groupJoiningDate="1-Sept-2019";
 	    nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 	    //Enter the employee Id
-	    nhp.getEmployeeId().sendKeys("NXKS95");
+	    nhp.getEmployeeId().sendKeys("NXTS95");
 	    //Enter email id
-	    nhp.getEmailIdEditbox().sendKeys("tssagar45");
+	    nhp.getEmailIdEditbox().sendKeys("tmssagar45");
 	    //Pick employment type 
 	    nhp.getEmploymentTypeDropdown().click();
 	    nhp.getPickEmploymentType().click();
@@ -1805,9 +1802,9 @@ public static void verifyErrorForPicking_DOB_lessThanEighteen_years() throws Int
     String groupJoiningDate="1-Sept-2019";
     nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
     //Enter the employee Id
-    nhp.getEmployeeId().sendKeys("MEGTA5");
+    nhp.getEmployeeId().sendKeys("NMEGTA5");
     //Enter email id
-    nhp.getEmailIdEditbox().sendKeys("sapan23");
+    nhp.getEmailIdEditbox().sendKeys("tsapan23");
     //Pick employment type 
     nhp.getEmploymentTypeDropdown().click();
     nhp.getPickEmploymentType().click();
@@ -1815,31 +1812,63 @@ public static void verifyErrorForPicking_DOB_lessThanEighteen_years() throws Int
     nhp.getEmploymentStatusDropdown().click();
     nhp.getPickEmploymentStatusAsConfirmed().click();
     //Enter three letters in the role editbox
-    nhp.getRoleEditbox().sendKeys("ass");
-    nhp.getPickRole().click();
-    //Enter three letters in the Department editbox and pick one department
-    nhp.getDepartmentEditbox().sendKeys("sal");
-    nhp.getPickDepartment().click();
-    //Enter three letters in the designation editbox and pick one.
-    nhp.getDesignationEditbox().sendKeys("sal");
-    nhp.getPickDesignation().click();
-    //Enter three letters in the reporting Hiring Manager and pick one.
-    nhp.getReportingHiringManagerEditbox().sendKeys("sar");
-    nhp.getPickReportingHiringManager().click();
-    //Select paytype
-    nhp.getPickTypeDropdown().click();
-    nhp.getPickPayType().click();
-    //Pick pay frequency
-    nhp.getPayFrequencyDropdown().click();
-    nhp.getPickPayFrequencyDropdownValue().click();
-    //Pick FT/PT indicator
-    nhp.getFtptIndicatorDropdown().click();
-    nhp.getPickPartTimeIndicator().click();
-    //Enter FTE Equivalent hours
-    nhp.getFteEditbox().sendKeys("30");
-    //Click on save and Continue
-    nhp.getSaveAndContinueButton().click();	
-    Thread.sleep(2000);
+    try {
+	     nhp.getRoleEditbox().sendKeys("sal");
+	     Thread.sleep(2000);
+	     nhp.selectRole();
+	        }
+	     catch(StaleElementReferenceException e)
+	     {
+		     //nhp.selectRole();
+		     nhp.selectRole();
+	     }
+	    //Enter three letters in the Department editbox and pick one department
+	     try {
+		 nhp.getDepartmentEditbox().sendKeys("sal");
+		 Thread.sleep(2000);
+		 nhp.selectDepartment();
+		 //nhp.getPickDepartment().click();
+	     }
+	     catch(StaleElementReferenceException e)
+	     {
+	       nhp.getPickDepartment().click();
+	     }
+       //Enter three letters and select Designation
+	     try
+	     {
+	     nhp.getDesignationEditbox().sendKeys("Sal");
+	     Thread.sleep(2000);
+	     nhp.getPickDesignation().click();
+	     }
+	     catch(StaleElementReferenceException e)
+	     {
+	    	 nhp.getPickDesignation().click();
+	     }
+	     //Enter three letters and select reporting hiring manager
+	     try {
+	     nhp.getReportingHiringManagerEditbox().sendKeys("Sar");
+	     Thread.sleep(2000);
+	     nhp.getPickReportingHiringManager().click();
+	     }
+	     catch(StaleElementReferenceException e)
+	     {
+	    WebdriverUtils.waitForElementPresent(driver, nhp.getPickReportingHiringManager());
+		 nhp.getPickReportingHiringManager().click(); 
+	     }
+	   //Select paytype
+		    nhp.getPickTypeDropdown().click();
+		    nhp.getPickPayType().click();
+		    //Pick pay frequency
+		    nhp.getPayFrequencyDropdown().click();
+		    nhp.getPickPayFrequencyDropdownValue().click();
+		    //Pick FT/PT indicator
+		    nhp.getFtptIndicatorDropdown().click();
+		    nhp.getPickPartTimeIndicator().click();
+		    //Enter FTE Equivalent hours
+		    nhp.getFteEditbox().sendKeys("30");
+		    //Click on save and Continue
+		    nhp.getSaveAndContinueButton().click();
+       Thread.sleep(2000);
     //Declare the expected error message
 	log.debug("Error message should be displayed as :DOB should be greater than 18 years.");
 	log.debug("                 ");
@@ -2014,9 +2043,43 @@ public static void pickCountryUAEAndValidateLocation()
 	log.debug("-----Validate if the location is displayed------");
 	Assert.assertTrue(nhp.getLocationDropdown().isEnabled());
 	log.info("Available locations are :" +availablelocation);	
-	
-}
+ }
+//43. Pick Employment type Regular and validate probation, Confirmed.
+@Test()
+public static void pickRegularAndValidateEmploymentStatus() throws InterruptedException
+{
+log.debug("-------pickRegularAndValidateEmploymentStatus:Test Started---------");
+log.debug("----Pick Country UAE and Validate Location :-Test started-----");
+LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+//Click on admin icon
+WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+lnp.getAdminIcon().click();
+//Click on new hire option
+//lnp.getNewHireAdminValue().click();
+lnp.clickNewHire();
+//Call the new hire page
+NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+//Click on employment type
+nhp.getEmploymentTypeDropdown().click();
+Thread.sleep(2000);
+nhp.getPickEmploymentType().click();
+nhp.getEmploymentStatusDropdown().click();
+//Declare the emp status values for Regular type
+List<String> expVal= new ArrayList<String>();
+expVal.add("Select");
+expVal.add("Confirmed");
+expVal.add("Probation");
+log.debug("Expected values are :"+expVal);
+//Capture the actual values
+List<String> actVal=nhp.empStatusValues();
+log.debug("                  ");
+log.debug("--------Validate the expected values------");
+Assert.assertEquals(actVal, expVal);
+log.info("Actual values are :"+actVal);
+log.info("-------pickRegularAndValidateEmploymentStatus:Test Ended---------");
 
+
+}
 
 
 

@@ -18,7 +18,7 @@ public class LandingPage
 	private WebElement adminIcon;
 	@FindBy(xpath="//div[@class='nav-wrapper']/ul/li[2]/a/span")
 	private WebElement adminToolTip;
-	@FindBy(xpath="//ul[@id='AdminDropDowns']/li[9]/a")
+	@FindBy(xpath="//ul[@id='AdminDropDowns']/li/a[text()='Configuration Setup']")
 	private WebElement configurationSetupAdminValue;
 	@FindBy(xpath="//div[@class='nav-wrapper']/ul/li[4]/ul/li")
 	private List<WebElement> adminDropdownValues;

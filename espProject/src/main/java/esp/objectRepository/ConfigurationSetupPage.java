@@ -23,6 +23,21 @@ private WebElement clickCostCenterManagement;
 		
 	
 /*************************Getters Usage*****************************/
+public WebElement getCompItemGroups() {
+	return compItemGroups;
+}
+public WebElement getCompItems() {
+	return compItems;
+}
+public WebElement getOrgDesignData() {
+	return orgDesignData;
+}
+public WebElement getClickLegalEntityManagement() {
+	return clickLegalEntityManagement;
+}
+public WebElement getClickCostCenterManagement() {
+	return clickCostCenterManagement;
+}
 	
 public WebElement getCompensationItems() {
 	return compensationItems;

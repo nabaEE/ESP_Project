@@ -831,4 +831,14 @@ public class NewHirePage
 			 return values;
 		 }
 
+//Method to print employment status
+public List<String> empStatusValues()
+{
+List<String> val= new ArrayList<String>();
+for(int i=0; i<employmentStatusDropdownValues.size(); i++)
+{
+	val.add(employmentStatusDropdownValues.get(i).getText());
+}
+return val;
+}
 }

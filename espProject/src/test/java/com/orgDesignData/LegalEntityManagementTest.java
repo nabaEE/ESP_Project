@@ -2,11 +2,13 @@ package com.orgDesignData;
 
 import java.util.Arrays;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import esp.genericLibraries.BaseClass;
+import esp.objectRepository.ConfigurationSetupPage;
 import esp.objectRepository.LandingPage;
 
 public class LegalEntityManagementTest extends BaseClass
@@ -48,7 +50,32 @@ public class LegalEntityManagementTest extends BaseClass
      log.debug("    ");
      log.info("Actual values are :"+Arrays.toString(actVal));
      log.info("------printAndVerifyAdminValues : Test Ended-------");
-      
-     
- }
+  }
+
+//3. Submit new Legal Entity and verify.
+@Test()
+public static void submitNewLegalEntityAndVerify()
+{
+	driver.findElement(By.id("Not_now")).click();
+	//Call the landing page
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	lnp.getAdminIcon().click();
+	//Click on Configuration setup
+	lnp.getConfigurationSetupAdminValue().click();
+	//Call the ConfigurationSetup page
+	ConfigurationSetupPage csp= PageFactory.initElements(driver, ConfigurationSetupPage.class);
+	//Click on org design data
+	csp.getOrgDesignData().click();
 }
+
+}
+
+
+
+
+
+
+
+
+
