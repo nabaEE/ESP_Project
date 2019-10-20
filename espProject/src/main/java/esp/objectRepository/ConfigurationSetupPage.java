@@ -14,15 +14,22 @@ private WebElement compItemGroups;
 private WebElement compItems;
 @FindBy(xpath="//div[@id='showGroups']/div[2]/div[1]/div/div/p[1]")
 private WebElement orgDesignData;
-@FindBy(xpath="//div[@id='Display_ul']/div[4]/li/p")
+@FindBy(xpath="//div[@id='Display_ul']/div[4]/li/p[text()='Legal Entity Management']")
 private WebElement clickLegalEntityManagement;
 @FindBy(xpath="//div[@id='Display_ul']/div[3]/li/p")
 private WebElement clickCostCenterManagement;
+@FindBy(xpath="//div[@id='Display_ul']/div[2]/li/p[text()='Department Management']")
+private WebElement clickDepartment;
+
 
 	
 		
 	
+
 /*************************Getters Usage*****************************/
+public WebElement getClickDepartment() {
+	return clickDepartment;
+}
 public WebElement getCompItemGroups() {
 	return compItemGroups;
 }

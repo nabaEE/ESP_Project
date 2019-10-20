@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 import esp.genericLibraries.BaseClass;
 import esp.objectRepository.ConfigurationSetupPage;
 import esp.objectRepository.LandingPage;
+import esp.objectRepository.LegalEntityManagementPage;
 
 public class LegalEntityManagementTest extends BaseClass
 {
@@ -54,7 +55,7 @@ public class LegalEntityManagementTest extends BaseClass
 
 //3. Submit new Legal Entity and verify.
 @Test()
-public static void submitNewLegalEntityAndVerify()
+public static void submitNewLegalEntityAndVerify() throws InterruptedException
 {
 	driver.findElement(By.id("Not_now")).click();
 	//Call the landing page
@@ -67,6 +68,24 @@ public static void submitNewLegalEntityAndVerify()
 	ConfigurationSetupPage csp= PageFactory.initElements(driver, ConfigurationSetupPage.class);
 	//Click on org design data
 	csp.getOrgDesignData().click();
+	//Click on legal entity management page
+	csp.getClickDepartment().click();
+	csp.getClickLegalEntityManagement().click();
+	Thread.sleep(5000);
+	//Call legal entity management page
+	LegalEntityManagementPage lem= PageFactory.initElements(driver, LegalEntityManagementPage.class);
+	//Click on add new button
+	lem.getAddNewButton().click();
+	//Enter the legal entity name
+	lem.getLegalEntityNameEditbox().sendKeys("");
+	//Pick the effective from date
+	lem.getEffectiveFromDateCalenderWin().click();
+	lem.getCurrentDate().click();
+	//Click on country dropdown
+	lem.getCountryDropdown().click();
+	//Pick the country 
+	
+	
 }
 
 }

@@ -25,6 +25,8 @@ private WebElement currentDate;
 private WebElement submitButton;
 @FindBy(xpath="//div[@id='PopUpCont']/div/button/i")
 private WebElement closePopupWin;
+@FindBy(xpath="//div[@id='div_Country']/div/ul/li/span[text()='India']")
+private WebElement pickCountryIndia;
 
 	
 	
@@ -32,6 +34,10 @@ private WebElement closePopupWin;
 	
 	
 /************Getters Usage*************/
+public WebElement getPickCountryIndia()
+{
+	return pickCountryIndia;
+}
 public WebElement getAddNewButton() {
 	return addNewButton;
 }
