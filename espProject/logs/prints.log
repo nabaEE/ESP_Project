@@ -1,38 +1,26 @@
-16:33:28.158 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
-16:33:39.489 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
-16:33:45.400 [main] DEBUG esp.genericLibraries.BaseClass - ---------submit New Hire FormAnd Validate Activate Button:- test started----------
-16:34:07.018 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
-16:34:11.468 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
-16:34:25.455 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
-16:34:33.240 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
-16:34:36.787 [main] DEBUG esp.genericLibraries.BaseClass - ---------submit New Hire FormAnd Validate Activate Button:- test started----------
-16:35:10.778 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
-16:35:14.023 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
-16:36:55.708 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
-16:37:02.941 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
-16:37:06.341 [main] DEBUG esp.genericLibraries.BaseClass - ---------submit New Hire FormAnd Validate Activate Button:- test started----------
-16:39:00.759 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
-16:39:03.271 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
-16:50:29.109 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
-16:50:35.881 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
-16:50:39.733 [main] DEBUG esp.genericLibraries.BaseClass - ---------submit New Hire FormAnd Validate Activate Button:- test started----------
-16:52:33.042 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
-16:52:35.750 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
-16:56:57.479 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
-16:57:04.175 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
-16:57:08.229 [main] DEBUG esp.genericLibraries.BaseClass - -------printAndVerifyAdminValues : Test Started-------
-16:57:11.902 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
-16:57:16.486 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
-16:57:37.709 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
-16:57:44.532 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
-16:57:48.182 [main] DEBUG esp.genericLibraries.BaseClass - -------printAndVerifyAdminValues : Test Started-------
-16:57:56.351 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
-16:58:01.343 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
-16:59:35.194 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
-16:59:41.880 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
-17:00:18.294 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
-17:00:21.102 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
-17:03:57.259 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
-17:04:04.050 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
-17:04:11.546 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
-17:04:16.741 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+07:18:53.902 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+07:21:17.396 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+07:21:24.613 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+07:21:28.671 [main] DEBUG esp.genericLibraries.BaseClass - -------printAndVerifyAdminValues : Test Started-------
+07:21:30.253 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+07:21:37.686 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+07:23:40.966 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+07:23:47.722 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+07:23:52.142 [main] DEBUG esp.genericLibraries.BaseClass - -------printAndVerifyAdminValues : Test Started-------
+07:23:53.541 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+07:24:00.860 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+07:25:33.640 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+07:25:40.831 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+07:25:45.303 [main] DEBUG esp.genericLibraries.BaseClass - -------printAndVerifyAdminValues : Test Started-------
+07:25:47.137 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+07:25:52.841 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+10:24:57.000 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+10:25:07.270 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+10:25:14.033 [main] DEBUG esp.genericLibraries.BaseClass - ---------submit New Hire FormAnd Validate Activate Button:- test started----------
+10:25:46.078 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+10:25:49.200 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+10:26:12.626 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+10:26:20.372 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+10:26:23.696 [main] DEBUG esp.genericLibraries.BaseClass - ---------submit New Hire FormAnd Validate Activate Button:- test started----------
+10:28:29.905 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+10:28:32.915 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********

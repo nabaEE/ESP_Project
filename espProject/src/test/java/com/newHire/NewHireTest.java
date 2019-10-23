@@ -25,7 +25,7 @@ public class NewHireTest extends BaseClass
 public static void submitNewHireFormAndValidateActivateButton() throws AWTException, InterruptedException
 {
 	   log.debug("---------submit New Hire FormAnd Validate Activate Button:- test started----------");
-	    driver.findElement(By.id("Not_now")).click();
+	   // driver.findElement(By.id("Not_now")).click();
 	    //Call the landing page
 		LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
 		//Click on admin icon
@@ -40,7 +40,7 @@ public static void submitNewHireFormAndValidateActivateButton() throws AWTExcept
 		nhp.getTitleDropdown().click();
 		nhp.getPickTitle_MR().click();
 		//Enter the first Name
-		nhp.getFirstNameEditbox().sendKeys("Rana");
+		nhp.getFirstNameEditbox().sendKeys("Rajat");
 		//Enter last name
 		nhp.getLastNameEditbox().sendKeys("Dafadar");
 		//Pick date of birth
@@ -90,9 +90,9 @@ public static void submitNewHireFormAndValidateActivateButton() throws AWTExcept
 	    String groupJoiningDate="1-Sept-2019";
 	    nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 	    //Enter the employee Id
-	    nhp.getEmployeeId().sendKeys("NXR12");
+	    nhp.getEmployeeId().sendKeys("NXR745");
 	    //Enter email id
-	    nhp.getEmailIdEditbox().sendKeys("ranadaff2");
+	    nhp.getEmailIdEditbox().sendKeys("rajat.duffadar");
 	    //Pick employment type 
 	    nhp.getEmploymentTypeDropdown().click();
 	    nhp.getPickEmploymentType().click();
@@ -101,17 +101,6 @@ public static void submitNewHireFormAndValidateActivateButton() throws AWTExcept
 	    nhp.getPickEmploymentStatusAsConfirmed().click();
 	    //Stop page refresh
 	    // BaseClass.driver.findElement(By.tagName("body")).sendKeys("Keys.ESCAPE");
-	    //Enter three letters in the role editbox
-	     try {
-	     nhp.getRoleEditbox().sendKeys("sal");
-	     Thread.sleep(2000);
-	     nhp.selectRole();
-	        }
-	     catch(StaleElementReferenceException e)
-	     {
-		     //nhp.selectRole();
-		     nhp.selectRole();
-	     }
 	    //Enter three letters in the Department editbox and pick one department
 	     try {
 		 nhp.getDepartmentEditbox().sendKeys("sal");
@@ -122,6 +111,17 @@ public static void submitNewHireFormAndValidateActivateButton() throws AWTExcept
 	     catch(StaleElementReferenceException e)
 	     {
 	       nhp.getPickDepartment().click();
+	     }
+	   //Enter three letters in the role editbox
+	     try {
+	     nhp.getRoleEditbox().sendKeys("sal");
+	     Thread.sleep(2000);
+	     nhp.selectRole();
+	        }
+	     catch(StaleElementReferenceException e)
+	     {
+		     //nhp.selectRole();
+		     nhp.selectRole();
 	     }
         //Enter three letters and select Designation
 	     try
@@ -161,7 +161,7 @@ public static void submitNewHireFormAndValidateActivateButton() throws AWTExcept
 	    //Call the compensation page
 	    CompensationPage cmp= PageFactory.initElements(driver, CompensationPage.class);
 	    //select above 3 lakhs
-	    cmp.getClickAbove3Lakh().click();
+	  // cmp.getClickAbove3Lakh().click();
 	    //Click on save And continue
 	    WebdriverUtils.waitForPageToLoad(driver);
 	    cmp.getSaveAndContinueButton().click();
