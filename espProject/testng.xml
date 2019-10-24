@@ -8,9 +8,9 @@
   <parameter name="browser" value="firefox 68"/>
   <test thread-count="5" name="Test">
    <classes>
-      <class name="com.newHire.NewHireTest">
+      <class name="com.orgDesignData.LegalEntityManagementTest">
       <methods>
-      <include name="submitNewHireFormAndValidateActivateButton"/>
+      <include name="submitFormWithKeepingRemarksBlank"/>
       </methods>
       </class>
     </classes>

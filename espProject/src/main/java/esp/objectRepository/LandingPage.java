@@ -75,7 +75,7 @@ act.moveToElement(adminIcon).perform();
 //Method to print all admin values
 public String[] printAdminValues()
 {
- String[] val= new String[9];
+ String[] val= new String[10];
  for(int i=0; i<adminDropdownValues.size(); i++)
  {
 	 val[i]=adminDropdownValues.get(i).getText();
