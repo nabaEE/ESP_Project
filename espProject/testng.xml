@@ -9,9 +9,9 @@
   <test thread-count="5" name="Test">
    <classes>
       <class name="com.orgDesignData.LegalEntityManagementTest">
-      <methods>
+     <!--  <methods>
       <include name="submitFormWithKeepingRemarksBlank"/>
-      </methods>
+      </methods> -->
       </class>
     </classes>
   </test> <!-- Test -->
