@@ -1,9 +1,39 @@
-11:40:30.187 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
-11:40:36.954 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
-11:40:40.781 [main] DEBUG esp.genericLibraries.BaseClass - -------clickEditIconAndSubmitWithoutModifying :test Started-------
-11:40:42.999 [main] DEBUG esp.genericLibraries.BaseClass - Picked legal entity is :SRS
-11:40:43.268 [main] DEBUG esp.genericLibraries.BaseClass - -----Validate the legal entity after submit--------
-11:40:43.435 [main] INFO  esp.genericLibraries.BaseClass - Legal entity is :SRS
-11:40:43.435 [main] INFO  esp.genericLibraries.BaseClass - -------clickEditIconAndSubmitWithoutModifying :test ended-------
-11:40:44.152 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
-11:40:49.287 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+17:39:49.571 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+17:40:00.603 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+17:40:03.564 [main] DEBUG esp.genericLibraries.BaseClass - -------verifyCommentsOnViewWin :test Started-------
+17:40:06.311 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+17:40:07.048 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+17:41:31.058 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+17:41:41.933 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+17:41:43.900 [main] DEBUG esp.genericLibraries.BaseClass - -------verifyCommentsOnViewWin :test Started-------
+17:41:46.599 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+17:41:47.326 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+17:44:03.711 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+17:44:14.344 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+17:44:16.399 [main] DEBUG esp.genericLibraries.BaseClass - -------verifyCommentsOnViewWin :test Started-------
+17:44:19.983 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+17:44:20.722 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+17:44:47.386 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+17:44:58.827 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+17:45:00.850 [main] DEBUG esp.genericLibraries.BaseClass - -------verifyCommentsOnViewWin :test Started-------
+17:45:03.236 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+17:45:03.971 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+17:45:33.801 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+17:45:44.707 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+17:45:46.671 [main] DEBUG esp.genericLibraries.BaseClass - -------verifyCommentsOnViewWin :test Started-------
+17:46:19.281 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+17:46:19.984 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+17:49:06.715 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+17:49:17.628 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+17:49:19.749 [main] DEBUG esp.genericLibraries.BaseClass - -------verifyCommentsOnViewWin :test Started-------
+17:49:22.593 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+17:49:23.316 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+17:50:17.998 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+17:50:24.717 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+17:50:30.026 [main] DEBUG esp.genericLibraries.BaseClass - -------verifyCommentsOnViewWin :test Started-------
+17:50:34.796 [main] DEBUG esp.genericLibraries.BaseClass - -----Verify the entered comments------
+17:50:34.885 [main] INFO  esp.genericLibraries.BaseClass - Suveen S (#9) on 28 Oct, 5:50 PM
+Able to view legal entity details
+17:50:35.118 [main] DEBUG esp.genericLibraries.BaseClass - -------verifyCommentsOnViewWin :test ended-------
+17:50:35.822 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+17:50:40.174 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********

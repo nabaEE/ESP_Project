@@ -14,7 +14,7 @@ public class LandingPage
 /************Utilization*************/
 	@FindBy(xpath="//ul[@class='right hide-on-med-and-down']/li")
 	private List<WebElement> landingPageValues;
-	@FindBy(xpath="/html/body/header/div[2]/nav/div/ul/li[2]/a/img")
+	@FindBy(xpath="//html//body//header//div[2]//nav//div//ul//li[2]//a//img")
 	private WebElement adminIcon;
 	@FindBy(xpath="//div[@class='nav-wrapper']/ul/li[2]/a/span")
 	private WebElement adminToolTip;

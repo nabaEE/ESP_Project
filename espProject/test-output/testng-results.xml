@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="9" total="10" passed="1">
+<testng-results skipped="0" failed="0" ignored="12" total="13" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="19162" started-at="2019-10-28T06:10:30Z" finished-at="2019-10-28T06:10:49Z">
+  <suite name="Suite" duration-ms="22222" started-at="2019-10-28T12:20:17Z" finished-at="2019-10-28T12:20:40Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="19162" started-at="2019-10-28T06:10:30Z" finished-at="2019-10-28T06:10:49Z">
+    <test name="Test" duration-ms="22222" started-at="2019-10-28T12:20:17Z" finished-at="2019-10-28T12:20:40Z">
       <class name="com.orgDesignData.LegalEntityManagementTest">
-        <test-method status="PASS" signature="openBrowser(java.lang.String)[pri:0, instance:com.orgDesignData.LegalEntityManagementTest@c267ef4]" name="openBrowser" is-config="true" duration-ms="6810" started-at="2019-10-28T06:10:30Z" finished-at="2019-10-28T06:10:36Z">
+        <test-method status="PASS" signature="openBrowser(java.lang.String)[pri:0, instance:com.orgDesignData.LegalEntityManagementTest@c267ef4]" name="openBrowser" is-config="true" duration-ms="6738" started-at="2019-10-28T12:20:17Z" finished-at="2019-10-28T12:20:24Z">
           <params>
             <param index="0">
               <value>
@@ -18,19 +18,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method status="PASS" signature="login()[pri:0, instance:com.orgDesignData.LegalEntityManagementTest@c267ef4]" name="login" is-config="true" duration-ms="3821" started-at="2019-10-28T06:10:36Z" finished-at="2019-10-28T06:10:40Z">
+        <test-method status="PASS" signature="login()[pri:0, instance:com.orgDesignData.LegalEntityManagementTest@c267ef4]" name="login" is-config="true" duration-ms="5300" started-at="2019-10-28T12:20:24Z" finished-at="2019-10-28T12:20:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="clickEditIconAndSubmitWithoutModifying()[pri:0, instance:com.orgDesignData.LegalEntityManagementTest@c267ef4]" name="clickEditIconAndSubmitWithoutModifying" duration-ms="2660" started-at="2019-10-28T06:10:40Z" finished-at="2019-10-28T06:10:43Z">
+        <test-method status="PASS" signature="verifyCommentsOnViewWin()[pri:0, instance:com.orgDesignData.LegalEntityManagementTest@c267ef4]" name="verifyCommentsOnViewWin" duration-ms="5103" started-at="2019-10-28T12:20:30Z" finished-at="2019-10-28T12:20:35Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickEditIconAndSubmitWithoutModifying -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.orgDesignData.LegalEntityManagementTest@c267ef4]" name="tearDown" is-config="true" duration-ms="714" started-at="2019-10-28T06:10:43Z" finished-at="2019-10-28T06:10:44Z">
+        </test-method> <!-- verifyCommentsOnViewWin -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.orgDesignData.LegalEntityManagementTest@c267ef4]" name="tearDown" is-config="true" duration-ms="700" started-at="2019-10-28T12:20:35Z" finished-at="2019-10-28T12:20:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.orgDesignData.LegalEntityManagementTest@c267ef4]" name="closeBrowser" is-config="true" duration-ms="5135" started-at="2019-10-28T06:10:44Z" finished-at="2019-10-28T06:10:49Z">
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.orgDesignData.LegalEntityManagementTest@c267ef4]" name="closeBrowser" is-config="true" duration-ms="4351" started-at="2019-10-28T12:20:35Z" finished-at="2019-10-28T12:20:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->

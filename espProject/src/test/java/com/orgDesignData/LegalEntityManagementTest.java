@@ -342,7 +342,7 @@ public static void submitFormWithKeepingRemarksBlank() throws InterruptedExcepti
     log.info("------submitFormWithKeepingRemarksBlank:-test ended-------");
     
     }
-//9. Pick one legal entity from the table then modify and submit to verify.
+//9. Click on submit button with changing the legal entity name on edit window.
 @Test()
 public static void modifyLegalEntity() throws Exception
 {
@@ -380,7 +380,7 @@ public static void modifyLegalEntity() throws Exception
 	log.debug("------modifyLegalEntity:-test ended-------");
 	
 }
-//10. Click on pencil icon then click on submit without making any change
+//10. Click on submit button without making any changes on edit window.
 @Test()
 public static void clickEditIconAndSubmitWithoutModifying()
 {
@@ -411,7 +411,111 @@ public static void clickEditIconAndSubmitWithoutModifying()
 	log.info("-------clickEditIconAndSubmitWithoutModifying :test ended-------");
 	
 }
-//11.
+//11. Check the maximum size of the legal Entity name editbox on New Legal Entity window.
+@Test()
+public static void verifySizeOfLegalEntityEditbox()
+{
+	log.debug("-------verifySizeOfLegalEntityEditbox :test Started-------");
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	lnp.getAdminIcon().click();
+	//Click on Configuration setup
+	lnp.getConfigurationSetupAdminValue().click();
+	//Call the ConfigurationSetup page
+	ConfigurationSetupPage csp= PageFactory.initElements(driver, ConfigurationSetupPage.class);
+	//Click on org design data
+	csp.getOrgDesignData().click();
+	//Click on legal entity management page
+	csp.getClickDepartment().click();
+	csp.getClickLegalEntityManagement().click();
+	//Call legal entity management page
+	LegalEntityManagementPage lem= PageFactory.initElements(driver, LegalEntityManagementPage.class);
+	//Click on add new button
+	WebdriverUtils.waitForElementPresent(driver, lem.getAddNewButton());
+	lem.getAddNewButton().click();
+	//Enter the legal entity name
+	String legalEntity="BRMRC soft tech";
+	String expLength=legalEntity.length()+"/50";
+	lem.getLegalEntityNameEditbox().sendKeys(legalEntity);
+	log.debug("Entererd length is :"+expLength);
+	//Capture the actual length
+	String actLength=lem.getLegalEntityNameEditboxLength().getText();
+	log.debug("-------Verify the length--------");
+	Assert.assertEquals(actLength, expLength);
+	log.info("Actual length is :"+actLength);
+	//Close the pop up window
+	lem.getClosePopupWin().click();
+	log.info("-------verifySizeOfLegalEntityEditbox :test ended-------");
+}
+//12. Check the size of Remarks editbox and verify it.
+@Test()
+public static void verifySizeOfRemarksEditbox()
+{
+	log.debug("-------verifySizeOfRemarksEditbox :test Started-------");
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	lnp.getAdminIcon().click();
+	//Click on Configuration setup
+	lnp.getConfigurationSetupAdminValue().click();
+	//Call the ConfigurationSetup page
+	ConfigurationSetupPage csp= PageFactory.initElements(driver, ConfigurationSetupPage.class);
+	//Click on org design data
+	csp.getOrgDesignData().click();
+	//Click on legal entity management page
+	csp.getClickDepartment().click();
+	csp.getClickLegalEntityManagement().click();
+	//Call legal entity management page
+	LegalEntityManagementPage lem= PageFactory.initElements(driver, LegalEntityManagementPage.class);
+	//Click on add new button
+	WebdriverUtils.waitForElementPresent(driver, lem.getAddNewButton());
+	lem.getAddNewButton().click();
+	String remarks="submit";
+	lem.getRemarksEditbox().sendKeys(remarks);
+	//Declare the expected length
+	String expLength=remarks.length()+"/250";
+	log.debug("Expected length of entered remarks is :"+expLength);
+	//Capture the actual length
+	String actLength=lem.getRemarksEditboxLength().getText();
+	log.debug("----Verify the length------");
+	Assert.assertEquals(actLength, expLength);
+	log.info("Actual length is :"+actLength);
+	//Close pop up window
+	lem.getClosePopupWin().click();
+	log.debug("-------verifySizeOfRemarksEditbox :test ended-------");
+ }
+//13. Enter comments in the view window and verify it.
+@Test()
+public static void verifyCommentsOnViewWin() throws Exception
+{
+	log.debug("-------verifyCommentsOnViewWin :test Started-------");
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on Configuration setup
+	lnp.getConfigurationSetupAdminValue().click();
+	//Call the ConfigurationSetup page
+	ConfigurationSetupPage csp= PageFactory.initElements(driver, ConfigurationSetupPage.class);
+	//Click on org design data
+	csp.getOrgDesignData().click();
+	//Click on legal entity management page
+	csp.getClickDepartment().click();
+	csp.getClickLegalEntityManagement().click();
+	//Call legal entity management page
+	LegalEntityManagementPage lem= PageFactory.initElements(driver, LegalEntityManagementPage.class);
+   //Click on the view window
+	lem.getViewIcon().click();
+	//Enter the comments in the editbox
+    lem.getCommentsEditbox().sendKeys("Able to view legal entity details");
+    lem.getSaveButton().click();
+    Thread.sleep(2000);
+    log.debug("-----Verify the entered comments------");
+    Assert.assertTrue(lem.getCheckEnteredComments().isDisplayed());
+    log.info(lem.getCheckEnteredComments().getText());
+  //close the pop up window
+    lem.getClosePopupWin().click();
+	log.debug("-------verifyCommentsOnViewWin :test ended-------");
+}
 
 
 }

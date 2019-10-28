@@ -10,7 +10,7 @@
    <classes>
       <class name="com.orgDesignData.LegalEntityManagementTest">
       <methods>
-      <include name="clickEditIconAndSubmitWithoutModifying"/>
+      <include name="verifyCommentsOnViewWin"/>
       </methods>
       </class>
     </classes>

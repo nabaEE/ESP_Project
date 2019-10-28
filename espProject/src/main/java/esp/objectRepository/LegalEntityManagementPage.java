@@ -39,6 +39,8 @@ private WebElement effectiveFromDateBlankErr;
 private WebElement countryDropdownBlankErr;
 @FindBy(id="Error_Remarks")
 private WebElement remarksEditboxBlankErr;
+@FindBy(xpath="//div[@id='div_Remarks']/span")
+private WebElement remarksEditboxLength;
 
 @FindBy(xpath="//tbody[@id='TBody']/tr[2]/td[1]/a[1]")
 private WebElement editIcon;
@@ -48,7 +50,12 @@ private WebElement viewIcon;
 private WebElement deleteIcon;
 @FindBy(xpath="//tbody[@id='TBody']/tr[2]/td[2]")
 private WebElement modifiedLegalEntity;
-
+@FindBy(id="LegalEntityComments")
+private WebElement commentsEditbox;
+@FindBy(id="SaveLegalEntityComments")
+private WebElement saveButton;
+@FindBy(xpath="//ul[@id='LegalEntityComments_UL']/div[1]/li/p")
+private WebElement checkEnteredComments;
 @FindBy(xpath="//th[@id='LegalEntity_Name']/a/i")
 private WebElement legalEntityFilterIcon;
 @FindBy(id="1_SelectAll")
@@ -64,6 +71,19 @@ private WebElement filterWinSearchbox;
 
 
 /************Getters Usage*************/
+public WebElement getCommentsEditbox() {
+	return commentsEditbox;
+}
+public WebElement getSaveButton() {
+	return saveButton;
+}
+public WebElement getCheckEnteredComments() {
+	return checkEnteredComments;
+}
+
+public WebElement getRemarksEditboxLength() {
+	return remarksEditboxLength;
+}
 public WebElement getModifiedLegalEntity() {
 	return modifiedLegalEntity;
 }
