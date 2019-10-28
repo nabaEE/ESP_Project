@@ -10,7 +10,7 @@
    <classes>
       <class name="com.orgDesignData.LegalEntityManagementTest">
       <methods>
-      <include name="verifyCommentsOnViewWin"/>
+      <include name="deleteLegalEntity"/>
       </methods>
       </class>
     </classes>

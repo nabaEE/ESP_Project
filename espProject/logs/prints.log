@@ -37,3 +37,10 @@ Able to view legal entity details
 17:50:35.118 [main] DEBUG esp.genericLibraries.BaseClass - -------verifyCommentsOnViewWin :test ended-------
 17:50:35.822 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
 17:50:40.174 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+18:34:13.179 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+18:34:20.422 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+18:34:25.338 [main] DEBUG esp.genericLibraries.BaseClass - ------deleteLegalEntity: Test started--------
+18:34:27.495 [main] DEBUG esp.genericLibraries.BaseClass - Picked legal entity is :SRS
+18:34:27.747 [main] DEBUG esp.genericLibraries.BaseClass - ---------Verify the deleted legal entity---------
+18:34:28.828 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+18:34:33.469 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********

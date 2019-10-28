@@ -516,6 +516,40 @@ public static void verifyCommentsOnViewWin() throws Exception
     lem.getClosePopupWin().click();
 	log.debug("-------verifyCommentsOnViewWin :test ended-------");
 }
+//14. Try to delete the legal entity and verify it.
+@Test()
+public static void deleteLegalEntity()
+{
+	log.debug("------deleteLegalEntity: Test started--------");
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on Configuration setup
+	lnp.getConfigurationSetupAdminValue().click();
+	//Call the ConfigurationSetup page
+	ConfigurationSetupPage csp= PageFactory.initElements(driver, ConfigurationSetupPage.class);
+	//Click on org design data
+	csp.getOrgDesignData().click();
+	//Click on legal entity management page
+	csp.getClickDepartment().click();
+	csp.getClickLegalEntityManagement().click();
+	//Call legal entity management page
+	LegalEntityManagementPage lem= PageFactory.initElements(driver, LegalEntityManagementPage.class);	
+	//Click on the legal entity to delete
+	lem.getDeleteIcon().click();
+	//Print the selected legal entity to delete
+	String legalEntity=lem.getModifiedLegalEntity().getText();
+	log.debug("Picked legal entity is :"+legalEntity);
+	//Click on yes 
+	lem.getClickYesButton().click();
+	log.debug("---------Verify the deleted legal entity---------");
+	Assert.assertFalse(lem.getModifiedLegalEntity().isDisplayed());
+	log.info("Deleted legal entity name is :"+legalEntity);
+	
+	log.debug("------deleteLegalEntity: Test ended--------");
+	
+}
 
 
 }

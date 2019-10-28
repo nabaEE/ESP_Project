@@ -48,6 +48,8 @@ private WebElement editIcon;
 private WebElement viewIcon;
 @FindBy(xpath="//tbody[@id='TBody']/tr[2]/td[1]/a[3]")
 private WebElement deleteIcon;
+@FindBy(id="popUpYes")
+private WebElement clickYesButton;
 @FindBy(xpath="//tbody[@id='TBody']/tr[2]/td[2]")
 private WebElement modifiedLegalEntity;
 @FindBy(id="LegalEntityComments")
@@ -64,13 +66,13 @@ private WebElement selectAllCheckbox;
 private WebElement filterWinSearchbox;
 
 	
-	
-	
-	
-	
 
 
 /************Getters Usage*************/
+public WebElement getClickYesButton()
+{
+	return clickYesButton;
+}
 public WebElement getCommentsEditbox() {
 	return commentsEditbox;
 }
