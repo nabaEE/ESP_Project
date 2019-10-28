@@ -40,13 +40,51 @@ private WebElement countryDropdownBlankErr;
 @FindBy(id="Error_Remarks")
 private WebElement remarksEditboxBlankErr;
 
+@FindBy(xpath="//tbody[@id='TBody']/tr[2]/td[1]/a[1]")
+private WebElement editIcon;
+@FindBy(xpath="//tbody[@id='TBody']/tr[2]/td[1]/a[2]")
+private WebElement viewIcon;
+@FindBy(xpath="//tbody[@id='TBody']/tr[2]/td[1]/a[3]")
+private WebElement deleteIcon;
+@FindBy(xpath="//tbody[@id='TBody']/tr[2]/td[2]")
+private WebElement modifiedLegalEntity;
+
+@FindBy(xpath="//th[@id='LegalEntity_Name']/a/i")
+private WebElement legalEntityFilterIcon;
+@FindBy(id="1_SelectAll")
+private WebElement selectAllCheckbox;
+@FindBy(id="1_Search")
+private WebElement filterWinSearchbox;
+
 	
 	
 	
 	
 	
 
+
 /************Getters Usage*************/
+public WebElement getModifiedLegalEntity() {
+	return modifiedLegalEntity;
+}
+public WebElement getLegalEntityFilterIcon() {
+	return legalEntityFilterIcon;
+}
+public WebElement getSelectAllCheckbox() {
+	return selectAllCheckbox;
+}
+public WebElement getFilterWinSearchbox() {
+	return filterWinSearchbox;
+}
+public WebElement getEditIcon() {
+	return editIcon;
+}
+public WebElement getViewIcon() {
+	return viewIcon;
+}
+public WebElement getDeleteIcon() {
+	return deleteIcon;
+}
 public List<WebElement> getLegalEntities() {
 	return legalEntities;
 }

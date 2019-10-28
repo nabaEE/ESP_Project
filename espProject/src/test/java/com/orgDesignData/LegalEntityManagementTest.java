@@ -342,7 +342,76 @@ public static void submitFormWithKeepingRemarksBlank() throws InterruptedExcepti
     log.info("------submitFormWithKeepingRemarksBlank:-test ended-------");
     
     }
-//9. 
+//9. Pick one legal entity from the table then modify and submit to verify.
+@Test()
+public static void modifyLegalEntity() throws Exception
+{
+	log.debug("------modifyLegalEntity:-test started-------");
+	WebdriverUtils.waitForPageToLoad(driver);
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	lnp.getAdminIcon().click();
+	//Click on Configuration setup
+	lnp.getConfigurationSetupAdminValue().click();
+	//Call the ConfigurationSetup page
+	ConfigurationSetupPage csp= PageFactory.initElements(driver, ConfigurationSetupPage.class);
+	//Click on org design data
+	csp.getOrgDesignData().click();
+	//Click on legal entity management page
+	csp.getClickDepartment().click();
+	csp.getClickLegalEntityManagement().click();
+	//Call legal entity management page
+	LegalEntityManagementPage lem= PageFactory.initElements(driver, LegalEntityManagementPage.class);	
+	//Click on the pencil icon
+	lem.getEditIcon().click();
+	String changLegalEntity="SRS";
+	//Clear the legal entity name
+	lem.getLegalEntityNameEditbox().clear();
+	Thread.sleep(2000);
+	lem.getLegalEntityNameEditbox().sendKeys(changLegalEntity);
+	//Click on submit
+	lem.getSubmitButton().click();
+	log.debug("Expected legal entity name is :"+changLegalEntity);
+	//Capture the actual legal entity name
+	String modifiedLegalEntity=lem.getModifiedLegalEntity().getText();
+	log.debug("---Verify modified legal entity name------");
+	Assert.assertEquals(modifiedLegalEntity, changLegalEntity);
+	log.info("Modified legal entity name is :"+modifiedLegalEntity);
+	log.debug("------modifyLegalEntity:-test ended-------");
+	
+}
+//10. Click on pencil icon then click on submit without making any change
+@Test()
+public static void clickEditIconAndSubmitWithoutModifying()
+{
+	log.debug("-------clickEditIconAndSubmitWithoutModifying :test Started-------");
+	WebdriverUtils.waitForPageToLoad(driver);
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	lnp.getAdminIcon().click();
+	//Click on Configuration setup
+	lnp.getConfigurationSetupAdminValue().click();
+	//Call the ConfigurationSetup page
+	ConfigurationSetupPage csp= PageFactory.initElements(driver, ConfigurationSetupPage.class);
+	//Click on org design data
+	csp.getOrgDesignData().click();
+	//Click on legal entity management page
+	csp.getClickDepartment().click();
+	csp.getClickLegalEntityManagement().click();
+	//Call legal entity management page
+	LegalEntityManagementPage lem= PageFactory.initElements(driver, LegalEntityManagementPage.class);	
+	//Click on the pencil icon
+	lem.getEditIcon().click();
+	log.debug("Picked legal entity is :"+lem.getModifiedLegalEntity().getText());
+	//Click on submit
+	lem.getSubmitButton().click();
+	log.debug("-----Validate the legal entity after submit--------");
+	Assert.assertTrue(lem.getModifiedLegalEntity().isDisplayed());
+	log.info("Legal entity is :"+lem.getModifiedLegalEntity().getText());
+	log.info("-------clickEditIconAndSubmitWithoutModifying :test ended-------");
+	
+}
+//11.
 
 
 }

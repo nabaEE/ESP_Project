@@ -10,7 +10,7 @@
     <classes>
       <class name="com.orgDesignData.LegalEntityManagementTest">
         <methods>
-          <include name="submitExistingLegalEntity"/>
+          <include name="clickEditIconAndSubmitWithoutModifying"/>
           <include name="login"/>
           <include name="closeBrowser"/>
           <include name="openBrowser"/>
