@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterClass;
@@ -25,6 +26,7 @@ public class BaseClass extends FileUtils
 {
  public static WebDriver driver;
  protected static Logger log= LogManager.getLogger(BaseClass.class);
+ FirefoxProfile profile = new FirefoxProfile();
  @BeforeClass()
  @Parameters({"browser"})
 public void openBrowser(String browserName)
@@ -40,6 +42,9 @@ public void openBrowser(String browserName)
   /*call the firefox browser*/
  else if(browserName.equalsIgnoreCase("firefox 68"))
   {
+	 profile.setPreference("browser.download.folderList", 2);
+	 profile.setPreference("browser.helperApps.neverAsk.SaveToDisk", "Application/zip");
+	 profile.setPreference("browser.download.dir", "D:\\app\\");
 	 System.setProperty("webdriver.gecko.driver", "C:\\Program Files\\gecko\\geckodriver.exe");
 	 driver= new FirefoxDriver();
    }

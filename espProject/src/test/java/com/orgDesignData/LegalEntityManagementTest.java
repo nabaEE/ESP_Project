@@ -50,7 +50,7 @@ public class LegalEntityManagementTest extends BaseClass
      log.debug("    ");
      log.debug("------Validate the expected values with actual values-------");
      log.debug("    ");
-     Assert.assertEquals(actVal.length, expVal.length);
+     Assert.assertEquals(actVal, expVal);
      log.debug("    ");
      log.info("Actual values are :"+Arrays.toString(actVal));
      log.info("------printAndVerifyAdminValues : Test Ended-------");
@@ -672,12 +672,64 @@ public static void verifyAddNewTooltip()
 	log.info("Actual tooltip is :"+actTooltip);
 	log.info("------verifyAddNewTooltip: Test ended--------");
 }
-//19. Click on the data grid Icon and verify the added columns
+//19. Click on the data grid Icon and verify column names.
 @Test()
-public static void downloadPdf()
+public static void clickAndVerifyDataGridValues()
 {
-	
+	log.debug("------clickAndVerifyDataGridValues: Test started--------");
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on Configuration setup
+	lnp.getConfigurationSetupAdminValue().click();
+	//Call the ConfigurationSetup page
+	ConfigurationSetupPage csp= PageFactory.initElements(driver, ConfigurationSetupPage.class);
+	//Click on org design data
+	csp.getOrgDesignData().click();
+	//Click on legal entity management page
+	csp.getClickDepartment().click();
+	csp.getClickLegalEntityManagement().click();
+	//Call legal entity management page
+	LegalEntityManagementPage lem= PageFactory.initElements(driver, LegalEntityManagementPage.class);
+	//Click on data grid icon
+	lem.getGridColumnIcon().click();
+	//Declare the expected column names
+	String[] expVal= {"Data Grid", "Legal Entity", "Country","Effective From","Effective End Date", "Created By", "Created On"};
+	log.debug("Expected tooltip is :"+Arrays.toString(expVal));
+	//Capture the actual tooltip
+	String[] actVal=lem.getGridValues();
+	log.debug("------Verify the grid values-------");
+	Assert.assertEquals(actVal, expVal);
+	log.info("Actual tooltip is :"+Arrays.toString(actVal));
+	log.info("------clickAndVerifyDataGridValues: Test ended--------");	
 }
+//20. Download legal entity records in excel format.
+@Test()
+public static void downloadLegalEntityRecordInExcelFormat()
+{
+	log.debug("------clickAndVerifyDataGridValues: Test started--------");
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on Configuration setup
+	lnp.getConfigurationSetupAdminValue().click();
+	//Call the ConfigurationSetup page
+	ConfigurationSetupPage csp= PageFactory.initElements(driver, ConfigurationSetupPage.class);
+	//Click on org design data
+	csp.getOrgDesignData().click();
+	//Click on legal entity management page
+	csp.getClickDepartment().click();
+	csp.getClickLegalEntityManagement().click();
+	//Call legal entity management page
+	LegalEntityManagementPage lem= PageFactory.initElements(driver, LegalEntityManagementPage.class);
+	//Click on download icon
+	lem.getDownloadIcon().click();
+	//Click on excel
+	lem.getDownloadExcel().click();
+}
+
 }
 
 

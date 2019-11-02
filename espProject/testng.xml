@@ -10,7 +10,7 @@
    <classes>
       <class name="com.orgDesignData.LegalEntityManagementTest">
       <methods>
-      <include name="verifyAddNewTooltip"/>
+      <include name="downloadLegalEntityRecordInExcelFormat"/>
       </methods>
       </class>
     </classes>

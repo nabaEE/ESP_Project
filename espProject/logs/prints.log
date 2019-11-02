@@ -1,26 +1,21 @@
-11:47:45.070 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
-11:47:52.957 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
-11:47:56.320 [main] DEBUG esp.genericLibraries.BaseClass - ------getdownloadTooltip: Test started--------
-11:47:58.313 [main] DEBUG esp.genericLibraries.BaseClass - Expected tooltip is :Download
-11:47:58.492 [main] DEBUG esp.genericLibraries.BaseClass - -----Verify the download tooltip message-------
-11:47:58.494 [main] INFO  esp.genericLibraries.BaseClass - Actual tooltip is :Download
-11:47:58.494 [main] DEBUG esp.genericLibraries.BaseClass - ------getdownloadTooltip: Test ended--------
-11:47:59.167 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
-11:48:05.063 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
-12:01:31.088 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
-12:01:38.430 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
-12:01:41.652 [main] DEBUG esp.genericLibraries.BaseClass - ------verifyClearFilterTooltip: Test started--------
-12:01:44.743 [main] DEBUG esp.genericLibraries.BaseClass - Expected tooltip is :Clear Filter
-12:01:44.923 [main] DEBUG esp.genericLibraries.BaseClass - ------Verify the tooltip message-------
-12:01:44.925 [main] INFO  esp.genericLibraries.BaseClass - Actual tooltip is :Clear Filter
-12:01:45.590 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
-12:01:51.736 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
-12:12:48.163 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
-12:12:55.879 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
-12:12:58.960 [main] DEBUG esp.genericLibraries.BaseClass - ------verifyAddNewTooltip: Test started--------
-12:13:00.915 [main] DEBUG esp.genericLibraries.BaseClass - Expected tooltip is :Add New
-12:13:01.119 [main] DEBUG esp.genericLibraries.BaseClass - ------Verify the tooltip message-------
-12:13:01.121 [main] INFO  esp.genericLibraries.BaseClass - Actual tooltip is :Add New
-12:13:01.121 [main] INFO  esp.genericLibraries.BaseClass - ------verifyAddNewTooltip: Test ended--------
-12:13:01.872 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
-12:13:08.438 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+16:56:37.817 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+16:56:44.943 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+16:56:48.028 [main] DEBUG esp.genericLibraries.BaseClass - ------clickAndVerifyDataGridValues: Test started--------
+16:56:51.277 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+16:56:57.293 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+16:57:16.595 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+16:57:23.255 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+16:57:26.597 [main] DEBUG esp.genericLibraries.BaseClass - ------clickAndVerifyDataGridValues: Test started--------
+16:57:29.871 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+16:57:37.367 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+16:58:59.976 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+16:59:07.281 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+16:59:10.222 [main] DEBUG esp.genericLibraries.BaseClass - ------clickAndVerifyDataGridValues: Test started--------
+16:59:13.597 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+16:59:19.129 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+17:01:10.561 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+17:01:17.149 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+17:01:20.447 [main] DEBUG esp.genericLibraries.BaseClass - ------clickAndVerifyDataGridValues: Test started--------
+17:01:23.942 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+17:01:31.076 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+18:29:41.538 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************

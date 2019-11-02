@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-skipped">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,21 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">1 method,  1 skipped,  </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods skipped suite-Suite"> (hide)</a> <!-- hide-methods skipped suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods skipped suite-Suite"> (show)</a> <!-- show-methods skipped suite-Suite -->
                     </span>
-                    <div class="method-list-content passed suite-Suite">
+                    <div class="method-list-content skipped suite-Suite">
                       <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.orgDesignData.LegalEntityManagementTest" hash-for-method="verifyAddNewTooltip">verifyAddNewTooltip</a> <!-- method navigator-link -->
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.orgDesignData.LegalEntityManagementTest" hash-for-method="downloadLegalEntityRecordInExcelFormat">downloadLegalEntityRecordInExcelFormat</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Suite -->
+                    </div> <!-- method-list-content skipped suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -117,21 +117,25 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-passed">
+          <div class="suite-Suite-class-skipped">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="skipped.png"/>
               <span class="class-name">com.orgDesignData.LegalEntityManagementTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyAddNewTooltip">
-                  </a> <!-- verifyAddNewTooltip -->
-                  <span class="method-name">verifyAddNewTooltip</span>
+                  <a name="downloadLegalEntityRecordInExcelFormat">
+                  </a> <!-- downloadLegalEntityRecordInExcelFormat -->
+                  <span class="method-name">downloadLegalEntityRecordInExcelFormat</span>
+                  <div class="stack-trace">java.lang.ClassCastException: org.openqa.selenium.firefox.FirefoxProfile cannot be cast to org.openqa.selenium.Capabilities
+	at esp.genericLibraries.BaseClass.openBrowser(BaseClass.java:50)
+... Removed 26 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-passed -->
+          </div> <!-- suite-Suite-class-skipped -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -151,7 +155,7 @@
     &lt;classes&gt;
       &lt;class name=&quot;com.orgDesignData.LegalEntityManagementTest&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;verifyAddNewTooltip&quot;/&gt;
+          &lt;include name=&quot;downloadLegalEntityRecordInExcelFormat&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- com.orgDesignData.LegalEntityManagementTest --&gt;
     &lt;/classes&gt;
@@ -195,14 +199,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyAddNewTooltip')
+data.setCell(0, 1, 'downloadLegalEntityRecordInExcelFormat')
 data.setCell(0, 2, 'com.orgDesignData.LegalEntityManagementTest')
-data.setCell(0, 3, 2169);
+data.setCell(0, 3, 1);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 seconds</span>
+              <span class="suite-total-time">Total running time: 1 ms</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -217,7 +221,7 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">17 ignored methods</span>
+            <span class="header-content">19 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
@@ -235,6 +239,8 @@ return data;
                 <br/>
                 <span class="ignored-method-name">clickEditIconAndSubmitWithoutModifying</span>
                 <br/>
+                <span class="ignored-method-name">verifyAddNewTooltip</span>
+                <br/>
                 <span class="ignored-method-name">verifyGridIconTooltip</span>
                 <br/>
                 <span class="ignored-method-name">verifyClearFilterTooltip</span>
@@ -250,6 +256,8 @@ return data;
                 <span class="ignored-method-name">submitExistingLegalEntity</span>
                 <br/>
                 <span class="ignored-method-name">submitFormWithoutPickingEffectiveFromDate</span>
+                <br/>
+                <span class="ignored-method-name">clickAndVerifyDataGridValues</span>
                 <br/>
                 <span class="ignored-method-name">printAndVerifyAdminValues</span>
                 <br/>
@@ -268,26 +276,16 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
               <div class="chronological-class-name">com.orgDesignData.LegalEntityManagementTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">downloadLegalEntityRecordInExcelFormat</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- test-method -->
               <div class="configuration-class before">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">openBrowser(firefox 68)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
-              <div class="configuration-method before">
-                <span class="method-name">login</span>
-                <span class="method-start">7751 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">verifyAddNewTooltip</span>
-                <span class="method-start">10824 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown</span>
-                <span class="method-start">12994 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-class after">
-                <span class="method-name">closeBrowser</span>
-                <span class="method-start">13745 ms</span>
-              </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

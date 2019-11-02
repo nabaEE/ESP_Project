@@ -71,12 +71,18 @@ private WebElement filterWinSearchbox;
 
 @FindBy(id="GridColumn")
 private WebElement gridColumnIcon;
+@FindBy(xpath="//ul[@id='ColumnFilter']/li")
+private List<WebElement> dataGridValues;
 @FindBy(xpath="//div[@id='AppsMenuRow']/div/div/a[1]/span")
 private WebElement gridIconTooltip;
 @FindBy(id="DownloadTable")
 private WebElement downloadIcon;
 @FindBy(xpath="//a[@id='DownloadTable']/span")
 private WebElement downloadTooltip;
+@FindBy(xpath="//ul[@id='DownloadOptions']/li[1]/span")
+private WebElement downloadExcel;
+@FindBy(xpath="//ul[@id='DownloadOptions']/li[2]/span")
+private WebElement downloadPdf;
 @FindBy(id="ClearTable")
 private WebElement clearTableIcon;
 @FindBy(xpath="//a[@id='ClearTable']/span")
@@ -87,6 +93,31 @@ private WebElement addNewTooltip;
 
 
 /************Getters Usage*************/
+public WebElement getDownloadExcel() {
+	return downloadExcel;
+}
+public WebElement getDownloadPdf() {
+	return downloadPdf;
+}
+public List<WebElement> getDataGridValues() {
+	return dataGridValues;
+}
+public WebElement getGridIconTooltip() {
+	return gridIconTooltip;
+}
+public WebElement getDownloadIcon() {
+	return downloadIcon;
+}
+public WebElement getClearTableIcon() {
+	return clearTableIcon;
+}
+public WebElement getClearTableTooltip() {
+	return clearTableTooltip;
+}
+public WebElement getGridColumnIcon()
+{
+	return gridColumnIcon;
+}
 public WebElement getClickYesButton()
 {
 	return clickYesButton;
@@ -220,6 +251,17 @@ public String getAddNewTooltip()
 	act.moveToElement(addNewButton).perform();
 	String tooltip=addNewTooltip.getText();
 	return tooltip;
+}
+//Method to print data grid values
+public String[] getGridValues()
+{
+	String[] val= new String[7];
+	for(int i=0; i<dataGridValues.size(); i++)
+	{
+		val[i]=dataGridValues.get(i).getText();
+	}
+	return val;
+	
 }
 
 }

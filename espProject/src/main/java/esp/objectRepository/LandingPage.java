@@ -20,7 +20,7 @@ public class LandingPage
 	private WebElement adminToolTip;
 	@FindBy(xpath="//ul[@id='AdminDropDowns']/li/a[text()='Configuration Setup']")
 	private WebElement configurationSetupAdminValue;
-	@FindBy(xpath="//div[@class='nav-wrapper']/ul/li[4]/ul/li")
+	@FindBy(xpath="//ul[@id='AdminDropDowns']/li/a")
 	private List<WebElement> adminDropdownValues;
 	@FindBy(xpath="//ul[@id='AdminDropDowns']/li[4]/a")
 	private WebElement newHireAdminValue;
@@ -79,6 +79,7 @@ public String[] printAdminValues()
  for(int i=0; i<adminDropdownValues.size(); i++)
  {
 	 val[i]=adminDropdownValues.get(i).getText();
+	 System.out.println(val[i]);
  }
  return val;
  
