@@ -18,7 +18,7 @@ public class LoginPage
 	private WebElement loginBtn;
 	@FindBy(css=".dropdown-icon")
 	private WebElement dropDownArrow;
-	@FindBy(xpath="//ul[@id='dropdown1']/li[2]/a")
+	@FindBy(xpath="//ul[@id='dropdown1']/li[1]/a")
 	private WebElement logoutBtn;
 	/************************************Utilization******************************************/
 	public void loginToPage(String username, String password)

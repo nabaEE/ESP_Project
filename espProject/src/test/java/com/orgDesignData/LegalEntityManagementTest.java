@@ -280,7 +280,10 @@ public static void submitFormWithoutPickingCountry()
 	//Enter the remarks
 	lem.getRemarksEditbox().sendKeys("Submit");
 	//Click on submit
+	WebdriverUtils.waitForElementPresent(driver, lem.getSubmitButton());
 	lem.getSubmitButton().click();	
+	//Close pop up window
+		lem.getClosePopupWin().click();
 	//Declare the expected error message
 	String expErr="Country cannot be empty";
 	log.debug("Expected error message is :"+expErr);
@@ -288,8 +291,6 @@ public static void submitFormWithoutPickingCountry()
 	String actErr=lem.getCountryDropdownBlankErr().getText();
 	Assert.assertEquals(actErr, expErr);
 	log.info("Actual error message is :"+actErr);
-	//Close pop up window
-	lem.getClosePopupWin().click();
 	log.info("---------submitFormWithoutPickingCountry :test ended------------");
 
  }
@@ -550,8 +551,133 @@ public static void deleteLegalEntity()
 	log.debug("------deleteLegalEntity: Test ended--------");
 	
 }
-
-
+//15. Keep the mouse pointer on grid icon and capture the tooltip message.
+@Test()
+public static void verifyGridIconTooltip()
+{
+	log.debug("------verifyGridIconTooltip: Test started--------");
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on Configuration setup
+	lnp.getConfigurationSetupAdminValue().click();
+	//Call the ConfigurationSetup page
+	ConfigurationSetupPage csp= PageFactory.initElements(driver, ConfigurationSetupPage.class);
+	//Click on org design data
+	csp.getOrgDesignData().click();
+	//Click on legal entity management page
+	csp.getClickDepartment().click();
+	csp.getClickLegalEntityManagement().click();
+	//Call legal entity management page
+	LegalEntityManagementPage lem= PageFactory.initElements(driver, LegalEntityManagementPage.class);
+	//Declare the expected grid message
+	String expMessage="Data Grid";
+	log.debug("Expected message is :"+expMessage);
+	//Capture the actual grid message
+	String actMessage=lem.getGridTooltip();
+	log.debug("------Verify the tooltip message------");
+	Assert.assertEquals(actMessage, expMessage);
+	log.info("Actual message is :"+actMessage);
+	log.info("------verifyGridIconTooltip: Test ended--------");
+}
+//16. Keep the mouse pointer on download icon and verify the tooltip.
+@Test()
+public static void verifyDownloadTooltip()
+{
+	log.debug("------getdownloadTooltip: Test started--------");
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on Configuration setup
+	lnp.getConfigurationSetupAdminValue().click();
+	//Call the ConfigurationSetup page
+	ConfigurationSetupPage csp= PageFactory.initElements(driver, ConfigurationSetupPage.class);
+	//Click on org design data
+	csp.getOrgDesignData().click();
+	//Click on legal entity management page
+	csp.getClickDepartment().click();
+	csp.getClickLegalEntityManagement().click();
+	//Call legal entity management page
+	LegalEntityManagementPage lem= PageFactory.initElements(driver, LegalEntityManagementPage.class);
+	//Declare expected grid message
+	String expMessage="Download";
+	log.debug("Expected tooltip is :"+expMessage);
+	//Capture the actual grid message
+	String actMessage=lem.getDownloadTooltip();
+	log.debug("-----Verify the download tooltip message-------");
+	Assert.assertEquals(actMessage, expMessage);
+	log.info("Actual tooltip is :"+actMessage);
+	log.info("------verifyDownloadTooltip: Test ended--------");
+	
+  }
+//17. Keep the mouse pointer on clear filter table icon and capture the tooltip message
+@Test()
+public static void verifyClearFilterTooltip()
+{
+	log.debug("------verifyClearFilterTooltip: Test started--------");
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on Configuration setup
+	lnp.getConfigurationSetupAdminValue().click();
+	//Call the ConfigurationSetup page
+	ConfigurationSetupPage csp= PageFactory.initElements(driver, ConfigurationSetupPage.class);
+	//Click on org design data
+	csp.getOrgDesignData().click();
+	//Click on legal entity management page
+	csp.getClickDepartment().click();
+	csp.getClickLegalEntityManagement().click();
+	//Call legal entity management page
+	LegalEntityManagementPage lem= PageFactory.initElements(driver, LegalEntityManagementPage.class);
+	//Declare the expected tooltip message
+	String expTooltip="Clear Filter";
+	log.debug("Expected tooltip is :"+expTooltip);
+	//Capture the actual tooltip
+	String actTooltip=lem.getClearFilterTooltip();
+	log.debug("------Verify the tooltip message-------");
+	Assert.assertEquals(actTooltip, expTooltip);
+	log.info("Actual tooltip is :"+actTooltip);
+	log.info("------verifyClearFilterTooltip: Test ended--------");
+}
+//18. Place the mouse pointer on Add icon and verify the tooltip message.
+@Test()
+public static void verifyAddNewTooltip()
+{
+	log.debug("------verifyAddNewTooltip: Test started--------");
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on Configuration setup
+	lnp.getConfigurationSetupAdminValue().click();
+	//Call the ConfigurationSetup page
+	ConfigurationSetupPage csp= PageFactory.initElements(driver, ConfigurationSetupPage.class);
+	//Click on org design data
+	csp.getOrgDesignData().click();
+	//Click on legal entity management page
+	csp.getClickDepartment().click();
+	csp.getClickLegalEntityManagement().click();
+	//Call legal entity management page
+	LegalEntityManagementPage lem= PageFactory.initElements(driver, LegalEntityManagementPage.class);
+	//Declare the expected tooltip message
+	String expTooltip="Add New";
+	log.debug("Expected tooltip is :"+expTooltip);
+	//Capture the actual tooltip
+	String actTooltip=lem.getAddNewTooltip();
+	log.debug("------Verify the tooltip message-------");
+	Assert.assertEquals(actTooltip, expTooltip);
+	log.info("Actual tooltip is :"+actTooltip);
+	log.info("------verifyAddNewTooltip: Test ended--------");
+}
+//19. Click on the data grid Icon and verify the added columns
+@Test()
+public static void downloadPdf()
+{
+	
+}
 }
 
 

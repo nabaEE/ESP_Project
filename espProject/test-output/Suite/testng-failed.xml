@@ -11,6 +11,7 @@
       <class name="com.orgDesignData.LegalEntityManagementTest">
         <methods>
           <include name="deleteLegalEntity"/>
+          <include name="submitExistingLegalEntity"/>
           <include name="login"/>
           <include name="closeBrowser"/>
           <include name="openBrowser"/>

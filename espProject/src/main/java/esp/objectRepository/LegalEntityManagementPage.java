@@ -3,7 +3,11 @@ package esp.objectRepository;
 import java.util.List;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+
+import esp.genericLibraries.BaseClass;
+import esp.genericLibraries.WebdriverUtils;
 
 public class LegalEntityManagementPage
 {
@@ -65,6 +69,20 @@ private WebElement selectAllCheckbox;
 @FindBy(id="1_Search")
 private WebElement filterWinSearchbox;
 
+@FindBy(id="GridColumn")
+private WebElement gridColumnIcon;
+@FindBy(xpath="//div[@id='AppsMenuRow']/div/div/a[1]/span")
+private WebElement gridIconTooltip;
+@FindBy(id="DownloadTable")
+private WebElement downloadIcon;
+@FindBy(xpath="//a[@id='DownloadTable']/span")
+private WebElement downloadTooltip;
+@FindBy(id="ClearTable")
+private WebElement clearTableIcon;
+@FindBy(xpath="//a[@id='ClearTable']/span")
+private WebElement clearTableTooltip;
+@FindBy(xpath="//div[@id='AppsMenuRow']/div/div/a[4]/span")
+private WebElement addNewTooltip;
 	
 
 
@@ -167,6 +185,41 @@ public String verifyLegalEntity()
 	}
 	return val;
 }
-
+//Method to capture grid tooltip
+public String getGridTooltip()
+{
+	WebdriverUtils.waitForPageToLoad(BaseClass.driver);
+	Actions act= new Actions(BaseClass.driver);
+	act.moveToElement(gridColumnIcon).perform();
+	String tooltip=gridIconTooltip.getText();
+	return tooltip;
+}
+//Method to capture download tooltip
+public String getDownloadTooltip()
+{
+	WebdriverUtils.waitForPageToLoad(BaseClass.driver);
+	Actions act=new Actions(BaseClass.driver);
+	act.moveToElement(downloadIcon).perform();
+	String tooltip=downloadTooltip.getText();
+	return tooltip;
+}
+//Method to capture Clear Filter tooltip
+public String getClearFilterTooltip()
+{
+	WebdriverUtils.waitForPageToLoad(BaseClass.driver);
+	Actions act=new Actions(BaseClass.driver);	
+	act.moveToElement(clearTableIcon).perform();
+	String tooltip=clearTableTooltip.getText();
+	return tooltip;
+}
+//Method to capture Add new tooltip
+public String getAddNewTooltip()
+{
+	WebdriverUtils.waitForPageToLoad(BaseClass.driver);
+	Actions act= new Actions(BaseClass.driver);
+	act.moveToElement(addNewButton).perform();
+	String tooltip=addNewTooltip.getText();
+	return tooltip;
+}
 
 }
