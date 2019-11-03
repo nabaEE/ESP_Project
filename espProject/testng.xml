@@ -5,12 +5,12 @@
 <listener class-name="esp.genericLibraries.ListenerImplimentationClass"/>
 <listener class-name="esp.genericLibraries.ExtentReporterNG"/>
 </listeners>
-  <parameter name="browser" value="firefox 68"/>
+  <parameter name="browser" value="chrome"/>
   <test thread-count="5" name="Test">
    <classes>
       <class name="com.orgDesignData.LegalEntityManagementTest">
       <methods>
-      <include name="searchLegalEntityAndVerify"/>
+      <include name="downloadLegalEntityRecordInPdfFormat"/>
       </methods>
       </class>
     </classes>

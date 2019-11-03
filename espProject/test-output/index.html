@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite">
-              <span class="suite-name border-skipped">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,21 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,  1 skipped,  </span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title skipped">Skipped methods</span>
-                    <span class="show-or-hide-methods skipped">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods skipped suite-Suite"> (hide)</a> <!-- hide-methods skipped suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods skipped suite-Suite"> (show)</a> <!-- show-methods skipped suite-Suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
                     </span>
-                    <div class="method-list-content skipped suite-Suite">
+                    <div class="method-list-content failed suite-Suite">
                       <span>
-                        <img width="3%" src="skipped.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.orgDesignData.LegalEntityManagementTest" hash-for-method="downloadLegalEntityRecordInExcelFormat">downloadLegalEntityRecordInExcelFormat</a> <!-- method navigator-link -->
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.orgDesignData.LegalEntityManagementTest" hash-for-method="downloadLegalEntityRecordInPdfFormat">downloadLegalEntityRecordInPdfFormat</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content skipped suite-Suite -->
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -117,25 +117,41 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-skipped">
+          <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
+              <img src="failed.png"/>
               <span class="class-name">com.orgDesignData.LegalEntityManagementTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="downloadLegalEntityRecordInExcelFormat">
-                  </a> <!-- downloadLegalEntityRecordInExcelFormat -->
-                  <span class="method-name">downloadLegalEntityRecordInExcelFormat</span>
-                  <div class="stack-trace">java.lang.ClassCastException: org.openqa.selenium.firefox.FirefoxProfile cannot be cast to org.openqa.selenium.Capabilities
-	at esp.genericLibraries.BaseClass.openBrowser(BaseClass.java:50)
-... Removed 26 stack frames
+                  <a name="downloadLegalEntityRecordInPdfFormat">
+                  </a> <!-- downloadLegalEntityRecordInPdfFormat -->
+                  <span class="method-name">downloadLegalEntityRecordInPdfFormat</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;a href=&quot;E2Pro_COPS.php?Tx_Process_Id=2&quot;&gt;...&lt;/a&gt; is not clickable at point (1105, 142). Other element would receive the click: &lt;a href=&quot;E2Pro_COPS.php?Tx_Process_Id=221&quot;&gt;...&lt;/a&gt;
+  (Session info: chrome=77.0.3865.120)
+Build info: version: &apos;4.0.0-alpha-2&apos;, revision: &apos;f148142cf8&apos;, time: &apos;2019-07-01T20:55:26&apos;
+System info: host: &apos;SYSTEM-72&apos;, ip: &apos;192.168.0.104&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_211&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 77.0.3865.120, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\Prod\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:52846}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: ed16c820ad5d3902c7bc42f99e008778
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:191)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:125)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:161)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:576)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:308)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at com.sun.proxy.$Proxy28.click(Unknown Source)
+	at com.orgDesignData.LegalEntityManagementTest.downloadLegalEntityRecordInPdfFormat(LegalEntityManagementTest.java:743)
+... Removed 33 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-skipped -->
+          </div> <!-- suite-Suite-class-failed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -146,7 +162,7 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Suite&quot;&gt;
-  &lt;parameter name=&quot;browser&quot; value=&quot;firefox 68&quot;/&gt;
+  &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;esp.genericLibraries.ListenerImplimentationClass&quot;/&gt;
     &lt;listener class-name=&quot;esp.genericLibraries.ExtentReporterNG&quot;/&gt;
@@ -155,7 +171,7 @@
     &lt;classes&gt;
       &lt;class name=&quot;com.orgDesignData.LegalEntityManagementTest&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;downloadLegalEntityRecordInExcelFormat&quot;/&gt;
+          &lt;include name=&quot;downloadLegalEntityRecordInPdfFormat&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- com.orgDesignData.LegalEntityManagementTest --&gt;
     &lt;/classes&gt;
@@ -199,14 +215,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'downloadLegalEntityRecordInExcelFormat')
+data.setCell(0, 1, 'downloadLegalEntityRecordInPdfFormat')
 data.setCell(0, 2, 'com.orgDesignData.LegalEntityManagementTest')
-data.setCell(0, 3, 1);
+data.setCell(0, 3, 2221);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 ms</span>
+              <span class="suite-total-time">Total running time: 2 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -221,7 +237,7 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">19 ignored methods</span>
+            <span class="header-content">21 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
@@ -237,11 +253,15 @@ return data;
                 <br/>
                 <span class="ignored-method-name">verifyCommentsOnViewWin</span>
                 <br/>
+                <span class="ignored-method-name">searchLegalEntityAndVerify</span>
+                <br/>
+                <span class="ignored-method-name">downloadLegalEntityRecordInExcelFormat</span>
+                <br/>
                 <span class="ignored-method-name">clickEditIconAndSubmitWithoutModifying</span>
                 <br/>
-                <span class="ignored-method-name">verifyAddNewTooltip</span>
-                <br/>
                 <span class="ignored-method-name">verifyGridIconTooltip</span>
+                <br/>
+                <span class="ignored-method-name">verifyAddNewTooltip</span>
                 <br/>
                 <span class="ignored-method-name">verifyClearFilterTooltip</span>
                 <br/>
@@ -261,9 +281,9 @@ return data;
                 <br/>
                 <span class="ignored-method-name">printAndVerifyAdminValues</span>
                 <br/>
-                <span class="ignored-method-name">verifyAdminOption</span>
-                <br/>
                 <span class="ignored-method-name">verifySizeOfRemarksEditbox</span>
+                <br/>
+                <span class="ignored-method-name">verifyAdminOption</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -276,16 +296,28 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
               <div class="chronological-class-name">com.orgDesignData.LegalEntityManagementTest</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">downloadLegalEntityRecordInExcelFormat</span>
-                <span class="method-start">0 ms</span>
-              </div> <!-- test-method -->
               <div class="configuration-class before">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">openBrowser(firefox 68)</span>
+                <span class="method-name">openBrowser(chrome)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">login</span>
+                <span class="method-start">10846 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">downloadLegalEntityRecordInPdfFormat</span>
+                <span class="method-start">12956 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">15714 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-class after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">16106 ms</span>
+              </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

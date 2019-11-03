@@ -708,7 +708,7 @@ public static void clickAndVerifyDataGridValues()
 @Test()
 public static void downloadLegalEntityRecordInExcelFormat()
 {
-	log.debug("------clickAndVerifyDataGridValues: Test started--------");
+	log.debug("------downloadLegalEntityRecordInExcelFormat: Test started--------");
 	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
 	//Click on admin icon
 	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
@@ -728,6 +728,7 @@ public static void downloadLegalEntityRecordInExcelFormat()
 	lem.getDownloadIcon().click();
 	//Click on excel
 	lem.getDownloadExcel().click();
+	log.info("------downloadLegalEntityRecordInExcelFormat: Test ended--------");
 }
 //21. Download legal entity records in pdf format.
 @Test()
@@ -753,6 +754,7 @@ public static void downloadLegalEntityRecordInPdfFormat()
 	lem.getDownloadIcon().click();
 	//Click on pdf
 	lem.getDownloadPdf().click();
+	log.info("------downloadLegalEntityRecordInPdfFormat: Test ended--------");
 }
 //22. Search for a legal entity and verify it.
 @Test()
@@ -781,13 +783,13 @@ public static void searchLegalEntityAndVerify()
 	log.debug("Expected legal entity :"+expLegalEntity);
 	lem.getFilterWinSearchbox().sendKeys(expLegalEntity);
 	//Capture the actual legal entity
-	String actLegalEntity=lem.getSearchedLegalEntity();
+	String actLegalEntity=lem.getSearchedLegalEntity().getText();
+	log.info("Searched legal entity is :"+actLegalEntity);
 	log.debug("---Verify the searched legal entity----");
 	Assert.assertEquals(actLegalEntity, expLegalEntity);
 	log.info("Searched legal entity is found :"+actLegalEntity);
 	log.info("------searchLegalEntityAndVerify: Test ended--------");
-	
-   }
+ }
 
 }
 

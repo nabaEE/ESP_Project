@@ -1,0 +1,46 @@
+23:16:12.875 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+23:16:25.010 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+23:16:26.990 [main] DEBUG esp.genericLibraries.BaseClass - ------searchLegalEntityAndVerify: Test started--------
+23:17:00.072 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+23:17:00.870 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+23:19:46.403 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+23:19:57.327 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+23:19:59.100 [main] DEBUG esp.genericLibraries.BaseClass - ------searchLegalEntityAndVerify: Test started--------
+23:20:24.734 [main] DEBUG esp.genericLibraries.BaseClass - Expected legal entity :SRS
+23:20:24.961 [main] INFO  esp.genericLibraries.BaseClass - Searched legal entity is :SRS
+23:20:24.961 [main] DEBUG esp.genericLibraries.BaseClass - ---Verify the searched legal entity----
+23:20:24.963 [main] INFO  esp.genericLibraries.BaseClass - Searched legal entity is found :SRS
+23:20:24.963 [main] INFO  esp.genericLibraries.BaseClass - ------searchLegalEntityAndVerify: Test ended--------
+23:20:25.734 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+23:20:26.558 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+23:20:46.715 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+23:20:57.663 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+23:20:59.481 [main] DEBUG esp.genericLibraries.BaseClass - ------searchLegalEntityAndVerify: Test started--------
+23:21:02.229 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+23:21:02.960 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+23:22:46.200 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+23:22:57.020 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+23:22:58.905 [main] DEBUG esp.genericLibraries.BaseClass - ------searchLegalEntityAndVerify: Test started--------
+23:23:02.058 [main] DEBUG esp.genericLibraries.BaseClass - Expected legal entity :SRS
+23:23:02.269 [main] INFO  esp.genericLibraries.BaseClass - Searched legal entity is :SRS
+23:23:02.270 [main] DEBUG esp.genericLibraries.BaseClass - ---Verify the searched legal entity----
+23:23:02.271 [main] INFO  esp.genericLibraries.BaseClass - Searched legal entity is found :SRS
+23:23:02.271 [main] INFO  esp.genericLibraries.BaseClass - ------searchLegalEntityAndVerify: Test ended--------
+23:23:02.864 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+23:23:03.623 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+23:23:44.046 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+23:23:54.999 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+23:23:57.459 [main] DEBUG esp.genericLibraries.BaseClass - ------downloadLegalEntityRecordInPdfFormat: Test started--------
+23:24:29.364 [main] INFO  esp.genericLibraries.BaseClass - ------downloadLegalEntityRecordInPdfFormat: Test ended--------
+23:24:30.245 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+23:24:31.030 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+23:24:47.088 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+23:24:58.002 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+23:24:59.701 [main] DEBUG esp.genericLibraries.BaseClass - ------downloadLegalEntityRecordInPdfFormat: Test started--------
+23:25:02.669 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+23:25:03.400 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+23:36:42.121 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+23:36:53.002 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+23:36:55.034 [main] DEBUG esp.genericLibraries.BaseClass - ------downloadLegalEntityRecordInPdfFormat: Test started--------
+23:37:27.847 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+23:37:28.568 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********

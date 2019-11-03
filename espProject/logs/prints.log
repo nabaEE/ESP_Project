@@ -1,21 +1,5 @@
-16:56:37.817 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
-16:56:44.943 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
-16:56:48.028 [main] DEBUG esp.genericLibraries.BaseClass - ------clickAndVerifyDataGridValues: Test started--------
-16:56:51.277 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
-16:56:57.293 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
-16:57:16.595 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
-16:57:23.255 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
-16:57:26.597 [main] DEBUG esp.genericLibraries.BaseClass - ------clickAndVerifyDataGridValues: Test started--------
-16:57:29.871 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
-16:57:37.367 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
-16:58:59.976 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
-16:59:07.281 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
-16:59:10.222 [main] DEBUG esp.genericLibraries.BaseClass - ------clickAndVerifyDataGridValues: Test started--------
-16:59:13.597 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
-16:59:19.129 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
-17:01:10.561 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
-17:01:17.149 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
-17:01:20.447 [main] DEBUG esp.genericLibraries.BaseClass - ------clickAndVerifyDataGridValues: Test started--------
-17:01:23.942 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
-17:01:31.076 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
-18:29:41.538 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+23:38:08.179 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+23:38:19.006 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+23:38:21.107 [main] DEBUG esp.genericLibraries.BaseClass - ------downloadLegalEntityRecordInPdfFormat: Test started--------
+23:38:24.251 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+23:38:24.965 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
