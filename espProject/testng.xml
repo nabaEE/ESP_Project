@@ -10,7 +10,7 @@
    <classes>
       <class name="com.orgDesignData.LegalEntityManagementTest">
       <methods>
-      <include name="downloadLegalEntityRecordInExcelFormat"/>
+      <include name="searchLegalEntityAndVerify"/>
       </methods>
       </class>
     </classes>

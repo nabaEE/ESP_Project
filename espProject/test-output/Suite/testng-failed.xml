@@ -10,10 +10,9 @@
     <classes>
       <class name="com.orgDesignData.LegalEntityManagementTest">
         <methods>
-          <include name="deleteLegalEntity"/>
-          <include name="submitExistingLegalEntity"/>
           <include name="login"/>
           <include name="closeBrowser"/>
+          <include name="searchLegalEntityAndVerify"/>
           <include name="openBrowser"/>
           <include name="tearDown"/>
         </methods>

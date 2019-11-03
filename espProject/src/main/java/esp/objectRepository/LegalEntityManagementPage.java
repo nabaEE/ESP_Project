@@ -89,6 +89,8 @@ private WebElement clearTableIcon;
 private WebElement clearTableTooltip;
 @FindBy(xpath="//div[@id='AppsMenuRow']/div/div/a[4]/span")
 private WebElement addNewTooltip;
+@FindBy(xpath="//div[@id='LegalEntity_Name_UniqueList']/p/label/span")
+private List<WebElement> searchedLegalEntity;
 	
 
 
@@ -262,6 +264,16 @@ public String[] getGridValues()
 	}
 	return val;
 	
+}
+//Method to get searched legal entity
+public String getSearchedLegalEntity()
+{
+ String val = null;
+ for(int i=0; i<searchedLegalEntity.size(); i++)
+ {
+  val=searchedLegalEntity.get(i).getText();
+ }
+ return val;
 }
 
 }

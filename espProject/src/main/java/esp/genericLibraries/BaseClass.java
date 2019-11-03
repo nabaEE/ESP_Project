@@ -6,9 +6,11 @@ import java.util.Properties;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -26,8 +28,8 @@ public class BaseClass extends FileUtils
 {
  public static WebDriver driver;
  protected static Logger log= LogManager.getLogger(BaseClass.class);
- FirefoxProfile profile = new FirefoxProfile();
- @BeforeClass()
+ FirefoxOptions profile = new FirefoxOptions();
+@BeforeClass()
  @Parameters({"browser"})
 public void openBrowser(String browserName)
   {
@@ -42,11 +44,11 @@ public void openBrowser(String browserName)
   /*call the firefox browser*/
  else if(browserName.equalsIgnoreCase("firefox 68"))
   {
-	 profile.setPreference("browser.download.folderList", 2);
-	 profile.setPreference("browser.helperApps.neverAsk.SaveToDisk", "Application/zip");
-	 profile.setPreference("browser.download.dir", "D:\\app\\");
+	 profile.addPreference("browser.download.folderList", 2);
+	 profile.addPreference("browser.helperApps.neverAsk.SaveToDisk", "Application.excel");
+	 profile.addPreference("browser.download.dir", "D:\\app\\");
 	 System.setProperty("webdriver.gecko.driver", "C:\\Program Files\\gecko\\geckodriver.exe");
-	 driver= new FirefoxDriver();
+	 driver= new FirefoxDriver(profile);
    }
   /*call the internet explorer browser*/
  else if(browserName.equalsIgnoreCase("ie"))

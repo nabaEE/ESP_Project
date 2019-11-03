@@ -729,6 +729,65 @@ public static void downloadLegalEntityRecordInExcelFormat()
 	//Click on excel
 	lem.getDownloadExcel().click();
 }
+//21. Download legal entity records in pdf format.
+@Test()
+public static void downloadLegalEntityRecordInPdfFormat()
+{
+	log.debug("------downloadLegalEntityRecordInPdfFormat: Test started--------");
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on Configuration setup
+	lnp.getConfigurationSetupAdminValue().click();
+	//Call the ConfigurationSetup page
+	ConfigurationSetupPage csp= PageFactory.initElements(driver, ConfigurationSetupPage.class);
+	//Click on org design data
+	csp.getOrgDesignData().click();
+	//Click on legal entity management page
+	csp.getClickDepartment().click();
+	csp.getClickLegalEntityManagement().click();
+	//Call legal entity management page
+	LegalEntityManagementPage lem= PageFactory.initElements(driver, LegalEntityManagementPage.class);
+	//Click on download icon
+	lem.getDownloadIcon().click();
+	//Click on pdf
+	lem.getDownloadPdf().click();
+}
+//22. Search for a legal entity and verify it.
+@Test()
+public static void searchLegalEntityAndVerify()
+{
+	log.debug("------searchLegalEntityAndVerify: Test started--------");
+	LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+	//Click on admin icon
+	WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+	lnp.getAdminIcon().click();
+	//Click on Configuration setup
+	lnp.getConfigurationSetupAdminValue().click();
+	//Call the ConfigurationSetup page
+	ConfigurationSetupPage csp= PageFactory.initElements(driver, ConfigurationSetupPage.class);
+	//Click on org design data
+	csp.getOrgDesignData().click();
+	//Click on legal entity management page
+	csp.getClickDepartment().click();
+	csp.getClickLegalEntityManagement().click();
+	//Call legal entity management page
+	LegalEntityManagementPage lem= PageFactory.initElements(driver, LegalEntityManagementPage.class);
+	//Click on legal entity filter icon
+	lem.getLegalEntityFilterIcon().click();
+	//Enter the legal entity in the filter search box
+	String expLegalEntity="SRS";
+	log.debug("Expected legal entity :"+expLegalEntity);
+	lem.getFilterWinSearchbox().sendKeys(expLegalEntity);
+	//Capture the actual legal entity
+	String actLegalEntity=lem.getSearchedLegalEntity();
+	log.debug("---Verify the searched legal entity----");
+	Assert.assertEquals(actLegalEntity, expLegalEntity);
+	log.info("Searched legal entity is found :"+actLegalEntity);
+	log.info("------searchLegalEntityAndVerify: Test ended--------");
+	
+   }
 
 }
 
