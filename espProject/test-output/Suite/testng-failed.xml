@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <parameter name="browser" value="firefox 68"/>
+  <parameter name="browser" value="chrome"/>
   <listeners>
     <listener class-name="esp.genericLibraries.ListenerImplimentationClass"/>
     <listener class-name="esp.genericLibraries.ExtentReporterNG"/>
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.orgDesignData.LegalEntityManagementTest">
+      <class name="com.newHire.NewHireTest">
         <methods>
+          <include name="markAttendance"/>
           <include name="login"/>
           <include name="closeBrowser"/>
-          <include name="searchLegalEntityAndVerify"/>
           <include name="openBrowser"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.orgDesignData.LegalEntityManagementTest -->
+      </class> <!-- com.newHire.NewHireTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

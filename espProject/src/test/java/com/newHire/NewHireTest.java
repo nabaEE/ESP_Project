@@ -20,6 +20,19 @@ import esp.objectRepository.NewHirePage;
 
 public class NewHireTest extends BaseClass
 {
+//Mark attendance
+	@Test()
+	public static void markAttendance()
+	{
+	log.debug("-------Mark attendance : test started--------");
+	driver.findElement(By.id("Not_now")).click();
+	//Call the landing page
+    LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+    //Click on skip for now 
+    lnp.getSkipForNowButton().click();
+	log.debug("-------Mark attendance : test ended--------");
+	
+	}
 //1. Submit new hire form and verify.
 @Test(groups="Smoke", priority=-1)
 public static void submitNewHireFormAndValidateActivateButton() throws AWTException, InterruptedException

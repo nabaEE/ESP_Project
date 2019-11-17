@@ -15,6 +15,12 @@ public class LandingPage
 /************Utilization*************/
 	@FindBy(xpath="//ul[@class='right hide-on-med-and-down']/li")
 	private List<WebElement> landingPageValues;
+	@FindBy(name="Attendance")
+	private WebElement attendanceWindow;
+	@FindBy(id="Not_now")
+	private WebElement skipForNowButton;
+	@FindBy(id="present")
+	private WebElement markAttendance;
 	@FindBy(xpath="//html//body//header//div[2]//nav//div//ul//li[2]//a//img")
 	private WebElement adminIcon;
 	@FindBy(xpath="//div[@class='nav-wrapper']/ul/li[2]/a/span")
@@ -27,6 +33,15 @@ public class LandingPage
 	private WebElement newHireAdminValue;
 	
 /***********Getters Usage************/
+	public WebElement getAttendanceWindow() {
+		return attendanceWindow;
+	}
+	public WebElement getSkipForNowButton() {
+		return skipForNowButton;
+	}
+	public WebElement getMarkAttendance() {
+		return markAttendance;
+	}
 	
 	public WebElement getAdminIcon() {
 		return adminIcon;
