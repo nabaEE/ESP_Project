@@ -21,24 +21,20 @@ import esp.objectRepository.NewHirePage;
 public class NewHireTest extends BaseClass
 {
 //Mark attendance
-	@Test()
+	@Test(priority=-1)
 	public static void markAttendance()
 	{
 	log.debug("-------Mark attendance : test started--------");
 	driver.findElement(By.id("Not_now")).click();
-	//Call the landing page
-    LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
-    //Click on skip for now 
-    lnp.getSkipForNowButton().click();
 	log.debug("-------Mark attendance : test ended--------");
 	
 	}
 //1. Submit new hire form and verify.
-@Test(groups="Smoke", priority=-1)
+@Test(groups="Smoke")
 public static void submitNewHireFormAndValidateActivateButton() throws AWTException, InterruptedException
 {
 	   log.debug("---------submit New Hire FormAnd Validate Activate Button:- test started----------");
-	   // driver.findElement(By.id("Not_now")).click();
+	    driver.findElement(By.id("Not_now")).click();
 	    //Call the landing page
 		LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
 		//Click on admin icon
@@ -53,9 +49,9 @@ public static void submitNewHireFormAndValidateActivateButton() throws AWTExcept
 		nhp.getTitleDropdown().click();
 		nhp.getPickTitle_MR().click();
 		//Enter the first Name
-		nhp.getFirstNameEditbox().sendKeys("Rajat");
+		nhp.getFirstNameEditbox().sendKeys("Nandan");
 		//Enter last name
-		nhp.getLastNameEditbox().sendKeys("Dafadar");
+		nhp.getLastNameEditbox().sendKeys("Mahapatra");
 		//Pick date of birth
 		WebElement element=nhp.getDateOfBirthCalenderWindow();
 		String date="1-Feb-1990";
@@ -103,9 +99,9 @@ public static void submitNewHireFormAndValidateActivateButton() throws AWTExcept
 	    String groupJoiningDate="1-Sept-2019";
 	    nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 	    //Enter the employee Id
-	    nhp.getEmployeeId().sendKeys("NXR745");
+	    nhp.getEmployeeId().sendKeys("DAKO34");
 	    //Enter email id
-	    nhp.getEmailIdEditbox().sendKeys("rajat.duffadar");
+	    nhp.getEmailIdEditbox().sendKeys("nandan.mahapatra");
 	    //Pick employment type 
 	    nhp.getEmploymentTypeDropdown().click();
 	    nhp.getPickEmploymentType().click();
@@ -115,49 +111,44 @@ public static void submitNewHireFormAndValidateActivateButton() throws AWTExcept
 	    //Stop page refresh
 	    // BaseClass.driver.findElement(By.tagName("body")).sendKeys("Keys.ESCAPE");
 	    //Enter three letters in the Department editbox and pick one department
-	     try {
-		 nhp.getDepartmentEditbox().sendKeys("sal");
+		/*
+		 * try { nhp.getDepartmentEditbox().sendKeys("sal"); Thread.sleep(2000);
+		 * nhp.selectDepartment(); //nhp.getPickDepartment().click(); }
+		 * catch(StaleElementReferenceException e) { nhp.getPickDepartment().click(); }
+		 */
+	     nhp.getDepartmentEditbox().sendKeys("sal");
 		 Thread.sleep(2000);
 		 nhp.selectDepartment();
-		 //nhp.getPickDepartment().click();
-	     }
-	     catch(StaleElementReferenceException e)
-	     {
-	       nhp.getPickDepartment().click();
-	     }
 	   //Enter three letters in the role editbox
-	     try {
+		/*
+		 * try { nhp.getRoleEditbox().sendKeys("sal"); Thread.sleep(2000);
+		 * nhp.selectRole(); } catch(StaleElementReferenceException e) {
+		 * //nhp.selectRole(); nhp.selectRole(); }
+		 */
 	     nhp.getRoleEditbox().sendKeys("sal");
 	     Thread.sleep(2000);
 	     nhp.selectRole();
-	        }
-	     catch(StaleElementReferenceException e)
-	     {
-		     //nhp.selectRole();
-		     nhp.selectRole();
-	     }
         //Enter three letters and select Designation
-	     try
-	     {
+		/*
+		 * try { nhp.getDesignationEditbox().sendKeys("Sal"); Thread.sleep(2000);
+		 * nhp.getPickDesignation().click(); } catch(StaleElementReferenceException e) {
+		 * nhp.getPickDesignation().click(); }
+		 */
 	     nhp.getDesignationEditbox().sendKeys("Sal");
 	     Thread.sleep(2000);
 	     nhp.getPickDesignation().click();
-	     }
-	     catch(StaleElementReferenceException e)
-	     {
-	    	 nhp.getPickDesignation().click();
-	     }
 	     //Enter three letters and select reporting hiring manager
-	     try {
+		/*
+		 * try { nhp.getReportingHiringManagerEditbox().sendKeys("Sar");
+		 * Thread.sleep(2000); nhp.getPickReportingHiringManager().click(); }
+		 * catch(StaleElementReferenceException e) {
+		 * WebdriverUtils.waitForElementPresent(driver,
+		 * nhp.getPickReportingHiringManager());
+		 * nhp.getPickReportingHiringManager().click(); }
+		 */
 	     nhp.getReportingHiringManagerEditbox().sendKeys("Sar");
 	     Thread.sleep(2000);
 	     nhp.getPickReportingHiringManager().click();
-	     }
-	     catch(StaleElementReferenceException e)
-	     {
-	    WebdriverUtils.waitForElementPresent(driver, nhp.getPickReportingHiringManager());
-		 nhp.getPickReportingHiringManager().click(); 
-	     }
 	    //Select paytype
 	    nhp.getPickTypeDropdown().click();
 	    nhp.getPickPayType().click();
@@ -174,7 +165,8 @@ public static void submitNewHireFormAndValidateActivateButton() throws AWTExcept
 	    //Call the compensation page
 	    CompensationPage cmp= PageFactory.initElements(driver, CompensationPage.class);
 	    //select above 3 lakhs
-	  // cmp.getClickAbove3Lakh().click();
+	    cmp.getSelectProfileDropdown().click();
+	    cmp.getSelectOneProfile().click();
 	    //Click on save And continue
 	    WebdriverUtils.waitForPageToLoad(driver);
 	    cmp.getSaveAndContinueButton().click();

@@ -59,7 +59,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="group-Suite">
-                    <span>0 groups</span>
+                    <span>1 group</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -102,7 +102,7 @@
                     <div class="method-list-content failed suite-Suite">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.orgDesignData.LegalEntityManagementTest" hash-for-method="downloadLegalEntityRecordInPdfFormat">downloadLegalEntityRecordInPdfFormat</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.newHire.NewHireTest" hash-for-method="submitNewHireFormAndValidateActivateButton">submitNewHireFormAndValidateActivateButton</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Suite -->
@@ -120,21 +120,21 @@
           <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">com.orgDesignData.LegalEntityManagementTest</span>
+              <span class="class-name">com.newHire.NewHireTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="downloadLegalEntityRecordInPdfFormat">
-                  </a> <!-- downloadLegalEntityRecordInPdfFormat -->
-                  <span class="method-name">downloadLegalEntityRecordInPdfFormat</span>
-                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;a href=&quot;E2Pro_COPS.php?Tx_Process_Id=2&quot;&gt;...&lt;/a&gt; is not clickable at point (1105, 142). Other element would receive the click: &lt;a href=&quot;E2Pro_COPS.php?Tx_Process_Id=221&quot;&gt;...&lt;/a&gt;
-  (Session info: chrome=77.0.3865.120)
+                  <a name="submitNewHireFormAndValidateActivateButton">
+                  </a> <!-- submitNewHireFormAndValidateActivateButton -->
+                  <span class="method-name">submitNewHireFormAndValidateActivateButton</span>
+                  <div class="stack-trace">org.openqa.selenium.StaleElementReferenceException: The element reference of &lt;i class=&quot;material-icons&quot;&gt; is stale; either the element is no longer attached to the DOM, it is not in the current frame context, or the document has been refreshed
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
 Build info: version: &apos;4.0.0-alpha-2&apos;, revision: &apos;f148142cf8&apos;, time: &apos;2019-07-01T20:55:26&apos;
-System info: host: &apos;SYSTEM-72&apos;, ip: &apos;192.168.0.104&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_211&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 77.0.3865.120, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\Prod\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:52846}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: ed16c820ad5d3902c7bc42f99e008778
+System info: host: &apos;SYSTEM-72&apos;, ip: &apos;10.9.46.161&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_211&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 70.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20191030021342, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 14200, moz:profile: C:\Users\Prod\AppData\Local..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: b509f479-2d5b-4275-8d8e-72a069647f67
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:191)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:125)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
@@ -145,8 +145,8 @@ Session ID: ed16c820ad5d3902c7bc42f99e008778
 	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
 	at com.sun.proxy.$Proxy28.click(Unknown Source)
-	at com.orgDesignData.LegalEntityManagementTest.downloadLegalEntityRecordInPdfFormat(LegalEntityManagementTest.java:743)
-... Removed 33 stack frames
+	at com.newHire.NewHireTest.submitNewHireFormAndValidateActivateButton(NewHireTest.java:237)
+... Removed 32 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -162,18 +162,18 @@ Session ID: ed16c820ad5d3902c7bc42f99e008778
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Suite&quot;&gt;
-  &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
+  &lt;parameter name=&quot;browser&quot; value=&quot;firefox 68&quot;/&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;esp.genericLibraries.ListenerImplimentationClass&quot;/&gt;
     &lt;listener class-name=&quot;esp.genericLibraries.ExtentReporterNG&quot;/&gt;
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.orgDesignData.LegalEntityManagementTest&quot;&gt;
+      &lt;class name=&quot;com.newHire.NewHireTest&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;downloadLegalEntityRecordInPdfFormat&quot;/&gt;
+          &lt;include name=&quot;submitNewHireFormAndValidateActivateButton&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- com.orgDesignData.LegalEntityManagementTest --&gt;
+      &lt;/class&gt; &lt;!-- com.newHire.NewHireTest --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -197,6 +197,14 @@ Session ID: ed16c820ad5d3902c7bc42f99e008778
             <span class="header-content">Groups for Suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">Smoke</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">submitNewHireFormAndValidateActivateButton</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-Suite" class="panel">
@@ -215,14 +223,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'downloadLegalEntityRecordInPdfFormat')
-data.setCell(0, 2, 'com.orgDesignData.LegalEntityManagementTest')
-data.setCell(0, 3, 2221);
+data.setCell(0, 1, 'submitNewHireFormAndValidateActivateButton')
+data.setCell(0, 2, 'com.newHire.NewHireTest')
+data.setCell(0, 3, 94448);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -237,53 +245,97 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">21 ignored methods</span>
+            <span class="header-content">43 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">com.orgDesignData.LegalEntityManagementTest</span>
+              <span class="ignored-class-name">com.newHire.NewHireTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">verifyDownloadTooltip</span>
+                <span class="ignored-method-name">checkErrorMessageForEnteringExistingEmail</span>
                 <br/>
-                <span class="ignored-method-name">submitFormWithKeepingLegalEntityNameBlank</span>
+                <span class="ignored-method-name">markAttendance</span>
                 <br/>
-                <span class="ignored-method-name">deleteLegalEntity</span>
+                <span class="ignored-method-name">verifyErrorForNotPickingLegalEntity</span>
                 <br/>
-                <span class="ignored-method-name">submitFormWithKeepingRemarksBlank</span>
+                <span class="ignored-method-name">pickCountrySriLankaAndValidateLocation</span>
                 <br/>
-                <span class="ignored-method-name">verifyCommentsOnViewWin</span>
+                <span class="ignored-method-name">validateErrorForNotPickingEmploymentType</span>
                 <br/>
-                <span class="ignored-method-name">searchLegalEntityAndVerify</span>
+                <span class="ignored-method-name">verifyErrorForNotPickingContractEndDate</span>
                 <br/>
-                <span class="ignored-method-name">downloadLegalEntityRecordInExcelFormat</span>
+                <span class="ignored-method-name">clickAndverifyTitleDropdownValues</span>
                 <br/>
-                <span class="ignored-method-name">clickEditIconAndSubmitWithoutModifying</span>
+                <span class="ignored-method-name">verifyErrorForKeepingDesignationBlank</span>
                 <br/>
-                <span class="ignored-method-name">verifyGridIconTooltip</span>
+                <span class="ignored-method-name">keepEmailIdSectionBlankAndVerifyError</span>
                 <br/>
-                <span class="ignored-method-name">verifyAddNewTooltip</span>
+                <span class="ignored-method-name">pickCountryUAEAndValidateLocation</span>
                 <br/>
-                <span class="ignored-method-name">verifyClearFilterTooltip</span>
+                <span class="ignored-method-name">checkErrorForNotPickingJoiningDate</span>
                 <br/>
-                <span class="ignored-method-name">modifyLegalEntity</span>
+                <span class="ignored-method-name">makeEmployeeIdEditboxBlankAndValidateError</span>
                 <br/>
-                <span class="ignored-method-name">verifySizeOfLegalEntityEditbox</span>
+                <span class="ignored-method-name">makeBothDOB_JoiningDateEqualAndverifyError</span>
                 <br/>
-                <span class="ignored-method-name">submitFormWithoutPickingCountry</span>
+                <span class="ignored-method-name">CheckErrorForKeepingRoleEditboxBlank</span>
                 <br/>
-                <span class="ignored-method-name">submitNewLegalEntityAndVerify</span>
+                <span class="ignored-method-name">VerifyErrorForkeepingTitleWinBlank</span>
                 <br/>
-                <span class="ignored-method-name">submitExistingLegalEntity</span>
+                <span class="ignored-method-name">checkErrorForKeepingReferalSearchBoxBlank</span>
                 <br/>
-                <span class="ignored-method-name">submitFormWithoutPickingEffectiveFromDate</span>
+                <span class="ignored-method-name">checkErrorForNotPickingUniversityName</span>
                 <br/>
-                <span class="ignored-method-name">clickAndVerifyDataGridValues</span>
+                <span class="ignored-method-name">verifyErrorForNotPickingFTE_Equivalent</span>
                 <br/>
-                <span class="ignored-method-name">printAndVerifyAdminValues</span>
+                <span class="ignored-method-name">verifyErrorForNotPickingCountry</span>
                 <br/>
-                <span class="ignored-method-name">verifySizeOfRemarksEditbox</span>
+                <span class="ignored-method-name">verifyErrorForNotPickingLocation</span>
                 <br/>
-                <span class="ignored-method-name">verifyAdminOption</span>
+                <span class="ignored-method-name">checkErrorMessageForNotPickingDOB</span>
+                <br/>
+                <span class="ignored-method-name">checkErrorForKeepingCityOfBirthBlank</span>
+                <br/>
+                <span class="ignored-method-name">displayErrorForKeepingReportingManagerBlank</span>
+                <br/>
+                <span class="ignored-method-name">verifyErrorMessageForKeepingFirstNameBlank</span>
+                <br/>
+                <span class="ignored-method-name">verifyErrorMessageForNotPickingCountryOfBirth</span>
+                <br/>
+                <span class="ignored-method-name">checkErrorForNotPickingGender</span>
+                <br/>
+                <span class="ignored-method-name">checkErrorForKeepingRelevantExpEditboxBlank</span>
+                <br/>
+                <span class="ignored-method-name">pickCountryIndiaAndValidateLocation</span>
+                <br/>
+                <span class="ignored-method-name">checkErrorForNotSelectingMaritalStatus</span>
+                <br/>
+                <span class="ignored-method-name">pickRegularAndValidateEmploymentStatus</span>
+                <br/>
+                <span class="ignored-method-name">checkErrorForKeepingDepartmentEditboxBlank</span>
+                <br/>
+                <span class="ignored-method-name">verifyErrorMessageForKeepingLastNameBlank</span>
+                <br/>
+                <span class="ignored-method-name">enterExistEmployeeIdAndValidateErrorMessage</span>
+                <br/>
+                <span class="ignored-method-name">checkErrorForNotPickingEducationDetails</span>
+                <br/>
+                <span class="ignored-method-name">displayErrorForNotPickingFT_Indicator</span>
+                <br/>
+                <span class="ignored-method-name">checkErrorForNotPickingCitizenShip</span>
+                <br/>
+                <span class="ignored-method-name">verifyErrorForNotPickingEmploymentStatus</span>
+                <br/>
+                <span class="ignored-method-name">pickCountrySingaporeAndValidateLocation</span>
+                <br/>
+                <span class="ignored-method-name">uploadProfilePhotoWithIncorrectFormat</span>
+                <br/>
+                <span class="ignored-method-name">verifyErrorForPicking_DOB_lessThanEighteen_years</span>
+                <br/>
+                <span class="ignored-method-name">checkErrorForNotPickingGroupJoiningDate</span>
+                <br/>
+                <span class="ignored-method-name">uploadProfilePhotoWithCorrectFormat</span>
+                <br/>
+                <span class="ignored-method-name">checkErrorMessageForNotPickingStateOfBirth</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -295,28 +347,28 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.orgDesignData.LegalEntityManagementTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.newHire.NewHireTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">openBrowser(chrome)</span>
+                <span class="method-name">openBrowser(firefox 68)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">login</span>
-                <span class="method-start">10846 ms</span>
+                <span class="method-start">7086 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">downloadLegalEntityRecordInPdfFormat</span>
-                <span class="method-start">12956 ms</span>
+                <span class="method-name">submitNewHireFormAndValidateActivateButton</span>
+                <span class="method-start">10563 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">15714 ms</span>
+                <span class="method-start">105350 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">16106 ms</span>
+                <span class="method-start">105990 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

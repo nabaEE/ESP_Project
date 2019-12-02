@@ -5,12 +5,12 @@
 <listener class-name="esp.genericLibraries.ListenerImplimentationClass"/>
 <listener class-name="esp.genericLibraries.ExtentReporterNG"/>
 </listeners>
-  <parameter name="browser" value="chrome"/>
+  <parameter name="browser" value="firefox 68"/>
   <test thread-count="5" name="Test">
    <classes>
       <class name="com.newHire.NewHireTest">
       <methods>
-      <include name="markAttendance"/>
+      <include name="submitNewHireFormAndValidateActivateButton"/>
       </methods>
       </class>
     </classes>

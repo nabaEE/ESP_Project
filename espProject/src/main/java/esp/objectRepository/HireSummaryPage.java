@@ -22,7 +22,7 @@ import esp.genericLibraries.WebdriverUtils;
 public class HireSummaryPage
 {
 /*************Initialization*****************/
- @FindBy(xpath="//form[@id='ContentDiv']/div[1]/div/table/tbody/tr[5]/td[1]/a/i")
+ @FindBy(xpath="//form[@id='ContentDiv']/div[1]/div/table/tbody/tr[6]/td[1]/a/i")
  private WebElement clickContactDetails;
  
  @FindBy(id="div_Phone_Type")
@@ -38,7 +38,7 @@ public class HireSummaryPage
  @FindBy(id="div_Country_Code")
  private WebElement countryCodeDropdown;
  //@FindBy(id="//div[@id='div_Country_Code']/div/ul/li[2]/span")
- @FindBy(xpath="//html//body//main//div//div[2]//div[2]//div[3]//div//form//div[1]//div//div//div[1]//div[2]//div//ul//li[2]//span")
+ @FindBy(xpath="//span[text()='India +91']")
  private WebElement pickCountryCodeAsIndia;
  @FindBy(id="Error_Country_Code")
  private WebElement countryCodeBlankErrorMessage;
@@ -53,7 +53,7 @@ public class HireSummaryPage
  @FindBy(id="Submit")
  private WebElement submitButton;
  
- @FindBy(xpath="//form[@id='ContentDiv']/div[1]/div/table/tbody/tr[6]/td[2]/table/tbody/tr[1]/td[1]/a/i")
+ @FindBy(xpath="//form[@id='ContentDiv']/div/div/table/tbody/tr[7]/td[2]/table/tbody/tr[1]/td/a/i")
  private WebElement clickCurrentAddressPencilIcon;
  @FindBy(id="Effective_FromDate")
  private WebElement effectiveFromDateCalenderWin;
@@ -107,7 +107,7 @@ public class HireSummaryPage
  @FindBy(id="Error_Item_Doc")
  private WebElement uploadBlankErrorMessage;
  
- @FindBy(xpath="//form[@id='ContentDiv']/div[1]/div/table/tbody/tr[7]/td[1]/a/i")
+ @FindBy(xpath="//form[@id='ContentDiv']/div[1]/div/table/tbody/tr[8]/td[1]/a/i")
  private WebElement emailDetailsAddIcon;
  
  @FindBy(id="div_Email_Type")
@@ -127,7 +127,7 @@ public class HireSummaryPage
  private WebElement emailIdBlankErrorMessage;
  
  //@FindBy(xpath="//form[@id='ContentDiv']/div[1]/div/table/tbody/tr[10]/td[1]/a/i")
- @FindBy(xpath="//html//body//main//div//div[2]//div[2]//form//div[1]//div//table//tbody//tr[11]//td[2]//table//thead//tr//td//span")
+ @FindBy(xpath="//form[@id='ContentDiv']/div[1]/div/table/tbody/tr[12]/td[1]/a/i")
  private WebElement statutoryNumbersAddIcon;
  @FindBy(id="div_Statutory_Type")
  private WebElement statutoryTypeDropdown;
@@ -151,7 +151,7 @@ public class HireSummaryPage
  @FindBy(id="Error_Statutory_Value")
  private WebElement statutoryValueBlankErrMessage;
  
- @FindBy(xpath="//form[@id='ContentDiv']/div[1]/div/table/tbody/tr[13]/td[1]/a/i") //..........
+ @FindBy(xpath="//form[@id='ContentDiv']/div[1]/div/table/tbody/tr[15]/td[1]/a/i") 
  private WebElement healthDetailsAddIcon;
  
  @FindBy(id="Emp_Height")
