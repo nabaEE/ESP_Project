@@ -1,0 +1,45 @@
+17:12:25.781 [main] DEBUG esp.genericLibraries.BaseClass -                 
+17:12:25.787 [main] INFO  esp.genericLibraries.BaseClass - Actual error message is :Designation cannot be empty
+17:12:25.787 [main] INFO  esp.genericLibraries.BaseClass - ------Verify error for keeping designation blank:-test ended--------
+17:12:26.367 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+17:12:26.367 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+17:12:27.333 [main] DEBUG esp.genericLibraries.BaseClass - --------Verify error for not picking contract end date :-test started----------
+17:12:29.043 [main] DEBUG esp.genericLibraries.BaseClass - Expected error message is :Contract End Date cannot be empty
+17:12:29.071 [main] DEBUG esp.genericLibraries.BaseClass -                 
+17:12:29.071 [main] DEBUG esp.genericLibraries.BaseClass - ----------Validate the error message-----------
+17:12:29.924 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+17:12:29.924 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+17:12:30.693 [main] DEBUG esp.genericLibraries.BaseClass - --------Verify error message for not picking country:-test started----------
+17:13:03.385 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+17:13:03.386 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+17:13:04.334 [main] DEBUG esp.genericLibraries.BaseClass - ------Verify error for not picking employment status :-test started-------
+17:13:06.427 [main] DEBUG esp.genericLibraries.BaseClass - Expected error message is :Employment Status cannot be empty
+17:13:06.439 [main] DEBUG esp.genericLibraries.BaseClass -                 
+17:13:06.439 [main] DEBUG esp.genericLibraries.BaseClass - ---------Validate the error message----------
+17:13:06.440 [main] DEBUG esp.genericLibraries.BaseClass -                 
+17:13:06.440 [main] INFO  esp.genericLibraries.BaseClass - Actual error message is :Employment Status cannot be empty
+17:13:06.440 [main] INFO  esp.genericLibraries.BaseClass - ------Verify error for not picking employment status :-test ended-------
+17:13:07.006 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+17:13:07.006 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+17:13:07.893 [main] DEBUG esp.genericLibraries.BaseClass - ------Verify error for not picking FTE Equivalent:-test started--------
+17:13:09.599 [main] DEBUG esp.genericLibraries.BaseClass - Expected error message is :FTE Equivalent(Weekly Hours) cannot be empty
+17:13:09.620 [main] DEBUG esp.genericLibraries.BaseClass - -------Validate the error message----------
+17:13:09.620 [main] DEBUG esp.genericLibraries.BaseClass -                 
+17:13:09.621 [main] INFO  esp.genericLibraries.BaseClass - Actual error message is :FTE Equivalent(Weekly Hours) cannot be empty
+17:13:09.621 [main] INFO  esp.genericLibraries.BaseClass - ------Verify error for not picking FTE Equivalent:-test ended--------
+17:13:10.156 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+17:13:10.156 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+17:13:11.137 [main] DEBUG esp.genericLibraries.BaseClass - --------Verify error message for not picking Legal Entity:-test started----------
+17:13:13.160 [main] DEBUG esp.genericLibraries.BaseClass - Expected error message is :Legal Entity cannot be empty
+17:13:13.175 [main] DEBUG esp.genericLibraries.BaseClass -                 
+17:13:13.175 [main] DEBUG esp.genericLibraries.BaseClass - ---------Validate the error message----------
+17:13:13.175 [main] DEBUG esp.genericLibraries.BaseClass -                 
+17:13:13.175 [main] INFO  esp.genericLibraries.BaseClass - Actual error message is :Legal Entity cannot be empty
+17:13:13.175 [main] DEBUG esp.genericLibraries.BaseClass - --------Verify error message for not picking Legal Entity:-test ended----------
+17:13:13.730 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+17:13:13.730 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+17:13:14.653 [main] DEBUG esp.genericLibraries.BaseClass - --------Verify error for not picking location:-test started----------
+17:13:16.126 [main] DEBUG esp.genericLibraries.BaseClass - Expected error message is :Location cannot be empty
+17:13:16.143 [main] DEBUG esp.genericLibraries.BaseClass -                 
+17:13:16.143 [main] DEBUG esp.genericLibraries.BaseClass - -------Validate the error message-------
+17:13:16.143 [main] DEBUG esp.genericLibraries.BaseClass -                 

@@ -21,20 +21,19 @@ import esp.objectRepository.NewHirePage;
 public class NewHireTest extends BaseClass
 {
 //Mark attendance
-	@Test(priority=-1)
+	@Test(enabled=false)
 	public static void markAttendance()
 	{
 	log.debug("-------Mark attendance : test started--------");
 	driver.findElement(By.id("Not_now")).click();
 	log.debug("-------Mark attendance : test ended--------");
-	
 	}
 //1. Submit new hire form and verify.
 @Test(groups="Smoke")
 public static void submitNewHireFormAndValidateActivateButton() throws AWTException, InterruptedException
 {
 	   log.debug("---------submit New Hire FormAnd Validate Activate Button:- test started----------");
-	    driver.findElement(By.id("Not_now")).click();
+	  //  driver.findElement(By.id("Not_now")).click();
 	    //Call the landing page
 		LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
 		//Click on admin icon
@@ -49,9 +48,9 @@ public static void submitNewHireFormAndValidateActivateButton() throws AWTExcept
 		nhp.getTitleDropdown().click();
 		nhp.getPickTitle_MR().click();
 		//Enter the first Name
-		nhp.getFirstNameEditbox().sendKeys("Nandan");
+		nhp.getFirstNameEditbox().sendKeys("Badri");
 		//Enter last name
-		nhp.getLastNameEditbox().sendKeys("Mahapatra");
+		nhp.getLastNameEditbox().sendKeys("Patra");
 		//Pick date of birth
 		WebElement element=nhp.getDateOfBirthCalenderWindow();
 		String date="1-Feb-1990";
@@ -99,9 +98,9 @@ public static void submitNewHireFormAndValidateActivateButton() throws AWTExcept
 	    String groupJoiningDate="1-Sept-2019";
 	    nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 	    //Enter the employee Id
-	    nhp.getEmployeeId().sendKeys("DAKO34");
+	    nhp.getEmployeeId().sendKeys("NXBD7");
 	    //Enter email id
-	    nhp.getEmailIdEditbox().sendKeys("nandan.mahapatra");
+	    nhp.getEmailIdEditbox().sendKeys("badri.patra");
 	    //Pick employment type 
 	    nhp.getEmploymentTypeDropdown().click();
 	    nhp.getPickEmploymentType().click();

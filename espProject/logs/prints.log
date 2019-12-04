@@ -1,10 +1,3 @@
-14:52:53.516 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
-14:53:13.636 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
-14:53:19.088 [main] DEBUG esp.genericLibraries.BaseClass - ---------submit New Hire FormAnd Validate Activate Button:- test started----------
-14:55:26.284 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
-14:55:28.504 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
-15:43:31.081 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
-15:43:38.149 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
-15:43:41.626 [main] DEBUG esp.genericLibraries.BaseClass - ---------submit New Hire FormAnd Validate Activate Button:- test started----------
-15:45:17.053 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
-15:45:19.416 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+18:01:27.658 [main] INFO  esp.genericLibraries.BaseClass - ---------submit New Hire Form And Validate Activate Button:- test ended----------.
+18:01:28.227 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+18:01:30.238 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
