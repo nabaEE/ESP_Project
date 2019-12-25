@@ -59,7 +59,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="group-Suite">
-                    <span>1 group</span>
+                    <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -102,7 +102,7 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.newHire.NewHireTest" hash-for-method="submitNewHireFormAndValidateActivateButton">submitNewHireFormAndValidateActivateButton</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.separation.AdminSeparationRequestTest" hash-for-method="submitSeparationRequest">submitSeparationRequest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -120,14 +120,14 @@
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.newHire.NewHireTest</span>
+              <span class="class-name">com.separation.AdminSeparationRequestTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="submitNewHireFormAndValidateActivateButton">
-                  </a> <!-- submitNewHireFormAndValidateActivateButton -->
-                  <span class="method-name">submitNewHireFormAndValidateActivateButton</span>
+                  <a name="submitSeparationRequest">
+                  </a> <!-- submitSeparationRequest -->
+                  <span class="method-name">submitSeparationRequest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -149,11 +149,11 @@
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.newHire.NewHireTest&quot;&gt;
+      &lt;class name=&quot;com.separation.AdminSeparationRequestTest&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;submitNewHireFormAndValidateActivateButton&quot;/&gt;
+          &lt;include name=&quot;submitSeparationRequest&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- com.newHire.NewHireTest --&gt;
+      &lt;/class&gt; &lt;!-- com.separation.AdminSeparationRequestTest --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -177,14 +177,6 @@
             <span class="header-content">Groups for Suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="test-group">
-              <span class="test-group-name">Smoke</span>
-              <br/>
-              <div class="method-in-group">
-                <span class="method-in-group-name">submitNewHireFormAndValidateActivateButton</span>
-                <br/>
-              </div> <!-- method-in-group -->
-            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-Suite" class="panel">
@@ -203,14 +195,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'submitNewHireFormAndValidateActivateButton')
-data.setCell(0, 2, 'com.newHire.NewHireTest')
-data.setCell(0, 3, 105875);
+data.setCell(0, 1, 'submitSeparationRequest')
+data.setCell(0, 2, 'com.separation.AdminSeparationRequestTest')
+data.setCell(0, 3, 11695);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 11 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -225,100 +217,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">43 ignored methods</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">com.newHire.NewHireTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">checkErrorMessageForEnteringExistingEmail</span>
-                <br/>
-                <span class="ignored-method-name">markAttendance</span>
-                <br/>
-                <span class="ignored-method-name">verifyErrorForNotPickingLegalEntity</span>
-                <br/>
-                <span class="ignored-method-name">pickCountrySriLankaAndValidateLocation</span>
-                <br/>
-                <span class="ignored-method-name">validateErrorForNotPickingEmploymentType</span>
-                <br/>
-                <span class="ignored-method-name">verifyErrorForNotPickingContractEndDate</span>
-                <br/>
-                <span class="ignored-method-name">clickAndverifyTitleDropdownValues</span>
-                <br/>
-                <span class="ignored-method-name">verifyErrorForKeepingDesignationBlank</span>
-                <br/>
-                <span class="ignored-method-name">keepEmailIdSectionBlankAndVerifyError</span>
-                <br/>
-                <span class="ignored-method-name">pickCountryUAEAndValidateLocation</span>
-                <br/>
-                <span class="ignored-method-name">checkErrorForNotPickingJoiningDate</span>
-                <br/>
-                <span class="ignored-method-name">makeEmployeeIdEditboxBlankAndValidateError</span>
-                <br/>
-                <span class="ignored-method-name">makeBothDOB_JoiningDateEqualAndverifyError</span>
-                <br/>
-                <span class="ignored-method-name">CheckErrorForKeepingRoleEditboxBlank</span>
-                <br/>
-                <span class="ignored-method-name">VerifyErrorForkeepingTitleWinBlank</span>
-                <br/>
-                <span class="ignored-method-name">checkErrorForKeepingReferalSearchBoxBlank</span>
-                <br/>
-                <span class="ignored-method-name">checkErrorForNotPickingUniversityName</span>
-                <br/>
-                <span class="ignored-method-name">verifyErrorForNotPickingFTE_Equivalent</span>
-                <br/>
-                <span class="ignored-method-name">verifyErrorForNotPickingCountry</span>
-                <br/>
-                <span class="ignored-method-name">verifyErrorForNotPickingLocation</span>
-                <br/>
-                <span class="ignored-method-name">checkErrorMessageForNotPickingDOB</span>
-                <br/>
-                <span class="ignored-method-name">checkErrorForKeepingCityOfBirthBlank</span>
-                <br/>
-                <span class="ignored-method-name">displayErrorForKeepingReportingManagerBlank</span>
-                <br/>
-                <span class="ignored-method-name">verifyErrorMessageForKeepingFirstNameBlank</span>
-                <br/>
-                <span class="ignored-method-name">verifyErrorMessageForNotPickingCountryOfBirth</span>
-                <br/>
-                <span class="ignored-method-name">checkErrorForNotPickingGender</span>
-                <br/>
-                <span class="ignored-method-name">checkErrorForKeepingRelevantExpEditboxBlank</span>
-                <br/>
-                <span class="ignored-method-name">pickCountryIndiaAndValidateLocation</span>
-                <br/>
-                <span class="ignored-method-name">checkErrorForNotSelectingMaritalStatus</span>
-                <br/>
-                <span class="ignored-method-name">pickRegularAndValidateEmploymentStatus</span>
-                <br/>
-                <span class="ignored-method-name">verifyErrorMessageForKeepingLastNameBlank</span>
-                <br/>
-                <span class="ignored-method-name">checkErrorForKeepingDepartmentEditboxBlank</span>
-                <br/>
-                <span class="ignored-method-name">enterExistEmployeeIdAndValidateErrorMessage</span>
-                <br/>
-                <span class="ignored-method-name">checkErrorForNotPickingEducationDetails</span>
-                <br/>
-                <span class="ignored-method-name">displayErrorForNotPickingFT_Indicator</span>
-                <br/>
-                <span class="ignored-method-name">checkErrorForNotPickingCitizenShip</span>
-                <br/>
-                <span class="ignored-method-name">verifyErrorForNotPickingEmploymentStatus</span>
-                <br/>
-                <span class="ignored-method-name">pickCountrySingaporeAndValidateLocation</span>
-                <br/>
-                <span class="ignored-method-name">uploadProfilePhotoWithIncorrectFormat</span>
-                <br/>
-                <span class="ignored-method-name">verifyErrorForPicking_DOB_lessThanEighteen_years</span>
-                <br/>
-                <span class="ignored-method-name">checkErrorForNotPickingGroupJoiningDate</span>
-                <br/>
-                <span class="ignored-method-name">uploadProfilePhotoWithCorrectFormat</span>
-                <br/>
-                <span class="ignored-method-name">checkErrorMessageForNotPickingStateOfBirth</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Suite" class="panel">
@@ -327,26 +228,26 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.newHire.NewHireTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.separation.AdminSeparationRequestTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">openBrowser(firefox 68)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">login</span>
-                <span class="method-start">17198 ms</span>
+                <span class="method-start">6665 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">submitNewHireFormAndValidateActivateButton</span>
-                <span class="method-start">21969 ms</span>
+                <span class="method-name">submitSeparationRequest</span>
+                <span class="method-start">17996 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">127845 ms</span>
+                <span class="method-start">29694 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">128384 ms</span>
+                <span class="method-start">31128 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

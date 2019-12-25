@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="43" total="44" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="130409" started-at="2019-12-04T12:29:19Z" finished-at="2019-12-04T12:31:30Z">
+  <suite name="Suite" duration-ms="36806" started-at="2019-12-25T02:48:26Z" finished-at="2019-12-25T02:49:02Z">
     <groups>
-      <group name="Smoke">
-        <method signature="NewHireTest.submitNewHireFormAndValidateActivateButton()[pri:0, instance:com.newHire.NewHireTest@76508ed1]" name="submitNewHireFormAndValidateActivateButton" class="com.newHire.NewHireTest"/>
-      </group> <!-- Smoke -->
     </groups>
-    <test name="Test" duration-ms="130409" started-at="2019-12-04T12:29:19Z" finished-at="2019-12-04T12:31:30Z">
-      <class name="com.newHire.NewHireTest">
-        <test-method status="PASS" signature="openBrowser(java.lang.String)[pri:0, instance:com.newHire.NewHireTest@76508ed1]" name="openBrowser" is-config="true" duration-ms="17095" started-at="2019-12-04T12:29:19Z" finished-at="2019-12-04T12:29:36Z">
+    <test name="Test" duration-ms="36806" started-at="2019-12-25T02:48:26Z" finished-at="2019-12-25T02:49:02Z">
+      <class name="com.separation.AdminSeparationRequestTest">
+        <test-method status="PASS" signature="openBrowser(java.lang.String)[pri:0, instance:com.separation.AdminSeparationRequestTest@3911c2a7]" name="openBrowser" is-config="true" duration-ms="6661" started-at="2019-12-25T02:48:26Z" finished-at="2019-12-25T02:48:32Z">
           <params>
             <param index="0">
               <value>
@@ -21,23 +18,23 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method status="PASS" signature="login()[pri:0, instance:com.newHire.NewHireTest@76508ed1]" name="login" is-config="true" duration-ms="4771" started-at="2019-12-04T12:29:37Z" finished-at="2019-12-04T12:29:41Z">
+        <test-method status="PASS" signature="login()[pri:0, instance:com.separation.AdminSeparationRequestTest@3911c2a7]" name="login" is-config="true" duration-ms="11331" started-at="2019-12-25T02:48:32Z" finished-at="2019-12-25T02:48:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="submitNewHireFormAndValidateActivateButton()[pri:0, instance:com.newHire.NewHireTest@76508ed1]" name="submitNewHireFormAndValidateActivateButton" duration-ms="105875" started-at="2019-12-04T12:29:41Z" finished-at="2019-12-04T12:31:27Z">
+        <test-method status="PASS" signature="submitSeparationRequest()[pri:0, instance:com.separation.AdminSeparationRequestTest@3911c2a7]" name="submitSeparationRequest" duration-ms="11695" started-at="2019-12-25T02:48:44Z" finished-at="2019-12-25T02:48:55Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- submitNewHireFormAndValidateActivateButton -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.newHire.NewHireTest@76508ed1]" name="tearDown" is-config="true" duration-ms="539" started-at="2019-12-04T12:31:27Z" finished-at="2019-12-04T12:31:28Z">
+        </test-method> <!-- submitSeparationRequest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.separation.AdminSeparationRequestTest@3911c2a7]" name="tearDown" is-config="true" duration-ms="1432" started-at="2019-12-25T02:48:55Z" finished-at="2019-12-25T02:48:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.newHire.NewHireTest@76508ed1]" name="closeBrowser" is-config="true" duration-ms="2011" started-at="2019-12-04T12:31:28Z" finished-at="2019-12-04T12:31:30Z">
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.separation.AdminSeparationRequestTest@3911c2a7]" name="closeBrowser" is-config="true" duration-ms="5672" started-at="2019-12-25T02:48:57Z" finished-at="2019-12-25T02:49:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- com.newHire.NewHireTest -->
+      </class> <!-- com.separation.AdminSeparationRequestTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

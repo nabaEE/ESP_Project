@@ -8,24 +8,15 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.newHire.NewHireTest">
+      <class name="com.separation.AdminSeparationRequestTest">
         <methods>
-          <include name="checkErrorMessageForEnteringExistingEmail"/>
-          <include name="validateErrorForNotPickingEmploymentType"/>
-          <include name="verifyErrorForNotPickingContractEndDate"/>
-          <include name="submitNewHireFormAndValidateActivateButton"/>
-          <include name="openBrowser"/>
-          <include name="keepEmailIdSectionBlankAndVerifyError"/>
-          <include name="checkErrorForNotSelectingMaritalStatus"/>
-          <include name="checkErrorForNotPickingEducationDetails"/>
+          <include name="submitSeparationRequest"/>
           <include name="login"/>
           <include name="closeBrowser"/>
-          <include name="checkErrorForNotPickingCitizenShip"/>
-          <include name="verifyErrorForNotPickingCountry"/>
+          <include name="openBrowser"/>
           <include name="tearDown"/>
-          <include name="checkErrorForNotPickingGroupJoiningDate"/>
         </methods>
-      </class> <!-- com.newHire.NewHireTest -->
+      </class> <!-- com.separation.AdminSeparationRequestTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
