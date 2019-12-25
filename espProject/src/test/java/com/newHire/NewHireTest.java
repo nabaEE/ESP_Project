@@ -33,7 +33,7 @@ public class NewHireTest extends BaseClass
 public static void submitNewHireFormAndValidateActivateButton() throws AWTException, InterruptedException
 {
 	   log.debug("---------submit New Hire FormAnd Validate Activate Button:- test started----------");
-	  //  driver.findElement(By.id("Not_now")).click();
+	  // driver.findElement(By.id("Not_now")).click();
 	    //Call the landing page
 		LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
 		//Click on admin icon

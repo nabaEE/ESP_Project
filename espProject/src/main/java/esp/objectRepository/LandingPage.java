@@ -31,8 +31,15 @@ public class LandingPage
 	private List<WebElement> adminDropdownValues;
 	@FindBy(xpath="//ul[@id='AdminDropDowns']/li[4]/a")
 	private WebElement newHireAdminValue;
+	@FindBy(xpath="//ul[@id='AdminDropDowns']/li/a[text()='People']")
+    private WebElement peopleIcon;
+	
 	
 /***********Getters Usage************/
+	public WebElement getPeopleIcon()
+	{
+		return peopleIcon;
+	}
 	public WebElement getAttendanceWindow() {
 		return attendanceWindow;
 	}

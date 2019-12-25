@@ -29,7 +29,7 @@ public class BaseClass extends FileUtils
  public static WebDriver driver;
  protected static Logger log= LogManager.getLogger(BaseClass.class);
  FirefoxOptions profile = new FirefoxOptions();
-@BeforeClass()
+ @BeforeClass()
  @Parameters({"browser"})
 public void openBrowser(String browserName)
   {
@@ -73,7 +73,6 @@ public void login() throws IOException
  lp.loginToPage(pObj.getProperty("USERNAME"), pObj.getProperty("PASSWORD"));
  WebdriverUtils.waitForPageToLoad(driver);
  driver.switchTo().frame(BaseClass.driver.findElement(By.xpath("//html//frameset//frame")));
-
  
  }
 @AfterMethod
