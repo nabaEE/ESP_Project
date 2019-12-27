@@ -1,5 +1,7 @@
 package esp.objectRepository;
 
+import java.util.List;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -18,15 +20,73 @@ private WebElement selectSeparationReason;
 @FindBy(id="div_InitiatedDate")
 private WebElement submissionDate;
 @FindBy(css=".is-today")
-private WebElement currentDate;
+private WebElement selectToday;
 
-@FindBy(id="div_RelieveDate")
+@FindBy(xpath="//input[@id='RelieveDate']")
 private WebElement relieveDate;
-
+@FindBy(xpath="//div[@id='modal-83c5e144-e9e4-1c29-c3f9-05bbbe9d0bd2']//button[@class='datepicker-day-button'][contains(text(),'27')]")
+private WebElement selectRelieveDate;
 @FindBy(id="Feedback")
 private WebElement commentsEditbox;
 
 @FindBy(id="Submit")
 private WebElement submitButton;
 
+@FindBy(xpath="//tbody/tr[10]/td/ul/li")
+private List<WebElement> adminActions;
+
+/*********************Getters Usage**************************/
+public WebElement getSelectRelieveDate()
+{
+	return selectRelieveDate;
+}
+public WebElement getSeparationType() {
+	return separationType;
+}
+
+public WebElement getSelectSeparationType() {
+	return selectSeparationType;
+}
+
+public WebElement getSeparationReason() {
+	return separationReason;
+}
+
+public WebElement getSelectSeparationReason() {
+	return selectSeparationReason;
+}
+
+public WebElement getSubmissionDate() {
+	return submissionDate;
+}
+
+public WebElement getSelectToday()
+{
+	return selectToday;
+}
+
+public WebElement getRelieveDate() {
+	return relieveDate;
+}
+
+public WebElement getCommentsEditbox() {
+	return commentsEditbox;
+}
+
+public WebElement getSubmitButton() {
+	return submitButton;
+}
+
+/***************************Utilization****************************/
+
+public void clickSeparationOption()
+{
+for (int i=0; i<adminActions.size(); i++)
+{
+  if(adminActions.get(i).getText().equalsIgnoreCase("Separation")) {
+	  adminActions.get(i).click();
+  }
+}
+
+}
 }
