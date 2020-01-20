@@ -24,7 +24,8 @@ private WebElement selectToday;
 
 @FindBy(xpath="//input[@id='RelieveDate']")
 private WebElement relieveDate;
-@FindBy(xpath="//div[@id='modal-83c5e144-e9e4-1c29-c3f9-05bbbe9d0bd2']//button[@class='datepicker-day-button'][contains(text(),'27')]")
+@FindBy(xpath="//tbody//tr//td//button[text()='20']")
+
 private WebElement selectRelieveDate;
 @FindBy(id="Feedback")
 private WebElement commentsEditbox;
@@ -35,7 +36,20 @@ private WebElement submitButton;
 @FindBy(xpath="//tbody/tr[10]/td/ul/li")
 private List<WebElement> adminActions;
 
+@FindBy(id="InitiatedText")
+private WebElement initiatedText;
+@FindBy(id="RelieveText")
+private WebElement relieveText;
+
 /*********************Getters Usage**************************/
+public WebElement getInitiatedText()
+{
+	return initiatedText;
+}
+public WebElement getRelieveText()
+{
+	return relieveText;
+}
 public WebElement getSelectRelieveDate()
 {
 	return selectRelieveDate;

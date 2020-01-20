@@ -10,7 +10,7 @@
    <classes>
       <class name="com.separation.AdminSeparationRequestTest">
       <methods>
-      <include name="submitSeparationRequest"/>
+      <include name="verifyInitiatedAndRelieveText"/>
       </methods>
       </class>
     </classes>
