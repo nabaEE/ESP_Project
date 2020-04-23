@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="1" total="2" passed="1">
+<testng-results skipped="0" failed="1" ignored="43" total="44" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="20230" started-at="2020-01-20T05:32:25Z" finished-at="2020-01-20T05:32:46Z">
+  <suite name="Suite" duration-ms="122012" started-at="2020-04-08T18:19:32Z" finished-at="2020-04-08T18:21:34Z">
     <groups>
+      <group name="Smoke">
+        <method signature="NewHireTest.submitNewHireFormAndValidateActivateButton()[pri:0, instance:com.newHire.NewHireTest@76508ed1]" name="submitNewHireFormAndValidateActivateButton" class="com.newHire.NewHireTest"/>
+      </group> <!-- Smoke -->
     </groups>
-    <test name="Test" duration-ms="20230" started-at="2020-01-20T05:32:25Z" finished-at="2020-01-20T05:32:46Z">
-      <class name="com.separation.AdminSeparationRequestTest">
-        <test-method status="PASS" signature="openBrowser(java.lang.String)[pri:0, instance:com.separation.AdminSeparationRequestTest@3911c2a7]" name="openBrowser" is-config="true" duration-ms="5942" started-at="2020-01-20T05:32:25Z" finished-at="2020-01-20T05:32:31Z">
+    <test name="Test" duration-ms="122012" started-at="2020-04-08T18:19:32Z" finished-at="2020-04-08T18:21:34Z">
+      <class name="com.newHire.NewHireTest">
+        <test-method status="PASS" signature="openBrowser(java.lang.String)[pri:0, instance:com.newHire.NewHireTest@76508ed1]" name="openBrowser" is-config="true" duration-ms="7585" started-at="2020-04-08T18:19:32Z" finished-at="2020-04-08T18:19:39Z">
           <params>
             <param index="0">
               <value>
@@ -18,23 +21,85 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method status="PASS" signature="login()[pri:0, instance:com.separation.AdminSeparationRequestTest@3911c2a7]" name="login" is-config="true" duration-ms="4574" started-at="2020-01-20T05:32:31Z" finished-at="2020-01-20T05:32:36Z">
+        <test-method status="PASS" signature="login()[pri:0, instance:com.newHire.NewHireTest@76508ed1]" name="login" is-config="true" duration-ms="4275" started-at="2020-04-08T18:19:39Z" finished-at="2020-04-08T18:19:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="verifyInitiatedAndRelieveText()[pri:0, instance:com.separation.AdminSeparationRequestTest@3911c2a7]" name="verifyInitiatedAndRelieveText" duration-ms="4039" started-at="2020-01-20T05:32:36Z" finished-at="2020-01-20T05:32:40Z">
+        <test-method status="FAIL" signature="submitNewHireFormAndValidateActivateButton()[pri:0, instance:com.newHire.NewHireTest@76508ed1]" name="submitNewHireFormAndValidateActivateButton" duration-ms="106514" started-at="2020-04-08T18:19:44Z" finished-at="2020-04-08T18:21:30Z">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[Element <div id="div_Pay_Type" class="input-field col s12 m6 l6 xl6"> is not clickable at point (928,425) because another element <li> obscures it
+Build info: version: '4.0.0-alpha-2', revision: 'f148142cf8', time: '2019-07-01T20:55:26'
+System info: host: 'SYSTEM-72', ip: '192.168.0.103', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 74.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200403064753, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 9796, moz:profile: C:\Users\Prod\AppData\Local..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: f0d75aa1-9fb0-43bd-b57d-a549ee859848]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: Element <div id="div_Pay_Type" class="input-field col s12 m6 l6 xl6"> is not clickable at point (928,425) because another element <li> obscures it
+Build info: version: '4.0.0-alpha-2', revision: 'f148142cf8', time: '2019-07-01T20:55:26'
+System info: host: 'SYSTEM-72', ip: '192.168.0.103', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 74.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200403064753, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 9796, moz:profile: C:\Users\Prod\AppData\Local..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: f0d75aa1-9fb0-43bd-b57d-a549ee859848
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:191)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:125)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:161)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:576)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:308)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
+at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+at com.sun.proxy.$Proxy28.click(Unknown Source)
+at com.newHire.NewHireTest.submitNewHireFormAndValidateActivateButton(NewHireTest.java:155)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyInitiatedAndRelieveText -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.separation.AdminSeparationRequestTest@3911c2a7]" name="tearDown" is-config="true" duration-ms="708" started-at="2020-01-20T05:32:40Z" finished-at="2020-01-20T05:32:41Z">
+        </test-method> <!-- submitNewHireFormAndValidateActivateButton -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.newHire.NewHireTest@76508ed1]" name="tearDown" is-config="true" duration-ms="755" started-at="2020-04-08T18:21:31Z" finished-at="2020-04-08T18:21:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.separation.AdminSeparationRequestTest@3911c2a7]" name="closeBrowser" is-config="true" duration-ms="4937" started-at="2020-01-20T05:32:41Z" finished-at="2020-01-20T05:32:46Z">
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.newHire.NewHireTest@76508ed1]" name="closeBrowser" is-config="true" duration-ms="2432" started-at="2020-04-08T18:21:31Z" finished-at="2020-04-08T18:21:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- com.separation.AdminSeparationRequestTest -->
+      </class> <!-- com.newHire.NewHireTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

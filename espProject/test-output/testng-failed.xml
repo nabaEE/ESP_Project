@@ -8,15 +8,15 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.separation.AdminSeparationRequestTest">
+      <class name="com.newHire.NewHireTest">
         <methods>
-          <include name="submitSeparationRequest"/>
+          <include name="submitNewHireFormAndValidateActivateButton"/>
           <include name="login"/>
           <include name="closeBrowser"/>
           <include name="openBrowser"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.separation.AdminSeparationRequestTest -->
+      </class> <!-- com.newHire.NewHireTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

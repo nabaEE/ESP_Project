@@ -8,9 +8,9 @@
   <parameter name="browser" value="firefox 68"/>
   <test thread-count="5" name="Test">
    <classes>
-      <class name="com.separation.AdminSeparationRequestTest">
-      <methods>
-      <include name="verifyInitiatedAndRelieveText"/>
+      <class name="com.newHire.NewHireTest">
+      <methods> 
+      <include name="submitNewHireFormAndValidateActivateButton"></include>
       </methods>
       </class>
     </classes>

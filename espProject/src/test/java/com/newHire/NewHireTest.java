@@ -44,6 +44,9 @@ public static void submitNewHireFormAndValidateActivateButton() throws AWTExcept
 		lnp.clickNewHire();
 		//Call the new hire page
 		NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+		//Click add new button
+		Thread.sleep(2000);
+		nhp.getClickAddNewButton().click();
 		//Click on title dropdown and pick MR
 		nhp.getTitleDropdown().click();
 		nhp.getPickTitle_MR().click();
@@ -382,9 +385,9 @@ public static void checkErrorMessageForEnteringExistingEmail() throws Interrupte
 		    String groupJoiningDate="1-Sept-2019";
 		    nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 		    //Enter the employee Id
-		    nhp.getEmployeeId().sendKeys("NXET35");
+		    nhp.getEmployeeId().sendKeys("NX8520");
 		    //Enter email id
-		    nhp.getEmailIdEditbox().sendKeys("satyak3");
+		    nhp.getEmailIdEditbox().sendKeys("naman.kar");
 		    //Pick employment type 
 		    nhp.getEmploymentTypeDropdown().click();
 		    nhp.getPickEmploymentType().click();

@@ -28,6 +28,8 @@ public class NewHirePage
 	private WebElement uploadEditIcon;
 	@FindBy(id="div_FileError1")
 	private WebElement incorrectFileFormatError;
+	@FindBy(xpath="//div[@id='AppsMenuRow']/div/div/a[4]")
+	private WebElement clickAddNewButton;
 	
 	@FindBy(xpath="//div[@id='div_Emp_Title']/div/input")
 	private WebElement titleDropdown;
@@ -315,6 +317,10 @@ public class NewHirePage
 	
 	
 	/************************Getters Usage********************************/
+	public WebElement getClickAddNewButton()
+	{
+		return clickAddNewButton;
+	}
 	public WebElement getNewHireImage() {
 		return newHireImage;
 	}
