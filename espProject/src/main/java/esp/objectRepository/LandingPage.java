@@ -15,6 +15,8 @@ public class LandingPage
 /************Utilization*************/
 	@FindBy(xpath="//ul[@class='right hide-on-med-and-down']/li")
 	private List<WebElement> landingPageValues;
+	@FindBy(id="Not_now")
+	private WebElement clickNotNow;
 	@FindBy(name="Attendance")
 	private WebElement attendanceWindow;
 	@FindBy(id="Not_now")
@@ -64,6 +66,15 @@ public class LandingPage
 	}
 	
 /***********Utilization*************/
+	public void skipAttendance()
+	{
+		if(clickNotNow.isDisplayed()) {
+		clickNotNow.click();
+		}
+		else {
+		    
+		}
+	}
 	
 	public void clickAdminIcon() {
 		for(int i=0; i<landingPageValues.size(); i++)

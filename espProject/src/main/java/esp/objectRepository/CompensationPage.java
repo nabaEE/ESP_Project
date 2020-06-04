@@ -15,7 +15,7 @@ private WebElement skipButton;
 @FindBy(id="Submit")
 private WebElement saveAndContinueButton;
 
-@FindBy(xpath="//form[@id='CompForm']/div[2]/div/div/div[2]/div/div/div[3]/div/div/span/div/input")
+@FindBy(xpath="//label[text()='Select Profile ']")
 private WebElement selectProfileDropdown;
 @FindBy(xpath="//span[text()='NXTGEN - Above 3Lakh with LTA']")
 private WebElement selectOneProfile;

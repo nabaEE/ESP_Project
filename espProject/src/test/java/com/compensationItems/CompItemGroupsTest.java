@@ -19,6 +19,8 @@ public static void submitNewCompensationGroup() throws InterruptedException
 {
 //Call the landing page
 LandingPage lnp= PageFactory.initElements(driver, LandingPage.class);
+//Click notnow if attendance is displayed
+lnp.skipAttendance();
 //Click on admin icon
 lnp.getAdminIcon().click();
 //Click on Configuration setup
