@@ -22,8 +22,15 @@ private WebElement selectOneProfile;
 
 @FindBy(id="UserEntered_Amt")
 private WebElement userEnteredAmountEditbox;
+@FindBy(xpath="//div[@id='Display_ul']/div[4]/li/p")
+private WebElement clickHireSummary;
+@FindBy(xpath="//div[@id='Display_ul']/div[5]/li/p")
+private WebElement clickHireSummaryMUJ;
 
 /************Getters Usage*******************/
+public WebElement getClickHireSummary() {
+	return clickHireSummary;
+}
 public WebElement getUserEnteredAmountEditbox()
 {
 	return userEnteredAmountEditbox;
@@ -45,6 +52,9 @@ public WebElement getSkipButton() {
 
 public WebElement getSaveAndContinueButton() {
 	return saveAndContinueButton;
+}
+public WebElement getClickHireSummaryMUJ() {
+	return clickHireSummaryMUJ;
 }
 	
 	

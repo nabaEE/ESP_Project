@@ -38,7 +38,7 @@ public void openBrowser(String browserName)
 	 log.info("*****************Launching the Browser*************************");
   if(browserName.equalsIgnoreCase("chrome"))
    {
-	 System.setProperty("webdriver.chrome.driver", "C:\\Users\\Prod\\Desktop\\driver\\chromedriver.exe");
+	 System.setProperty("webdriver.chrome.driver", "C:\\Users\\Prod\\Documents\\driver\\chromedriver.exe");
 	 driver= new ChromeDriver();
     }
   /*call the firefox browser*/

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <parameter name="browser" value="firefox 68"/>
+  <parameter name="browser" value="chrome"/>
   <listeners>
     <listener class-name="esp.genericLibraries.ListenerImplimentationClass"/>
     <listener class-name="esp.genericLibraries.ExtentReporterNG"/>
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.newHire.NewHireTest">
+      <class name="com.newHire.NewHireTestMUJ">
         <methods>
-          <include name="submitNewHireFormAndValidateActivateButton"/>
+          <include name="submitNewHireFormAndValidate"/>
           <include name="login"/>
           <include name="closeBrowser"/>
           <include name="openBrowser"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.newHire.NewHireTest -->
+      </class> <!-- com.newHire.NewHireTestMUJ -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

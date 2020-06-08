@@ -17,6 +17,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import esp.genericLibraries.BaseClass;
+import esp.genericLibraries.WebdriverUtils;
 
 public class NewHirePage {
 
@@ -135,7 +136,8 @@ public class NewHirePage {
 	private WebElement sourceOfHireDropdown;
 	@FindBy(xpath = "//div[@id='div_SourceOf_Hire']/div/ul/li")
 	private List<WebElement> sourceOfHireDropdownValues;
-	@FindBy(xpath = "//div[@id='div_SourceOf_Hire']/div/ul/li[2]")
+	//@FindBy(xpath = "//div[@id='div_SourceOf_Hire']/div/ul/li[2]")
+	@FindBy(xpath="//span[text()='Campus Recruitment']")
 	private WebElement campusRecruitmentSourceOfHire;
 	@FindBy(xpath = "//div[@id='div_SourceOf_Hire']/div/ul/li[3]")
 	private WebElement referalSourceOfHire;
@@ -213,7 +215,7 @@ public class NewHirePage {
 	private WebElement emailIdEditbox;
 	@FindBy(id = "div_Org_EmailDomain")
 	private WebElement emailDomainDropdown;
-	@FindBy(xpath="//div[@id='div_Org_EmailDomain']/div/ul/li[2]")
+	@FindBy(xpath = "//div[@id='div_Org_EmailDomain']/div/ul/li[2]")
 	private WebElement pickEmailDomain;
 	@FindBy(xpath = "//div[@id='div_Email']/span")
 	private WebElement emailIdEditboxLength;
@@ -226,7 +228,8 @@ public class NewHirePage {
 	private WebElement employmentTypeDropdown;
 	@FindBy(xpath = "//div[@id='div_Employment_Type']/div/ul/li")
 	private List<WebElement> employmentTypeDropdownValues;
-	@FindBy(xpath = "//div[@id='div_Employment_Type']/div/ul/li[4]")
+	//@FindBy(xpath = "//div[@id='div_Employment_Type']/div/ul/li[4]")
+    @FindBy(xpath="//span[text()='Regular']")
 	private WebElement pickEmploymentType;
 	@FindBy(id = "Error_Employment_Type")
 	private WebElement employmentTypeBlankErrorMessage;
@@ -260,9 +263,9 @@ public class NewHirePage {
 	private WebElement roleEditbox;
 	@FindBy(id = "Error_Role_Id")
 	private WebElement roleEditboxBlankErrorMessage;
-	@FindBy(xpath = "//div[@id='div_Role_Id']/ul/li")
+	@FindBy(xpath = "//ul[@id='Role_Search_Role_Id']/li")
 	private List<WebElement> roleDropdownValues;
-	@FindBy(xpath = "//div[@id='div_Role_Id']/ul/li[2]")
+	@FindBy(xpath = "//ul[@id='Role_Search_Role_Id']/li")
 	private WebElement pickRole;
 
 	@FindBy(id = "Designation_Id")
@@ -273,6 +276,11 @@ public class NewHirePage {
 	private WebElement pickDesignation;
 	@FindBy(id = "Error_Designation_Id")
 	private WebElement designationBlankErrorMessage;
+	
+	@FindBy(xpath="//div[@id='div_Grade_Code']/div/input")
+	private WebElement gradeDropdown;
+	@FindBy(xpath="//div[@id='div_Grade_Code']/div/ul/li")
+	private List<WebElement> gradeValues;
 
 	@FindBy(id = "Manager_Id")
 	private WebElement reportingHiringManagerEditbox;
@@ -661,9 +669,11 @@ public class NewHirePage {
 	public WebElement getEmailIdEditboxLength() {
 		return emailIdEditboxLength;
 	}
+
 	public WebElement getEmailDomainDropdown() {
 		return emailDomainDropdown;
 	}
+
 	public WebElement getPickEmailDomain() {
 		return pickEmailDomain;
 	}
@@ -755,7 +765,9 @@ public class NewHirePage {
 	public WebElement getPickDesignation() {
 		return pickDesignation;
 	}
-
+   public WebElement getGradeDropdown() {
+	   return gradeDropdown;
+   }
 	public WebElement getDesignationBlankErrorMessage() {
 		return designationBlankErrorMessage;
 	}
@@ -837,18 +849,37 @@ public class NewHirePage {
 	// Method to pick role
 	public void selectRole() {
 		for (int i = 0; i < roleDropdownValues.size(); i++) {
-			if (roleDropdownValues.get(i).getText()
-					.contains("Regular -> NxtGen -> Assistant Manager - Business Analyst - Salest")) {
-
+			if (roleDropdownValues.get(i).getText().equalsIgnoreCase("Assistant Manager - Business Analyst - Salest")) {
+				WebdriverUtils.waitForElementPresent(BaseClass.driver, roleDropdownValues.get(i));
 				roleDropdownValues.get(i).click();
 			}
 		}
 	}
-
+	
+//Method to choose role
+	public void chooseRole() {
+		for (int i = 0; i < roleDropdownValues.size(); i++) {
+			if (i==1) {
+				WebdriverUtils.waitForElementPresent(BaseClass.driver, roleDropdownValues.get(i));
+				roleDropdownValues.get(i).click();
+			}
+		}
+	}
+	
 	// Method to pick Department
 	public void selectDepartment() {
 		for (int i = 0; i < departmentDropdownValues.size(); i++) {
 			if (departmentDropdownValues.get(i).getText().equalsIgnoreCase("Sales -> Channel Sales")) {
+				WebdriverUtils.waitForElementPresent(BaseClass.driver, departmentDropdownValues.get(i));
+				departmentDropdownValues.get(i).click();
+			}
+		}
+	}
+	//Method to pick department for bluestone
+	public void chooseDepartment() {
+		for(int i=0; i< departmentDropdownValues.size(); i++) {
+			if (i==1) {
+				WebdriverUtils.waitForElementPresent(BaseClass.driver, departmentDropdownValues.get(i));
 				departmentDropdownValues.get(i).click();
 			}
 		}
@@ -857,8 +888,17 @@ public class NewHirePage {
 	// Method to pick designation
 	public void selectDesignation() throws Exception {
 		for (int i = 0; i < designationDropdownValues.size(); i++) {
-			designationEditbox.sendKeys("Sal");
 			if (designationDropdownValues.get(i).getText().contains("Vice President - Pre sales")) {
+				WebdriverUtils.waitForElementPresent(BaseClass.driver, designationDropdownValues.get(i));
+				designationDropdownValues.get(i).click();
+			}
+		}
+	}
+	//Method to pick designation
+	public void chooseDesignation() throws Exception {
+		for (int i = 0; i < designationDropdownValues.size(); i++) {
+			if (i==1) {
+				WebdriverUtils.waitForElementPresent(BaseClass.driver, designationDropdownValues.get(i));
 				designationDropdownValues.get(i).click();
 			}
 		}
@@ -884,6 +924,23 @@ public class NewHirePage {
 		for (int i = 0; i < employmentTypeDropdownValues.size(); i++) {
 			if (employmentTypeDropdownValues.get(i).getText().equals("Contract")) {
 				employmentTypeDropdownValues.get(i).click();
+			}
+		}
+	}
+	
+	// Method to pick role
+	public void pickGradeAsTeaching() {
+		for(int i=0; i<gradeValues.size(); i++) {
+			if(gradeValues.get(i).getText().equalsIgnoreCase("Teaching Cadre")) {
+				gradeValues.get(i).click();
+			}
+		}
+	}
+	//Method to pick grade
+	public void selectGrade() {
+		for(int i=0; i<gradeValues.size(); i++) {
+			if(i==1) {
+				gradeValues.get(i).click();
 			}
 		}
 	}
@@ -959,6 +1016,6 @@ public class NewHirePage {
 		}
 		return val;
 	}
-//Method to select email domanin
+//Method to select employment status
 
 }

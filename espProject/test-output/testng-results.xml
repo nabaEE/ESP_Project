@@ -1,69 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="43" total="44" passed="0">
+<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="128110" started-at="2020-06-03T13:50:50Z" finished-at="2020-06-03T13:52:58Z">
+  <suite name="Suite" duration-ms="19615" started-at="2020-06-08T16:59:58Z" finished-at="2020-06-08T17:00:18Z">
     <groups>
       <group name="Smoke">
-        <method signature="NewHireTest.submitNewHireFormAndValidateActivateButton()[pri:0, instance:com.newHire.NewHireTest@130161f7]" name="submitNewHireFormAndValidateActivateButton" class="com.newHire.NewHireTest"/>
+        <method signature="NewHireTestMUJ.submitNewHireFormAndValidate()[pri:0, instance:com.newHire.NewHireTestMUJ@1817d444]" name="submitNewHireFormAndValidate" class="com.newHire.NewHireTestMUJ"/>
       </group> <!-- Smoke -->
     </groups>
-    <test name="Test" duration-ms="128110" started-at="2020-06-03T13:50:50Z" finished-at="2020-06-03T13:52:58Z">
-      <class name="com.newHire.NewHireTest">
-        <test-method status="PASS" signature="openBrowser(java.lang.String)[pri:0, instance:com.newHire.NewHireTest@130161f7]" name="openBrowser" is-config="true" duration-ms="6822" started-at="2020-06-03T13:50:50Z" finished-at="2020-06-03T13:50:57Z">
+    <test name="Test" duration-ms="19615" started-at="2020-06-08T16:59:58Z" finished-at="2020-06-08T17:00:18Z">
+      <class name="com.newHire.NewHireTestMUJ">
+        <test-method status="PASS" signature="openBrowser(java.lang.String)[pri:0, instance:com.newHire.NewHireTestMUJ@1817d444]" name="openBrowser" is-config="true" duration-ms="7087" started-at="2020-06-08T16:59:58Z" finished-at="2020-06-08T17:00:05Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[firefox 68]]>
+                <![CDATA[chrome]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method status="PASS" signature="login()[pri:0, instance:com.newHire.NewHireTest@130161f7]" name="login" is-config="true" duration-ms="5825" started-at="2020-06-03T13:50:57Z" finished-at="2020-06-03T13:51:03Z">
+        <test-method status="PASS" signature="login()[pri:0, instance:com.newHire.NewHireTestMUJ@1817d444]" name="login" is-config="true" duration-ms="4272" started-at="2020-06-08T17:00:05Z" finished-at="2020-06-08T17:00:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="FAIL" signature="submitNewHireFormAndValidateActivateButton()[pri:0, instance:com.newHire.NewHireTest@130161f7]" name="submitNewHireFormAndValidateActivateButton" duration-ms="112047" started-at="2020-06-03T13:51:03Z" finished-at="2020-06-03T13:52:55Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[Unable to locate element: //form[@id='CompForm']/div[2]/div/div/div[2]/div/div/div[3]/div/div/span/div/input
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '4.0.0-alpha-2', revision: 'f148142cf8', time: '2019-07-01T20:55:26'
-System info: host: 'SYSTEM-72', ip: '192.168.0.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 77.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200528194502, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 22340, moz:profile: C:\Users\Prod\AppData\Local..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 5269a012-aac3-4c25-af94-134619b7abae
-*** Element info: {Using=xpath, value=//form[@id='CompForm']/div[2]/div/div/div[2]/div/div/div[3]/div/div/span/div/input}]]>
-            </message>
+        <test-method status="FAIL" signature="submitNewHireFormAndValidate()[pri:0, instance:com.newHire.NewHireTestMUJ@1817d444]" name="submitNewHireFormAndValidate" duration-ms="6100" started-at="2020-06-08T17:00:09Z" finished-at="2020-06-08T17:00:16Z">
+          <exception class="java.lang.NullPointerException">
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: //form[@id='CompForm']/div[2]/div/div/div[2]/div/div/div[3]/div/div/span/div/input
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '4.0.0-alpha-2', revision: 'f148142cf8', time: '2019-07-01T20:55:26'
-System info: host: 'SYSTEM-72', ip: '192.168.0.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 77.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20200528194502, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 22340, moz:profile: C:\Users\Prod\AppData\Local..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 5269a012-aac3-4c25-af94-134619b7abae
-*** Element info: {Using=xpath, value=//form[@id='CompForm']/div[2]/div/div/div[2]/div/div/div[3]/div/div/span/div/input}
-at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:191)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:125)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:161)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:576)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:327)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:445)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:319)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-at com.sun.proxy.$Proxy28.click(Unknown Source)
-at com.newHire.NewHireTest.submitNewHireFormAndValidateActivateButton(NewHireTest.java:168)
+              <![CDATA[java.lang.NullPointerException
+at esp.genericLibraries.FileUtils.getExcelData(FileUtils.java:32)
+at com.newHire.NewHireTestMUJ.submitNewHireFormAndValidate(NewHireTestMUJ.java:39)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -91,19 +58,19 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- submitNewHireFormAndValidateActivateButton -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.newHire.NewHireTest@130161f7]" name="tearDown" is-config="true" duration-ms="853" started-at="2020-06-03T13:52:55Z" finished-at="2020-06-03T13:52:56Z">
+        </test-method> <!-- submitNewHireFormAndValidate -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.newHire.NewHireTestMUJ@1817d444]" name="tearDown" is-config="true" duration-ms="843" started-at="2020-06-08T17:00:16Z" finished-at="2020-06-08T17:00:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.newHire.NewHireTest@130161f7]" name="closeBrowser" is-config="true" duration-ms="2298" started-at="2020-06-03T13:52:56Z" finished-at="2020-06-03T13:52:58Z">
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.newHire.NewHireTestMUJ@1817d444]" name="closeBrowser" is-config="true" duration-ms="804" started-at="2020-06-08T17:00:17Z" finished-at="2020-06-08T17:00:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- com.newHire.NewHireTest -->
+      </class> <!-- com.newHire.NewHireTestMUJ -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

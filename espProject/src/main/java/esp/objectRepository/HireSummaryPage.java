@@ -22,6 +22,10 @@ import esp.genericLibraries.WebdriverUtils;
 public class HireSummaryPage
 {
 /*************Initialization*****************/
+ @FindBy(id="PageName_2304")
+ private WebElement hireSummaryPageTitle;
+ @FindBy(xpath="//div[@id='HireDetailsDiv']/div[1]/div/div/fieldset/legend/a")
+ private WebElement clickPersonalData;
  @FindBy(xpath="//form[@id='ContentDiv']/div[1]/div/table/tbody/tr[6]/td[1]/a/i")
  private WebElement clickContactDetails;
  
@@ -213,14 +217,16 @@ public class HireSummaryPage
  //@FindBy(xpath="//html//body//main//div//div[2]//div[2]//form//div[5]//button[2]")
  @FindBy(xpath="//form[@id=\"ContentDiv\"]/div[5]/button[2]")
  private WebElement activateButton;
- 
- 
- 
-
-
 
 
 /************Getters Usage******************/
+ public WebElement gethireSummaryPageTitle() {
+	 return hireSummaryPageTitle;
+ }
+ public WebElement getclickPersonalData()
+ {
+	 return clickPersonalData;
+ }
 	
 	
 	public WebElement getClickContactDetails() {

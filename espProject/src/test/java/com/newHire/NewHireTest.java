@@ -99,9 +99,9 @@ public class NewHireTest extends BaseClass {
 		String groupJoiningDate = "1-Jun-2020";
 		nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 		// Enter the employee Id
-		nhp.getEmployeeId().sendKeys("0005825");
+		nhp.getEmployeeId().sendKeys("0001112");
 		// Enter email id
-		nhp.getEmailIdEditbox().sendKeys("badri.patra");
+		nhp.getEmailIdEditbox().sendKeys("suman.patra");
 		//Click email domain
 		nhp.getEmailDomainDropdown().click();
 		//Select the domain type
