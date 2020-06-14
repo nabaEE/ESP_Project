@@ -3,6 +3,7 @@ package com.newHire;
 import java.awt.AWTException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -12,6 +13,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import esp.genericLibraries.BaseClass;
+import esp.genericLibraries.FileUtils;
 import esp.genericLibraries.WebdriverUtils;
 import esp.objectRepository.CompensationPage;
 import esp.objectRepository.HireSummaryPage;
@@ -19,6 +21,7 @@ import esp.objectRepository.LandingPage;
 import esp.objectRepository.NewHirePage;
 
 public class NewHireTest extends BaseClass {
+	static FileUtils fil= new FileUtils();
 //Mark attendance
 	@Test(enabled = false)
 	public static void markAttendance() {
@@ -29,7 +32,7 @@ public class NewHireTest extends BaseClass {
 
 //1. Submit new hire form and verify.
 	@Test(groups = "Smoke")
-	public static void submitNewHireFormAndValidateActivateButton() throws AWTException, InterruptedException {
+	public static void submitNewHireFormAndValidateActivateButton() throws Exception {
 		log.debug("---------submit New Hire FormAnd Validate Activate Button:- test started----------");
 		// driver.findElement(By.id("Not_now")).click();
 		// Call the landing page
@@ -54,7 +57,7 @@ public class NewHireTest extends BaseClass {
 		nhp.getLastNameEditbox().sendKeys("Patra");
 		// Pick date of birth
 		WebElement element = nhp.getDateOfBirthCalenderWindow();
-		String date = "1-Feb-1990";
+		Date date = fil.getDateFromExcel("Nextgen", 1, 2);
 		nhp.DatePicker(driver, element, date);
 		// Pick country of birth as India
 		nhp.getCountryOfBirthDropdown().click();
@@ -92,11 +95,11 @@ public class NewHireTest extends BaseClass {
 		nhp.getPickLocation().click();
 		// Pick the joining date
 		WebElement joiningDateElement = nhp.getJoiningDate();
-		String joiningDate = "1-Jun-2020";
+		Date joiningDate = fil.getDateFromExcel("Nextgen", 1, 4);
 		nhp.DatePicker(driver, joiningDateElement, joiningDate);
 		// Pick the group joining
 		WebElement groupJoiningDateElement = nhp.getGroupJoiningDate();
-		String groupJoiningDate = "1-Jun-2020";
+		Date groupJoiningDate = fil.getDateFromExcel("Nextgen", 1, 5);
 		nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 		// Enter the employee Id
 		nhp.getEmployeeId().sendKeys("0001112");
@@ -336,7 +339,7 @@ public class NewHireTest extends BaseClass {
 //2. Enter an existing email and validate the error message.
 
 	@Test(groups = "Smoke")
-	public static void checkErrorMessageForEnteringExistingEmail() throws InterruptedException {
+	public static void checkErrorMessageForEnteringExistingEmail() throws Exception {
 		log.debug("---------check Error Message For Entering Existing Email:- test started.----------");
 		// Call the landing page
 		LandingPage lnp = PageFactory.initElements(driver, LandingPage.class);
@@ -357,7 +360,7 @@ public class NewHireTest extends BaseClass {
 		nhp.getLastNameEditbox().sendKeys("dhawan");
 		// Pick date of birth
 		WebElement element = nhp.getDateOfBirthCalenderWindow();
-		String date = "7-Oct-1989";
+		Date date = fil.getDateFromExcel("Nextgen", 1, 2);
 		nhp.DatePicker(driver, element, date);
 		// Pick country of birth as India
 		nhp.getCountryOfBirthDropdown().click();
@@ -395,11 +398,11 @@ public class NewHireTest extends BaseClass {
 		nhp.getPickLocation().click();
 		// Pick the joining date
 		WebElement joiningDateElement = nhp.getJoiningDate();
-		String joiningDate = "1-Sept-2019";
+		Date joiningDate = fil.getDateFromExcel("Nextgen", 1, 4);
 		nhp.DatePicker(driver, joiningDateElement, joiningDate);
 		// Pick the group joining
 		WebElement groupJoiningDateElement = nhp.getGroupJoiningDate();
-		String groupJoiningDate = "1-Sept-2019";
+		Date groupJoiningDate = fil.getDateFromExcel("Nextgen", 1, 5);
 		nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 		// Enter the employee Id
 		nhp.getEmployeeId().sendKeys("NX8520");
@@ -478,7 +481,7 @@ public class NewHireTest extends BaseClass {
 //3. Enter an existing Employee Id and validate the error message.
 
 	@Test(groups = "Smoke")
-	public static void enterExistEmployeeIdAndValidateErrorMessage() throws InterruptedException {
+	public static void enterExistEmployeeIdAndValidateErrorMessage() throws Exception {
 		log.debug("------------Enter existing EemployeeId and validate error Message:- test started---------------");
 		// Call the landing page
 		LandingPage lnp = PageFactory.initElements(driver, LandingPage.class);
@@ -499,7 +502,7 @@ public class NewHireTest extends BaseClass {
 		nhp.getLastNameEditbox().sendKeys("dhawan");
 		// Pick date of birth
 		WebElement element = nhp.getDateOfBirthCalenderWindow();
-		String date = "7-Oct-1989";
+		Date date = fil.getDateFromExcel("Nextgen", 1, 2);
 		nhp.DatePicker(driver, element, date);
 		// Pick country of birth as India
 		nhp.getCountryOfBirthDropdown().click();
@@ -537,11 +540,11 @@ public class NewHireTest extends BaseClass {
 		nhp.getPickLocation().click();
 		// Pick the joining date
 		WebElement joiningDateElement = nhp.getJoiningDate();
-		String joiningDate = "1-Sept-2019";
+		Date joiningDate = fil.getDateFromExcel("Nextgen", 1, 4);
 		nhp.DatePicker(driver, joiningDateElement, joiningDate);
 		// Pick the group joining
 		WebElement groupJoiningDateElement = nhp.getGroupJoiningDate();
-		String groupJoiningDate = "1-Sept-2019";
+		Date groupJoiningDate = fil.getDateFromExcel("Nextgen", 1, 5);
 		nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 		// Enter the employee Id
 		nhp.getEmployeeId().sendKeys("AXZ7894222");
@@ -659,7 +662,7 @@ public class NewHireTest extends BaseClass {
 
 //5. Enter the DOB equals to joining date and verify the error message.
 	@Test(groups = "Smoke")
-	public static void makeBothDOB_JoiningDateEqualAndverifyError() throws InterruptedException {
+	public static void makeBothDOB_JoiningDateEqualAndverifyError() throws Exception {
 		log.debug("-----------Make both DOB and Joining Date equal and verify error message:- test started-----------");
 		// Call the landing page
 		LandingPage lnp = PageFactory.initElements(driver, LandingPage.class);
@@ -680,7 +683,7 @@ public class NewHireTest extends BaseClass {
 		nhp.getLastNameEditbox().sendKeys("dhawan");
 		// Pick date of birth
 		WebElement element = nhp.getDateOfBirthCalenderWindow();
-		String date = "1-Sept-2019";
+		Date date = fil.getDateFromExcel("Nextgen", 1, 2);
 		nhp.DatePicker(driver, element, date);
 		// Pick country of birth as India
 		nhp.getCountryOfBirthDropdown().click();
@@ -718,11 +721,11 @@ public class NewHireTest extends BaseClass {
 		nhp.getPickLocation().click();
 		// Pick the joining date
 		WebElement joiningDateElement = nhp.getJoiningDate();
-		String joiningDate = "1-Sept-2019";
+		Date joiningDate = fil.getDateFromExcel("Nextgen", 1, 4);
 		nhp.DatePicker(driver, joiningDateElement, joiningDate);
 		// Pick the group joining
 		WebElement groupJoiningDateElement = nhp.getGroupJoiningDate();
-		String groupJoiningDate = "1-Sept-2019";
+		Date groupJoiningDate = fil.getDateFromExcel("Nextgen", 1, 5);
 		nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 		// Enter the employee Id
 		nhp.getEmployeeId().sendKeys("NXTS95");
@@ -1729,7 +1732,7 @@ public class NewHireTest extends BaseClass {
 
 //36. Submit the new hire form with picking DOB<18 years and validate the error message.
 	@Test()
-	public static void verifyErrorForPicking_DOB_lessThanEighteen_years() throws InterruptedException {
+	public static void verifyErrorForPicking_DOB_lessThanEighteen_years() throws Exception {
 		log.debug("------Verify error for picking DOB < 18 years:-test started-----");
 		// Call the landing page
 		LandingPage lnp = PageFactory.initElements(driver, LandingPage.class);
@@ -1750,7 +1753,7 @@ public class NewHireTest extends BaseClass {
 		nhp.getLastNameEditbox().sendKeys("dhawan");
 		// Pick date of birth
 		WebElement element = nhp.getDateOfBirthCalenderWindow();
-		String date = "7-Oct-2009";
+		Date date = fil.getDateFromExcel("Nextgen", 1, 2);
 		nhp.DatePicker(driver, element, date);
 		// Pick country of birth as India
 		nhp.getCountryOfBirthDropdown().click();
@@ -1788,11 +1791,11 @@ public class NewHireTest extends BaseClass {
 		nhp.getPickLocation().click();
 		// Pick the joining date
 		WebElement joiningDateElement = nhp.getJoiningDate();
-		String joiningDate = "1-Sept-2019";
+		Date joiningDate = fil.getDateFromExcel("Nextgen", 1, 4);
 		nhp.DatePicker(driver, joiningDateElement, joiningDate);
 		// Pick the group joining
 		WebElement groupJoiningDateElement = nhp.getGroupJoiningDate();
-		String groupJoiningDate = "1-Sept-2019";
+		Date groupJoiningDate = fil.getDateFromExcel("Nextgen", 1, 5);
 		nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 		// Enter the employee Id
 		nhp.getEmployeeId().sendKeys("NMEGTA5");

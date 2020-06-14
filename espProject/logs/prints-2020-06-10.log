@@ -1,0 +1,41 @@
+19:14:22.062 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+19:14:26.037 [main] DEBUG esp.genericLibraries.BaseClass - ---------submit New Hire Form and validate all mandatory fields are selected----------
+19:14:33.390 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+19:14:34.487 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+22:21:08.729 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+22:21:17.281 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+22:21:22.537 [main] DEBUG esp.genericLibraries.BaseClass - ---------submit New Hire Form and validate all mandatory fields are selected----------
+22:21:33.151 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+22:21:34.411 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+22:28:38.121 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+22:28:45.601 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+22:28:52.432 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+22:28:53.549 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+22:29:58.649 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+22:30:05.712 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+22:30:09.990 [main] DEBUG esp.genericLibraries.BaseClass - ---------submit New Hire Form and validate all mandatory fields are selected----------
+22:30:17.410 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+22:30:18.215 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+22:42:52.317 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+22:42:59.091 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+22:43:03.994 [main] DEBUG esp.genericLibraries.BaseClass - ---------submit New Hire Form and validate all mandatory fields are selected----------
+09:48:58.753 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+09:49:07.026 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+09:49:11.803 [main] DEBUG esp.genericLibraries.BaseClass - ---------submit New Hire Form and validate all mandatory fields are selected----------
+09:49:24.665 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+09:49:25.561 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+09:55:10.734 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+09:55:17.228 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+09:55:20.897 [main] DEBUG esp.genericLibraries.BaseClass - ---------submit New Hire Form and validate all mandatory fields are selected----------
+09:56:41.769 [main] INFO  esp.genericLibraries.BaseClass - The page title is :--Hire Summary for Naman Singh (#0001118)
+09:56:42.320 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+09:56:43.124 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+18:04:23.301 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+18:04:37.726 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+18:04:42.075 [main] DEBUG esp.genericLibraries.BaseClass - ---------submit New Hire Form and validate all mandatory fields are selected----------
+18:06:05.480 [main] INFO  esp.genericLibraries.BaseClass - The page title is :--Hire Summary for Naman Singh (#0001118)
+18:06:06.167 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+18:06:07.015 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+18:19:05.239 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+18:19:12.163 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+18:19:16.070 [main] DEBUG esp.genericLibraries.BaseClass - ---------submit New Hire Form and validate all mandatory fields are selected----------

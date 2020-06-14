@@ -7,6 +7,7 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.openqa.selenium.Alert;
@@ -238,7 +239,8 @@ public class NewHirePage {
 	private WebElement employmentStatusDropdown;
 	@FindBy(xpath = "//div[@id='div_Employment_Status']/div/ul/li")
 	private List<WebElement> employmentStatusDropdownValues;
-	@FindBy(xpath = "//div[@id='div_Employment_Status']/div/ul/li[2]")
+	//@FindBy(xpath = "//div[@id='div_Employment_Status']/div/ul/li[2]")
+	@FindBy(xpath="//span[text()='Confirmed']")
 	private WebElement pickEmploymentStatusAsConfirmed;
 	@FindBy(xpath = "//div[@id='div_Employment_Status']/div/ul/li[3]")
 	private WebElement pickEmploymentStatusAsProbation;
@@ -295,6 +297,8 @@ public class NewHirePage {
 	private List<WebElement> pickTypeDropdownValues;
 	@FindBy(xpath = "//div[@id='div_Pay_Type']/div/ul/li[3]")
 	private WebElement pickPayType;
+	@FindBy(xpath="//div[@id='div_Pay_Type']/div/ul/li[2]")
+	private WebElement pickPayTypeSalary;
 
 	@FindBy(id = "div_Pay_Frequency")
 	private WebElement payFrequencyDropdown;
@@ -795,6 +799,9 @@ public class NewHirePage {
 	public WebElement getPickPayType() {
 		return pickPayType;
 	}
+	public WebElement getPickPayTypeSalary() {
+		return pickPayTypeSalary;
+	}
 
 	public WebElement getPayFrequencyDropdown() {
 		return payFrequencyDropdown;
@@ -896,7 +903,7 @@ public class NewHirePage {
 	}
 	//Method to pick designation
 	public void chooseDesignation() throws Exception {
-		for (int i = 0; i < designationDropdownValues.size(); i++) {
+		for (int i = 1; i < designationDropdownValues.size(); i++) {
 			if (i==1) {
 				WebdriverUtils.waitForElementPresent(BaseClass.driver, designationDropdownValues.get(i));
 				designationDropdownValues.get(i).click();
@@ -904,7 +911,7 @@ public class NewHirePage {
 		}
 	}
 
-	public void DatePicker(WebDriver driver, WebElement element, String date) {
+	public void DatePicker(WebDriver driver, WebElement element, Date date) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].setAttribute('value',' " + date + "');", element);
 	}

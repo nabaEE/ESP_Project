@@ -1,4 +1,4 @@
-URL:https://uat.nexuba.com/
-USERNAME: 11002438@jaipur.manipal.edu
-PASSWORD: Muj!2020
+URL:http://uat.nexuba.com/
+USERNAME: seetha@moonraft.com
+PASSWORD: MooN!20
 BROWSER: chrome

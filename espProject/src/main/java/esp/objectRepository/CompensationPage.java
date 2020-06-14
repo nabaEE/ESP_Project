@@ -26,8 +26,13 @@ private WebElement userEnteredAmountEditbox;
 private WebElement clickHireSummary;
 @FindBy(xpath="//div[@id='Display_ul']/div[5]/li/p")
 private WebElement clickHireSummaryMUJ;
+@FindBy(xpath="//div[@id='Display_ul']/div[3]/li/p")
+private WebElement clickHireSummarySpecific;
 
 /************Getters Usage*******************/
+public WebElement getClickHireSummarySpecific() {
+	return clickHireSummarySpecific;
+}
 public WebElement getClickHireSummary() {
 	return clickHireSummary;
 }

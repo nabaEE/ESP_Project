@@ -1,4 +1,6 @@
 package com.newHire;
+import java.util.Date;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -37,12 +39,12 @@ public class NewHireTestNextgen extends BaseClass {
 			nhp.getTitleDropdown().click();
 			nhp.getPickTitle_MR().click();
 			// Enter the first Name
-			nhp.getFirstNameEditbox().sendKeys("Prakash");
+			nhp.getFirstNameEditbox().sendKeys(fil.getExcelData("Nextgen", 1, 0));
 			// Enter last name
-			nhp.getLastNameEditbox().sendKeys("Sinha");
+			nhp.getLastNameEditbox().sendKeys(fil.getExcelData("Nextgen", 1, 1));
 			// Pick date of birth
 			WebElement element = nhp.getDateOfBirthCalenderWindow();
-			String date = "1-Feb-1990";
+			Date date = fil.getDateFromExcel("Nextgen", 1, 2);
 			nhp.DatePicker(driver, element, date);
 			// Pick country of birth as India
 			nhp.getCountryOfBirthDropdown().click();
@@ -51,7 +53,7 @@ public class NewHireTestNextgen extends BaseClass {
 			nhp.getStateOfBirthDropdown().click();
 			nhp.getPickStateOfBirth().click();
 			// Enter the city of birth
-			nhp.getCityOfBirthEditbox().sendKeys("Hyderabad");
+			nhp.getCityOfBirthEditbox().sendKeys(fil.getExcelData("Nextgen", 1, 3));
 			// Pick citizenship
 			nhp.getCitizenshipDropdown().click();
 			nhp.getPickCitizenshipAsIndia().click();
@@ -80,16 +82,16 @@ public class NewHireTestNextgen extends BaseClass {
 			nhp.getPickLocation().click();
 			// Pick the joining date
 			WebElement joiningDateElement = nhp.getJoiningDate();
-			String joiningDate = "1-Jun-2020";
+			Date joiningDate = fil.getDateFromExcel("Nextgen", 1, 4);
 			nhp.DatePicker(driver, joiningDateElement, joiningDate);
 			// Pick the group joining
 			WebElement groupJoiningDateElement = nhp.getGroupJoiningDate();
-			String groupJoiningDate = "1-Jun-2020";
+			Date groupJoiningDate = fil.getDateFromExcel("Nextgen", 1, 5);
 			nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 			// Enter the employee Id
 			nhp.getEmployeeId().sendKeys("0001118");
 			// Enter email id
-			nhp.getEmailIdEditbox().sendKeys("prakash.sinha");
+			nhp.getEmailIdEditbox().sendKeys(fil.getExcelData("Nextgen", 1, 6));
 			//Click email domain
 			nhp.getEmailDomainDropdown().click();
 			//Select the domain type

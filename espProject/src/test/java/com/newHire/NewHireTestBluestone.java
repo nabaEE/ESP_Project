@@ -1,9 +1,12 @@
 package com.newHire;
+import java.util.Date;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import esp.genericLibraries.BaseClass;
+import esp.genericLibraries.FileUtils;
 import esp.genericLibraries.WebdriverUtils;
 import esp.objectRepository.CompensationPage;
 import esp.objectRepository.HireSummaryPage;
@@ -13,6 +16,7 @@ import esp.objectRepository.NewHirePage;
 public class NewHireTestBluestone extends BaseClass {
 	@Test(groups = "Smoke")
 	public static void submitNewHireFormAndValidate() throws Throwable {
+		FileUtils fil= new FileUtils();
 		log.debug("---------submit New Hire Form and validate all mandatory fields are selected----------");
 		// driver.findElement(By.id("Not_now")).click();
 		// Call the landing page
@@ -37,7 +41,7 @@ public class NewHireTestBluestone extends BaseClass {
 		nhp.getLastNameEditbox().sendKeys("Sinha");
 		// Pick date of birth
 		WebElement element = nhp.getDateOfBirthCalenderWindow();
-		String date = "1-Feb-1990";
+		Date date=fil.getDateFromExcel("Bluestone", 1, 2);
 		nhp.DatePicker(driver, element, date);
 		// Pick country of birth as India
 		nhp.getCountryOfBirthDropdown().click();
@@ -75,11 +79,11 @@ public class NewHireTestBluestone extends BaseClass {
 		nhp.getPickLocation().click();
 		// Pick the joining date
 		WebElement joiningDateElement = nhp.getJoiningDate();
-		String joiningDate = "1-Jun-2020";
+		Date joiningDate = fil.getDateFromExcel("Bluestone", 1, 4);
 		nhp.DatePicker(driver, joiningDateElement, joiningDate);
 		// Pick the group joining
 		WebElement groupJoiningDateElement = nhp.getGroupJoiningDate();
-		String groupJoiningDate = "1-Jun-2020";
+		Date groupJoiningDate = fil.getDateFromExcel("Bluestone", 1, 5);
 		nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 		// Enter the employee Id
 		nhp.getEmployeeId().sendKeys("0001118");

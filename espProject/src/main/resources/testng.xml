@@ -8,7 +8,7 @@
   <parameter name="browser" value="chrome"/>
   <test thread-count="5" name="Test">
    <classes>
-      <class name="com.newHire.NewHireTestMUJ">
+      <class name="com.newHire.NewHireTestMoonraft">
       <methods> 
       <include name="submitNewHireFormAndValidate"></include>
       </methods>
