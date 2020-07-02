@@ -173,5 +173,8 @@ public class NewHireTestION extends BaseClass {
 		System.out.println("The page title is :--" + hireSummaryTitle);
 		log.info("The page title is :--" + hireSummaryTitle);
 	}
-
+@Test()
+public static void compensationValidate() {
+	
+}
 }
