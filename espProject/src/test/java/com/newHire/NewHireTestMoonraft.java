@@ -158,6 +158,7 @@ public class NewHireTestMoonraft extends BaseClass{
 		// Enter FTE Equivalent hours
 		nhp.getFteEditbox().sendKeys("30");
 		// Click on save and Continue
+		WebdriverUtils.waitForElementPresent(driver, nhp.getSaveAndContinueButton());
 		nhp.getSaveAndContinueButton().click();
 		//Call the compensation page and click on skip button
 		CompensationPage cmp=PageFactory.initElements(driver, CompensationPage.class);
@@ -168,6 +169,7 @@ public class NewHireTestMoonraft extends BaseClass{
 		HireSummaryPage hs=PageFactory.initElements(driver, HireSummaryPage.class);
 		hs.getclickPersonalData().click();
 		//Click on save and continue
+		WebdriverUtils.waitForElementPresent(driver, nhp.getSaveAndContinueButton());
 		nhp.getSaveAndContinueButton().click();
 		// click hire summary
 		cmp.getClickHireSummarySpecific().click();

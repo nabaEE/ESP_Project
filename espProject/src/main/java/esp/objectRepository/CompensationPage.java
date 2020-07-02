@@ -1,7 +1,10 @@
 package esp.objectRepository;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import esp.genericLibraries.BaseClass;
 
 public class CompensationPage 
 {
@@ -11,41 +14,51 @@ private WebElement clickAbove3Lakh;
 
 @FindBy(id="SKIP")
 private WebElement skipButton;
-
-@FindBy(id="Submit")
-private WebElement saveAndContinueButton;
-
-@FindBy(xpath="//label[text()='Select Profile ']")
+@FindBy(xpath="//form[@id='CompForm']/div[2]/div/div/div[1]/div/div/div[3]/div/div/span/div/input")
 private WebElement selectProfileDropdown;
-@FindBy(xpath="//span[text()='NXTGEN - Above 3Lakh with LTA']")
-private WebElement selectOneProfile;
-
+@FindBy(xpath="//span[text()='NXTGEN - Above 3Lakh with LTA ']")
+private WebElement selectCompProfileNextgen;
+@FindBy(xpath="//form[@id='CompForm']/div[2]/div/div/div/div/div/div[3]/div/div/span/div/ul/li[2]")
+private WebElement selectIPEprofile;
 @FindBy(id="UserEntered_Amt")
-private WebElement userEnteredAmountEditbox;
+private WebElement annualFixedAmountNextgen;
+@FindBy(id="BAS")
+private WebElement basicPayIPE;
 @FindBy(xpath="//div[@id='Display_ul']/div[4]/li/p")
 private WebElement clickHireSummary;
 @FindBy(xpath="//div[@id='Display_ul']/div[5]/li/p")
 private WebElement clickHireSummaryMUJ;
 @FindBy(xpath="//div[@id='Display_ul']/div[3]/li/p")
 private WebElement clickHireSummarySpecific;
+@FindBy(xpath="//div[@id='FinalSubmitDiv']/button[@id='Submit']")
+private static WebElement saveAndContinue;
 
 /************Getters Usage*******************/
+public WebElement getBasicPayIPE() {
+	return basicPayIPE;
+}
+public WebElement getSelectIPEprofile() {
+	return selectIPEprofile;
+}
+public WebElement getsaveAndContinue() {
+	return saveAndContinue;
+}
 public WebElement getClickHireSummarySpecific() {
 	return clickHireSummarySpecific;
 }
 public WebElement getClickHireSummary() {
 	return clickHireSummary;
 }
-public WebElement getUserEnteredAmountEditbox()
+public WebElement getAnnualFixedAmountNextgen()
 {
-	return userEnteredAmountEditbox;
+	return annualFixedAmountNextgen;
 }
 public WebElement getSelectProfileDropdown() {
 	return selectProfileDropdown;
 }
 
-public WebElement getSelectOneProfile() {
-	return selectOneProfile;
+public WebElement getSelectCompProfileNextgen() {
+	return selectCompProfileNextgen;
 }
 public WebElement getClickAbove3Lakh() {
 	return clickAbove3Lakh;
@@ -54,14 +67,18 @@ public WebElement getClickAbove3Lakh() {
 public WebElement getSkipButton() {
 	return skipButton;
 }
-
-public WebElement getSaveAndContinueButton() {
-	return saveAndContinueButton;
-}
 public WebElement getClickHireSummaryMUJ() {
 	return clickHireSummaryMUJ;
 }
 	
 	
 /************Utilization*********************/
+
+//Method to click element using java script
+public void clickElement(WebElement element) {
+    JavascriptExecutor executor = (JavascriptExecutor)BaseClass.driver;
+    executor.executeScript("arguments[0].click();", element);
 }
+	
+}
+

@@ -19,7 +19,7 @@ public class NewHireTestMUJ extends BaseClass {
 	@Test(groups = "Smoke")
 	public static void submitNewHireFormAndValidate() throws Throwable {
 		log.debug("---------submit New Hire Form and validate all mandatory fields are selected----------");
-		FileUtils fil= new FileUtils();
+		FileUtils fil = new FileUtils();
 		// driver.findElement(By.id("Not_now")).click();
 		// Call the landing page
 		LandingPage lnp = PageFactory.initElements(driver, LandingPage.class);
@@ -32,7 +32,7 @@ public class NewHireTestMUJ extends BaseClass {
 		// Call the new hire page
 		NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
 		// Click add new button
-		Thread.sleep(2000);
+		WebdriverUtils.waitForElementPresent(driver, nhp.getClickAddNewButton());
 		nhp.getClickAddNewButton().click();
 		// Click on title dropdown and pick MR
 		nhp.getTitleDropdown().click();
@@ -91,9 +91,9 @@ public class NewHireTestMUJ extends BaseClass {
 		nhp.getEmployeeId().sendKeys("0001118");
 		// Enter email id
 		nhp.getEmailIdEditbox().sendKeys("prakash.sinha");
-		//Click email domain
+		// Click email domain
 		nhp.getEmailDomainDropdown().click();
-		//Select the domain type
+		// Select the domain type
 		nhp.getPickEmailDomain().click();
 		// Pick employment type
 		nhp.getEmploymentTypeDropdown().click();
@@ -120,7 +120,7 @@ public class NewHireTestMUJ extends BaseClass {
 		WebdriverUtils.waitForElementPresent(driver, nhp.getRoleEditbox());
 		nhp.getRoleEditbox().sendKeys("tea");
 		Thread.sleep(1000);
-		//nhp.getPickRole().click();
+		// nhp.getPickRole().click();
 		nhp.chooseRole();
 		// Enter three letters and select Designation
 		/*
@@ -130,7 +130,7 @@ public class NewHireTestMUJ extends BaseClass {
 		 */
 		nhp.getDesignationEditbox().sendKeys("man");
 		Thread.sleep(1000);
-		nhp.chooseDesignation();
+		nhp.getPickDesignation().click();
 		// Enter three letters and select reporting hiring manager
 		/*
 		 * try { nhp.getReportingHiringManagerEditbox().sendKeys("Sar");
@@ -140,9 +140,9 @@ public class NewHireTestMUJ extends BaseClass {
 		 * nhp.getPickReportingHiringManager());
 		 * nhp.getPickReportingHiringManager().click(); }
 		 */
-		//Click on grade dropdown
+		// Click on grade dropdown
 		nhp.getGradeDropdown().click();
-		//Select the teaching grade
+		// Select the teaching grade
 		nhp.selectGrade();
 		nhp.getReportingHiringManagerEditbox().sendKeys("Sar");
 		Thread.sleep(1000);
@@ -159,20 +159,21 @@ public class NewHireTestMUJ extends BaseClass {
 		// Enter FTE Equivalent hours
 		nhp.getFteEditbox().sendKeys("30");
 		// Click on save and Continue
-		nhp.getSaveAndContinueButton().click();
-		//Call the compensation page and click on skip button
-		CompensationPage cmp=PageFactory.initElements(driver, CompensationPage.class);
-		//Click hire summary
-		WebdriverUtils.waitForElementPresent(BaseClass.driver, cmp.getClickHireSummary());
-		cmp.getClickHireSummary().click();
-		//Call the Hire Summary page
-		HireSummaryPage hs=PageFactory.initElements(driver, HireSummaryPage.class);
+		WebdriverUtils.waitForElementPresent(driver, nhp.getSaveAndContinueButtonMUJ());
+		nhp.getSaveAndContinueButtonMUJ().click();
+		// Call the compensation page and click on skip button
+		CompensationPage cmp = PageFactory.initElements(driver, CompensationPage.class);
+		// Click hire summary
+		WebdriverUtils.waitForElementPresent(BaseClass.driver, cmp.getClickHireSummaryMUJ());
+		cmp.getClickHireSummaryMUJ().click();
+		// Call the Hire Summary page
+		HireSummaryPage hs = PageFactory.initElements(driver, HireSummaryPage.class);
 		hs.getclickPersonalData().click();
 		// Click on save and continue button on new hire page to validate all the
 		// mandatory fields
-		nhp.getSaveAndContinueButton().click();
+		nhp.getSaveAndContinueButtonMUJ().click();
 		// click hire summary
-		cmp.getClickHireSummary().click();
+		cmp.getClickHireSummaryMUJ().click();
 		// Capture the Hire summary page title to validate
 		String hireSummaryTitle = hs.gethireSummaryPageTitle().getText();
 		// Validate the page title
@@ -181,6 +182,5 @@ public class NewHireTestMUJ extends BaseClass {
 		System.out.println("The page title is :--" + hireSummaryTitle);
 		log.info("The page title is :--" + hireSummaryTitle);
 	}
-
 
 }

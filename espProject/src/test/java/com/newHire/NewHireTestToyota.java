@@ -38,7 +38,7 @@ public class NewHireTestToyota extends BaseClass {
 		nhp.getTitleDropdown().click();
 		nhp.getPickTitle_MR().click();
 		// Enter the first Name
-		nhp.getFirstNameEditbox().sendKeys("Prakash");
+		nhp.getFirstNameEditbox().sendKeys("Naman");
 		// Enter last name
 		nhp.getLastNameEditbox().sendKeys("Sinha");
 		// Pick date of birth
@@ -88,9 +88,9 @@ public class NewHireTestToyota extends BaseClass {
 		Date groupJoiningDate = fil.getDateFromExcel("Toyota", 1, 5);
 		nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 		// Enter the employee Id
-		nhp.getEmployeeId().sendKeys("0001118");
+		nhp.getEmployeeId().sendKeys("0001111");
 		// Enter email id
-		nhp.getEmailIdEditbox().sendKeys("prakash.sinha");
+		nhp.getEmailIdEditbox().sendKeys("naman.sinha");
 		// Click email domain
 		nhp.getEmailDomainDropdown().click();
 		// Select the domain type

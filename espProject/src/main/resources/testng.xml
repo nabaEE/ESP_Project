@@ -8,9 +8,9 @@
   <parameter name="browser" value="chrome"/>
   <test thread-count="5" name="Test">
    <classes>
-      <class name="com.newHire.NewHireTestMoonraft">
-      <methods> 
-      <include name="submitNewHireFormAndValidate"></include>
+      <class name="com.newHire.NewHireTestNextgen">
+      <methods>
+      <include name="submitNewHireFormAndValidate"/>
       </methods>
       </class>
     </classes>

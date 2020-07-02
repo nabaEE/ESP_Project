@@ -191,7 +191,11 @@ public class NewHirePage {
 	private WebElement pickLocation;
 	@FindBy(id = "Error_Location_Code")
 	private WebElement locationBlankErrorMessage;
-
+	
+	@FindBy(id="div_Work_Location")
+	private WebElement workLocationDropdown;
+	@FindBy(xpath="//div[@id='div_Work_Location']/div/ul/li[2]")
+	private WebElement pickWorkLocationAsBangalore;
 	@FindBy(id = "Emp_JoiningDate")
 	private WebElement joiningDate;
 	@FindBy(id = "Error_Emp_JoiningDate")
@@ -325,9 +329,14 @@ public class NewHirePage {
 
 	@FindBy(id = "Submit")
 	private WebElement saveAndContinueButton;
+	@FindBy(xpath="//button[@id='Submit']")
+	private WebElement saveAndContinueButtonMUJ;
 
 	@FindBy(xpath = "//div[@id=\"Display_ul\"]/div[4]/li/p")
 	private WebElement savedList;
+	@FindBy(xpath="//tbody[@id='TBody']/tr[1]/td/span/i")
+	private WebElement pickEmployee;
+	
 
 	/************************ Getters Usage ********************************/
 	public WebElement getClickAddNewButton() {
@@ -621,6 +630,13 @@ public class NewHirePage {
 	public WebElement getPickLocation() {
 		return pickLocation;
 	}
+	public WebElement getWorkLocationDropdown() {
+		return workLocationDropdown;
+	}
+
+	public WebElement getPickWorkLocationAsBangalore() {
+		return pickWorkLocationAsBangalore;
+	}
 
 	public WebElement getLocationBlankErrorMessage() {
 		return locationBlankErrorMessage;
@@ -850,8 +866,14 @@ public class NewHirePage {
 	public WebElement getSavedList() {
 		return savedList;
 	}
+	public WebElement getSaveAndContinueButtonMUJ() {
+		return saveAndContinueButtonMUJ;
+	}
+	public WebElement getPickEmployee() {
+		return pickEmployee;
+	}
 
-	/************************** Utilization ******************************/
+	/************************* Utilization ******************************/
 
 	// Method to pick role
 	public void selectRole() {
@@ -887,7 +909,12 @@ public class NewHirePage {
 		for(int i=0; i< departmentDropdownValues.size(); i++) {
 			if (i==1) {
 				WebdriverUtils.waitForElementPresent(BaseClass.driver, departmentDropdownValues.get(i));
-				departmentDropdownValues.get(i).click();
+				try {
+					departmentDropdownValues.get(i).click();
+				} catch (StaleElementReferenceException e) {
+					departmentDropdownValues.get(i);
+					departmentDropdownValues.get(i).click();
+				}
 			}
 		}
 	}

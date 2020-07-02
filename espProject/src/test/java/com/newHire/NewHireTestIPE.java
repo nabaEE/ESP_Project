@@ -2,6 +2,8 @@ package com.newHire;
 
 import java.util.Date;
 
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -155,6 +157,7 @@ public class NewHireTestIPE extends BaseClass {
 		// Enter FTE Equivalent hours
 		nhp.getFteEditbox().sendKeys("30");
 		// Click on save and Continue
+		WebdriverUtils.waitForElementPresent(driver, nhp.getSaveAndContinueButton());
 		nhp.getSaveAndContinueButton().click();
 		// Call the compensation page and click on skip button
 		CompensationPage cmp = PageFactory.initElements(driver, CompensationPage.class);
@@ -177,6 +180,68 @@ public class NewHireTestIPE extends BaseClass {
 		System.out.println("All new hire mandatory fields has been verified successfully");
 		System.out.println("The page title is :--" + hireSummaryTitle);
 		log.info("The page title is :--" + hireSummaryTitle);
+	}
+	@Test()
+	public static void validateCompensation() throws Exception {
+		log.debug("-------Validate Compensation Test started-------");
+		LandingPage lnp = PageFactory.initElements(driver, LandingPage.class);
+		// Click on admin icon
+		WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+		lnp.getAdminIcon().click();
+		// Click on new hire option
+		// lnp.getNewHireAdminValue().click();
+		lnp.clickNewHire();
+		// Call the new hire page
+		NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
+		// pick employee
+		nhp.getPickEmployee().click();
+		// Click on Compensation on Hire Summary page
+		HireSummaryPage hsp = PageFactory.initElements(driver, HireSummaryPage.class);
+		WebdriverUtils.waitForElementPresent(driver, hsp.getClickCompensationPencilIcon());
+		hsp.getClickCompensationPencilIcon().click();
+		// Call the compensation page and click on skip button
+		CompensationPage cmp = PageFactory.initElements(driver, CompensationPage.class);
+		// Click on the comp profile
+		// driver.switchTo().window(hsp.moveTopage());
+		Thread.sleep(2000);
+		WebdriverUtils.waitForElementPresent(driver, cmp.getSelectProfileDropdown());
+		try {
+			cmp.getSelectProfileDropdown().click();
+		} catch (StaleElementReferenceException e) {
+			cmp.getSelectProfileDropdown();
+			cmp.getSelectProfileDropdown().click();
+		}
+		// Select the specific profile
+		WebdriverUtils.waitForElementPresent(driver, cmp.getSelectIPEprofile());
+		cmp.getSelectIPEprofile().click();
+		// Clear the editbox then enter the annual amount
+		cmp.getBasicPayIPE().clear();
+		cmp.getBasicPayIPE().sendKeys("40000", Keys.ENTER);
+		WebdriverUtils.waitForElementPresent(driver, cmp.getsaveAndContinue());
+		// Call the java script method to click on save and continue button
+		// cmp.getsaveAndContinue().click();
+		cmp.clickElement(cmp.getsaveAndContinue());
+		// acp.clickElement(acp.getClickSubmit());
+		// get the compensation value and validate
+		String compCTC = hsp.getCheckCompensationValue().getText();
+		System.out.println(compCTC);
+		// Validate the ctc
+		Assert.assertTrue(compCTC.contains("480,000"));
+		System.out.println("The expected ctc is :" + compCTC);
+		log.info("-------Validate Compensation Test ended-------");
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 
 }

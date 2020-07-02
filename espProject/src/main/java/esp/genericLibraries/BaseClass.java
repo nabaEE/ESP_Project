@@ -31,8 +31,10 @@ public class BaseClass extends FileUtils
  FirefoxOptions profile = new FirefoxOptions();
  @BeforeClass()
  @Parameters({"browser"})
-public void openBrowser(String browserName)
+
+public void openBrowser() throws IOException
   {
+	String browserName= new FileUtils().getPropertyData().getProperty("BROWSER");
 	 /*Call the chrome driver*/
 	 System.out.println("********************Launching the browser**********************");
 	 log.info("*****************Launching the Browser*************************");

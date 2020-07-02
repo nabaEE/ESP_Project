@@ -21,7 +21,8 @@ import esp.objectRepository.LandingPage;
 import esp.objectRepository.NewHirePage;
 
 public class NewHireTest extends BaseClass {
-	static FileUtils fil= new FileUtils();
+	static FileUtils fil = new FileUtils();
+
 //Mark attendance
 	@Test(enabled = false)
 	public static void markAttendance() {
@@ -46,7 +47,7 @@ public class NewHireTest extends BaseClass {
 		// Call the new hire page
 		NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
 		// Click add new button
-		Thread.sleep(2000);
+		WebdriverUtils.waitForElementPresent(driver, nhp.getClickAddNewButton());
 		nhp.getClickAddNewButton().click();
 		// Click on title dropdown and pick MR
 		nhp.getTitleDropdown().click();
@@ -105,9 +106,9 @@ public class NewHireTest extends BaseClass {
 		nhp.getEmployeeId().sendKeys("0001112");
 		// Enter email id
 		nhp.getEmailIdEditbox().sendKeys("suman.patra");
-		//Click email domain
+		// Click email domain
 		nhp.getEmailDomainDropdown().click();
-		//Select the domain type
+		// Select the domain type
 		nhp.getPickEmailDomain().click();
 		// Pick employment type
 		nhp.getEmploymentTypeDropdown().click();
@@ -173,10 +174,10 @@ public class NewHireTest extends BaseClass {
 		CompensationPage cmp = PageFactory.initElements(driver, CompensationPage.class);
 		// select above 3 lakhs
 		cmp.getSelectProfileDropdown().click();
-		cmp.getSelectOneProfile().click();
+		cmp.getSelectCompProfileNextgen().click();
 		// Click on save And continue
 		WebdriverUtils.waitForPageToLoad(driver);
-		cmp.getSaveAndContinueButton().click();
+		cmp.getsaveAndContinue().click();
 		// Call Hire summary page
 		HireSummaryPage hsp = PageFactory.initElements(driver, HireSummaryPage.class);
 		/****************************

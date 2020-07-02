@@ -7,7 +7,9 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -218,8 +220,18 @@ public class HireSummaryPage
  @FindBy(xpath="//form[@id=\"ContentDiv\"]/div[5]/button[2]")
  private WebElement activateButton;
 
+ @FindBy(xpath="//div[@id='HireDetailsDiv']/../div[3]/div[2]/div/div/fieldset/div/div[4]/div/p[1]/i")
+ private WebElement clickCompensationPencilIcon;
+ @FindBy(xpath="//div[@id='HireDetailsDiv']/../div[3]/div[2]/div/div/fieldset/div/div[4]/div/p[2]")
+ private WebElement checkCompensationValue;
 
 /************Getters Usage******************/
+ public WebElement getCheckCompensationValue() {
+	 return checkCompensationValue;
+ }
+ public WebElement getClickCompensationPencilIcon() {
+	 return clickCompensationPencilIcon;
+ }
  public WebElement gethireSummaryPageTitle() {
 	 return hireSummaryPageTitle;
  }
@@ -795,4 +807,13 @@ public WebElement getActivateButton() {
 		alt.accept();
 		
 	 }
-}
+
+	 //Method to move from one pages to another page
+	 public String moveTopage() {
+		 Set<String> sessionIds=BaseClass.driver.getWindowHandles();
+			Iterator<String> it= sessionIds.iterator();
+			String pWin=it.next();
+			String cWin=it.next();
+			return cWin;
+	 }
+	 }

@@ -1,6 +1,7 @@
 package com.newHire;
 import java.util.Date;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -95,9 +96,11 @@ public class NewHireTestBluestone extends BaseClass {
 		nhp.getPickEmailDomain().click();
 		// Pick employment type
 		nhp.getEmploymentTypeDropdown().click();
+		WebdriverUtils.waitForElementPresent(driver, nhp.getPickEmploymentType());
 		nhp.getPickEmploymentType().click();
 		// Pick employment status
 		nhp.getEmploymentStatusDropdown().click();
+		WebdriverUtils.waitForElementPresent(driver, nhp.getPickEmploymentStatusAsConfirmed());
 		nhp.getPickEmploymentStatusAsConfirmed().click();
 		// Stop page refresh
 		// BaseClass.driver.findElement(By.tagName("body")).sendKeys("Keys.ESCAPE");
@@ -167,6 +170,44 @@ public class NewHireTestBluestone extends BaseClass {
 		System.out.println("All new hire mandatory fields has been verified successfully");
 		System.out.println("The page title is :--" + hireSummaryTitle);
 		log.info("The page title is :--" + hireSummaryTitle);
+	}
+	
+		@Test()
+		public static void validateCompensation() throws Exception {
+			log.debug("-------Validate Compensation Test started-------");
+			LandingPage lnp = PageFactory.initElements(driver, LandingPage.class);
+			// Click on admin icon
+			WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+			lnp.getAdminIcon().click();
+			// Click on new hire option
+			// lnp.getNewHireAdminValue().click();
+			lnp.clickNewHire();
+			// Call the new hire page
+			NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
+			//pick employee
+			nhp.getPickEmployee().click();
+			//Click on Compensation on Hire Summary page
+			HireSummaryPage hsp= PageFactory.initElements(driver, HireSummaryPage.class);
+			WebdriverUtils.waitForElementPresent(driver, hsp.getClickCompensationPencilIcon());
+		    hsp.getClickCompensationPencilIcon().click();
+			//Call the compensation page and click on skip button
+			CompensationPage cmp=PageFactory.initElements(driver, CompensationPage.class);	
+			//Click on the comp profile
+		//	driver.switchTo().window(hsp.moveTopage());
+			WebdriverUtils.waitForElementPresent(driver, cmp.getSelectProfileDropdown());
+			cmp.getSelectProfileDropdown().click();
+			//Select the specific profile
+			cmp.getSelectCompProfileNextgen().click();
+			//Enter the annual amount
+			cmp.getAnnualFixedAmountNextgen().sendKeys("500000", Keys.ENTER);
+			cmp.getsaveAndContinue().click();	
+			cmp.getsaveAndContinue().click();
+			//get the compensation value and validate
+			String compCTC=hsp.getCheckCompensationValue().getText();
+			//Validate the ctc
+			Assert.assertTrue(compCTC.contains("500000"));
+			System.out.println("The expected ctc is :"+compCTC);
+			log.info("-------Validate Compensation Test ended-------");
 	}
 
 }

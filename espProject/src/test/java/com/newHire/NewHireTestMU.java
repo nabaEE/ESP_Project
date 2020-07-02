@@ -17,9 +17,9 @@ import esp.objectRepository.NewHirePage;
 
 public class NewHireTestMU extends BaseClass {
 	@Test(groups = "Smoke")
-	
+
 	public static void submitNewHireFormAndValidate() throws Throwable {
-		FileUtils fil= new FileUtils();
+		FileUtils fil = new FileUtils();
 		log.debug("---------submit New Hire Form and validate all mandatory fields are selected----------");
 		// driver.findElement(By.id("Not_now")).click();
 		// Call the landing page
@@ -33,15 +33,15 @@ public class NewHireTestMU extends BaseClass {
 		// Call the new hire page
 		NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
 		// Click add new button
-		Thread.sleep(2000);
+		WebdriverUtils.waitForElementPresent(driver, nhp.getClickAddNewButton());
 		nhp.getClickAddNewButton().click();
 		// Click on title dropdown and pick MR
 		nhp.getTitleDropdown().click();
 		nhp.getPickTitle_MR().click();
 		// Enter the first Name
-		nhp.getFirstNameEditbox().sendKeys("Prakash");
+		nhp.getFirstNameEditbox().sendKeys("Rama");
 		// Enter last name
-		nhp.getLastNameEditbox().sendKeys("Sinha");
+		nhp.getLastNameEditbox().sendKeys("Prakash");
 		// Pick date of birth
 		WebElement element = nhp.getDateOfBirthCalenderWindow();
 		Date date = fil.getDateFromExcel("MUJ", 1, 2);
@@ -89,18 +89,20 @@ public class NewHireTestMU extends BaseClass {
 		Date groupJoiningDate = fil.getDateFromExcel("MUJ", 1, 5);
 		nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 		// Enter the employee Id
-		nhp.getEmployeeId().sendKeys("0001118");
+		nhp.getEmployeeId().sendKeys("0001122");
 		// Enter email id
-		nhp.getEmailIdEditbox().sendKeys("prakash.sinha");
-		//Click email domain
+		nhp.getEmailIdEditbox().sendKeys("rama.prakash");
+		// Click email domain
 		nhp.getEmailDomainDropdown().click();
-		//Select the domain type
+		// Select the domain type
 		nhp.getPickEmailDomain().click();
 		// Pick employment type
 		nhp.getEmploymentTypeDropdown().click();
+		WebdriverUtils.waitForElementPresent(driver, nhp.getPickEmploymentType());
 		nhp.getPickEmploymentType().click();
 		// Pick employment status
 		nhp.getEmploymentStatusDropdown().click();
+		WebdriverUtils.waitForElementPresent(driver, nhp.getPickEmploymentStatusAsConfirmed());
 		nhp.getPickEmploymentStatusAsConfirmed().click();
 		// Stop page refresh
 		// BaseClass.driver.findElement(By.tagName("body")).sendKeys("Keys.ESCAPE");
@@ -110,8 +112,10 @@ public class NewHireTestMU extends BaseClass {
 		 * nhp.selectDepartment(); //nhp.getPickDepartment().click(); }
 		 * catch(StaleElementReferenceException e) { nhp.getPickDepartment().click(); }
 		 */
-		nhp.getDepartmentEditbox().sendKeys("sal");
-		nhp.selectDepartment();
+		WebdriverUtils.waitForElementPresent(driver, nhp.getDepartmentEditbox());
+		nhp.getDepartmentEditbox().sendKeys("ion");
+		Thread.sleep(1000);
+		nhp.chooseDepartment();
 		// Enter three letters in the role editbox
 		/*
 		 * try { nhp.getRoleEditbox().sendKeys("sal"); Thread.sleep(2000);
@@ -119,17 +123,17 @@ public class NewHireTestMU extends BaseClass {
 		 * //nhp.selectRole(); nhp.selectRole(); }
 		 */
 		WebdriverUtils.waitForElementPresent(driver, nhp.getRoleEditbox());
-		nhp.getRoleEditbox().sendKeys("sal");
+		nhp.getRoleEditbox().sendKeys("d");
 		Thread.sleep(1000);
-		//nhp.getPickRole().click();
-		nhp.selectRole();
+		// nhp.getPickRole().click();
+		nhp.chooseRole();
 		// Enter three letters and select Designation
 		/*
 		 * try { nhp.getDesignationEditbox().sendKeys("Sal"); Thread.sleep(2000);
 		 * nhp.getPickDesignation().click(); } catch(StaleElementReferenceException e) {
 		 * nhp.getPickDesignation().click(); }
 		 */
-		nhp.getDesignationEditbox().sendKeys("Sal");
+		nhp.getDesignationEditbox().sendKeys("m");
 		Thread.sleep(1000);
 		nhp.getPickDesignation().click();
 		// Enter three letters and select reporting hiring manager
@@ -142,6 +146,7 @@ public class NewHireTestMU extends BaseClass {
 		 * nhp.getPickReportingHiringManager().click(); }
 		 */
 		nhp.getReportingHiringManagerEditbox().sendKeys("Sar");
+		WebdriverUtils.waitForElementPresent(driver, nhp.getPickReportingHiringManager());
 		Thread.sleep(1000);
 		nhp.getPickReportingHiringManager().click();
 		// Select paytype
@@ -157,32 +162,27 @@ public class NewHireTestMU extends BaseClass {
 		nhp.getFteEditbox().sendKeys("30");
 		// Click on save and Continue
 		nhp.getSaveAndContinueButton().click();
-		//Call the compensation page and click on skip button
-		CompensationPage cmp=PageFactory.initElements(driver, CompensationPage.class);
-		//Click hire summary
+		// Call the compensation page and click on skip button
+		CompensationPage cmp = PageFactory.initElements(driver, CompensationPage.class);
+		// Click hire summary
 		WebdriverUtils.waitForElementPresent(BaseClass.driver, cmp.getClickHireSummary());
 		cmp.getClickHireSummary().click();
-		//Call the Hire Summary page
-		HireSummaryPage hs=PageFactory.initElements(driver, HireSummaryPage.class);
+		// Call the Hire Summary page
+		HireSummaryPage hs = PageFactory.initElements(driver, HireSummaryPage.class);
 		hs.getclickPersonalData().click();
-		//Check the below conditions if selected.
-		Assert.assertTrue(nhp.getFirstNameEditbox().isDisplayed());
-		Assert.assertTrue(nhp.getLastNameEditbox().isDisplayed());
-		Assert.assertTrue(nhp.getDateOfBirthCalenderWindow().isDisplayed());
-		Assert.assertTrue(nhp.getUniversityNameDropdown().isSelected());
-		Assert.assertTrue(nhp.getEducationDetailsDropdown().isSelected());
-		Assert.assertTrue(nhp.getLocationDropdown().isSelected());
-		Assert.assertTrue(nhp.getLegalEntityDropdown().isSelected());
-		Assert.assertTrue(nhp.getEmployeeId().isDisplayed());
-		Assert.assertTrue(nhp.getEmailIdEditbox().isDisplayed());
-		Assert.assertTrue(nhp.getEmailDomainDropdown().isSelected());
-		Assert.assertTrue(nhp.getEmploymentTypeDropdown().isSelected());
-		Assert.assertTrue(nhp.getEmploymentStatusDropdown().isSelected());
-		Assert.assertTrue(nhp.getRoleEditbox().isDisplayed());
-		Assert.assertTrue(nhp.getDepartmentEditbox().isDisplayed());
-		Assert.assertTrue(nhp.getDesignationEditbox().isDisplayed());
-		Assert.assertTrue(nhp.getReportingHiringManagerEditbox().isDisplayed());
+		// Click on save and continue button on new hire page to validate all the
+		// mandatory fields
+		nhp.getSaveAndContinueButtonMUJ().click();
+		// click hire summary
+		WebdriverUtils.waitForElementPresent(BaseClass.driver, cmp.getClickHireSummary());
+		cmp.getClickHireSummary().click();
+		// Capture the Hire summary page title to validate
+		String hireSummaryTitle = hs.gethireSummaryPageTitle().getText();
+		// Validate the page title
+		Assert.assertTrue(hireSummaryTitle.contains("Hire Summary for"));
+		System.out.println("All new hire mandatory fields has been verified successfully");
+		System.out.println("The page title is :--" + hireSummaryTitle);
+		log.info("The page title is :--" + hireSummaryTitle);
 	}
-
 
 }
