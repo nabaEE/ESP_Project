@@ -16,7 +16,7 @@ import esp.objectRepository.LandingPage;
 import esp.objectRepository.NewHirePage;
 
 public class NewHireTestBluestone extends BaseClass {
-	@Test(enabled=false)
+	@Test()
 	public static void submitNewHireFormAndValidate() throws Throwable {
 		FileUtils fil= new FileUtils();
 		log.debug("---------submit New Hire Form and validate all mandatory fields are selected----------");
@@ -38,9 +38,9 @@ public class NewHireTestBluestone extends BaseClass {
 		nhp.getTitleDropdown().click();
 		nhp.getPickTitle_MR().click();
 		// Enter the first Name
-		nhp.getFirstNameEditbox().sendKeys("Prakash");
+		nhp.getFirstNameEditbox().sendKeys(fil.getExcelData("Bluestone", 1, 0));
 		// Enter last name
-		nhp.getLastNameEditbox().sendKeys("Sinha");
+		nhp.getLastNameEditbox().sendKeys(fil.getExcelData("Bluestone", 1, 1));
 		// Pick date of birth
 		WebElement element = nhp.getDateOfBirthCalenderWindow();
 		Date date=fil.getDateFromExcel("Bluestone", 1, 2);
@@ -88,9 +88,9 @@ public class NewHireTestBluestone extends BaseClass {
 		Date groupJoiningDate = fil.getDateFromExcel("Bluestone", 1, 5);
 		nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 		// Enter the employee Id
-		nhp.getEmployeeId().sendKeys("0001118");
+		nhp.getEmployeeId().sendKeys(fil.getExcelData("Bluestone", 1, 6));
 		// Enter email id
-		nhp.getEmailIdEditbox().sendKeys("prakash.sinha");
+		nhp.getEmailIdEditbox().sendKeys(fil.getExcelData("Bluestone", 1, 7));
 		//Click email domain
 		nhp.getEmailDomainDropdown().click();
 		//Select the domain type
@@ -212,7 +212,6 @@ public class NewHireTestBluestone extends BaseClass {
 			//get the compensation value and validate
 			WebdriverUtils.waitForElementPresent(driver, hsp.getCheckCompensationValue());
 			String compCTC=hsp.getCheckCompensationValue().getText();
-			System.out.println(compCTC);
 			//Validate the ctc
 			Assert.assertFalse(compCTC.isEmpty());
 			System.out.println("The expected ctc is :"+compCTC);

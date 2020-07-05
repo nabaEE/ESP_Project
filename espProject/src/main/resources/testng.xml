@@ -8,9 +8,10 @@
   <parameter name="browser" value="chrome"/>
   <test thread-count="5" name="Test">
    <classes>
-      <class name="com.newHire.NewHireTestNextgen">
+      <class name="com.newHire.NewHireTestBluestone">
       <methods>
       <include name="submitNewHireFormAndValidate"/>
+      <include name="validateCompensation"/>
       </methods>
       </class>
     </classes>
