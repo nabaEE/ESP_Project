@@ -1,0 +1,44 @@
+15:02:32.736 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+15:02:39.524 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+15:02:43.880 [main] DEBUG esp.genericLibraries.BaseClass - -------Validate Compensation Test started-------
+15:02:49.229 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+15:02:50.012 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+15:03:43.814 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+15:03:50.727 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+15:03:54.840 [main] DEBUG esp.genericLibraries.BaseClass - -------Validate Compensation Test started-------
+15:03:59.352 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+15:04:00.225 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+15:05:15.999 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+15:05:22.625 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+15:05:26.902 [main] DEBUG esp.genericLibraries.BaseClass - -------Validate Compensation Test started-------
+15:05:31.176 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+15:05:31.990 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+15:44:00.815 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+15:44:07.440 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+15:44:12.144 [main] DEBUG esp.genericLibraries.BaseClass - -------Validate Compensation Test started-------
+15:44:17.952 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+15:44:18.739 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+15:47:51.985 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+15:47:58.780 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+15:48:03.517 [main] DEBUG esp.genericLibraries.BaseClass - -------Validate Compensation Test started-------
+15:48:38.346 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+15:48:39.137 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+15:50:43.143 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+15:50:49.869 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+15:50:57.553 [main] DEBUG esp.genericLibraries.BaseClass - -------Validate Compensation Test started-------
+15:51:10.877 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+15:51:11.675 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+16:06:12.715 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+16:06:19.396 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+16:06:29.063 [main] DEBUG esp.genericLibraries.BaseClass - -------Validate Compensation Test started-------
+16:07:07.774 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+16:07:08.581 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+16:09:59.100 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+16:10:05.934 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+16:10:22.319 [main] DEBUG esp.genericLibraries.BaseClass - -------Validate Compensation Test started-------
+16:11:31.829 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+16:11:32.680 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+16:12:14.532 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+16:12:21.156 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+16:12:35.475 [main] DEBUG esp.genericLibraries.BaseClass - -------Validate Compensation Test started-------
+16:12:45.388 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************

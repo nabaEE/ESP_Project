@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <parameter name="browser" value="chrome"/>
-  <listeners>
-    <listener class-name="esp.genericLibraries.ListenerImplimentationClass"/>
-    <listener class-name="esp.genericLibraries.ExtentReporterNG"/>
-  </listeners>
-  <test thread-count="5" name="Test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.newHire.NewHireTestION">
+      <class name="com.newHire.NewHireTestBluestone">
         <methods>
           <include name="login"/>
           <include name="closeBrowser"/>
-          <include name="submitNewHireFormAndValidate"/>
+          <include name="validateCompensation"/>
           <include name="openBrowser"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.newHire.NewHireTestION -->
+      </class> <!-- com.newHire.NewHireTestBluestone -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

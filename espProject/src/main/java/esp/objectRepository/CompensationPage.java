@@ -1,6 +1,9 @@
 package esp.objectRepository;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.SearchContext;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -20,6 +23,8 @@ private WebElement selectProfileDropdown;
 private WebElement selectCompProfileNextgen;
 @FindBy(xpath="//form[@id='CompForm']/div[2]/div/div/div/div/div/div[3]/div/div/span/div/ul/li[2]")
 private WebElement selectIPEprofile;
+@FindBy(xpath="//span[text()='Fixed with Variable pay ']")
+private WebElement selectBluestoneProfile;
 @FindBy(id="UserEntered_Amt")
 private WebElement annualFixedAmountNextgen;
 @FindBy(id="BAS")
@@ -70,6 +75,9 @@ public WebElement getSkipButton() {
 public WebElement getClickHireSummaryMUJ() {
 	return clickHireSummaryMUJ;
 }
+public WebElement getSelectBluestoneProfile() {
+	return selectBluestoneProfile;
+}
 	
 	
 /************Utilization*********************/
@@ -78,6 +86,21 @@ public WebElement getClickHireSummaryMUJ() {
 public void clickElement(WebElement element) {
     JavascriptExecutor executor = (JavascriptExecutor)BaseClass.driver;
     executor.executeScript("arguments[0].click();", element);
+}
+// Method to click while stale element exception
+public boolean retryingFindClick(WebElement element) {
+    boolean result = false;
+    int attempts = 0;
+    while(attempts < 2) {
+        try {
+             ((WebElement) element).click();
+            result = true;
+            break;
+        } catch(StaleElementReferenceException e) {
+        }
+        attempts++;
+    }
+    return result;
 }
 	
 }

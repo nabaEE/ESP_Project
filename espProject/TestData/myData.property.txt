@@ -1,4 +1,4 @@
 URL: https://uat.nexuba.com/
-USERNAME: brajesh.k@i-on.in
-PASSWORD: IoN@2020
+USERNAME: HEMANTH.KUMAR@BLUESTONE.COM
+PASSWORD: BLue@2020
 BROWSER: chrome
