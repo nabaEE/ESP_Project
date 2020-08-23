@@ -97,23 +97,5 @@ public static void submitSeparationRequest() throws InterruptedException
 	   Assert.assertTrue(initiatedInfo.contains("Submitted Separation Request"));
 	   log.info(initiatedInfo);
 	   log.info("-----------verifyInitiatedAndRelieveText :- Test ended"); 
-	 
-	   
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
- }
+	 }
 }

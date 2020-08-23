@@ -189,7 +189,7 @@ public class NewHirePage {
 	private List<WebElement> locationDropdownValues;
 	@FindBy(xpath = "//div[@id='div_Location_Code']/div/ul/li[2]")
 	private WebElement pickLocation;
-	@FindBy(id = "Error_Location_Code")
+	@FindBy(id ="Error_Location_Code")
 	private WebElement locationBlankErrorMessage;
 	
 	@FindBy(id="div_Work_Location")
@@ -224,7 +224,7 @@ public class NewHirePage {
 	private WebElement pickEmailDomain;
 	@FindBy(xpath = "//div[@id='div_Email']/span")
 	private WebElement emailIdEditboxLength;
-	@FindBy(id = "Error Error_MailIdExists")
+	@FindBy(id = "Error_Email")
 	private WebElement emaildIdBlankErrorMessage;
 	@FindBy(id = "DBError_Email")
 	private WebElement emailAlreadyExistErr;
@@ -287,6 +287,8 @@ public class NewHirePage {
 	private WebElement gradeDropdown;
 	@FindBy(xpath="//div[@id='div_Grade_Code']/div/ul/li")
 	private List<WebElement> gradeValues;
+	@FindBy(id="Error_Grade_Code")
+	private WebElement gradeBlankErrorMessage;
 
 	@FindBy(id = "Manager_Id")
 	private WebElement reportingHiringManagerEditbox;
@@ -788,6 +790,9 @@ public class NewHirePage {
    public WebElement getGradeDropdown() {
 	   return gradeDropdown;
    }
+   public WebElement getGradeBlankErrorMessage() {
+	   return gradeBlankErrorMessage;
+   }
 	public WebElement getDesignationBlankErrorMessage() {
 		return designationBlankErrorMessage;
 	}
@@ -912,7 +917,6 @@ public class NewHirePage {
 				try {
 					departmentDropdownValues.get(i).click();
 				} catch (StaleElementReferenceException e) {
-					departmentDropdownValues.get(i);
 					departmentDropdownValues.get(i).click();
 				}
 			}

@@ -8,15 +8,15 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.newHire.NewHireTestBluestone">
+      <class name="com.newHire.NewHireTestToyota">
         <methods>
           <include name="login"/>
           <include name="closeBrowser"/>
-          <include name="validateCompensation"/>
+          <include name="submitCovidFormAndVerify"/>
           <include name="openBrowser"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.newHire.NewHireTestBluestone -->
+      </class> <!-- com.newHire.NewHireTestToyota -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

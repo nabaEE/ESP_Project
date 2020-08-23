@@ -40,7 +40,7 @@ public class NewHireTestMUJ extends BaseClass {
 		// Enter the first Name
 		nhp.getFirstNameEditbox().sendKeys(fil.getExcelData("MUJ", 1, 0));
 		// Enter last name
-		nhp.getLastNameEditbox().sendKeys("Sinha");
+		nhp.getLastNameEditbox().sendKeys(fil.getExcelData("MUJ", 1, 1));
 		// Pick date of birth
 		WebElement element = nhp.getDateOfBirthCalenderWindow();
 		Date date = fil.getDateFromExcel("MUJ", 1, 2);

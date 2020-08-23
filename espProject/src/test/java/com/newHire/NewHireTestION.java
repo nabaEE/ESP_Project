@@ -38,9 +38,9 @@ public class NewHireTestION extends BaseClass {
 		nhp.getTitleDropdown().click();
 		nhp.getPickTitle_MR().click();
 		// Enter the first Name
-		nhp.getFirstNameEditbox().sendKeys("Rama");
+		nhp.getFirstNameEditbox().sendKeys("Manoj");
 		// Enter last name
-		nhp.getLastNameEditbox().sendKeys("Prakash");
+		nhp.getLastNameEditbox().sendKeys("Test");
 		// Pick date of birth
 		WebElement element = nhp.getDateOfBirthCalenderWindow();
 		Date date = fil.getDateFromExcel("ION", 1, 2);
@@ -91,9 +91,9 @@ public class NewHireTestION extends BaseClass {
 		Date groupJoiningDate = fil.getDateFromExcel("ION", 1, 5);
 		nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 		// Enter the employee Id
-		nhp.getEmployeeId().sendKeys("0001122");
+		nhp.getEmployeeId().sendKeys("IN80589");
 		// Enter email id
-		nhp.getEmailIdEditbox().sendKeys("rama.prakash");
+		nhp.getEmailIdEditbox().sendKeys("manoj.test");
 		// Click email domain
 		nhp.getEmailDomainDropdown().click();
 		// Select the domain type

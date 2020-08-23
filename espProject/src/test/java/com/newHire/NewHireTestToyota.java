@@ -11,18 +11,46 @@ import esp.genericLibraries.BaseClass;
 import esp.genericLibraries.FileUtils;
 import esp.genericLibraries.WebdriverUtils;
 import esp.objectRepository.CompensationPage;
+import esp.objectRepository.CovidPage;
 import esp.objectRepository.HireSummaryPage;
 import esp.objectRepository.LandingPage;
 import esp.objectRepository.NewHirePage;
+import esp.objectRepository.ReportsPage;
 
 public class NewHireTestToyota extends BaseClass {
+	static FileUtils fil = new FileUtils();
+	@Test()
+	public static void submitCovidFormAndVerify() {
+		log.info("---------submitCovidFormAndVerify Test Started----------");
+		LandingPage lnp = PageFactory.initElements(driver, LandingPage.class);
+		//Call the covid page to manage pop up window
+		CovidPage cp= PageFactory.initElements(driver, CovidPage.class);
+		cp.checkCovidForm(); 
+		//Click on admin icon
+		lnp.getAdminIcon().click();
+		//Click on reports
+		lnp.clickReports();
+		WebdriverUtils.waitForPageToLoad(driver);
+	   //Click statutory reports
+	   ReportsPage rp= PageFactory.initElements(driver, ReportsPage.class);
+	   rp.getClickStatutoryReports().click();
+	   WebdriverUtils.waitForPageToLoad(driver);
+	   //Click on Covidform declaration
+	   rp.getClickCovidFormDeclaration().click();
+	   
+	   
+		
+		log.info("---------submitCovidFormAndVerify Test Closed----------");	
+	}
 	@Test(groups = "Smoke")
 	public static void submitNewHireFormAndValidate() throws Throwable {
-		FileUtils fil = new FileUtils();
 		log.debug("---------submit New Hire Form and validate all mandatory fields are selected----------");
 		// driver.findElement(By.id("Not_now")).click();
 		// Call the landing page
 		LandingPage lnp = PageFactory.initElements(driver, LandingPage.class);
+		//Call the covid page to manage pop up window
+		CovidPage cp= PageFactory.initElements(driver, CovidPage.class);
+		cp.checkCovidForm(); 
 		// Click on admin icon
 		WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
 		lnp.getAdminIcon().click();
@@ -38,9 +66,9 @@ public class NewHireTestToyota extends BaseClass {
 		nhp.getTitleDropdown().click();
 		nhp.getPickTitle_MR().click();
 		// Enter the first Name
-		nhp.getFirstNameEditbox().sendKeys("Naman");
+		nhp.getFirstNameEditbox().sendKeys("Tarun");
 		// Enter last name
-		nhp.getLastNameEditbox().sendKeys("Sinha");
+		nhp.getLastNameEditbox().sendKeys("Test");
 		// Pick date of birth
 		WebElement element = nhp.getDateOfBirthCalenderWindow();
 		Date date = fil.getDateFromExcel("Toyota", 1, 2);
@@ -88,9 +116,9 @@ public class NewHireTestToyota extends BaseClass {
 		Date groupJoiningDate = fil.getDateFromExcel("Toyota", 1, 5);
 		nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 		// Enter the employee Id
-		nhp.getEmployeeId().sendKeys("0001111");
+		nhp.getEmployeeId().sendKeys("0002222");
 		// Enter email id
-		nhp.getEmailIdEditbox().sendKeys("naman.sinha");
+		nhp.getEmailIdEditbox().sendKeys("tarun.test");
 		// Click email domain
 		nhp.getEmailDomainDropdown().click();
 		// Select the domain type

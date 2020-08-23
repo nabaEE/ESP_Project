@@ -3,15 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.newHire.NewHireTestBluestone">
+      <class name="com.newHire.NewHireTestToyota">
         <methods>
+          <include name="submitNewHireFormAndValidate"/>
           <include name="login"/>
           <include name="closeBrowser"/>
-          <include name="validateCompensation"/>
           <include name="openBrowser"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.newHire.NewHireTestBluestone -->
+      </class> <!-- com.newHire.NewHireTestToyota -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

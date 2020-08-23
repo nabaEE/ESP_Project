@@ -1,6 +1,8 @@
 package com.newHire;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -16,6 +18,7 @@ import esp.objectRepository.LandingPage;
 import esp.objectRepository.NewHirePage;
 
 public class NewHireTestEE extends BaseClass {
+	static FileUtils fil= new FileUtils();
 	@Test(groups = "Smoke")
 	public static void submitNewHireFormAndValidate() throws Throwable {
 		FileUtils fil = new FileUtils();
@@ -40,7 +43,7 @@ public class NewHireTestEE extends BaseClass {
 		// Enter the first Name
 		nhp.getFirstNameEditbox().sendKeys("Prakash");
 		// Enter last name
-		nhp.getLastNameEditbox().sendKeys("Sinha");
+		nhp.getLastNameEditbox().sendKeys("Test");
 		// Pick date of birth
 		WebElement element = nhp.getDateOfBirthCalenderWindow();
 		Date date = fil.getDateFromExcel("EE", 1, 2);
@@ -88,9 +91,9 @@ public class NewHireTestEE extends BaseClass {
 		Date groupJoiningDate = fil.getDateFromExcel("EE", 1, 5);
 		nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 		// Enter the employee Id
-		nhp.getEmployeeId().sendKeys("0001118");
+		nhp.getEmployeeId().sendKeys("PT896");
 		// Enter email id
-		nhp.getEmailIdEditbox().sendKeys("prakash.sinha");
+		nhp.getEmailIdEditbox().sendKeys("prakash.test");
 		// Click email domain
 		nhp.getEmailDomainDropdown().click();
 		// Select the domain type
@@ -180,5 +183,50 @@ public class NewHireTestEE extends BaseClass {
 		System.out.println("The page title is :--" + hireSummaryTitle);
 		log.info("The page title is :--" + hireSummaryTitle);
 	}
+	//3. Click on title dropdown and verify all the dropdown values. 
+	@Test()
+	public static void verifyTitleDropdownValues() throws Exception {
+		log.info("-------verifyTitleDropdownValues Test started-------");
+		// Call the landing page
+		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
+		// click on people icon
+		lp.getAdminIcon().click();
+		// Click on new hire section
+		lp.clickNewHire();
+		// Call the new hire page
+		NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
+		//Click on add new button
+		nhp.getClickAddNewButton().click();
+		// Click on title dropdown
+		nhp.getTitleDropdown().click();
+		// Declare the expected values
+		List<String> expValues = new ArrayList<String>();
+		expValues.add(fil.getExcelData("Title values", 0, 0));
+		expValues.add(fil.getExcelData("Title values", 1, 0));
+		expValues.add(fil.getExcelData("Title values", 2, 0));
+		expValues.add(fil.getExcelData("Title values", 3, 0));
+		expValues.add(fil.getExcelData("Title values", 4, 0));
+		expValues.add(fil.getExcelData("Title values", 5, 0));
+		expValues.add(fil.getExcelData("Title values", 6, 0));
+		expValues.add(fil.getExcelData("Title values", 7, 0));
+		expValues.add(fil.getExcelData("Title values", 8, 0));
+		expValues.add(fil.getExcelData("Title values", 9, 0));
+		expValues.add(fil.getExcelData("Title values", 10, 0));
+		expValues.add(fil.getExcelData("Title values", 11, 0));
+		expValues.add(fil.getExcelData("Title values", 12, 0));
+		log.debug("Expected title values are :" + expValues);
+		System.out.println("Expected title values are :" + expValues);
+		// Capture the actual data
+		List<String> actValues = nhp.printTitleDropdownValues();
+		System.out.println("           ");
+		log.debug("----------Validate the actual values----------");
+		Assert.assertEquals(actValues, expValues);
+		System.out.println("                        ");
+		log.info("Actual values are :" + actValues);
+		System.out.println("Actual values are :" + actValues);
 
-}
+		log.info("-------verifyTitleDropdownValues Test ended-------");
+	}	
+	}
+
+

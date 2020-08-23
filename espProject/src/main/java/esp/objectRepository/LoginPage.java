@@ -14,26 +14,37 @@ public class LoginPage
 	private WebElement userNameEdt;
 	@FindBy(id="Password")
 	private WebElement passWordEdt;
-	@FindBy(xpath="//*[@id=\"login_normal\"]")
+	@FindBy(id="Customer_Id")
+	private WebElement secureUserName;
+	@FindBy(id="Customer_Password")
+	private WebElement secureUserPassword;
+	@FindBy(id="Cmr_Access")
+	private WebElement secureSubmit;
+	//@FindBy(xpath="//*[@id=\"login_normal\"]")
+	@FindBy(xpath="//button[text()='Continue']")
 	private WebElement loginBtn;
 	@FindBy(css=".dropdown-icon")
 	private WebElement dropDownArrow;
 	@FindBy(xpath="//ul[@id='dropdown1']/li[1]/a")
 	private WebElement logoutBtn;
 	/************************************Utilization******************************************/
-	public void loginToPage(String username, String password)
-	{
+	public void loginToPage(String username, String password) {
 		BaseClass.driver.switchTo().frame(BaseClass.driver.findElement(By.xpath("//html//frameset//frameset//frame")));
 		userNameEdt.sendKeys(username);
 		passWordEdt.sendKeys(password);
 		loginBtn.click();
-	 }
-	  public void logOut()
-	  {
-		  WebdriverUtils.waitForElementPresent(BaseClass.driver, dropDownArrow);
-	      dropDownArrow.click();
-	      logoutBtn.click();
-	  }
-	
+	}
+
+	public void secureLogin(String username, String password) {
+		secureUserName.sendKeys(username);
+		secureUserPassword.sendKeys(password);
+		secureSubmit.click();
+	}
+
+	public void logOut() {
+		WebdriverUtils.waitForElementPresent(BaseClass.driver, dropDownArrow);
+		dropDownArrow.click();
+		logoutBtn.click();
+	}
 	
 }

@@ -1,5 +1,7 @@
 package com.newHire;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -16,9 +18,11 @@ import esp.objectRepository.LandingPage;
 import esp.objectRepository.NewHirePage;
 
 public class NewHireTestBluestone extends BaseClass {
-	@Test()
+	static FileUtils fil= new FileUtils();
+	//1. Fill in the details on new hire page then click on save and continue and verify it.
+	@Test(priority=-1)
 	public static void submitNewHireFormAndValidate() throws Throwable {
-		FileUtils fil= new FileUtils();
+		
 		log.debug("---------submit New Hire Form and validate all mandatory fields are selected----------");
 		// driver.findElement(By.id("Not_now")).click();
 		// Call the landing page
@@ -172,7 +176,7 @@ public class NewHireTestBluestone extends BaseClass {
 		System.out.println("The page title is :--" + hireSummaryTitle);
 		log.info("The page title is :--" + hireSummaryTitle);
 	}
-	
+	//2. Enter the compensation and verify it on hire summary page.
 		@Test()
 		public static void validateCompensation() throws Exception {
 			log.debug("-------Validate Compensation Test started-------");
@@ -217,5 +221,542 @@ public class NewHireTestBluestone extends BaseClass {
 			System.out.println("The expected ctc is :"+compCTC);
 			log.info("-------Validate Compensation Test ended-------");
 	}
+	//3. Click on title dropdown and verify all the dropdown values. 
+	@Test()
+	public static void verifyTitleDropdownValues() throws Exception {
+		log.info("-------verifyTitleDropdownValues Test started-------");
+		// Call the landing page
+		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
+		// click on people icon
+		lp.getAdminIcon().click();
+		// Click on new hire section
+		lp.clickNewHire();
+		// Call the new hire page
+		NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
+		//Click on add new button
+		nhp.getClickAddNewButton().click();
+		// Click on title dropdown
+		nhp.getTitleDropdown().click();
+		// Declare the expected values
+		List<String> expValues = new ArrayList<String>();
+		expValues.add(fil.getExcelData("Title values", 0, 0));
+		expValues.add(fil.getExcelData("Title values", 1, 0));
+		expValues.add(fil.getExcelData("Title values", 2, 0));
+		expValues.add(fil.getExcelData("Title values", 3, 0));
+		expValues.add(fil.getExcelData("Title values", 4, 0));
+		expValues.add(fil.getExcelData("Title values", 5, 0));
+		expValues.add(fil.getExcelData("Title values", 6, 0));
+		expValues.add(fil.getExcelData("Title values", 7, 0));
+		expValues.add(fil.getExcelData("Title values", 8, 0));
+		expValues.add(fil.getExcelData("Title values", 9, 0));
+		expValues.add(fil.getExcelData("Title values", 10, 0));
+		expValues.add(fil.getExcelData("Title values", 11, 0));
+		expValues.add(fil.getExcelData("Title values", 12, 0));
+		log.debug("Expected title values are :" + expValues);
+		System.out.println("Expected title values are :" + expValues);
+		// Capture the actual data
+		List<String> actValues = nhp.printTitleDropdownValues();
+		System.out.println("           ");
+		log.debug("----------Validate the actual values----------");
+		Assert.assertEquals(actValues, expValues);
+		System.out.println("                        ");
+		log.info("Actual values are :" + actValues);
+		System.out.println("Actual values are :" + actValues);
+
+		log.info("-------verifyTitleDropdownValues Test ended-------");
+	}
+	//4. First Name mandatory.
+	@Test()
+	public static void firstNameMandatory() throws Exception {
+		log.info("----------FirstNameMandatory Test Started---------");
+		// Call the landing page
+		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
+		// click on people icon
+		lp.getAdminIcon().click();
+		// Click on new hire section
+		lp.clickNewHire();
+		// Call the new hire page
+		NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
+		// Click on add new button
+		nhp.getClickAddNewButton().click();
+		// Declare the expected error message
+		String expErrorMessage = fil.getExcelData("Error Messages", 0, 1);
+		log.info("Expected error message is :" + expErrorMessage);
+		System.out.println("Expected error message is :" + expErrorMessage);
+		// Don't enter the first name then click on save and continue
+		nhp.getFirstNameEditbox().sendKeys("");
+		// Click on submit
+		nhp.getSaveAndContinueButton().click();
+		// Capture the error message
+		String actErrorMessage = nhp.getFirstNameBlankErrMessage().getText();
+		// Validate the error message
+		Assert.assertEquals(actErrorMessage, expErrorMessage);
+		log.info("Actual error message is :" + actErrorMessage);
+		System.out.println("Actual error message is :" + expErrorMessage);
+		log.info("----------FirstNameMandatory Test ended---------");
+		}
+	//5. Last Name mandatory
+	@Test()
+	public static void lastNameMandatory() throws Exception {
+		log.info("----------LastNameMandatory Test Started---------");
+		// Call the landing page
+		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
+		// click on people icon
+		lp.getAdminIcon().click();
+		// Click on new hire section
+		lp.clickNewHire();
+		// Call the new hire page
+		NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
+		// Click on add new button
+		nhp.getClickAddNewButton().click();
+		// Declare the expected error message
+		String expErrorMessage = fil.getExcelData("Error Messages", 1, 1);
+		log.info("Expected error message is :" + expErrorMessage);
+		System.out.println("Expected error message is :" + expErrorMessage);
+		// Don't enter the Last name then click on save and continue
+		nhp.getLastNameEditbox().sendKeys("");
+		// Click on submit
+		nhp.getSaveAndContinueButton().click();
+		// Capture the error message
+		String actErrorMessage = nhp.getLastNameEditboxBlankErrMessage().getText();
+		// Validate the error message
+		Assert.assertEquals(actErrorMessage, expErrorMessage);
+		log.info("Actual error message is :" + actErrorMessage);
+		System.out.println("Actual error message is :" + expErrorMessage);
+		log.info("----------LastNameMandatory Test ended---------");
+	}
+	//6. Education Details mandatory
+	@Test() 
+	public static void educationDetailsMandatory() throws Exception {
+		log.info("----------EducationDetailsMandatory Test Started---------");
+		// Call the landing page
+		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
+		// click on people icon
+		lp.getAdminIcon().click();
+		// Click on new hire section
+		lp.clickNewHire();
+		// Call the new hire page
+		NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
+		// Click on add new button
+		nhp.getClickAddNewButton().click();
+		// Declare the expected error message
+		String expErrorMessage = fil.getExcelData("Error Messages", 2, 1);
+		log.info("Expected error message is :" + expErrorMessage);
+		System.out.println("Expected error message is :" + expErrorMessage);
+		// Don't select the education dropdown and verify the error message
+		nhp.getEducationDetailsDropdown();
+		// Click on submit
+		nhp.getSaveAndContinueButton().click();
+		// Capture the error message
+		String actErrorMessage =nhp.getEducationDetailsBlankErrorMessage().getText();
+		// Validate the error message
+		Assert.assertEquals(actErrorMessage, expErrorMessage);
+		log.info("Actual error message is :" + actErrorMessage);
+		System.out.println("Actual error message is :" + expErrorMessage);
+		log.info("----------EducationDetailsMandatory Test ended---------");
+		}
+	//7. Country dropdown is mandatory.
+	@Test()
+	public static void countryMandatory() throws Exception {
+		log.info("----------CountryMandatory Test Started---------");
+		// Call the landing page
+		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
+		// click on people icon
+		lp.getAdminIcon().click();
+		// Click on new hire section
+		lp.clickNewHire();
+		// Call the new hire page
+		NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
+		// Click on add new button
+		nhp.getClickAddNewButton().click();
+		// Declare the expected error message
+		String expErrorMessage = fil.getExcelData("Error Messages", 3, 1);
+		log.info("Expected error message is :" + expErrorMessage);
+		System.out.println("Expected error message is :" + expErrorMessage);
+		// Don't select the country then click on save and continue
+		nhp.getCountryDropdown();
+		// Click on submit
+		nhp.getSaveAndContinueButton().click();
+		// Capture the actuall error message
+		String actErrorMessage = nhp.getCountryBlankErrorMessage().getText();
+		// Validate the error message
+		Assert.assertEquals(actErrorMessage, expErrorMessage);
+		log.info("Actual error message is :" + actErrorMessage);
+		System.out.println("Actual error message is :" + expErrorMessage);
+		log.info("----------CountryMandatory Test ended---------");
+		}
+
+	// 8. Legal Entity is mandatory
+	@Test()
+	public static void legalEntityMandatory() throws Exception {
+		log.info("----------LegalEntityMandatory Test Started---------");
+		// Call the landing page
+		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
+		// click on people icon
+		lp.getAdminIcon().click();
+		// Click on new hire section
+		lp.clickNewHire();
+		// Call the new hire page
+		NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
+		// Click on add new button
+		nhp.getClickAddNewButton().click();
+		// Declare the expected error message
+		String expErrorMessage = fil.getExcelData("Error Messages", 4, 1);
+		log.info("Expected error message is :" + expErrorMessage);
+		System.out.println("Expected error message is :" + expErrorMessage);
+		// Don't pick the legal entity
+		nhp.getLegalEntityDropdown();
+		// Click on submit
+		nhp.getSaveAndContinueButton().click();
+		// Capture the actuall error message
+		String actErrorMessage = nhp.getLegalEntityBlankErrorMessage().getText();
+		// Validate the error message
+		Assert.assertEquals(actErrorMessage, expErrorMessage);
+		log.info("Actual error message is :" + actErrorMessage);
+		System.out.println("Actual error message is :" + expErrorMessage);
+		log.info("----------LegalEntityMandatory Test ended---------");
+	}
+//9.  Location is mandatory
+ @Test() 
+ public static void locationMandatory() throws Exception {
+	 log.info("----------LocationMandatory Test Started---------"); 
+		// Call the landing page
+		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
+		// click on people icon
+		lp.getAdminIcon().click();
+		// Click on new hire section
+		lp.clickNewHire();
+		// Call the new hire page
+		NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
+		// Click on add new button
+		nhp.getClickAddNewButton().click();
+		// Declare the expected error message
+		String expErrorMessage = fil.getExcelData("Error Messages", 5, 1);
+		log.info("Expected error message is :" + expErrorMessage);
+		System.out.println("Expected error message is :" + expErrorMessage);
+		//Don't click on location	
+		nhp.getLocationDropdown();
+		// Click on submit
+		nhp.getSaveAndContinueButton().click();
+		// Capture the actuall error message
+		WebdriverUtils.waitForElementPresent(driver, nhp.getLocationDropdown());
+		String actErrorMessage = nhp.getLocationBlankErrorMessage().getText();
+		// Validate the error message
+		Assert.assertEquals(actErrorMessage, expErrorMessage);
+		log.info("Actual error message is :" + actErrorMessage);
+		System.out.println("Actual error message is :" + expErrorMessage);
+		log.info("----------LocationMandatory Test ended---------");
+	}
+ //10. Joining Date is Mandatory
+ @Test() 
+ public static void joiningDateMandatory() throws Exception {
+		log.info("----------joiningDateMandatory Test Started---------");
+		// Call the landing page
+		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
+		// click on people icon
+		lp.getAdminIcon().click();
+		// Click on new hire section
+		lp.clickNewHire();
+		// Call the new hire page
+		NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
+		// Click on add new button
+		nhp.getClickAddNewButton().click();
+		// Declare the expected error message
+		String expErrorMessage = fil.getExcelData("Error Messages", 6, 1);
+		log.info("Expected error message is :" + expErrorMessage);
+		System.out.println("Expected error message is :" + expErrorMessage);
+		// Don't pick the joining date
+		nhp.getJoiningDate();
+		// Click on submit
+		nhp.getSaveAndContinueButton().click();
+		// Capture the actuall error message
+		String actErrorMessage = nhp.getJoiningDateBlankErrorMessage().getText();
+		// Validate the error message
+		Assert.assertEquals(actErrorMessage, expErrorMessage);
+		log.info("Actual error message is :" + actErrorMessage);
+		System.out.println("Actual error message is :" + expErrorMessage);
+		log.info("----------joiningDateMandatory Test ended---------");
+
+	}
+ //11. Employee Id is mandatory
+ @Test()
+ public static void employeeIdMandatory() throws Exception {
+	 log.info("----------employeeIdMandatory Test Started---------");
+		// Call the landing page
+		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
+		// click on people icon
+		lp.getAdminIcon().click();
+		// Click on new hire section
+		lp.clickNewHire();
+		// Call the new hire page
+		NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
+		// Click on add new button
+		nhp.getClickAddNewButton().click();
+		// Declare the expected error message
+		String expErrorMessage = fil.getExcelData("Error Messages", 7, 1);
+		log.info("Expected error message is :" + expErrorMessage);
+		System.out.println("Expected error message is :" + expErrorMessage);
+		// Don't pick the joining date
+		nhp.getJoiningDate();
+		// Click on submit
+		nhp.getSaveAndContinueButton().click();
+		// Capture the actuall error message
+		String actErrorMessage = nhp.getEmployeeIdBlankErrorMessage().getText();
+		// Validate the error message
+		Assert.assertEquals(actErrorMessage, expErrorMessage);
+		log.info("Actual error message is :" + actErrorMessage);
+		System.out.println("Actual error message is :" + expErrorMessage);
+		log.info("----------joiningDateMandatory Test ended---------");
+		
+ }
+ //12. Email Id is mandatory
+ @Test()
+ public static void emailIdMandatory() throws Exception {
+		log.info("----------emailIdMandatory Test Started---------");
+		// Call the landing page
+		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
+		// click on people icon
+		lp.getAdminIcon().click();
+		// Click on new hire section
+		lp.clickNewHire();
+		// Call the new hire page
+		NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
+		// Click on add new button
+		nhp.getClickAddNewButton().click();
+		// Declare the expected error message
+		String expErrorMessage = fil.getExcelData("Error Messages", 8, 1);
+		log.info("Expected error message is :" + expErrorMessage);
+		System.out.println("Expected error message is :" + expErrorMessage);
+		// Don't pick the joining date
+		nhp.getEmailIdEditbox();
+		// Click on submit
+		nhp.getSaveAndContinueButton().click();
+		// Capture the actuall error message
+		WebdriverUtils.waitForElementPresent(driver, nhp.getEmaildIdBlankErrorMessage());
+		String actErrorMessage = nhp.getEmaildIdBlankErrorMessage().getText();
+		// Validate the error message
+		Assert.assertEquals(actErrorMessage, expErrorMessage);
+		log.info("Actual error message is :" + actErrorMessage);
+		System.out.println("Actual error message is :" + expErrorMessage);
+		log.info("----------emailIdMandatory Test ended---------");
+ }
+ //13. Employment Type is mandatory
+ @Test()
+ public static void employmentTypeMandatory() throws Exception {
+		log.info("----------employmentTypeMandatory Test Started---------");
+		// Call the landing page
+		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
+		// click on people icon
+		lp.getAdminIcon().click();
+		// Click on new hire section
+		lp.clickNewHire();
+		// Call the new hire page
+		NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
+		// Click on add new button
+		nhp.getClickAddNewButton().click();
+		// Declare the expected error message
+		String expErrorMessage = fil.getExcelData("Error Messages", 9, 1);
+		log.info("Expected error message is :" + expErrorMessage);
+		System.out.println("Expected error message is :" + expErrorMessage);
+		// Don't pick the employment type
+		nhp.getEmploymentTypeDropdown().click();
+		// Click on submit
+		nhp.getSaveAndContinueButton().click();
+		// Capture the actuall error message
+		WebdriverUtils.waitForElementPresent(driver, nhp.getEmploymentTypeBlankErrorMessage());
+		String actErrorMessage = nhp.getEmploymentTypeBlankErrorMessage().getText();
+		// Validate the error message
+		Assert.assertEquals(actErrorMessage, expErrorMessage);
+		log.info("Actual error message is :" + actErrorMessage);
+		System.out.println("Actual error message is :" + expErrorMessage);
+		log.info("----------employmentTypeMandatory Test ended---------");
+		
+ }
+ //14. Employment Status is mandatory
+ @Test()
+	public static void employmentStatusMandatory() throws Exception {
+		log.info("----------employmentStatusMandatory Test Started---------");
+		// Call the landing page
+		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
+		// click on people icon
+		lp.getAdminIcon().click();
+		// Click on new hire section
+		lp.clickNewHire();
+		// Call the new hire page
+		NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
+		// Click on add new button
+		nhp.getClickAddNewButton().click();
+		// Declare the expected error message
+		String expErrorMessage = fil.getExcelData("Error Messages", 10, 1);
+		log.info("Expected error message is :" + expErrorMessage);
+		System.out.println("Expected error message is :" + expErrorMessage);
+		// Don't pick the employment type
+		nhp.getEmploymentStatusDropdown().click();
+		// Click on submit
+		nhp.getSaveAndContinueButton().click();
+		// Capture the actuall error message
+		String actErrorMessage = nhp.getEmploymentStatusBlankErrorMessage().getText();
+		// Validate the error message
+		Assert.assertEquals(actErrorMessage, expErrorMessage);
+		log.info("Actual error message is :" + actErrorMessage);
+		System.out.println("Actual error message is :" + expErrorMessage);
+		log.info("----------employmentStatusMandatory Test ended---------");
+ }
+ //15. Department is mandatory
+	@Test()
+	public static void departmentMandatory() throws Exception {
+		log.info("----------departmentMandatory Test Started---------");
+		// Call the landing page
+		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
+		// click on people icon
+		lp.getAdminIcon().click();
+		// Click on new hire section
+		lp.clickNewHire();
+		// Call the new hire page
+		NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
+		// Click on add new button
+		nhp.getClickAddNewButton().click();
+		// Declare the expected error message
+		String expErrorMessage = fil.getExcelData("Error Messages", 11, 1);
+		log.info("Expected error message is :" + expErrorMessage);
+		System.out.println("Expected error message is :" + expErrorMessage);
+		// Don't pick the department
+		nhp.getDepartmentEditbox().sendKeys("");
+		// Click on submit
+		nhp.getSaveAndContinueButton().click();
+		// Capture the actuall error message
+		String actErrorMessage = nhp.getDepartmentBlankErrorMessage().getText();
+		// Validate the error message
+		Assert.assertEquals(actErrorMessage, expErrorMessage);
+		log.info("Actual error message is :" + actErrorMessage);
+		System.out.println("Actual error message is :" + expErrorMessage);
+		log.info("----------departmentMandatory Test ended---------");
+	}
+ 
+ //16. Designation is mandatory
+	@Test()
+	public static void designationMandatory() throws Exception {
+		log.info("----------designationMandatory Test Started---------");
+		// Call the landing page
+		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
+		// click on people icon
+		lp.getAdminIcon().click();
+		// Click on new hire section
+		lp.clickNewHire();
+		// Call the new hire page
+		NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
+		// Click on add new button
+		nhp.getClickAddNewButton().click();
+		// Declare the expected error message
+		String expErrorMessage = fil.getExcelData("Error Messages", 12, 1);
+		log.info("Expected error message is :" + expErrorMessage);
+		System.out.println("Expected error message is :" + expErrorMessage);
+		// Don't pick the designation
+		nhp.getDesignationEditbox().sendKeys("");
+		// Click on submit
+		nhp.getSaveAndContinueButton().click();
+		// Capture the actuall error message
+		String actErrorMessage = nhp.getDesignationBlankErrorMessage().getText();
+		// Validate the error message
+		Assert.assertEquals(actErrorMessage, expErrorMessage);
+		log.info("Actual error message is :" + actErrorMessage);
+		System.out.println("Actual error message is :" + expErrorMessage);
+		log.info("----------designationMandatory Test ended---------");
+	}
+ //17. Grade is mandatory
+	@Test()
+	public static void gradeMandatory() throws Exception {
+		log.info("----------gradeMandatory Test Started---------");
+		// Call the landing page
+		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
+		// click on people icon
+		lp.getAdminIcon().click();
+		// Click on new hire section
+		lp.clickNewHire();
+		// Call the new hire page
+		NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
+		// Click on add new button
+		nhp.getClickAddNewButton().click();
+		// Declare the expected error message
+		String expErrorMessage = fil.getExcelData("Error Messages", 13, 1);
+		log.info("Expected error message is :" + expErrorMessage);
+		System.out.println("Expected error message is :" + expErrorMessage);
+		// Don't pick the grade
+		nhp.getGradeDropdown().click();
+		// Click on submit
+		nhp.getSaveAndContinueButton().click();
+		// Capture the actuall error message
+		String actErrorMessage = nhp.getGradeBlankErrorMessage().getText();
+		// Validate the error message
+		Assert.assertEquals(actErrorMessage, expErrorMessage);
+		log.info("Actual error message is :" + actErrorMessage);
+		System.out.println("Actual error message is :" + expErrorMessage);
+		log.info("----------gradeMandatory Test ended---------");
+}
+ //18. Reporting/Hiring Manager is mandatory
+    @Test()
+	public static void reportingHiringManagerMandatory() throws Exception {
+		log.info("----------reportingHiringManagerMandatory Test Started---------");
+		// Call the landing page
+		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
+		// click on people icon
+		lp.getAdminIcon().click();
+		// Click on new hire section
+		lp.clickNewHire();
+		// Call the new hire page
+		NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
+		// Click on add new button
+		nhp.getClickAddNewButton().click();
+		// Declare the expected error message
+		String expErrorMessage = fil.getExcelData("Error Messages", 14, 1);
+		log.info("Expected error message is :" + expErrorMessage);
+		System.out.println("Expected error message is :" + expErrorMessage);
+		// Don't enter the reporting hiring manager
+		nhp.getReportingHiringManagerEditbox().sendKeys("");
+		// Click on submit
+		nhp.getSaveAndContinueButton().click();
+		// Capture the actuall error message
+		String actErrorMessage = nhp.getReportingHiringManagerBlankErrorMesage().getText();
+		// Validate the error message
+		Assert.assertEquals(actErrorMessage, expErrorMessage);
+		log.info("Actual error message is :" + actErrorMessage);
+		System.out.println("Actual error message is :" + expErrorMessage);
+		log.info("----------reportingHiringManagerMandatory Test ended---------");
+	
+}
+ //19. FT/PT Indicator is mandatory
+    @Test()
+    public static void ft_ptIndictorMandatory() throws Exception {
+    	log.info("----------ft_ptIndictorMandatory Test Started---------");
+		// Call the landing page
+		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
+		// click on people icon
+		lp.getAdminIcon().click();
+		// Click on new hire section
+		lp.clickNewHire();
+		// Call the new hire page
+		NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
+		// Click on add new button
+		nhp.getClickAddNewButton().click();
+		// Declare the expected error message
+		String expErrorMessage = fil.getExcelData("Error Messages", 15, 1);
+		log.info("Expected error message is :" + expErrorMessage);
+		System.out.println("Expected error message is :" + expErrorMessage);
+		// Don't select FT/PT indicator
+		nhp.getFtptIndicatorDropdown().click();
+		// Click on submit
+		nhp.getSaveAndContinueButton().click();
+		// Capture the actuall error message
+		String actErrorMessage = nhp.getFtptBlankErrorMessage().getText();
+		// Validate the error message
+		Assert.assertEquals(actErrorMessage, expErrorMessage);
+		log.info("Actual error message is :" + actErrorMessage);
+		System.out.println("Actual error message is :" + expErrorMessage);
+		log.info("----------ft_ptIndictorMandatory Test ended---------");
+    }
 
 }
+	
+	
+
+

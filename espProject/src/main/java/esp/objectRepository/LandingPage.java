@@ -35,6 +35,8 @@ public class LandingPage
 	private WebElement newHireAdminValue;
 	@FindBy(xpath="//ul[@id='AdminDropDowns']/li/a[text()='People']")
     private WebElement peopleIcon;
+
+	
 	
 	
 /***********Getters Usage************/
@@ -94,6 +96,15 @@ public class LandingPage
 				adminDropdownValues.get(i).click();
 			}
 		}
+	}
+	public void clickReports()
+	{
+		for(int i=0; i<adminDropdownValues.size(); i++)
+		{
+			if(adminDropdownValues.get(i).getText().equalsIgnoreCase("Reports")) {
+				adminDropdownValues.get(i).click();
+			}
+		}	
 	}
 
 //Method to verify Admin tooltip

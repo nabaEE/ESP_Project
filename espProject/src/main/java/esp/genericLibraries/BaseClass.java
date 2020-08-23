@@ -73,6 +73,7 @@ public void login() throws IOException
  esp.objectRepository.LoginPage lp= PageFactory.initElements(driver, LoginPage.class);
  //Calling the method declared in login page class
  lp.loginToPage(pObj.getProperty("USERNAME"), pObj.getProperty("PASSWORD"));
+ //lp.secureLogin(pObj.getProperty("USERNAME1"), pObj.getProperty("PASSWORD1"));
  WebdriverUtils.waitForPageToLoad(driver);
  driver.switchTo().frame(BaseClass.driver.findElement(By.xpath("//html//frameset//frame")));
  

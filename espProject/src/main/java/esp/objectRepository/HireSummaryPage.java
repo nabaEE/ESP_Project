@@ -222,7 +222,7 @@ public class HireSummaryPage
 
  @FindBy(xpath="//div[@id='HireDetailsDiv']/../div[3]/div[2]/div/div/fieldset/div/div[4]/div/p[1]/i")
  private WebElement clickCompensationPencilIcon;
- @FindBy(xpath="//div[@id='HireDetailsDiv']/../div[3]/div[2]/div/div/fieldset/div/div[4]/div/p[2]")
+ @FindBy(xpath="//div[@id='HireDetailsDiv']/div[2]/div/div/fieldset/div/div[4]/div/p[2]")
  private WebElement checkCompensationValue;
 
 /************Getters Usage******************/

@@ -93,9 +93,9 @@ public class NewHireTestNextgen extends BaseClass {
 		Date groupJoiningDate = fil.getDateFromExcel("Nextgen", 1, 5);
 		nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 		// Enter the employee Id
-		nhp.getEmployeeId().sendKeys("88899");
+		nhp.getEmployeeId().sendKeys(fil.getExcelData("Nextgen", 1, 6));
 		// Enter email id
-		nhp.getEmailIdEditbox().sendKeys(fil.getExcelData("Nextgen", 1, 6));
+		nhp.getEmailIdEditbox().sendKeys(fil.getExcelData("Nextgen", 1, 7));
 		// Click email domain
 		nhp.getEmailDomainDropdown().click();
 		// Select the domain type
@@ -248,7 +248,7 @@ public class NewHireTestNextgen extends BaseClass {
 		String compCTC = hsp.getCheckCompensationValue().getText();
 		System.out.println(compCTC);
 		// Validate the ctc
-		Assert.assertTrue(compCTC.contains("400,000"));
+		Assert.assertTrue(compCTC.contains("400000"));
 		System.out.println("The expected ctc is :" + compCTC);
 		log.info("-------Validate Compensation Test ended-------");
 	}
