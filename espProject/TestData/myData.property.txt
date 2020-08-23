@@ -1,6 +1,6 @@
 URL: https://in-test.nexuba.com/
-USERNAME: 000614@toyota-boshoku.com
-PASSWORD: InTest@20
-USERNAME1:nabaghana.behera@employeeexperts.com
-PASSWORD1:Depali@123
+USERNAME: 
+PASSWORD:
+USERNAME1:
+PASSWORD1:
 BROWSER: chrome
