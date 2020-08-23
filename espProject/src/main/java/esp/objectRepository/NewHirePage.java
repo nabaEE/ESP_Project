@@ -336,7 +336,7 @@ public class NewHirePage {
 
 	@FindBy(xpath = "//div[@id=\"Display_ul\"]/div[4]/li/p")
 	private WebElement savedList;
-	@FindBy(xpath="//tbody[@id='TBody']/tr[1]/td/span/i")
+	@FindBy(xpath="//div[@id='TableDiv']/table/tbody/tr[1]/td[1]/span/i")
 	private WebElement pickEmployee;
 	
 

@@ -28,14 +28,16 @@ public class HireSummaryPage
  private WebElement hireSummaryPageTitle;
  @FindBy(xpath="//div[@id='HireDetailsDiv']/div[1]/div/div/fieldset/legend/a")
  private WebElement clickPersonalData;
- @FindBy(xpath="//form[@id='ContentDiv']/div[1]/div/table/tbody/tr[6]/td[1]/a/i")
+ @FindBy(xpath="//div[@id='HireDetailsDiv']/div[1]/div/div/fieldset/div/div/p/a/i")
  private WebElement clickContactDetails;
+ @FindBy(xpath="//div[@id='HireDetailsDiv']/div[1]/div/div/fieldset/div/div/div[6]/div/p/span/span")
+ private WebElement submittedMobileNumber;
  
  @FindBy(id="div_Phone_Type")
  private WebElement phoneTypeDropdown;
  @FindBy(xpath="//div[@id='div_Phone_Type']/div/ul/li[2]")
  private WebElement pickPhoneTypeAsHome;
- @FindBy(xpath="//div[@id='div_Phone_Type']/div/ul/li[3]")
+ @FindBy(xpath="//div[@id='div_Phone_Type']/div/ul/li[2]")
  private WebElement pickPhoneTypeAsMobile;
  @FindBy(id="Error_Phone_Type")
  private WebElement phoneTypeBlankErrMessage;
@@ -55,6 +57,7 @@ public class HireSummaryPage
  private WebElement numberEditboxLength;
  @FindBy(id="Error_Contact_Number")
  private WebElement contactNumberBlankErrMessage;
+ 
  
  @FindBy(id="Submit")
  private WebElement submitButton;
@@ -245,6 +248,9 @@ public class HireSummaryPage
 	return clickContactDetails;
 }
 
+	public WebElement getSubmittedMobileNumber() {
+		return submittedMobileNumber;
+	}
 
 
 public WebElement getPhoneTypeDropdown() {

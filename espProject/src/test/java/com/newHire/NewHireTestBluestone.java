@@ -754,6 +754,44 @@ public class NewHireTestBluestone extends BaseClass {
 		System.out.println("Actual error message is :" + expErrorMessage);
 		log.info("----------ft_ptIndictorMandatory Test ended---------");
     }
+    //20. Enter the contact details then verify it
+    @Test() 
+    public static void submitContactDetailsAndValidate() throws Exception {
+    	log.info("----------submitContactDetailsAndValidate Test Started---------");
+		// Call the landing page
+		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
+		// click on people icon
+		lp.getAdminIcon().click();
+		//Click on new hire button
+		lp.clickNewHire();
+		//Call the new hire page and click on pencil icon
+		NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
+		//Click on pencil icon to add the contact details
+		nhp.getPickEmployee().click();
+		//Call the HireSummary page
+		HireSummaryPage hsp= PageFactory.initElements(driver, HireSummaryPage.class);
+		//Click on contact details
+		hsp.getClickContactDetails().click();
+		//Click on phone type dropdown
+		hsp.getPhoneTypeDropdown().click();
+		//Select the mobile
+		hsp.getPickPhoneTypeAsMobile().click();
+		//Select the country code as India
+		hsp.getCountryCodeDropdown().click();
+		hsp.getPickCountryCodeAsIndia().click();
+		//Enter the mobile number
+		hsp.getNumberEditbox().sendKeys("9874563012");
+		//Click on submit
+		hsp.getSubmitButton().click();
+		//Capture the submitted mobile number
+		String actNumber=hsp.getSubmittedMobileNumber().getText();
+		//Validate the added mobile number
+		Assert.assertEquals(actNumber.contains("9874563012"), true);
+		System.out.println("Mobile number is verified and the submitted number is :"+actNumber);
+		log.info("Mobile number is verified and the submitted number is :"+actNumber);
+		log.info("----------submitContactDetailsAndValidate Test Ended---------");
+		
+    }
 
 }
 	

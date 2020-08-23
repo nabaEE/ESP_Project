@@ -1,0 +1,9 @@
+18:40:20.908 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+18:40:24.758 [main] INFO  esp.genericLibraries.BaseClass - ----------submitContactDetailsAndValidate Test Started---------
+18:44:18.964 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+18:44:25.809 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+18:44:29.714 [main] INFO  esp.genericLibraries.BaseClass - ----------submitContactDetailsAndValidate Test Started---------
+18:44:33.639 [main] INFO  esp.genericLibraries.BaseClass - Mobile number is verified and the submitted number is :9874563012
+18:44:33.672 [main] INFO  esp.genericLibraries.BaseClass - ----------submitContactDetailsAndValidate Test Ended---------
+18:44:34.441 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+18:44:35.260 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
