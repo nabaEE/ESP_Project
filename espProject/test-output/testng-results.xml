@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="19" total="20" passed="1">
+<testng-results skipped="0" failed="0" ignored="26" total="27" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="16329" started-at="2020-08-23T13:14:18Z" finished-at="2020-08-23T13:14:35Z">
+  <suite name="Suite" duration-ms="16115" started-at="2020-08-31T19:25:38Z" finished-at="2020-08-31T19:25:54Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="16329" started-at="2020-08-23T13:14:18Z" finished-at="2020-08-23T13:14:35Z">
+    <test name="Test" duration-ms="16115" started-at="2020-08-31T19:25:38Z" finished-at="2020-08-31T19:25:54Z">
       <class name="com.newHire.NewHireTestBluestone">
-        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.newHire.NewHireTestBluestone@6e75aa0d]" name="openBrowser" is-config="true" duration-ms="6856" started-at="2020-08-23T13:14:18Z" finished-at="2020-08-23T13:14:25Z">
+        <test-method status="PASS" signature="openBrowser()[pri:0, instance:com.newHire.NewHireTestBluestone@6e75aa0d]" name="openBrowser" is-config="true" duration-ms="6591" started-at="2020-08-31T19:25:38Z" finished-at="2020-08-31T19:25:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method status="PASS" signature="login()[pri:0, instance:com.newHire.NewHireTestBluestone@6e75aa0d]" name="login" is-config="true" duration-ms="3898" started-at="2020-08-23T13:14:25Z" finished-at="2020-08-23T13:14:29Z">
+        <test-method status="PASS" signature="login()[pri:0, instance:com.newHire.NewHireTestBluestone@6e75aa0d]" name="login" is-config="true" duration-ms="3833" started-at="2020-08-31T19:25:45Z" finished-at="2020-08-31T19:25:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="submitContactDetailsAndValidate()[pri:0, instance:com.newHire.NewHireTestBluestone@6e75aa0d]" name="submitContactDetailsAndValidate" duration-ms="3965" started-at="2020-08-23T13:14:29Z" finished-at="2020-08-23T13:14:33Z">
+        <test-method status="PASS" signature="modifyAndVerifyOfficialEmail()[pri:0, instance:com.newHire.NewHireTestBluestone@6e75aa0d]" name="modifyAndVerifyOfficialEmail" duration-ms="4257" started-at="2020-08-31T19:25:48Z" finished-at="2020-08-31T19:25:53Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- submitContactDetailsAndValidate -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.newHire.NewHireTestBluestone@6e75aa0d]" name="tearDown" is-config="true" duration-ms="767" started-at="2020-08-23T13:14:33Z" finished-at="2020-08-23T13:14:34Z">
+        </test-method> <!-- modifyAndVerifyOfficialEmail -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.newHire.NewHireTestBluestone@6e75aa0d]" name="tearDown" is-config="true" duration-ms="623" started-at="2020-08-31T19:25:53Z" finished-at="2020-08-31T19:25:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.newHire.NewHireTestBluestone@6e75aa0d]" name="closeBrowser" is-config="true" duration-ms="820" started-at="2020-08-23T13:14:34Z" finished-at="2020-08-23T13:14:35Z">
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.newHire.NewHireTestBluestone@6e75aa0d]" name="closeBrowser" is-config="true" duration-ms="781" started-at="2020-08-31T19:25:53Z" finished-at="2020-08-31T19:25:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->

@@ -1,0 +1,45 @@
+22:34:08.581 [main] INFO  esp.genericLibraries.BaseClass - ----------addCurrentAddressAndVerify Test Started-------
+22:34:18.482 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+22:34:19.331 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+18:18:39.517 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+18:18:52.849 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+18:21:42.748 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+18:21:49.780 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+18:21:54.915 [main] DEBUG esp.genericLibraries.BaseClass - ---------submit New Hire Form and validate all mandatory fields are selected----------
+18:22:49.575 [main] INFO  esp.genericLibraries.BaseClass - The page title is :--Hire Summary for Karan Test (#EM851101)
+18:22:50.154 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+18:22:50.161 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+18:22:52.517 [main] INFO  esp.genericLibraries.BaseClass - ----------addCurrentAddressAndVerify Test Started-------
+18:23:03.784 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+18:23:04.977 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+18:31:58.891 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+18:32:05.593 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+18:32:10.676 [main] INFO  esp.genericLibraries.BaseClass - ----------addCurrentAddressAndVerify Test Started-------
+18:32:21.437 [main] INFO  esp.genericLibraries.BaseClass - Submitted current address is :6th Block Mysore
+Bangalore - 560037
+Andhra Pradesh - India
+18:32:21.437 [main] INFO  esp.genericLibraries.BaseClass - ----------addCurrentAddressAndVerify Test Ended---------
+18:32:22.480 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+18:32:23.371 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+18:33:27.416 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+18:33:34.190 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+18:33:39.757 [main] INFO  esp.genericLibraries.BaseClass - ----------addCurrentAddressAndVerify Test Started-------
+18:33:49.872 [main] INFO  esp.genericLibraries.BaseClass - Submitted current address is :6th Block Mysore6th Block Mysore
+Bangalore - 560037
+Andhra Pradesh - India
+18:33:49.872 [main] INFO  esp.genericLibraries.BaseClass - ----------addCurrentAddressAndVerify Test Ended---------
+18:33:50.721 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+18:33:51.573 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+19:15:28.142 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+19:15:34.954 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+19:15:39.734 [main] DEBUG esp.genericLibraries.BaseClass - ---------submit New Hire Form and validate all mandatory fields are selected----------
+19:16:31.064 [main] INFO  esp.genericLibraries.BaseClass - The page title is :--Hire Summary for Karan Test (#EM851101)
+19:16:31.587 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+19:16:31.589 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+19:16:34.043 [main] INFO  esp.genericLibraries.BaseClass - ----------addCurrentAddressAndVerify Test Started-------
+19:16:43.905 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+19:16:43.906 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+19:16:46.429 [main] INFO  esp.genericLibraries.BaseClass - ----------addPersonalEmailAndVerify Test Started---------
+19:23:18.896 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+19:23:25.768 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+19:23:31.634 [main] DEBUG esp.genericLibraries.BaseClass - ---------submit New Hire Form and validate all mandatory fields are selected----------

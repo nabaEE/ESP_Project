@@ -9,8 +9,8 @@
   <test thread-count="5" name="Test">
    <classes>
       <class name="com.newHire.NewHireTestBluestone">
-      <methods> 
-      <include name="submitContactDetailsAndValidate"></include>
+      <methods>
+      <include name="modifyAndVerifyOfficialEmail"></include>
       </methods>
       </class>
 </classes>

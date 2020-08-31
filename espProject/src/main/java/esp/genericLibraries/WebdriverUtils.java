@@ -48,7 +48,7 @@ public class WebdriverUtils
 		  try
 		  {
 			  wb.isDisplayed();
-			  System.out.println("\nElement is displayed\n");
+			 // System.out.println("\nElement is displayed\n");
 			  break;
 		  }
 		  catch(Throwable t)

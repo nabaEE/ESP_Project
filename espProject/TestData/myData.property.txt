@@ -1,6 +1,6 @@
-URL: https://in-test.nexuba.com/
-USERNAME: HEMANTH.KUMAR@BLUESTONE.COM
-PASSWORD: InTest@20
+URL: https://uat.nexuba.com/
+USERNAME: Hemanth.kumar@bluestone.com
+PASSWORD: BLue@2020
 USERNAME1:nabaghana.behera@employeeexperts.com
 PASSWORD1:Depali@123
 BROWSER: chrome

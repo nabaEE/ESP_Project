@@ -41,8 +41,9 @@ public class LoginPage
 		secureSubmit.click();
 	}
 
-	public void logOut() {
-		WebdriverUtils.waitForElementPresent(BaseClass.driver, dropDownArrow);
+	public void logOut() throws Exception {
+		//WebdriverUtils.waitForElementPresent(BaseClass.driver, dropDownArrow);
+		WebdriverUtils.waitForCompleteElementToLoad(dropDownArrow);
 		dropDownArrow.click();
 		logoutBtn.click();
 	}

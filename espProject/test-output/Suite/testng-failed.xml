@@ -10,7 +10,7 @@
     <classes>
       <class name="com.newHire.NewHireTestBluestone">
         <methods>
-          <include name="submitContactDetailsAndValidate"/>
+          <include name="addAndValidateFamilyDetails"/>
           <include name="login"/>
           <include name="closeBrowser"/>
           <include name="openBrowser"/>

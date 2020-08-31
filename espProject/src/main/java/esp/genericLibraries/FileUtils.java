@@ -23,8 +23,6 @@ public class FileUtils {
 	XSSFRow row;
 	XSSFCell col;
 	
-	
-
 	/* Declare the method to fetch the data from property file */
 	public Properties getPropertyData() throws IOException {
 		FileInputStream fis = new FileInputStream(data);
@@ -52,5 +50,16 @@ public class FileUtils {
 		Date date = sh.getRow(rowNumber).getCell(colNumber).getDateCellValue();
 		return date;
 		}
-	
-}
+	//Declare a method to fetch the number value from the excel sheet
+	public double getValueFromExcel(String sheetName, int rowNumber, int colNumber) throws Exception {
+		fis1= new FileInputStream(excelPath);
+	    wb = new XSSFWorkbook(fis1);
+		sh = wb.getSheet(sheetName);
+	    row = sh.getRow(rowNumber);
+        col =row.getCell(colNumber);
+		double val = (double) sh.getRow(rowNumber).getCell(colNumber).getNumericCellValue();
+		return val;
+		}
+		
+	}
+

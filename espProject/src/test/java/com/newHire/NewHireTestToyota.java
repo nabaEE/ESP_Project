@@ -19,7 +19,7 @@ import esp.objectRepository.ReportsPage;
 
 public class NewHireTestToyota extends BaseClass {
 	static FileUtils fil = new FileUtils();
-	@Test()
+	@Test(enabled=false)
 	public static void submitCovidFormAndVerify() {
 		log.info("---------submitCovidFormAndVerify Test Started----------");
 		LandingPage lnp = PageFactory.initElements(driver, LandingPage.class);
@@ -48,9 +48,6 @@ public class NewHireTestToyota extends BaseClass {
 		// driver.findElement(By.id("Not_now")).click();
 		// Call the landing page
 		LandingPage lnp = PageFactory.initElements(driver, LandingPage.class);
-		//Call the covid page to manage pop up window
-		CovidPage cp= PageFactory.initElements(driver, CovidPage.class);
-		cp.checkCovidForm(); 
 		// Click on admin icon
 		WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
 		lnp.getAdminIcon().click();
@@ -66,7 +63,7 @@ public class NewHireTestToyota extends BaseClass {
 		nhp.getTitleDropdown().click();
 		nhp.getPickTitle_MR().click();
 		// Enter the first Name
-		nhp.getFirstNameEditbox().sendKeys("Tarun");
+		nhp.getFirstNameEditbox().sendKeys("Madan");
 		// Enter last name
 		nhp.getLastNameEditbox().sendKeys("Test");
 		// Pick date of birth
@@ -116,9 +113,9 @@ public class NewHireTestToyota extends BaseClass {
 		Date groupJoiningDate = fil.getDateFromExcel("Toyota", 1, 5);
 		nhp.DatePicker(driver, groupJoiningDateElement, groupJoiningDate);
 		// Enter the employee Id
-		nhp.getEmployeeId().sendKeys("0002222");
+		nhp.getEmployeeId().sendKeys("0002225");
 		// Enter email id
-		nhp.getEmailIdEditbox().sendKeys("tarun.test");
+		nhp.getEmailIdEditbox().sendKeys("sadan.test");
 		// Click email domain
 		nhp.getEmailDomainDropdown().click();
 		// Select the domain type

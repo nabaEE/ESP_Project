@@ -1,0 +1,42 @@
+19:17:26.591 [main] INFO  esp.genericLibraries.BaseClass - ----------submitBankDetailsAndVerify Test Ended---------
+23:17:38.586 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+23:17:50.671 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+23:17:55.079 [main] INFO  esp.genericLibraries.BaseClass - ----------submitBankDetailsAndVerify Test Ended---------
+23:18:09.024 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+23:18:10.350 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+00:12:23.912 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+00:12:31.895 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+00:12:35.934 [main] INFO  esp.genericLibraries.BaseClass - ----------addAndValidateFamilyDetails Test Started---------
+00:12:42.446 [main] INFO  esp.genericLibraries.BaseClass - Submitted dependent is :Mr. Hari Singh | DOB 9-Aug-2000
+00:12:42.447 [main] INFO  esp.genericLibraries.BaseClass - ----------addAndValidateFamilyDetails Test Ended---------
+00:17:03.728 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+00:17:10.547 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+00:17:15.091 [main] DEBUG esp.genericLibraries.BaseClass - ---------submit New Hire Form and validate all mandatory fields are selected----------
+00:17:20.076 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+00:17:20.078 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+00:17:22.292 [main] INFO  esp.genericLibraries.BaseClass - ----------addAndValidateFamilyDetails Test Started---------
+00:17:27.194 [main] INFO  esp.genericLibraries.BaseClass - Submitted dependent is :Mr. Hari Singh | DOB 9-Aug-2000
+00:17:27.195 [main] INFO  esp.genericLibraries.BaseClass - ----------addAndValidateFamilyDetails Test Ended---------
+00:20:33.553 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+00:20:40.496 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+00:20:44.237 [main] DEBUG esp.genericLibraries.BaseClass - ---------submit New Hire Form and validate all mandatory fields are selected----------
+00:21:34.030 [main] INFO  esp.genericLibraries.BaseClass - The page title is :--Hire Summary for Madan Test (#EM78962)
+00:21:34.707 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+00:21:34.711 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+00:21:36.910 [main] INFO  esp.genericLibraries.BaseClass - ----------addAndValidateFamilyDetails Test Started---------
+00:26:28.752 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+00:26:35.429 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+00:26:39.649 [main] INFO  esp.genericLibraries.BaseClass - ----------addAndValidateFamilyDetails Test Started---------
+00:30:28.129 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+00:30:34.814 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+00:30:38.691 [main] INFO  esp.genericLibraries.BaseClass - ----------addAndValidateFamilyDetails Test Started---------
+00:31:15.185 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+00:31:16.702 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+00:32:55.121 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+00:33:01.944 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+00:33:06.378 [main] INFO  esp.genericLibraries.BaseClass - ----------addAndValidateFamilyDetails Test Started---------
+00:33:12.185 [main] INFO  esp.genericLibraries.BaseClass - Submitted dependent is :Mr. Hari Singh | DOB 1-Feb-2006
+00:33:12.185 [main] INFO  esp.genericLibraries.BaseClass - ----------addAndValidateFamilyDetails Test Ended---------
+00:33:12.793 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+00:33:13.554 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+00:55:38.582 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************

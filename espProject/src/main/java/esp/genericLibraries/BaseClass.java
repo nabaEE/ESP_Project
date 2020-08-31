@@ -40,7 +40,7 @@ public void openBrowser() throws IOException
 	 log.info("*****************Launching the Browser*************************");
   if(browserName.equalsIgnoreCase("chrome"))
    {
-	 System.setProperty("webdriver.chrome.driver", "C:\\Users\\Prod\\Documents\\driver\\chromedriver.exe");
+	 System.setProperty("webdriver.chrome.driver", "C:\\Users\\Prod\\chromedriver\\chromedriver.exe");
 	 driver= new ChromeDriver();
     }
   /*call the firefox browser*/
@@ -73,7 +73,7 @@ public void login() throws IOException
  esp.objectRepository.LoginPage lp= PageFactory.initElements(driver, LoginPage.class);
  //Calling the method declared in login page class
  lp.loginToPage(pObj.getProperty("USERNAME"), pObj.getProperty("PASSWORD"));
- //lp.secureLogin(pObj.getProperty("USERNAME1"), pObj.getProperty("PASSWORD1"));
+ lp.secureLogin(pObj.getProperty("USERNAME1"), pObj.getProperty("PASSWORD1"));
  WebdriverUtils.waitForPageToLoad(driver);
  driver.switchTo().frame(BaseClass.driver.findElement(By.xpath("//html//frameset//frame")));
  

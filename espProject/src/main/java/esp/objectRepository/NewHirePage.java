@@ -336,6 +336,14 @@ public class NewHirePage {
 
 	@FindBy(xpath = "//div[@id=\"Display_ul\"]/div[4]/li/p")
 	private WebElement savedList;
+	@FindBy(xpath="//th[@id='Emp_ListName']/a/i")
+	private WebElement clickEmployeeFilter;
+	@FindBy(id="6_Search")
+	private WebElement searchEmployee;
+	@FindBy(xpath="//div[@id='6_Filter']/div[3]/div/p/label")
+	private WebElement clickSearchedEmployee;
+	
+
 	@FindBy(xpath="//div[@id='TableDiv']/table/tbody/tr[1]/td[1]/span/i")
 	private WebElement pickEmployee;
 	
@@ -871,6 +879,21 @@ public class NewHirePage {
 	public WebElement getSavedList() {
 		return savedList;
 	}
+	public List<WebElement> getGradeValues() {
+		return gradeValues;
+	}
+
+	public WebElement getClickEmployeeFilter() {
+		return clickEmployeeFilter;
+	}
+
+	public WebElement getSearchEmployee() {
+		return searchEmployee;
+	}
+
+	public WebElement getClickSearchedEmployee() {
+		return clickSearchedEmployee;
+	}
 	public WebElement getSaveAndContinueButtonMUJ() {
 		return saveAndContinueButtonMUJ;
 	}
@@ -910,11 +933,12 @@ public class NewHirePage {
 		}
 	}
 	//Method to pick department for bluestone
-	public void chooseDepartment() {
+	public void chooseDepartment() throws Exception {
 		for(int i=0; i< departmentDropdownValues.size(); i++) {
 			if (i==1) {
 				WebdriverUtils.waitForElementPresent(BaseClass.driver, departmentDropdownValues.get(i));
 				try {
+					WebdriverUtils.waitForCompleteElementToLoad(departmentDropdownValues.get(i));
 					departmentDropdownValues.get(i).click();
 				} catch (StaleElementReferenceException e) {
 					departmentDropdownValues.get(i).click();

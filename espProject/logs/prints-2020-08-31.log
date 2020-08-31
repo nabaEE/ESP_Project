@@ -1,0 +1,41 @@
+15:21:15.808 [main] DEBUG esp.genericLibraries.BaseClass - ---------submit New Hire Form and validate all mandatory fields are selected----------
+15:22:05.966 [main] INFO  esp.genericLibraries.BaseClass - The page title is :--Hire Summary for Madan Test (#EM78962)
+15:22:06.731 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+15:22:06.734 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+15:22:08.767 [main] INFO  esp.genericLibraries.BaseClass - ----------submitBankDetailsAndVerify Test Ended---------
+15:24:25.721 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+15:24:32.697 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+15:24:37.332 [main] INFO  esp.genericLibraries.BaseClass - ----------submitBankDetailsAndVerify Test Ended---------
+15:34:16.617 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+15:34:24.535 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+15:34:30.891 [main] INFO  esp.genericLibraries.BaseClass - ----------submitBankDetailsAndVerify Test Ended---------
+15:39:47.477 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+15:39:54.490 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+15:39:58.494 [main] DEBUG esp.genericLibraries.BaseClass - ---------submit New Hire Form and validate all mandatory fields are selected----------
+15:40:43.356 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+15:40:50.229 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+15:40:54.198 [main] DEBUG esp.genericLibraries.BaseClass - ---------submit New Hire Form and validate all mandatory fields are selected----------
+15:41:44.792 [main] INFO  esp.genericLibraries.BaseClass - The page title is :--Hire Summary for Madan Test (#EM78962)
+15:41:45.319 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+15:41:45.324 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+15:41:47.336 [main] INFO  esp.genericLibraries.BaseClass - ----------submitBankDetailsAndVerify Test Ended---------
+19:05:11.330 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+19:05:26.045 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+19:05:35.348 [main] DEBUG esp.genericLibraries.BaseClass - ---------submit New Hire Form and validate all mandatory fields are selected----------
+19:06:27.999 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+19:06:28.001 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+19:06:30.192 [main] INFO  esp.genericLibraries.BaseClass - ----------submitBankDetailsAndVerify Test Ended---------
+19:08:08.882 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+19:08:19.799 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+19:08:28.580 [main] DEBUG esp.genericLibraries.BaseClass - ---------submit New Hire Form and validate all mandatory fields are selected----------
+19:09:25.100 [main] INFO  esp.genericLibraries.BaseClass - The page title is :--Hire Summary for Madan Test (#EM78962)
+19:09:25.644 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+19:09:25.710 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+19:09:27.615 [main] INFO  esp.genericLibraries.BaseClass - ----------submitBankDetailsAndVerify Test Ended---------
+19:12:15.205 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+19:12:41.285 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+19:12:45.330 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+19:12:52.202 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+19:12:58.174 [main] INFO  esp.genericLibraries.BaseClass - ----------submitBankDetailsAndVerify Test Ended---------
+19:17:10.772 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+19:17:20.195 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************

@@ -102,7 +102,7 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.newHire.NewHireTestBluestone" hash-for-method="submitContactDetailsAndValidate">submitContactDetailsAndValidate</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.newHire.NewHireTestBluestone" hash-for-method="modifyAndVerifyOfficialEmail">modifyAndVerifyOfficialEmail</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -125,9 +125,9 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="submitContactDetailsAndValidate">
-                  </a> <!-- submitContactDetailsAndValidate -->
-                  <span class="method-name">submitContactDetailsAndValidate</span>
+                  <a name="modifyAndVerifyOfficialEmail">
+                  </a> <!-- modifyAndVerifyOfficialEmail -->
+                  <span class="method-name">modifyAndVerifyOfficialEmail</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -151,7 +151,7 @@
     &lt;classes&gt;
       &lt;class name=&quot;com.newHire.NewHireTestBluestone&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;submitContactDetailsAndValidate&quot;/&gt;
+          &lt;include name=&quot;modifyAndVerifyOfficialEmail&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- com.newHire.NewHireTestBluestone --&gt;
     &lt;/classes&gt;
@@ -195,14 +195,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'submitContactDetailsAndValidate')
+data.setCell(0, 1, 'modifyAndVerifyOfficialEmail')
 data.setCell(0, 2, 'com.newHire.NewHireTestBluestone')
-data.setCell(0, 3, 3965);
+data.setCell(0, 3, 4257);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 seconds</span>
+              <span class="suite-total-time">Total running time: 4 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -217,7 +217,7 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">19 ignored methods</span>
+            <span class="header-content">26 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
@@ -229,6 +229,22 @@ return data;
                 <br/>
                 <span class="ignored-method-name">submitNewHireFormAndValidate</span>
                 <br/>
+                <span class="ignored-method-name">employmentTypeMandatory</span>
+                <br/>
+                <span class="ignored-method-name">gradeMandatory</span>
+                <br/>
+                <span class="ignored-method-name">verifyTitleDropdownValues</span>
+                <br/>
+                <span class="ignored-method-name">departmentMandatory</span>
+                <br/>
+                <span class="ignored-method-name">SubmitAadhaarAndVerify</span>
+                <br/>
+                <span class="ignored-method-name">locationMandatory</span>
+                <br/>
+                <span class="ignored-method-name">employeeIdMandatory</span>
+                <br/>
+                <span class="ignored-method-name">addAndValidateFamilyDetails</span>
+                <br/>
                 <span class="ignored-method-name">firstNameMandatory</span>
                 <br/>
                 <span class="ignored-method-name">employmentStatusMandatory</span>
@@ -237,29 +253,27 @@ return data;
                 <br/>
                 <span class="ignored-method-name">legalEntityMandatory</span>
                 <br/>
-                <span class="ignored-method-name">employmentTypeMandatory</span>
-                <br/>
                 <span class="ignored-method-name">reportingHiringManagerMandatory</span>
                 <br/>
-                <span class="ignored-method-name">gradeMandatory</span>
-                <br/>
-                <span class="ignored-method-name">verifyTitleDropdownValues</span>
-                <br/>
-                <span class="ignored-method-name">departmentMandatory</span>
+                <span class="ignored-method-name">AddAndVerifyEmergencyContactDetails</span>
                 <br/>
                 <span class="ignored-method-name">joiningDateMandatory</span>
                 <br/>
-                <span class="ignored-method-name">lastNameMandatory</span>
-                <br/>
                 <span class="ignored-method-name">designationMandatory</span>
                 <br/>
-                <span class="ignored-method-name">locationMandatory</span>
+                <span class="ignored-method-name">lastNameMandatory</span>
+                <br/>
+                <span class="ignored-method-name">submitContactDetailsAndValidate</span>
                 <br/>
                 <span class="ignored-method-name">ft_ptIndictorMandatory</span>
                 <br/>
+                <span class="ignored-method-name">addPersonalEmailAndVerify</span>
+                <br/>
                 <span class="ignored-method-name">validateCompensation</span>
                 <br/>
-                <span class="ignored-method-name">employeeIdMandatory</span>
+                <span class="ignored-method-name">addCurrentAddressAndVerify</span>
+                <br/>
+                <span class="ignored-method-name">submitBankDetailsAndVerify</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -278,19 +292,19 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">login</span>
-                <span class="method-start">6864 ms</span>
+                <span class="method-start">6604 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">submitContactDetailsAndValidate</span>
-                <span class="method-start">10762 ms</span>
+                <span class="method-name">modifyAndVerifyOfficialEmail</span>
+                <span class="method-start">10437 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">14729 ms</span>
+                <span class="method-start">14699 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">15496 ms</span>
+                <span class="method-start">15322 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -1,4 +1,6 @@
 package com.newHire;
+
+import java.awt.AWTException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -18,11 +20,13 @@ import esp.objectRepository.LandingPage;
 import esp.objectRepository.NewHirePage;
 
 public class NewHireTestBluestone extends BaseClass {
-	static FileUtils fil= new FileUtils();
-	//1. Fill in the details on new hire page then click on save and continue and verify it.
-	@Test(priority=-1)
+	static FileUtils fil = new FileUtils();
+
+	// 1. Fill in the details on new hire page then click on save and continue and
+	// verify it.
+	@Test(priority = -1)
 	public static void submitNewHireFormAndValidate() throws Throwable {
-		
+
 		log.debug("---------submit New Hire Form and validate all mandatory fields are selected----------");
 		// driver.findElement(By.id("Not_now")).click();
 		// Call the landing page
@@ -47,7 +51,7 @@ public class NewHireTestBluestone extends BaseClass {
 		nhp.getLastNameEditbox().sendKeys(fil.getExcelData("Bluestone", 1, 1));
 		// Pick date of birth
 		WebElement element = nhp.getDateOfBirthCalenderWindow();
-		Date date=fil.getDateFromExcel("Bluestone", 1, 2);
+		Date date = fil.getDateFromExcel("Bluestone", 1, 2);
 		nhp.DatePicker(driver, element, date);
 		// Pick country of birth as India
 		nhp.getCountryOfBirthDropdown().click();
@@ -95,9 +99,9 @@ public class NewHireTestBluestone extends BaseClass {
 		nhp.getEmployeeId().sendKeys(fil.getExcelData("Bluestone", 1, 6));
 		// Enter email id
 		nhp.getEmailIdEditbox().sendKeys(fil.getExcelData("Bluestone", 1, 7));
-		//Click email domain
+		// Click email domain
 		nhp.getEmailDomainDropdown().click();
-		//Select the domain type
+		// Select the domain type
 		nhp.getPickEmailDomain().click();
 		// Pick employment type
 		nhp.getEmploymentTypeDropdown().click();
@@ -129,7 +133,7 @@ public class NewHireTestBluestone extends BaseClass {
 		// Click on grade dropdown and pick the grade
 		nhp.getGradeDropdown().click();
 		nhp.selectGrade();
-		
+
 		// Enter three letters and select reporting hiring manager
 		/*
 		 * try { nhp.getReportingHiringManagerEditbox().sendKeys("Sar");
@@ -155,13 +159,13 @@ public class NewHireTestBluestone extends BaseClass {
 		nhp.getFteEditbox().sendKeys("30");
 		// Click on save and Continue
 		nhp.getSaveAndContinueButton().click();
-		//Call the compensation page and click on skip button
-		CompensationPage cmp=PageFactory.initElements(driver, CompensationPage.class);
-		//Click hire summary
+		// Call the compensation page and click on skip button
+		CompensationPage cmp = PageFactory.initElements(driver, CompensationPage.class);
+		// Click hire summary
 		WebdriverUtils.waitForElementPresent(BaseClass.driver, cmp.getClickHireSummary());
 		cmp.getClickHireSummary().click();
-		//Call the Hire Summary page
-		HireSummaryPage hs=PageFactory.initElements(driver, HireSummaryPage.class);
+		// Call the Hire Summary page
+		HireSummaryPage hs = PageFactory.initElements(driver, HireSummaryPage.class);
 		hs.getclickPersonalData().click();
 		// Click on save and continue button on new hire page to validate all the
 		// mandatory fields
@@ -176,52 +180,54 @@ public class NewHireTestBluestone extends BaseClass {
 		System.out.println("The page title is :--" + hireSummaryTitle);
 		log.info("The page title is :--" + hireSummaryTitle);
 	}
-	//2. Enter the compensation and verify it on hire summary page.
-		@Test()
-		public static void validateCompensation() throws Exception {
-			log.debug("-------Validate Compensation Test started-------");
-			LandingPage lnp = PageFactory.initElements(driver, LandingPage.class);
-			// Click on admin icon
-			WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
-			lnp.getAdminIcon().click();
-			// Click on new hire option
-			// lnp.getNewHireAdminValue().click();
-			lnp.clickNewHire();
-			// Call the new hire page
-			NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
-			//pick employee
-			nhp.getPickEmployee().click();
-			//Click on Compensation on Hire Summary page
-			HireSummaryPage hsp= PageFactory.initElements(driver, HireSummaryPage.class);
-			WebdriverUtils.waitForElementPresent(driver, hsp.getClickCompensationPencilIcon());
-		    hsp.getClickCompensationPencilIcon().click();
-			//Call the compensation page and click on skip button
-			CompensationPage cmp=PageFactory.initElements(driver, CompensationPage.class);	
-			//Call the method to click on select profile
-            cmp.retryingFindClick(cmp.getSelectProfileDropdown());
-		//	driver.switchTo().window(hsp.moveTopage());
-			//Select the specific profile
-            WebdriverUtils.waitForElementPresent(driver, cmp.getSelectBluestoneProfile());
-			cmp.getSelectBluestoneProfile().click();
-			//clear the annual amount
-			cmp.getAnnualFixedAmountNextgen().clear();
-			//Enter the annual amount
-			cmp.getAnnualFixedAmountNextgen().sendKeys("40000", Keys.ENTER);
-			WebdriverUtils.waitForElementPresent(driver, cmp.getsaveAndContinue());
-			cmp.clickElement(cmp.getsaveAndContinue());	
-			//Call the additional cost page and click on submit
-			AdditionalCostPage ap= PageFactory.initElements(driver, AdditionalCostPage.class);
-			WebdriverUtils.waitForElementPresent(driver, ap.getClickSubmit());
-			ap.getClickSubmit().click();
-			//get the compensation value and validate
-			WebdriverUtils.waitForElementPresent(driver, hsp.getCheckCompensationValue());
-			String compCTC=hsp.getCheckCompensationValue().getText();
-			//Validate the ctc
-			Assert.assertFalse(compCTC.isEmpty());
-			System.out.println("The expected ctc is :"+compCTC);
-			log.info("-------Validate Compensation Test ended-------");
+
+	// 2. Enter the compensation and verify it on hire summary page.
+	@Test()
+	public static void validateCompensation() throws Exception {
+		log.debug("-------Validate Compensation Test started-------");
+		LandingPage lnp = PageFactory.initElements(driver, LandingPage.class);
+		// Click on admin icon
+		WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
+		lnp.getAdminIcon().click();
+		// Click on new hire option
+		// lnp.getNewHireAdminValue().click();
+		lnp.clickNewHire();
+		// Call the new hire page
+		NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
+		// pick employee
+		nhp.getPickEmployee().click();
+		// Click on Compensation on Hire Summary page
+		HireSummaryPage hsp = PageFactory.initElements(driver, HireSummaryPage.class);
+		WebdriverUtils.waitForElementPresent(driver, hsp.getClickCompensationPencilIcon());
+		hsp.getClickCompensationPencilIcon().click();
+		// Call the compensation page and click on skip button
+		CompensationPage cmp = PageFactory.initElements(driver, CompensationPage.class);
+		// Call the method to click on select profile
+		cmp.retryingFindClick(cmp.getSelectProfileDropdown());
+		// driver.switchTo().window(hsp.moveTopage());
+		// Select the specific profile
+		WebdriverUtils.waitForElementPresent(driver, cmp.getSelectBluestoneProfile());
+		cmp.getSelectBluestoneProfile().click();
+		// clear the annual amount
+		cmp.getAnnualFixedAmountNextgen().clear();
+		// Enter the annual amount
+		cmp.getAnnualFixedAmountNextgen().sendKeys("40000", Keys.ENTER);
+		WebdriverUtils.waitForElementPresent(driver, cmp.getsaveAndContinue());
+		cmp.clickElement(cmp.getsaveAndContinue());
+		// Call the additional cost page and click on submit
+		AdditionalCostPage ap = PageFactory.initElements(driver, AdditionalCostPage.class);
+		WebdriverUtils.waitForElementPresent(driver, ap.getClickSubmit());
+		ap.getClickSubmit().click();
+		// get the compensation value and validate
+		WebdriverUtils.waitForElementPresent(driver, hsp.getCheckCompensationValue());
+		String compCTC = hsp.getCheckCompensationValue().getText();
+		// Validate the ctc
+		Assert.assertFalse(compCTC.isEmpty());
+		System.out.println("The expected ctc is :" + compCTC);
+		log.info("-------Validate Compensation Test ended-------");
 	}
-	//3. Click on title dropdown and verify all the dropdown values. 
+
+	// 3. Click on title dropdown and verify all the dropdown values.
 	@Test()
 	public static void verifyTitleDropdownValues() throws Exception {
 		log.info("-------verifyTitleDropdownValues Test started-------");
@@ -233,7 +239,7 @@ public class NewHireTestBluestone extends BaseClass {
 		lp.clickNewHire();
 		// Call the new hire page
 		NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
-		//Click on add new button
+		// Click on add new button
 		nhp.getClickAddNewButton().click();
 		// Click on title dropdown
 		nhp.getTitleDropdown().click();
@@ -265,7 +271,8 @@ public class NewHireTestBluestone extends BaseClass {
 
 		log.info("-------verifyTitleDropdownValues Test ended-------");
 	}
-	//4. First Name mandatory.
+
+	// 4. First Name mandatory.
 	@Test()
 	public static void firstNameMandatory() throws Exception {
 		log.info("----------FirstNameMandatory Test Started---------");
@@ -294,8 +301,9 @@ public class NewHireTestBluestone extends BaseClass {
 		log.info("Actual error message is :" + actErrorMessage);
 		System.out.println("Actual error message is :" + expErrorMessage);
 		log.info("----------FirstNameMandatory Test ended---------");
-		}
-	//5. Last Name mandatory
+	}
+
+	// 5. Last Name mandatory
 	@Test()
 	public static void lastNameMandatory() throws Exception {
 		log.info("----------LastNameMandatory Test Started---------");
@@ -325,8 +333,9 @@ public class NewHireTestBluestone extends BaseClass {
 		System.out.println("Actual error message is :" + expErrorMessage);
 		log.info("----------LastNameMandatory Test ended---------");
 	}
-	//6. Education Details mandatory
-	@Test() 
+
+	// 6. Education Details mandatory
+	@Test()
 	public static void educationDetailsMandatory() throws Exception {
 		log.info("----------EducationDetailsMandatory Test Started---------");
 		// Call the landing page
@@ -348,14 +357,15 @@ public class NewHireTestBluestone extends BaseClass {
 		// Click on submit
 		nhp.getSaveAndContinueButton().click();
 		// Capture the error message
-		String actErrorMessage =nhp.getEducationDetailsBlankErrorMessage().getText();
+		String actErrorMessage = nhp.getEducationDetailsBlankErrorMessage().getText();
 		// Validate the error message
 		Assert.assertEquals(actErrorMessage, expErrorMessage);
 		log.info("Actual error message is :" + actErrorMessage);
 		System.out.println("Actual error message is :" + expErrorMessage);
 		log.info("----------EducationDetailsMandatory Test ended---------");
-		}
-	//7. Country dropdown is mandatory.
+	}
+
+	// 7. Country dropdown is mandatory.
 	@Test()
 	public static void countryMandatory() throws Exception {
 		log.info("----------CountryMandatory Test Started---------");
@@ -384,7 +394,7 @@ public class NewHireTestBluestone extends BaseClass {
 		log.info("Actual error message is :" + actErrorMessage);
 		System.out.println("Actual error message is :" + expErrorMessage);
 		log.info("----------CountryMandatory Test ended---------");
-		}
+	}
 
 	// 8. Legal Entity is mandatory
 	@Test()
@@ -416,10 +426,11 @@ public class NewHireTestBluestone extends BaseClass {
 		System.out.println("Actual error message is :" + expErrorMessage);
 		log.info("----------LegalEntityMandatory Test ended---------");
 	}
+
 //9.  Location is mandatory
- @Test() 
- public static void locationMandatory() throws Exception {
-	 log.info("----------LocationMandatory Test Started---------"); 
+	@Test()
+	public static void locationMandatory() throws Exception {
+		log.info("----------LocationMandatory Test Started---------");
 		// Call the landing page
 		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
 		// click on people icon
@@ -434,7 +445,7 @@ public class NewHireTestBluestone extends BaseClass {
 		String expErrorMessage = fil.getExcelData("Error Messages", 5, 1);
 		log.info("Expected error message is :" + expErrorMessage);
 		System.out.println("Expected error message is :" + expErrorMessage);
-		//Don't click on location	
+		// Don't click on location
 		nhp.getLocationDropdown();
 		// Click on submit
 		nhp.getSaveAndContinueButton().click();
@@ -447,9 +458,10 @@ public class NewHireTestBluestone extends BaseClass {
 		System.out.println("Actual error message is :" + expErrorMessage);
 		log.info("----------LocationMandatory Test ended---------");
 	}
- //10. Joining Date is Mandatory
- @Test() 
- public static void joiningDateMandatory() throws Exception {
+
+	// 10. Joining Date is Mandatory
+	@Test()
+	public static void joiningDateMandatory() throws Exception {
 		log.info("----------joiningDateMandatory Test Started---------");
 		// Call the landing page
 		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
@@ -478,10 +490,11 @@ public class NewHireTestBluestone extends BaseClass {
 		log.info("----------joiningDateMandatory Test ended---------");
 
 	}
- //11. Employee Id is mandatory
- @Test()
- public static void employeeIdMandatory() throws Exception {
-	 log.info("----------employeeIdMandatory Test Started---------");
+
+	// 11. Employee Id is mandatory
+	@Test()
+	public static void employeeIdMandatory() throws Exception {
+		log.info("----------employeeIdMandatory Test Started---------");
 		// Call the landing page
 		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
 		// click on people icon
@@ -507,11 +520,12 @@ public class NewHireTestBluestone extends BaseClass {
 		log.info("Actual error message is :" + actErrorMessage);
 		System.out.println("Actual error message is :" + expErrorMessage);
 		log.info("----------joiningDateMandatory Test ended---------");
-		
- }
- //12. Email Id is mandatory
- @Test()
- public static void emailIdMandatory() throws Exception {
+
+	}
+
+	// 12. Email Id is mandatory
+	@Test()
+	public static void emailIdMandatory() throws Exception {
 		log.info("----------emailIdMandatory Test Started---------");
 		// Call the landing page
 		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
@@ -539,10 +553,11 @@ public class NewHireTestBluestone extends BaseClass {
 		log.info("Actual error message is :" + actErrorMessage);
 		System.out.println("Actual error message is :" + expErrorMessage);
 		log.info("----------emailIdMandatory Test ended---------");
- }
- //13. Employment Type is mandatory
- @Test()
- public static void employmentTypeMandatory() throws Exception {
+	}
+
+	// 13. Employment Type is mandatory
+	@Test()
+	public static void employmentTypeMandatory() throws Exception {
 		log.info("----------employmentTypeMandatory Test Started---------");
 		// Call the landing page
 		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
@@ -570,10 +585,11 @@ public class NewHireTestBluestone extends BaseClass {
 		log.info("Actual error message is :" + actErrorMessage);
 		System.out.println("Actual error message is :" + expErrorMessage);
 		log.info("----------employmentTypeMandatory Test ended---------");
-		
- }
- //14. Employment Status is mandatory
- @Test()
+
+	}
+
+	// 14. Employment Status is mandatory
+	@Test()
 	public static void employmentStatusMandatory() throws Exception {
 		log.info("----------employmentStatusMandatory Test Started---------");
 		// Call the landing page
@@ -601,8 +617,9 @@ public class NewHireTestBluestone extends BaseClass {
 		log.info("Actual error message is :" + actErrorMessage);
 		System.out.println("Actual error message is :" + expErrorMessage);
 		log.info("----------employmentStatusMandatory Test ended---------");
- }
- //15. Department is mandatory
+	}
+
+	// 15. Department is mandatory
 	@Test()
 	public static void departmentMandatory() throws Exception {
 		log.info("----------departmentMandatory Test Started---------");
@@ -632,8 +649,8 @@ public class NewHireTestBluestone extends BaseClass {
 		System.out.println("Actual error message is :" + expErrorMessage);
 		log.info("----------departmentMandatory Test ended---------");
 	}
- 
- //16. Designation is mandatory
+
+	// 16. Designation is mandatory
 	@Test()
 	public static void designationMandatory() throws Exception {
 		log.info("----------designationMandatory Test Started---------");
@@ -663,7 +680,8 @@ public class NewHireTestBluestone extends BaseClass {
 		System.out.println("Actual error message is :" + expErrorMessage);
 		log.info("----------designationMandatory Test ended---------");
 	}
- //17. Grade is mandatory
+
+	// 17. Grade is mandatory
 	@Test()
 	public static void gradeMandatory() throws Exception {
 		log.info("----------gradeMandatory Test Started---------");
@@ -692,9 +710,10 @@ public class NewHireTestBluestone extends BaseClass {
 		log.info("Actual error message is :" + actErrorMessage);
 		System.out.println("Actual error message is :" + expErrorMessage);
 		log.info("----------gradeMandatory Test ended---------");
-}
- //18. Reporting/Hiring Manager is mandatory
-    @Test()
+	}
+
+	// 18. Reporting/Hiring Manager is mandatory
+	@Test()
 	public static void reportingHiringManagerMandatory() throws Exception {
 		log.info("----------reportingHiringManagerMandatory Test Started---------");
 		// Call the landing page
@@ -722,12 +741,13 @@ public class NewHireTestBluestone extends BaseClass {
 		log.info("Actual error message is :" + actErrorMessage);
 		System.out.println("Actual error message is :" + expErrorMessage);
 		log.info("----------reportingHiringManagerMandatory Test ended---------");
-	
-}
- //19. FT/PT Indicator is mandatory
-    @Test()
-    public static void ft_ptIndictorMandatory() throws Exception {
-    	log.info("----------ft_ptIndictorMandatory Test Started---------");
+
+	}
+
+	// 19. FT/PT Indicator is mandatory
+	@Test()
+	public static void ft_ptIndictorMandatory() throws Exception {
+		log.info("----------ft_ptIndictorMandatory Test Started---------");
 		// Call the landing page
 		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
 		// click on people icon
@@ -753,48 +773,365 @@ public class NewHireTestBluestone extends BaseClass {
 		log.info("Actual error message is :" + actErrorMessage);
 		System.out.println("Actual error message is :" + expErrorMessage);
 		log.info("----------ft_ptIndictorMandatory Test ended---------");
-    }
-    //20. Enter the contact details then verify it
-    @Test() 
-    public static void submitContactDetailsAndValidate() throws Exception {
-    	log.info("----------submitContactDetailsAndValidate Test Started---------");
+	}
+
+	// 20. Enter the contact details then verify it
+	@Test()
+	public static void submitContactDetailsAndValidate() throws Exception {
+		log.info("----------submitContactDetailsAndValidate Test Started---------");
 		// Call the landing page
 		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
 		// click on people icon
 		lp.getAdminIcon().click();
-		//Click on new hire button
+		// Click on new hire button
 		lp.clickNewHire();
-		//Call the new hire page and click on pencil icon
-		NewHirePage nhp= PageFactory.initElements(driver, NewHirePage.class);
-		//Click on pencil icon to add the contact details
+		// Call the new hire page and click on pencil icon
+		NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
+		// Click on pencil icon to add the contact details
 		nhp.getPickEmployee().click();
-		//Call the HireSummary page
-		HireSummaryPage hsp= PageFactory.initElements(driver, HireSummaryPage.class);
-		//Click on contact details
+		// Call the HireSummary page
+		HireSummaryPage hsp = PageFactory.initElements(driver, HireSummaryPage.class);
+		// Click on contact details
 		hsp.getClickContactDetails().click();
-		//Click on phone type dropdown
+		// Click on phone type dropdown
 		hsp.getPhoneTypeDropdown().click();
-		//Select the mobile
+		// Select the mobile
 		hsp.getPickPhoneTypeAsMobile().click();
-		//Select the country code as India
+		// Select the country code as India
 		hsp.getCountryCodeDropdown().click();
 		hsp.getPickCountryCodeAsIndia().click();
-		//Enter the mobile number
+		// Enter the mobile number
 		hsp.getNumberEditbox().sendKeys("9874563012");
+		// Click on submit
+		hsp.getSubmitButton().click();
+		// Capture the submitted mobile number
+		String actNumber = hsp.getSubmittedMobileNumber().getText();
+		// Validate the added mobile number
+		Assert.assertEquals(actNumber.contains("9874563012"), true);
+		System.out.println("Mobile number is verified and the submitted number is :" + actNumber);
+		log.info("Mobile number is verified and the submitted number is :" + actNumber);
+		log.info("----------submitContactDetailsAndValidate Test Ended---------");
+	}
+
+//21. Fill in the address details and verify it.
+	@Test()
+	public static void addCurrentAddressAndVerify() throws Exception, InterruptedException {
+		log.info("----------addCurrentAddressAndVerify Test Started-------");
+		// Call the landing page
+		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
+		// click on people icon
+		lp.getAdminIcon().click();
+		// Click on new hire button
+		lp.clickNewHire();
+		// Call the new hire page and click on pencil icon
+		NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
+		// Click on pencil icon to add the contact details
+		nhp.getPickEmployee().click();
+		// Call the HireSummary page
+		HireSummaryPage hsp = PageFactory.initElements(driver, HireSummaryPage.class);
+		// Click on current address pencil icon
+		hsp.getClickCurrentAddressPencilIcon().click();
+		// enter the effective from date
+		hsp.getEffectiveFromDateCalenderWin().click();
+		hsp.getCurrentDate().click();
+		// Enter the address line1
+		hsp.getAddressLine1().sendKeys("6th Block Mysore");
+		// Click on country dropdown and select india
+		hsp.getCountryDropdownOnAddressDetailsWin().click();
+		hsp.getPickCountryIndiaOnAddressDetailsWin().click();
+		// Click on state dropdown
+		hsp.getStateDropdownOnAddressDetailsWin().click();
+		// Click on state
+		hsp.getPickState().click();
+		// Enter the city
+		hsp.getCityEditbox().sendKeys("Bangalore");
+		// Enter the postal code
+		hsp.getPostalCode().sendKeys("560037");
+		// Click on document upload
+		hsp.clickAnduploadDocument();
+		// Click on submit
+		hsp.getSubmitButton().click();
+		// Capture the submitted current address
+		String actualAddress = hsp.getCaptureSubmittedCurrentAddress().getText();
+		System.out.println(actualAddress);
+		// Validate the address
+		Assert.assertEquals(actualAddress.contains("6th Block Mysore"), true);
+		System.out.println("Submitted current address is :" + actualAddress);
+		log.info("Submitted current address is :" + actualAddress);
+		log.info("----------addCurrentAddressAndVerify Test Ended---------");
+   }
+
+//22. Enter the personal email and validate it
+	@Test()
+	public static void addPersonalEmailAndVerify() throws Exception {
+		log.info("----------addPersonalEmailAndVerify Test Started---------");
+		// Call the landing page
+		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
+		// click on people icon
+		lp.getAdminIcon().click();
+		// Click on new hire button
+		lp.clickNewHire();
+		// Call the new hire page and click on pencil icon
+		NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
+		// Click on pencil icon to add the contact details
+		nhp.getPickEmployee().click();
+		// Call the HireSummary page
+		HireSummaryPage hsp = PageFactory.initElements(driver, HireSummaryPage.class);
+		// Click on Email Details
+		hsp.getEmailDetailsAddIcon().click();
+		// Click on email dropdown
+		hsp.getEmailTypeDropdown().click();
+		// pick personal email
+		hsp.getPickPersonalEmail().click();
+		// Declare the expected email id
+		String expPersonalEmail = fil.getExcelData("Hire Summary Details", 1, 1);
+		// Enter the personal email Id
+		hsp.getEmailIdEditbox().sendKeys(expPersonalEmail);
+		// Click on submit
+		hsp.getSubmitButton().click();
+		// Capture the submitted personal email
+		String actualPersonalEmail = hsp.getSubmittedPersonalEmail().getText();
+		// Validate the submitted personal email
+		Assert.assertEquals(actualPersonalEmail, expPersonalEmail);
+		System.out.println("The entered email is :" + actualPersonalEmail);
+		log.info("The entered email is :" + actualPersonalEmail);
+		log.info("----------addPersonalEmailAndVerify Test Ended---------");
+	 }
+  //23. Fill in the Emergency contact details and verify it.
+	 @Test()
+	 public static void AddAndVerifyEmergencyContactDetails() throws Exception
+	 {
+		log.info("----------AddAndVerifyEmergencyContactDetails Test Started---------");
+		// Call the landing page
+		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
+		// click on people icon
+		lp.getAdminIcon().click();
+		// Click on new hire button
+		lp.clickNewHire();
+		// Call the new hire page and click on pencil icon
+		NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
+		// Click employee Id filter
+		nhp.getClickEmployeeFilter().click();
+		//Enter the employee Id
+		nhp.getSearchEmployee().sendKeys(fil.getExcelData("Bluestone", 1, 6));
+		nhp.getClickSearchedEmployee().click();
+		WebdriverUtils.waitForElementPresent(driver, nhp.getPickEmployee());
+		nhp.getPickEmployee().click();
+		// Call the HireSummary page
+		HireSummaryPage hsp = PageFactory.initElements(driver, HireSummaryPage.class);
+		//Click on Emergency contact details
+		hsp.getClickEmergencyPencilIcon().click();
+		//Enter the contact name
+		hsp.getEmergencyContactName().sendKeys(fil.getExcelData("EmergencyContactDetails", 0, 1));
+		//Click contact relation dropdown and pick friend
+		hsp.getEmergencyContactRelationDropdown().click();
+		hsp.getPickContactRelationPersonName().click();
+		//Enter the contact number
+		hsp.getEmergencyContactNumber().sendKeys(fil.getExcelData("EmergencyContactDetails", 1, 1));
+	    //Enter the contact email
+		hsp.getEmergencyContactEmail().sendKeys(fil.getExcelData("EmergencyContactDetails", 2, 1));
 		//Click on submit
 		hsp.getSubmitButton().click();
-		//Capture the submitted mobile number
-		String actNumber=hsp.getSubmittedMobileNumber().getText();
-		//Validate the added mobile number
-		Assert.assertEquals(actNumber.contains("9874563012"), true);
-		System.out.println("Mobile number is verified and the submitted number is :"+actNumber);
-		log.info("Mobile number is verified and the submitted number is :"+actNumber);
-		log.info("----------submitContactDetailsAndValidate Test Ended---------");
+		//Capture the submitted emergency contact details
+		String actualEmergencyContactDetails=hsp.getSubmittedEmergencyContactDetails().getText();
+		//Validate the submitted contact details
+		Assert.assertEquals(actualEmergencyContactDetails.contains(fil.getExcelData("EmergencyContactDetails", 0, 1)), true);
+	    System.out.println("Submitted emergency contact details :"+actualEmergencyContactDetails);
+	    log.info("Submitted emergency contact details :"+actualEmergencyContactDetails);
+	    log.info("----------AddAndVerifyEmergencyContactDetails Test Ended---------");
+		}
+	//24. Add the bank details and verify the account number
+	@Test() 
+	public static void submitBankDetailsAndVerify() throws Exception {
+		log.info("----------submitBankDetailsAndVerify Test Ended---------");
+		// Call the landing page
+		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
+		// click on people icon
+		lp.getAdminIcon().click();
+		// Click on new hire button
+		lp.clickNewHire();
+		// Call the new hire page and click on pencil icon
+		NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
+		// Click employee Id filter
+		nhp.getClickEmployeeFilter().click();
+		// Enter the employee Id
+		nhp.getSearchEmployee().sendKeys(fil.getExcelData("Bluestone", 1, 6));
+		nhp.getClickSearchedEmployee().click();
+		WebdriverUtils.waitForElementPresent(driver, nhp.getPickEmployee());
+		nhp.getPickEmployee().click();
+		// Call the HireSummary page
+		HireSummaryPage hsp = PageFactory.initElements(driver, HireSummaryPage.class);
+		// Click on Bank Details
+		hsp.getClickBankDetailsPencilIcon().click();
+		// enter the ifsc code
+		hsp.getIfscCode().sendKeys("SBI");
+		// Pick ifsc code
+		hsp.getPickIfscCode().click();
+		// Enter the Bank Name
+		hsp.getEmpNameOnBankAcc().sendKeys(fil.getExcelData("Bluestone", 1, 0));
+		// Enter the account number
+		hsp.getAccountNumber().sendKeys(fil.getExcelData("Bluestone", 1, 12));
+		// Confirm account number
+		hsp.getConfirmAccountNumber().sendKeys(fil.getExcelData("Bluestone", 1, 12));
+		// Click account type
+		hsp.getAccountTypeDropdown().click();
+		// click savings account
+		hsp.getPickSavingsAccount().click();
+		// Select effective from date
+		hsp.getEffectiveDateOnBankPage().click();
+		WebdriverUtils.waitForElementPresent(driver, hsp.getCurrentDate());
+		hsp.getCurrentDate().click();
+		// Click on submit
+		hsp.getSubmitButton().click();
+		// Capture the submitted bank details
+		String actualBankDetails = hsp.getSubmittedBankDetails().getText();
+		// Validate the submitted bank details
+		Assert.assertEquals(actualBankDetails.contains(fil.getExcelData("Bluestone", 1, 12)), true);
+		System.out.println("Submitted account number is :" + actualBankDetails);
+		log.info("Submitted bank details are :" + actualBankDetails);
+		log.info("----------submitBankDetailsAndVerify Test Ended---------");
+	}
+ //25. Submit the Aadhar details and verify it.
+	@Test()
+	public static void SubmitAadhaarAndVerify() throws Exception {
+		log.info("----------SubmitAadhaarAndVerify Test Started---------");
+		// Call the landing page
+		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
+		// click on people icon
+		lp.getAdminIcon().click();
+		// Click on new hire button
+		lp.clickNewHire();
+		// Call the new hire page and click on pencil icon
+		NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
+		// Click employee Id filter
+		nhp.getClickEmployeeFilter().click();
+		// Enter the employee Id
+		nhp.getSearchEmployee().sendKeys(fil.getExcelData("Bluestone", 1, 6));
+		nhp.getClickSearchedEmployee().click();
+		WebdriverUtils.waitForElementPresent(driver, nhp.getPickEmployee());
+		nhp.getPickEmployee().click();
+		// Call the HireSummary page
+		HireSummaryPage hsp = PageFactory.initElements(driver, HireSummaryPage.class);
+		//Click on Statutory details
+		hsp.getStatutoryNumbersAddIcon().click();
+		//Click statutory type dropdown
+		hsp.getStatutoryTypeDropdown().click();
+		//Pick Aadhaar number
+		hsp.getPickAadharStatutoryType().click();
+		//Enter the aadhaar number in statutory value editbox
+		hsp.getStatutoryValueEditbox().sendKeys("2145896745210");
+		//upload the document
+		hsp.clickAnduploadDocument();
+		//Click on submit
+		WebdriverUtils.waitForElementPresent(driver, hsp.getStatutoryDetailsSubmitButton());
+		hsp.getStatutoryDetailsSubmitButton().click();
+		// Capture the submitted aadhaar number
+		WebdriverUtils.waitForElementPresent(driver, hsp.getSubmittedAadhaar());
+		String actualAadhaar = hsp.getSubmittedAadhaar().getText();
+		//Validate the submitted aadhaar number
+		Assert.assertEquals(actualAadhaar.contains("21458"), true);
+		System.out.println("The Aadhaar Number is :"+actualAadhaar);
+		log.info("----------SubmitAadhaarAndVerify Test Ended---------");
+		}
+	//26. Add family details and verify it.
+	@Test()
+	public static void addAndValidateFamilyDetails() throws Exception {
+		log.info("----------addAndValidateFamilyDetails Test Started---------");
+		// Call the landing page
+		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
+		// click on people icon
+		lp.getAdminIcon().click();
+		// Click on new hire button
+		lp.clickNewHire();
+		// Call the new hire page and click on pencil icon
+		NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
+		// Click employee Id filter
+		nhp.getClickEmployeeFilter().click();
+		// Enter the employee Id
+		nhp.getSearchEmployee().sendKeys(fil.getExcelData("Bluestone", 1, 6));
+		nhp.getClickSearchedEmployee().click();
+		WebdriverUtils.waitForElementPresent(driver, nhp.getPickEmployee());
+		nhp.getPickEmployee().click();
+		// Call the HireSummary page
+		HireSummaryPage hsp = PageFactory.initElements(driver, HireSummaryPage.class);	
+		//Click dependent details
+		hsp.getFamilyDetailsAddIcon().click();
+		//Click title dropdown
+		hsp.getDependentTitle().click();
+		//Pick dependent title
+		hsp.getPickDependentTitle().click();
+		//Enter the dependent first name
+		hsp.getDependentFirstName().sendKeys("Hari");
+		//Enter the last name
+		hsp.getDependentLastName().sendKeys("Singh");
+		//Click on the gender radio button
+		hsp.getDependentGender().click();
+		//Select the dob
+		WebElement element = hsp.getDependentDOB();
+		Date date = fil.getDateFromExcel("Bluestone", 1, 14);
+		hsp.DatePicker(driver, element, date);
+		//Click on the relation type dropdown
+		hsp.getDependentRelation().click();
+		//Pick the relation
+		hsp.getPickDependentRelation().click();
+		//Click on submit
+		hsp.getSubmitButton().click();
+		//Capture the submitted dependent 
+		String dependent=hsp.getSubmittedDependent().getText();
+		//Validate the dependent details
+		Assert.assertEquals(dependent.contains(dependent),true);
+		System.out.println("Submitted dependent is :"+dependent);
+		log.info("Submitted dependent is :"+dependent);
+		log.info("----------addAndValidateFamilyDetails Test Ended---------");
 		
-    }
-
+	}
+      //27. Add modify official email and verify it
+	@Test()
+	public static void modifyAndVerifyOfficialEmail() throws Exception {
+		log.info("----------modifyAndVerifyOfficialEmail Test Started---------");
+		// Call the landing page
+		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
+		// click on people icon
+		lp.getAdminIcon().click();
+		// Click on new hire button
+		lp.clickNewHire();
+		// Call the new hire page and click on pencil icon
+		NewHirePage nhp = PageFactory.initElements(driver, NewHirePage.class);
+		// Click employee Id filter
+		nhp.getClickEmployeeFilter().click();
+		// Enter the employee Id
+		nhp.getSearchEmployee().sendKeys(fil.getExcelData("Bluestone", 1, 6));
+		nhp.getClickSearchedEmployee().click();
+		WebdriverUtils.waitForElementPresent(driver, nhp.getPickEmployee());
+		nhp.getPickEmployee().click();
+		// Call the HireSummary page
+		HireSummaryPage hsp = PageFactory.initElements(driver, HireSummaryPage.class);	
+		//click on official email pencil icon
+		hsp.getModifyOfficialEmail().click();
+		//Clear the email and enter again
+		hsp.getOfficialEmailEditbox().clear();
+		hsp.getOfficialEmailEditbox().sendKeys("madan.test");
+		//Click on submit
+		hsp.getSubmitButton().click();
+		//Capture the submitted official email
+		String submittedEmail=hsp.getSubmittedOfficialEmail().getText();
+		//Validate the official email
+		Assert.assertEquals(submittedEmail.contains("madan"), true);
+		System.out.println("Modified offical email is :"+submittedEmail);
+		log.info("Modified offical email is :"+submittedEmail);
+		log.info("----------modifyAndVerifyOfficialEmail Test Ended---------");
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
-	
-	
-
-
