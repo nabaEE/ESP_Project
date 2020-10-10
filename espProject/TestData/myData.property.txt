@@ -1,11 +1,6 @@
-URL: https://uat.nexuba.com/
-USERNAME: 000614@toyota-boshoku.com
-PASSWORD: TBI@2020
-USERNAME1:nabaghana.behera@employeeexperts.com
-PASSWORD1:Depali@123
+URL: https://in-test.nexuba.com/
+USERNAME: 
+PASSWORD:
+USERNAME1:
+PASSWORD1:
 BROWSER: chrome
-APPROVERNAME:000614@toyota-boshoku.com
-APPROVERPASSWORD:TBI@2020
-Id:000614@toyota-boshoku.com, 
-HEMANTH.KUMAR@BLUESTONE.COM
-ravi.v@nxtgen.com
