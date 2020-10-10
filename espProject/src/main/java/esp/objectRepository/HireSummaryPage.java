@@ -34,7 +34,7 @@ public class HireSummaryPage {
 	@FindBy(xpath = "//div[@id='HireDetailsDiv']/div[1]/div/div/fieldset/div/div/div[6]/div/p/span/span")
 	private WebElement submittedMobileNumber;
 
-	@FindBy(id = "div_Phone_Type")
+	@FindBy(xpath="//div[@id='div_Phone_Type']/div/input")
 	private WebElement phoneTypeDropdown;
 	@FindBy(xpath = "//div[@id='div_Phone_Type']/div/ul/li[2]")
 	private WebElement pickPhoneTypeAsHome;
@@ -120,7 +120,7 @@ public class HireSummaryPage {
 	@FindBy(xpath = "//div[@id='HireDetailsDiv']/div[1]/div/div/fieldset/div/div/div[8]/div/p/a/i")
 	private WebElement emailDetailsAddIcon;
 
-	@FindBy(id = "div_Email_Type")
+	@FindBy(xpath="//div[@id='div_Email_Type']/div/input")
 	private WebElement emailTypeDropdown;
 	@FindBy(xpath = "//div[@id='div_Email_Type']/div/ul/li[2]")
 	private WebElement pickPersonalEmail;
@@ -222,6 +222,66 @@ public class HireSummaryPage {
 	@FindBy(xpath="//div[@id='HireDetailsDiv']/div[1]/div/div/fieldset/div/div/div[12]/div/div/p/span/span")
 	private WebElement submittedDependent;
 	
+	@FindBy(xpath="//div[@id='HireDetailsDiv']/div[2]/div/div/fieldset/div/div[5]/div/p/a/i")
+	private WebElement additionalInfoAdd;
+	@FindBy(xpath="//div[@id='div_AdditionalInfo_Type']/div/input")
+	private WebElement additionalInfoDropdown;
+	@FindBy(xpath="//div[@id='div_AdditionalInfo_Type']/div/ul/li[2]")
+	private WebElement pickAdditionalInfoType;
+	@FindBy(id="EffectiveFrom_Date")
+	private WebElement additionalInfoEffectiveFromDate;
+	@FindBy(id="SaveC")
+	private WebElement additionalInfoSubmitButton;
+	@FindBy(id="AdditionalInfo_Value")
+	private WebElement additionalInfoValue;
+	@FindBy(xpath="//div[@id='HireDetailsDiv']/div[2]/div/div/fieldset/div/div[5]/div/div[1]/p/span")
+	private WebElement submittedShiftIndicator;
+	@FindBy(xpath="//div[@id='HireDetailsDiv']/div[2]/div/div/fieldset/div/div[5]/div/div[2]/p/span")
+	private WebElement submittedBadgeId;
+	
+	@FindBy(xpath="//div[@id='HireDetailsDiv']/div[1]/div/div/fieldset/div/div/div[13]/div/p/a/i")
+	private WebElement educationDetailsAdd;
+	@FindBy(xpath="//div[@id='div_Qualifications']/div/input")
+	private WebElement qualificationDropdown;
+	@FindBy(xpath="//div[@id='div_Qualifications']/div[1]/ul/li[4]/span")
+	private WebElement selectQualification;
+	@FindBy(id="div_Degree")
+	private WebElement degreeDropdown;
+	@FindBy(xpath="//div[@id='div_Degree']/div[1]/ul/li[4]")
+	private WebElement selectDegree;
+	@FindBy(id="div_Specializations")
+	private WebElement specializationDropdown;
+	@FindBy(xpath="//div[@id='div_Specializations']/div[1]/ul/li[2]")
+	private WebElement selectSpecialization;
+	@FindBy(id="div_Universities")
+	private WebElement university;
+	@FindBy(xpath="//div[@id='div_Universities']/div/ul/li[3]")
+	private WebElement pickUniversity;
+	@FindBy(id="div_Month_Names")
+	private WebElement monthCompletionDropdown;
+	@FindBy(xpath="//div[@id='div_Month_Names']/div/ul/li[2]")
+	private WebElement pickMonth;
+	@FindBy(id="Marks")
+	private WebElement marks_percentage_gradeEditbox;
+	@FindBy(id="div_Course_Type")
+	private WebElement courseTypeDropdown;
+	@FindBy(xpath="//div[@id='div_Course_Type']/div/ul/li[4]")
+	private WebElement pickCourseType;
+	@FindBy(id="div_Location_Name")
+	private WebElement universityLocationDropdown;
+	@FindBy(xpath="//div[@id='div_Location_Name']/div/ul/li[2]")
+	private WebElement selectUniversityLocation;
+	@FindBy(id="Radio_P")
+	private WebElement marksTypePercentage;
+	@FindBy(id="Year_of_Completion")
+	private WebElement yearOfCompletion;
+	@FindBy(xpath="//div[@id='HireDetailsDiv']/div[1]/div/div/fieldset/div/div/div[13]/div/div/p/span")
+	private WebElement submittedEducation;
+	
+
+	@FindBy(xpath="//div[@id='HireDetailsDiv']/div[1]/div/div/fieldset/div/div/div[14]/div/p/a/i")
+	private WebElement passportDetailsAdd;
+	
     @FindBy(xpath="//div[@id='HireDetailsDiv']/div[2]/div/div/fieldset/div/div[3]/div/p[1]/a/i")
     private WebElement modifyOfficialEmail;
     @FindBy(id="Email_ID")
@@ -282,10 +342,12 @@ public class HireSummaryPage {
 	@FindBy(id = "Error_PT_Exemption")
 	private WebElement ptExemptionBlankErrMessage;
 
-	@FindBy(xpath = "//fieldset[@class='custom-fieldset']/div[1]/input")
+	@FindBy(xpath = "//div[@id='showGroups']/div[3]/div[4]/div/div/div/fieldset/div[1]/input")
 	private WebElement uploadAppointmentLetterButton;
 	@FindBy(id = "f_upload")
 	private WebElement fileUpload;
+	@FindBy(xpath="//a[text()='Appointment Letter']")
+	private WebElement submittedAppointmentLetter;
 
 	@FindBy(xpath = "//form[@id='ContentDiv']/div[5]/button")
 	private WebElement deleteIcon;
@@ -770,6 +832,110 @@ public class HireSummaryPage {
 	public WebElement getSubmittedOfficialEmail() {
 		return submittedOfficialEmail;
 	}
+	public WebElement getEducationDetailsAdd() {
+		return educationDetailsAdd;
+	}
+
+	public WebElement getQualificationDropdown() {
+		return qualificationDropdown;
+	}
+
+	public WebElement getSelectQualification() {
+		return selectQualification;
+	}
+
+	public WebElement getDegreeDropdown() {
+		return degreeDropdown;
+	}
+
+	public WebElement getSelectDegree() {
+		return selectDegree;
+	}
+
+	public WebElement getSpecializationDropdown() {
+		return specializationDropdown;
+	}
+
+	public WebElement getSelectSpecialization() {
+		return selectSpecialization;
+	}
+
+	public WebElement getUniversity() {
+		return university;
+	}
+
+	public WebElement getPickUniversity() {
+		return pickUniversity;
+	}
+
+	public WebElement getMonthCompletionDropdown() {
+		return monthCompletionDropdown;
+	}
+
+	public WebElement getPickMonth() {
+		return pickMonth;
+	}
+
+	public WebElement getCourseTypeDropdown() {
+		return courseTypeDropdown;
+	}
+
+	public WebElement getPickCourseType() {
+		return pickCourseType;
+	}
+
+	public WebElement getPassportDetailsAdd() {
+		return passportDetailsAdd;
+	}
+	public WebElement getUniversityLocationDropdown() {
+		return universityLocationDropdown;
+	}
+
+	public WebElement getSelectUniversityLocation() {
+		return selectUniversityLocation;
+	}
+	public WebElement getMarksTypePercentage() {
+		return marksTypePercentage;
+	}
+	public WebElement getYearOfCompletion() {
+		return yearOfCompletion;
+	}
+	public WebElement getSubmittedEducation() {
+		return submittedEducation;
+	}
+	public WebElement getAdditionalInfoSubmitButton() {
+		return additionalInfoSubmitButton;
+	}
+	public WebElement getAdditionalInfoAdd() {
+		return additionalInfoAdd;
+	}
+	public WebElement getMarks_percentage_gradeEditbox() {
+		return marks_percentage_gradeEditbox;
+	}
+
+
+	public WebElement getAdditionalInfoEffectiveFromDate() {
+		return additionalInfoEffectiveFromDate;
+	}
+	public WebElement getAdditionalInfoDropdown() {
+		return additionalInfoDropdown;
+	}
+
+	public WebElement getPickAdditionalInfoType() {
+		return pickAdditionalInfoType;
+	}
+	public WebElement getAdditionalInfoValue() {
+		return additionalInfoValue;
+	}
+	public WebElement getSubmittedAppointmentLetter() {
+		return submittedAppointmentLetter;
+	}
+	public WebElement getSubmittedShiftIndicator() {
+		return submittedShiftIndicator;
+	}
+	public WebElement getSubmittedBadgeId() {
+		return submittedBadgeId;
+	}
 
 	/*************************** Utilization ***********************************/
 
@@ -879,5 +1045,10 @@ public class HireSummaryPage {
 		String pWin = it.next();
 		String cWin = it.next();
 		return cWin;
+	}
+	//Method to click using java script
+	public void clickElement(WebElement element) {
+	    JavascriptExecutor executor = (JavascriptExecutor)BaseClass.driver;
+	    executor.executeScript("arguments[0].click();", element);
 	}
 }

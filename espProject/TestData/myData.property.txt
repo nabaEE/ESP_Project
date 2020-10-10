@@ -1,6 +1,11 @@
 URL: https://uat.nexuba.com/
-USERNAME: Hemanth.kumar@bluestone.com
-PASSWORD: BLue@2020
+USERNAME: 000614@toyota-boshoku.com
+PASSWORD: TBI@2020
 USERNAME1:nabaghana.behera@employeeexperts.com
 PASSWORD1:Depali@123
 BROWSER: chrome
+APPROVERNAME:000614@toyota-boshoku.com
+APPROVERPASSWORD:TBI@2020
+Id:000614@toyota-boshoku.com, 
+HEMANTH.KUMAR@BLUESTONE.COM
+ravi.v@nxtgen.com

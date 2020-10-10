@@ -3,15 +3,38 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.newHire.NewHireTestToyota">
+      <class name="com.leave.LeaveTestToyota">
         <methods>
-          <include name="submitNewHireFormAndValidate"/>
+          <include name="modifyStartDateAndVerify"/>
+          <include name="applyAndReject"/>
+          <include name="verifyAutoSelectEndSession"/>
+          <include name="LeaveDateMandatory"/>
+          <include name="cancelHalfDayWFHAndVerifyAttendance"/>
+          <include name="verifyFileFormat"/>
+          <include name="verifyLeaveReasonsForLeaveType"/>
+          <include name="pickTheLeaveTypeAndVerify"/>
+          <include name="verifyDocForThreeDaySickLeave"/>
+          <include name="checkAndVerifyLeaveSessions"/>
           <include name="login"/>
           <include name="closeBrowser"/>
+          <include name="halfDayAbsent_HalfDayLeave"/>
+          <include name="halfDayWFH_halfDayWFH"/>
+          <include name="halfDayAbsent_HalfDayWFH"/>
+          <include name="viewLeaveBalanceAndVerify"/>
+          <include name="selectFutureDateAndVerify"/>
           <include name="openBrowser"/>
+          <include name="commentsBoxMandatory"/>
+          <include name="verifyLeaveReasonMandatory"/>
+          <include name="cancelHalfDayAndCancelHalfDay"/>
+          <include name="enterAndVerifyComments"/>
+          <include name="verifyErrorIfLeaveExist"/>
+          <include name="halfDayLeave_HalfDayLeave"/>
+          <include name="clickAndVerifyLeaveTypes"/>
+          <include name="verifyLeaveTypeMandatory"/>
           <include name="tearDown"/>
+          <include name="ApplyAndApproveEL"/>
         </methods>
-      </class> <!-- com.newHire.NewHireTestToyota -->
+      </class> <!-- com.leave.LeaveTestToyota -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

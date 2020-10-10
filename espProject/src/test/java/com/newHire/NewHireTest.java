@@ -2,7 +2,6 @@ package com.newHire;
 
 import java.awt.AWTException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import org.openqa.selenium.By;

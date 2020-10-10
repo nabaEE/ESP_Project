@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import esp.genericLibraries.BaseClass;
 import esp.genericLibraries.WebdriverUtils;
 
-public class CovidPage {
+public class CovidPage extends LandingPage{
  
 	/****************Initialization*********************/
 	@FindBy(xpath="//span[text()='Covid - Daily Self Declaration Form']")
@@ -28,9 +28,11 @@ public class CovidPage {
 		return covidFormTitle;
 	}
 	/****************Utilization
+	 * @return 
 	 * @throws InterruptedException *********************/
 	//Method to check if the covid pop up window has displayed
-	public WebElement checkCovidForm() {
+	public boolean checkCovidForm() {
+		LandingPage lp= new LandingPage();
 		if (covidFormTitle.isDisplayed()) {
 			bodyTemp.sendKeys("98.9");
 			visitingFrom.sendKeys("Chennai");
@@ -40,11 +42,16 @@ public class CovidPage {
 			js.executeScript("arguments[0].click();", clickCheckbox);
 			WebdriverUtils.waitForElementPresent(BaseClass.driver, clickSubmit);
 			clickSubmit.click();
+			return true;
 		} 
-		else {
+		else if (lp.getAdminIcon().isDisplayed()){
 			System.out.println(" Covid details has been already submitted");
-	} 
-		return covidFormTitle;
+			return true;
+			} 
+		else {
+			return false;
+		}
+		//return covidFormTitle;
 
 	}
 }

@@ -8,11 +8,34 @@
   <parameter name="browser" value="chrome"/>
   <test thread-count="5" name="Test">
    <classes>
-      <class name="com.newHire.NewHireTestBluestone">
+      <class name="com.leave.LeaveTestToyota">
       <methods>
-      <include name="modifyAndVerifyOfficialEmail"></include>
+      <!-- <include name="clickAndVerifyLeaveTypes"></include>
+      <include name="viewLeaveBalanceAndVerify"></include>
+      <include name="pickTheLeaveTypeAndVerify"></include>
+      <include name="verifyLeaveTypeMandatory"></include> -->
+      <include name="applyThreeDaySickLeaveWithDocument"></include>
       </methods>
       </class>
+      <!-- <class name="com.leave.LeaveTestNextgen">
+      <methods>
+      <include name="halfDayAbsent_HalfDayOD"></include>
+      <include name="halfDayOD_HalfDayOD"></include>
+      <include name="cancelHalfDayODAndVerifyAttendance"></include>
+      </methods>
+      </class> -->
+     <!--  <class name="com.leave.LeaveTestBluestone">
+      <methods>
+      <include name="verifyErrorIfLeaveExist"></include>
+      </methods>
+      </class> -->
+      <!-- <class name="com.leave.LeaveTestNextgen">
+      <methods>
+      <include name="halfDayAbsent_HalfDayOD"></include>
+      <include name="halfDayOD_HalfDayOD"></include>
+      <include name="cancelHalfDayODAndVerifyAttendance"></include>
+      </methods>
+      </class>  -->
 </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

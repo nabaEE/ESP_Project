@@ -1,6 +1,33 @@
-00:55:45.163 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
-00:55:49.004 [main] INFO  esp.genericLibraries.BaseClass - ----------modifyAndVerifyOfficialEmail Test Started---------
-00:55:53.250 [main] INFO  esp.genericLibraries.BaseClass - Modified offical email is :madan.test@bluestone.com
-00:55:53.253 [main] INFO  esp.genericLibraries.BaseClass - ----------modifyAndVerifyOfficialEmail Test Ended---------
-00:55:53.881 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
-00:55:54.661 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+13:02:44.125 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+13:02:51.278 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+13:02:55.979 [main] INFO  esp.genericLibraries.BaseClass - ------------uploadValidDocAndVerify : Test Started------
+13:02:57.836 [main] INFO  esp.genericLibraries.BaseClass - Upload the pdf file
+13:03:03.057 [main] INFO  esp.genericLibraries.BaseClass - The uploaded document is :Doc1.pdf
+13:03:03.057 [main] INFO  esp.genericLibraries.BaseClass - ------------uploadValidDocAndVerify : Test Ended---------
+13:03:03.873 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+13:03:04.685 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+15:01:53.769 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+15:02:00.359 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+15:02:04.060 [main] INFO  esp.genericLibraries.BaseClass - ------------applyThreeDaySickLeaveWithDocument : Test Started-------
+15:02:08.349 [main] INFO  esp.genericLibraries.BaseClass - Upload the document with correct size
+15:25:01.151 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+15:25:11.879 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+15:25:18.669 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+15:25:26.753 [main] INFO  esp.genericLibraries.BaseClass - ------------applyThreeDaySickLeaveWithDocument : Test Started-------
+15:25:29.675 [main] INFO  esp.genericLibraries.BaseClass - Upload the document with correct size
+15:25:56.640 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+15:25:57.481 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+15:27:05.090 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+15:27:12.306 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+15:27:19.595 [main] INFO  esp.genericLibraries.BaseClass - ------------applyThreeDaySickLeaveWithDocument : Test Started-------
+15:27:22.680 [main] INFO  esp.genericLibraries.BaseClass - Upload the document with correct size
+15:27:51.052 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+15:27:51.860 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+15:33:37.165 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+15:33:44.302 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+15:34:02.224 [main] INFO  esp.genericLibraries.BaseClass - ------------applyThreeDaySickLeaveWithDocument : Test Started-------
+15:34:05.399 [main] INFO  esp.genericLibraries.BaseClass - Upload the document with correct size
+15:45:28.802 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+15:45:35.988 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+15:45:41.952 [main] INFO  esp.genericLibraries.BaseClass - ------------applyThreeDaySickLeaveWithDocument : Test Started-------
+15:45:46.651 [main] INFO  esp.genericLibraries.BaseClass - Upload the document with correct size

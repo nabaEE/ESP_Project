@@ -49,6 +49,9 @@ public class NewHireTestToyota extends BaseClass {
 		// Call the landing page
 		LandingPage lnp = PageFactory.initElements(driver, LandingPage.class);
 		// Click on admin icon
+		// Call the covid page to manage pop up window
+		CovidPage cp = PageFactory.initElements(driver, CovidPage.class);
+		cp.checkCovidForm();
 		WebdriverUtils.waitForElementPresent(driver, lnp.getAdminIcon());
 		lnp.getAdminIcon().click();
 		// Click on new hire option

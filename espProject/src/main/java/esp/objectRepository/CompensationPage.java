@@ -27,6 +27,8 @@ private WebElement selectIPEprofile;
 private WebElement selectBluestoneProfile;
 @FindBy(id="UserEntered_Amt")
 private WebElement annualFixedAmountNextgen;
+@FindBy(id="UserEntered_Amt")
+private WebElement annualFixedAmount;
 @FindBy(id="BAS")
 private WebElement basicPayIPE;
 @FindBy(xpath="//div[@id='Display_ul']/div[4]/li/p")
@@ -77,6 +79,9 @@ public WebElement getClickHireSummaryMUJ() {
 }
 public WebElement getSelectBluestoneProfile() {
 	return selectBluestoneProfile;
+}
+public WebElement getAnnualFixedAmount() {
+	return annualFixedAmount;
 }
 	
 	
