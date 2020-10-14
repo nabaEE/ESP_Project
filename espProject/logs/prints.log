@@ -1,33 +1,131 @@
-13:02:44.125 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
-13:02:51.278 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
-13:02:55.979 [main] INFO  esp.genericLibraries.BaseClass - ------------uploadValidDocAndVerify : Test Started------
-13:02:57.836 [main] INFO  esp.genericLibraries.BaseClass - Upload the pdf file
-13:03:03.057 [main] INFO  esp.genericLibraries.BaseClass - The uploaded document is :Doc1.pdf
-13:03:03.057 [main] INFO  esp.genericLibraries.BaseClass - ------------uploadValidDocAndVerify : Test Ended---------
-13:03:03.873 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
-13:03:04.685 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
-15:01:53.769 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
-15:02:00.359 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
-15:02:04.060 [main] INFO  esp.genericLibraries.BaseClass - ------------applyThreeDaySickLeaveWithDocument : Test Started-------
-15:02:08.349 [main] INFO  esp.genericLibraries.BaseClass - Upload the document with correct size
-15:25:01.151 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
-15:25:11.879 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
-15:25:18.669 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
-15:25:26.753 [main] INFO  esp.genericLibraries.BaseClass - ------------applyThreeDaySickLeaveWithDocument : Test Started-------
-15:25:29.675 [main] INFO  esp.genericLibraries.BaseClass - Upload the document with correct size
-15:25:56.640 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
-15:25:57.481 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
-15:27:05.090 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
-15:27:12.306 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
-15:27:19.595 [main] INFO  esp.genericLibraries.BaseClass - ------------applyThreeDaySickLeaveWithDocument : Test Started-------
-15:27:22.680 [main] INFO  esp.genericLibraries.BaseClass - Upload the document with correct size
-15:27:51.052 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
-15:27:51.860 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
-15:33:37.165 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
-15:33:44.302 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
-15:34:02.224 [main] INFO  esp.genericLibraries.BaseClass - ------------applyThreeDaySickLeaveWithDocument : Test Started-------
-15:34:05.399 [main] INFO  esp.genericLibraries.BaseClass - Upload the document with correct size
-15:45:28.802 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
-15:45:35.988 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
-15:45:41.952 [main] INFO  esp.genericLibraries.BaseClass - ------------applyThreeDaySickLeaveWithDocument : Test Started-------
-15:45:46.651 [main] INFO  esp.genericLibraries.BaseClass - Upload the document with correct size
+10:49:14.517 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+10:49:21.858 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+10:49:26.730 [main] INFO  esp.genericLibraries.BaseClass - ---------------ApplyAndApproveEL:- Test Started-----------
+10:49:29.323 [main] INFO  esp.genericLibraries.BaseClass - Employee has submitted the leave for the date :Mon Dec 07 00:00:00 IST 2020
+10:49:35.412 [main] INFO  esp.genericLibraries.BaseClass - Reporting manager has approved the leave
+10:49:40.638 [main] INFO  esp.genericLibraries.BaseClass - Manager's manager has approved the leave
+10:49:40.639 [main] INFO  esp.genericLibraries.BaseClass - Login as employee to check leave history
+10:49:48.023 [main] INFO  esp.genericLibraries.BaseClass - Verify the leave status
+10:49:48.842 [main] INFO  esp.genericLibraries.BaseClass - Leave status is :Approved
+10:49:48.842 [main] INFO  esp.genericLibraries.BaseClass - ---------------ApplyAndApproveEL:- Test Ended-----------
+10:49:49.430 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+10:49:49.436 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+10:49:51.691 [main] INFO  esp.genericLibraries.BaseClass - ---------------ApplyAndApproveEL:- Test Started-----------
+10:50:00.096 [main] INFO  esp.genericLibraries.BaseClass - Login as employee to check the status
+10:50:08.307 [main] INFO  esp.genericLibraries.BaseClass - --Verify the leave status--
+10:50:08.834 [main] INFO  esp.genericLibraries.BaseClass - Leave status is :Rejected
+10:50:08.835 [main] INFO  esp.genericLibraries.BaseClass - ---------------ApplyAndApproveEL:- Test Ended-----------
+10:50:09.574 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+10:50:10.382 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+14:02:09.402 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+14:02:22.574 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+14:02:29.719 [main] INFO  esp.genericLibraries.BaseClass - ---------------ApplyAndApproveAdoptionLeave:- Test Started-----------
+14:05:35.092 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+14:05:41.784 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+14:05:46.634 [main] INFO  esp.genericLibraries.BaseClass - ---------------ApplyAndApproveAdoptionLeave:- Test Started-----------
+14:06:08.506 [main] INFO  esp.genericLibraries.BaseClass - Employee has submitted the leave for the date :Mon Dec 07 00:00:00 IST 2020
+14:06:13.164 [main] INFO  esp.genericLibraries.BaseClass - Login as employee to check leave history
+14:12:04.326 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+14:12:10.944 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+14:12:14.112 [main] INFO  esp.genericLibraries.BaseClass - ---------------ApplyAndApproveAdoptionLeave:- Test Started-----------
+14:12:21.324 [main] INFO  esp.genericLibraries.BaseClass - Employee has submitted the leave for the date :Mon Dec 07 00:00:00 IST 2020
+14:12:26.454 [main] INFO  esp.genericLibraries.BaseClass - Login as employee to check leave history
+14:12:31.441 [main] INFO  esp.genericLibraries.BaseClass - Verify the leave status
+14:12:32.597 [main] INFO  esp.genericLibraries.BaseClass - Leave status is :Approved
+14:12:32.597 [main] INFO  esp.genericLibraries.BaseClass - ---------------ApplyAndApproveAdoptionLeave:- Test Ended-----------
+14:12:33.548 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+14:12:33.552 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+14:12:35.471 [main] INFO  esp.genericLibraries.BaseClass - ---------------applyAndReject:- Test Started-----------
+14:12:40.266 [main] INFO  esp.genericLibraries.BaseClass - Employee has submitted the leave for the date :Tue Dec 08 00:00:00 IST 2020
+14:12:44.341 [main] INFO  esp.genericLibraries.BaseClass - Login as employee to check leave history
+14:12:49.440 [main] INFO  esp.genericLibraries.BaseClass - Verify the leave status
+14:12:49.790 [main] INFO  esp.genericLibraries.BaseClass - Leave status is :Rejected
+14:12:49.791 [main] INFO  esp.genericLibraries.BaseClass - ---------------applyAndReject:- Test Ended-----------
+14:12:50.267 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+14:12:51.085 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+14:17:37.026 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+14:17:44.148 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+14:17:48.750 [main] INFO  esp.genericLibraries.BaseClass - ---------------ApplyAndApproveAdoptionLeave:- Test Started-----------
+14:17:56.746 [main] INFO  esp.genericLibraries.BaseClass - Employee has submitted the leave for the date :Mon Dec 07 00:00:00 IST 2020
+14:18:01.748 [main] INFO  esp.genericLibraries.BaseClass - Login as employee to check leave history
+14:18:06.710 [main] INFO  esp.genericLibraries.BaseClass - Verify the leave status
+14:18:07.514 [main] INFO  esp.genericLibraries.BaseClass - Leave status is :Approved
+14:18:07.514 [main] INFO  esp.genericLibraries.BaseClass - ---------------ApplyAndApproveAdoptionLeave:- Test Ended-----------
+14:18:08.409 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+14:18:08.411 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+14:18:10.001 [main] INFO  esp.genericLibraries.BaseClass - ---------------applyAndReject:- Test Started-----------
+14:18:15.371 [main] INFO  esp.genericLibraries.BaseClass - Employee has submitted the leave for the date :Tue Dec 08 00:00:00 IST 2020
+14:18:19.429 [main] INFO  esp.genericLibraries.BaseClass - Login as employee to check leave history
+14:18:24.365 [main] INFO  esp.genericLibraries.BaseClass - Verify the leave status
+14:18:24.712 [main] INFO  esp.genericLibraries.BaseClass - Leave status is :Rejected
+14:18:24.712 [main] INFO  esp.genericLibraries.BaseClass - ---------------applyAndReject:- Test Ended-----------
+14:18:25.349 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+14:18:26.195 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+14:22:04.170 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+14:22:10.859 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+14:22:14.958 [main] INFO  esp.genericLibraries.BaseClass - ---------------ApplyAndApproveAdoptionLeave:- Test Started-----------
+14:26:56.546 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+14:27:03.609 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+14:27:08.925 [main] INFO  esp.genericLibraries.BaseClass - ---------------ApplyAndApproveAdoptionLeave:- Test Started-----------
+14:27:17.057 [main] INFO  esp.genericLibraries.BaseClass - Employee has submitted the leave for the date :Mon Dec 07 00:00:00 IST 2020
+14:27:22.458 [main] INFO  esp.genericLibraries.BaseClass - Login as employee to check leave history
+14:27:27.696 [main] INFO  esp.genericLibraries.BaseClass - Verify the leave status
+14:27:28.913 [main] INFO  esp.genericLibraries.BaseClass - Leave status is :Approved
+14:27:28.914 [main] INFO  esp.genericLibraries.BaseClass - ---------------ApplyAndApproveAdoptionLeave:- Test Ended-----------
+14:27:29.999 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+14:27:30.003 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+14:27:31.593 [main] INFO  esp.genericLibraries.BaseClass - ---------------applyAndReject:- Test Started-----------
+14:27:37.151 [main] INFO  esp.genericLibraries.BaseClass - Employee has submitted the leave for the date :Tue Dec 08 00:00:00 IST 2020
+14:27:41.336 [main] INFO  esp.genericLibraries.BaseClass - Login as employee to check leave history
+14:27:46.693 [main] INFO  esp.genericLibraries.BaseClass - Verify the leave status
+14:27:47.040 [main] INFO  esp.genericLibraries.BaseClass - Leave status is :Rejected
+14:27:47.040 [main] INFO  esp.genericLibraries.BaseClass - ---------------applyAndReject:- Test Ended-----------
+14:27:47.500 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+14:27:48.331 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+14:33:57.862 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+14:34:04.607 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+14:34:08.701 [main] INFO  esp.genericLibraries.BaseClass - ---------------ApplyAndApproveAdoptionLeave:- Test Started-----------
+14:34:16.420 [main] INFO  esp.genericLibraries.BaseClass - Employee has submitted the leave for the date :Mon Dec 07 00:00:00 IST 2020
+14:44:36.722 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+14:44:43.561 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+14:44:47.717 [main] INFO  esp.genericLibraries.BaseClass - ---------------ApplyAndApproveEL:- Test Started-----------
+14:44:55.498 [main] INFO  esp.genericLibraries.BaseClass - Employee has submitted the leave for the date :Mon Dec 07 00:00:00 IST 2020
+14:45:21.695 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+14:45:21.697 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+14:45:23.328 [main] INFO  esp.genericLibraries.BaseClass - ---------------applyAndReject:- Test Started-----------
+14:45:29.380 [main] INFO  esp.genericLibraries.BaseClass - Employee has submitted the leave for the date :Tue Dec 08 00:00:00 IST 2020
+14:45:50.833 [main] INFO  esp.genericLibraries.BaseClass - Login as employee to check leave history
+14:45:56.330 [main] INFO  esp.genericLibraries.BaseClass - Verify the leave status
+14:45:57.305 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+14:45:58.167 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+14:50:23.396 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+14:50:30.291 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+14:50:34.129 [main] INFO  esp.genericLibraries.BaseClass - ---------------ApplyAndApproveEL:- Test Started-----------
+14:50:41.708 [main] INFO  esp.genericLibraries.BaseClass - Employee has submitted the leave for the date :Mon Dec 07 00:00:00 IST 2020
+14:50:48.299 [main] INFO  esp.genericLibraries.BaseClass - Login as employee to check leave history
+14:50:53.714 [main] INFO  esp.genericLibraries.BaseClass - Verify the leave status
+14:50:54.102 [main] INFO  esp.genericLibraries.BaseClass - Leave status is :Approved
+14:50:54.102 [main] INFO  esp.genericLibraries.BaseClass - ---------------ApplyAndApproveEL:- Test Ended-----------
+14:50:55.073 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+14:50:55.077 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+14:50:56.693 [main] INFO  esp.genericLibraries.BaseClass - ---------------applyAndReject:- Test Started-----------
+14:51:02.517 [main] INFO  esp.genericLibraries.BaseClass - Employee has submitted the leave for the date :Tue Dec 08 00:00:00 IST 2020
+14:51:07.735 [main] INFO  esp.genericLibraries.BaseClass - Login as employee to check leave history
+14:51:13.163 [main] INFO  esp.genericLibraries.BaseClass - Verify the leave status
+14:51:13.320 [main] INFO  esp.genericLibraries.BaseClass - Leave status is :Rejected
+14:51:13.321 [main] INFO  esp.genericLibraries.BaseClass - ---------------applyAndReject:- Test Ended-----------
+14:51:13.756 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+14:51:14.541 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********
+15:58:07.767 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+15:58:14.438 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+15:59:22.092 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+15:59:29.094 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+15:59:33.370 [main] INFO  esp.genericLibraries.BaseClass - ------------clickAndVerifyLeaveTypes : Test Started-----------
+16:22:36.682 [main] INFO  esp.genericLibraries.BaseClass - *****************Launching the Browser*************************
+16:22:44.299 [main] INFO  esp.genericLibraries.BaseClass - ******************Login to the application********************
+16:22:48.782 [main] INFO  esp.genericLibraries.BaseClass - ------------viewLeaveBalanceAndVerify : Test Started---------
+16:22:50.405 [main] INFO  esp.genericLibraries.BaseClass - -Verify the leave balance is displayed--
+16:22:50.481 [main] INFO  esp.genericLibraries.BaseClass - The leave balances are :[Adoption Leave 0.5 Day, Bereavement Leave 4.5 Days, Casual Leave 2.5 Days, Paternity Leave 6 Days, Provisional Leave 22.5 Days]
+16:22:50.482 [main] INFO  esp.genericLibraries.BaseClass - ------------viewLeaveBalanceAndVerify : Test Ended-----------
+16:22:51.665 [main] INFO  esp.genericLibraries.BaseClass - *****************Logout from the application***************
+16:22:52.469 [main] INFO  esp.genericLibraries.BaseClass - **********Closing the Browser**********

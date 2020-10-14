@@ -2,18 +2,12 @@ package com.leave;
 
 import org.testng.annotations.Test;
 
-import java.awt.AWTException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Properties;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import org.testng.annotations.Test;
-
 import esp.genericLibraries.BaseClass;
 import esp.genericLibraries.FileUtils;
 import esp.genericLibraries.WebdriverUtils;
@@ -30,22 +24,20 @@ public class LeaveTestToyota extends BaseClass {
 	@Test()
 	public static void ApplyAndApproveEL() throws Exception {
 		log.info("---------------ApplyAndApproveEL:- Test Started-----------");
-		// Declare the object of property file
-		Properties pObj = fil.getPropertyData();
 		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
 		// Call the leave form page
 		LeaveFormPage lfp = PageFactory.initElements(driver, LeaveFormPage.class);
 		// Click on leave icon
 		lfp.getClickLeaveForm().click();
 		// Click on leave type reason
-		lfp.getClickLeaveTypeDropdown().click();
+		WebdriverUtils.clickElement(lfp.getClickLeaveTypeDropdown());
 		// Select earned Leave
 		lfp.selectEarnedLeave();
 		// Select leave reason dropdown
-		lfp.getClickLeaveTypeReasonDropdown().click();
+		WebdriverUtils.clickElement(lfp.getClickLeaveTypeReasonDropdown());
 		lfp.selectLeaveReasons();
 		// Pick the start date
-		Date date = new Date("16-Sept-2020");
+		Date date = new Date("07-Dec-2020");
 		lfp.DatePicker(driver, lfp.getStartDate(), date);
 		// Select end date
 		lfp.DatePicker(driver, lfp.getEndDate(), date);
@@ -93,7 +85,7 @@ public class LeaveTestToyota extends BaseClass {
 
 	// 2. Apply Earned Leave for Full day then reject it.
 	@Test()
-	public static void applyAndReject() throws IOException {
+	public static void applyAndReject() throws Exception {
 		log.info("------------------------applyAndReject :-Test Started--------------");
 		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
 		// Call the leave form page
@@ -108,7 +100,7 @@ public class LeaveTestToyota extends BaseClass {
 		lfp.getClickLeaveTypeReasonDropdown().click();
 		lfp.selectLeaveReasons();
 		// Pick the start date
-		Date date = new Date("11-Sept-2020");
+		Date date = new Date("11-Oct-2020");
 		lfp.DatePicker(driver, lfp.getStartDate(), date);
 		// Select end date
 		lfp.DatePicker(driver, lfp.getEndDate(), date);
@@ -136,8 +128,6 @@ public class LeaveTestToyota extends BaseClass {
 	@Test(priority = 1)
 	public static void halfDayAbsent_HalfDayLeave() throws IOException, InterruptedException {
 		log.info("---------------halfDayAbsent_HalfDayLeave :-Test Started--------------");
-		// Declare the object of property file
-		Properties pObj = fil.getPropertyData();
 		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
 		// Click on attendance
 		lp.getClickAttendanceWindow().click();
@@ -163,7 +153,7 @@ public class LeaveTestToyota extends BaseClass {
 		// Select leave reason dropdown
 		lfp.getClickLeaveTypeReasonDropdown().click();
 		lfp.selectLeaveReasons();
-		Date date1 = new Date("18-Sept-2020");
+		Date date1 = new Date("19-Sept-2020");
 		WebdriverUtils.waitForElementPresent(driver, lfp.getStartDate());
 		lfp.DatePicker(driver, lfp.getStartDate(), date1);
 		// Select end date
@@ -225,8 +215,6 @@ public class LeaveTestToyota extends BaseClass {
 	@Test(priority = 2)
 	public static void halfDayLeave_HalfDayLeave() throws Exception {
 		log.info("---------------halfDayLeave_HalfDayLeave :-Test Started----------------");
-		// Declare the object of property file
-		Properties pObj = fil.getPropertyData();
 		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
 		// Click on attendance
 		lp.getClickAttendanceWindow().click();
@@ -252,7 +240,7 @@ public class LeaveTestToyota extends BaseClass {
 		// Select leave reason dropdown
 		lfp.getClickLeaveTypeReasonDropdown().click();
 		lfp.selectLeaveReasons();
-		Date date1 = new Date("18-Sept-2020");
+		Date date1 = new Date("29-Sept-2020");
 		WebdriverUtils.waitForElementPresent(driver, lfp.getStartDate());
 		lfp.DatePicker(driver, lfp.getStartDate(), date1);
 		// Select end date
@@ -379,7 +367,7 @@ public class LeaveTestToyota extends BaseClass {
 		lfp.getClickLeaveTypeDropdown().click();
 		// Click on work from home
 		lfp.selectWFH();
-		Date date1 = new Date("21-Sept-2020");
+		Date date1 = new Date("21-Oct-2020");
 		WebdriverUtils.waitForElementPresent(driver, lfp.getStartDate());
 		lfp.DatePicker(driver, lfp.getStartDate(), date1);
 		// Select end date
@@ -698,7 +686,6 @@ public class LeaveTestToyota extends BaseClass {
 	@Test()
 	public static void verifyErrorIfLeaveExist() {
 		log.info("------------verifyErrorIfLeaveExist : Test Ended-----------");
-		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
 		// Call the leave form page
 		LeaveFormPage lfp = PageFactory.initElements(driver, LeaveFormPage.class);
 		// Click on leave icon
@@ -712,7 +699,7 @@ public class LeaveTestToyota extends BaseClass {
 		lfp.getClickLeaveTypeReasonDropdown().click();
 		lfp.selectLeaveReasons();
 		// Pick the start date
-		Date date = new Date("21-Sept-2020");
+		Date date = new Date("24-Sept-2020");
 		lfp.DatePicker(driver, lfp.getStartDate(), date);
 		// Select end date
 		lfp.DatePicker(driver, lfp.getEndDate(), date);
@@ -753,7 +740,6 @@ public class LeaveTestToyota extends BaseClass {
 	@Test()
 	public static void LeaveDateMandatory() throws InterruptedException {
 		log.info("------------LeaveDateMandatory : Test Started---------");
-		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
 		// Call the leave form page
 		LeaveFormPage lfp = PageFactory.initElements(driver, LeaveFormPage.class);
 		// Click on leave icon
@@ -766,10 +752,10 @@ public class LeaveTestToyota extends BaseClass {
 		lfp.getClickLeaveTypeReasonDropdown().click();
 		lfp.selectLeaveReasons();
 		// Pick the start date
-		Date date1 = new Date("17-Sept-2020");
+		Date date1 = new Date("10-Nov-2020");
 		lfp.DatePicker(driver, lfp.getStartDate(), date1);
 		// Select end date
-		Date date2 = new Date("16-Sept-2020");
+		Date date2 = new Date("10-Nov-2020");
 		lfp.DatePicker(driver, lfp.getEndDate(), date2);
 		// Enter the comments then click on submit
 		lfp.getLeaveDetailsEditbox().sendKeys("Submit");
@@ -792,7 +778,6 @@ public class LeaveTestToyota extends BaseClass {
 	@Test()
 	public static void selectFutureDateAndVerify() {
 		log.info("------------selectFutureDateAndVerify : Test Started----------");
-		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
 		// Call the leave form page
 		LeaveFormPage lfp = PageFactory.initElements(driver, LeaveFormPage.class);
 		// Click on leave icon
@@ -823,7 +808,6 @@ public class LeaveTestToyota extends BaseClass {
 	@Test()
 	public static void modifyStartDateAndVerify() {
 		log.info("------------modifyStartDateAndVerify : Test Started----------");
-		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
 		// Call the leave form page
 		LeaveFormPage lfp = PageFactory.initElements(driver, LeaveFormPage.class);
 		// Click on leave icon
@@ -837,11 +821,11 @@ public class LeaveTestToyota extends BaseClass {
 		lfp.selectLeaveReasons();
 		// Pick the start date
 		log.info("Enter the start date");
-		Date date1 = new Date("17-Nov-2020");
+		Date date1 = new Date("19-Nov-2020");
 		log.info("Entered date is :" + date1);
 		lfp.DatePicker(driver, lfp.getStartDate(), date1);
 		log.info("Clear the start date and enter another date");
-		Date date2 = new Date("15-Nov-2020");
+		Date date2 = new Date("19-Nov-2020");
 		lfp.DatePicker(driver, lfp.getStartDate(), date2);
 		// Close the leave form window
 		lfp.getcloseLeaveForm().click();
@@ -856,7 +840,6 @@ public class LeaveTestToyota extends BaseClass {
 	@Test()
 	public static void checkAndVerifyLeaveSessions() {
 		log.info("------------checkAndVerifyLeaveSessions : Test Started-----------");
-		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
 		// Call the leave form page
 		LeaveFormPage lfp = PageFactory.initElements(driver, LeaveFormPage.class);
 		// Click on leave icon
@@ -881,7 +864,6 @@ public class LeaveTestToyota extends BaseClass {
 	@Test()
 	public static void verifyAutoSelectEndSession() {
 		log.info("------------verifyAutoSelectEndSession : Test Started-----------");
-		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
 		// Call the leave form page
 		LeaveFormPage lfp = PageFactory.initElements(driver, LeaveFormPage.class);
 		// Click on leave icon
@@ -894,7 +876,7 @@ public class LeaveTestToyota extends BaseClass {
 		lfp.getClickLeaveTypeReasonDropdown().click();
 		lfp.selectLeaveReasons();
 		// Pick the start date
-		Date date = new Date("16-Sept-2020");
+		Date date = new Date("13-Sept-2020");
 		lfp.DatePicker(driver, lfp.getStartDate(), date);
 		// Select end date
 		lfp.DatePicker(driver, lfp.getEndDate(), date);
@@ -917,7 +899,6 @@ public class LeaveTestToyota extends BaseClass {
 	@Test()
 	public static void commentsBoxMandatory() throws Exception {
 		log.info("------------commentsBoxMandatory : Test Started-----------");
-		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
 		// Call the leave form page
 		LeaveFormPage lfp = PageFactory.initElements(driver, LeaveFormPage.class);
 		// Click on leave icon
@@ -940,7 +921,6 @@ public class LeaveTestToyota extends BaseClass {
 	@Test()
 	public static void enterAndVerifyComments() throws Exception {
 		log.info("------------enterAndVerifyComments : Test Started---------");
-		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
 		// Call the leave form page
 		LeaveFormPage lfp = PageFactory.initElements(driver, LeaveFormPage.class);
 		// Click on leave icon
@@ -961,7 +941,6 @@ public class LeaveTestToyota extends BaseClass {
 	@Test()
 	public static void verifyFileFormat() throws InterruptedException, Exception {
 		log.info("------------verifyFileFormat : Test Started---------");
-		LandingPage lp = PageFactory.initElements(driver, LandingPage.class);
 		// Call the leave form page
 		LeaveFormPage lfp = PageFactory.initElements(driver, LeaveFormPage.class);
 		// Click on leave icon
@@ -1061,9 +1040,9 @@ public class LeaveTestToyota extends BaseClass {
 		WebdriverUtils.clickElement(lfp.getClickLeaveTypeReasonDropdown());
 		lfp.selectLeaveReasons();
 		// Enter the start date
-		Date date1 = new Date("16-Nov-2020");
+		Date date1 = new Date("21-Nov-2020");
 		lfp.DatePicker(driver, lfp.getStartDate(), date1);
-		Date date2 = new Date("19-Nov-2020");
+		Date date2 = new Date("24-Nov-2020");
 		// Select end date
 		lfp.DatePicker(driver, lfp.getEndDate(), date2);
 		// Enter the comments
@@ -1088,13 +1067,47 @@ public class LeaveTestToyota extends BaseClass {
 	// 28. Without updating any of the fields, Click on submit
 	@Test()
 	public static void verifyAllMandatoryFields() throws Exception {
+		log.info("------------verifyAllMandatoryFields : Test Started---------");
 		// Call the leave form page
 		LeaveFormPage lfp = PageFactory.initElements(driver, LeaveFormPage.class);
 		// Click on leave icon
 		WebdriverUtils.clickElement(lfp.getClickLeaveForm());
 		// Click on leave type dropdown
 		WebdriverUtils.clickElement(lfp.getClickLeaveTypeDropdown());
-		
+		String expLeaveTypeBlankError = "Leave Type cannot be empty";
+		log.info("Expected :" + expLeaveTypeBlankError);
+		String expLeaveReasonBlankError = "Leave Reason cannot be empty";
+		log.info("Expected :" + expLeaveReasonBlankError);
+		String expStartDateError = "Start Date cannot be empty";
+		log.info("Expected :" + expStartDateError);
+		String expEndDateError = "End Date cannot be empty";
+		log.info("Expected :" + expEndDateError);
+		String expLeaveDetails = "Leave Details cannot be empty";
+		log.info("Expected :" + expLeaveDetails);
+		// Click on submit
+		WebdriverUtils.clickElement(lfp.getSubmitButton());
+		// Capture the actual message
+		String actLeaveTypeBlankError = lfp.getLeaveTypeBlankError().getText();
+		String actLeaveReasonBlankError = lfp.getLeaveReasonBlankError().getText();
+		String actStartDateError = lfp.getStartDateBlankError().getText();
+		String actEndDateError = lfp.getEndDateBlankError().getText();
+		String actLeaveDetailsError = lfp.getLeaveDetailsBlankError().getText();
+		// Close the leave form
+		WebdriverUtils.clickElement(lfp.getCloseLeaveForm());
+		log.info("Validate the mandatory fields");
+		Assert.assertEquals(actLeaveTypeBlankError, expLeaveTypeBlankError);
+		Assert.assertEquals(actLeaveReasonBlankError, expLeaveReasonBlankError);
+		Assert.assertEquals(expStartDateError, actStartDateError);
+		Assert.assertEquals(actEndDateError, expEndDateError);
+		Assert.assertEquals(expLeaveDetails, actLeaveDetailsError);
+		log.info("Actual :" + actLeaveTypeBlankError);
+		log.info("Actual :" + actLeaveReasonBlankError);
+		log.info("Actual :" + expStartDateError);
+		log.info("Actual :" + actEndDateError);
+		log.info("Actual :" + expLeaveDetails);
+		log.info("------------verifyAllMandatoryFields : Test Ended-------");
 	}
+	
+	
 
 }

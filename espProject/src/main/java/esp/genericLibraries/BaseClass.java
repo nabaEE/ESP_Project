@@ -57,7 +57,7 @@ public class BaseClass extends FileUtils {
 	}
 
 	@BeforeMethod()
-	public void login() throws IOException {
+	public void login() throws Exception {
 		System.out.println("************Login to the application***************");
 		log.info("******************Login to the application********************");
 		/* Create an object of FileUtils class to get the data from property file */

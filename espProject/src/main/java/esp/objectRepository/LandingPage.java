@@ -39,6 +39,8 @@ public class LandingPage {
 	private WebElement searchLeaveRequest;
 	@FindBy(xpath = "//div[@id='approvals']/div[2]/div/li[1]/div/div/p[3]/span/span[2]/i")
 	private WebElement approveRequest;
+	@FindBy(xpath="//div[@id='approvals']/div[2]/div/li[1]/div/div/p[3]/span/span[3]/i")
+	private WebElement rejectRequest;
 	@FindBy(xpath = "//div[@class='row three-main-cards-row']/div[3]")
 	private WebElement thirdPanel;
 	@FindBy(xpath = "//div[@id='approvals']/div[1]/div/div/a/i")
@@ -49,6 +51,9 @@ public class LandingPage {
 	private WebElement clickHomeIcon;
 
 	/*********** Getters Usage ************/
+	public WebElement getRejectRequest() {
+		return rejectRequest;
+	}
 	public WebElement getClickHomeIcon() {
 		return clickHomeIcon;
 	}

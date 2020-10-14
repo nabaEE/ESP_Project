@@ -10,11 +10,7 @@
    <classes>
       <class name="com.leave.LeaveTestToyota">
       <methods>
-      <!-- <include name="clickAndVerifyLeaveTypes"></include>
       <include name="viewLeaveBalanceAndVerify"></include>
-      <include name="pickTheLeaveTypeAndVerify"></include>
-      <include name="verifyLeaveTypeMandatory"></include> -->
-      <include name="applyThreeDaySickLeaveWithDocument"></include>
       </methods>
       </class>
       <!-- <class name="com.leave.LeaveTestNextgen">

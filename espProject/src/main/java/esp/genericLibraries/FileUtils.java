@@ -20,6 +20,7 @@ public class FileUtils {
 	String data = "./TestData/myData.property.txt";
 	String excelPath = "./TestData/EmpData.xlsx";
 	String leaveExcelPath = "./TestData/LeaveData.xlsx";
+	String credentials= "./TestData/UsernamePassword.xlsx";
 	XSSFWorkbook wb;
 	FileInputStream fis1;
 	XSSFSheet sh;
@@ -37,6 +38,16 @@ public class FileUtils {
 // Declare the method to fetch the string data from the excel sheet
 	public String getExcelData(String sheetName, int rowNumber, int colNumber) throws Exception {
 		fis1 = new FileInputStream(excelPath);
+		wb = new XSSFWorkbook(fis1);
+		sh = wb.getSheet(sheetName);
+		row = sh.getRow(rowNumber);
+		col = row.getCell(colNumber);
+		String data = sh.getRow(rowNumber).getCell(colNumber).getStringCellValue();
+		return data;
+	}
+	//Declare a method to get credentials
+	public String getCredentials(String sheetName, int rowNumber, int colNumber) throws Exception {
+		fis1 = new FileInputStream(credentials);
 		wb = new XSSFWorkbook(fis1);
 		sh = wb.getSheet(sheetName);
 		row = sh.getRow(rowNumber);

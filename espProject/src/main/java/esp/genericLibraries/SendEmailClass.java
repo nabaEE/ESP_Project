@@ -14,12 +14,12 @@ public class SendEmailClass {
 		Email email = new SimpleEmail();
 		email.setHostName("smtp.googlemail.com");
 		email.setSmtpPort(465);
-		email.setAuthenticator(new DefaultAuthenticator("nabaghana.behera@employeeexperts.com", "Employee@123"));
+		email.setAuthenticator(new DefaultAuthenticator("", ""));
 		email.setSSLOnConnect(true);
-		email.setFrom("nabaghana.behera@employeeexperts.com");
+		email.setFrom("");
 		email.setSubject("Automation Test Mail");
 		email.setMsg("This is a test mail ... :-)");
-		email.addTo("nabaghana.behera@employeeexperts.com");
+		email.addTo("");
 		email.send();
 	}
 

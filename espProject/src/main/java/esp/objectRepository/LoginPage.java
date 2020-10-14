@@ -37,17 +37,18 @@ public class LoginPage
 		loginBtn.click();
 	}
 
-	public void secureLogin(String username, String password) {
+	public void secureLogin(String username, String password) throws Exception {
 		secureUserName.sendKeys(username);
 		secureUserPassword.sendKeys(password);
+		WebdriverUtils.clickElement(secureSubmit);
 		secureSubmit.click();
 	}
 
 	public void logOut() throws Exception {
 		//WebdriverUtils.waitForElementPresent(BaseClass.driver, dropDownArrow);
 		WebdriverUtils.waitForCompleteElementToLoad(dropDownArrow);
-		dropDownArrow.click();
-		logoutBtn.click();
+		WebdriverUtils.clickElement(dropDownArrow);
+		WebdriverUtils.clickElement(logoutBtn);
 	}
 	
 }
