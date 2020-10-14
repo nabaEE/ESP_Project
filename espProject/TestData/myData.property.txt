@@ -1,17 +1,15 @@
 <<<<<<< HEAD
 URL: https://uat.nexuba.com/
-USERNAME: HEMANTH.KUMAR@BLUESTONE.COM
-PASSWORD: BLue@2020
-USERNAME1:nabaghana.behera@employeeexperts.com
-PASSWORD1:Depali@123
+USERNAME: 
+PASSWORD: 
+USERNAME1:
+PASSWORD1:
 BROWSER: chrome
-APPROVERNAME1: 000138@toyota-boshoku.com
-APPROVERPASSWORD: TBI@2020
-APPROVERNAME2:000036@toyota-boshoku.com
-EMPLOYEE: 000261@toyota-boshoku.com
-Id:000614@toyota-boshoku.com
-HEMANTH.KUMAR@BLUESTONE.COM
-ravi.v@nxtgen.com
+APPROVERNAME1: 
+APPROVERPASSWORD: 
+APPROVERNAME2:
+EMPLOYEE: 
+
 =======
 URL: https://in-test.nexuba.com/
 USERNAME: 
