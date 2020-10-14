@@ -1,3 +1,4 @@
+
 package esp.genericLibraries;
 
 import java.net.URL;
@@ -7,7 +8,6 @@ import org.apache.commons.mail.Email;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.HtmlEmail;
 import org.apache.commons.mail.SimpleEmail;
-
 public class SendEmailClass {
 
 	public void sendEmail() throws EmailException {
@@ -41,3 +41,4 @@ public class SendEmailClass {
 		email.send();
 	}
 }
+

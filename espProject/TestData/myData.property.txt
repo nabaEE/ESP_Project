@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 URL: https://uat.nexuba.com/
 USERNAME: HEMANTH.KUMAR@BLUESTONE.COM
 PASSWORD: BLue@2020
@@ -11,3 +12,11 @@ EMPLOYEE: 000261@toyota-boshoku.com
 Id:000614@toyota-boshoku.com
 HEMANTH.KUMAR@BLUESTONE.COM
 ravi.v@nxtgen.com
+=======
+URL: https://in-test.nexuba.com/
+USERNAME: 
+PASSWORD:
+USERNAME1:
+PASSWORD1:
+BROWSER: chrome
+>>>>>>> 90b26aa8eb8d9a51857203f5086d06e6fd207b7f
